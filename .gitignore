@@ -1,0 +1,64 @@
+# =============================================================================
+# Unity project. Standard Unity ignores, plus one Project3D-specific path.
+# =============================================================================
+
+# --- Unity generated ------------------------------------------------------
+# Unity regenerates all of these on first open. They are large, machine-local,
+# and conflict constantly if committed. This is the single most important thing
+# to get right in a Unity repo.
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Never commit the asset store download cache
+/[Aa]ssets/AssetStoreTools*
+/[Aa]ssets/Plugins/Editor/JetBrains*
+/[Aa]ssets/StreamingAssets/aa.meta
+/[Aa]ssets/StreamingAssets/aa/*
+
+# --- Visual Studio / Rider / VS Code -------------------------------------
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# --- OS -------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*~
+*.tmp
+
+# --- Unity crash reports --------------------------------------------------
+sysinfo.txt
+crashlytics-build.properties
+
+# --- Project3D specific ----------------------------------------------------
+# The private automation (ImportPostprocessor, BuildPrefabs, UpdateScenes) is
+# injected here by `make unity` so Unity will compile it, then removed again.
+# It is deliberately ignored: teammates clone a project that opens and plays
+# normally, with no automation in it.
+#
+# Do NOT un-ignore this to "keep a local copy". The pipeline overwrites it on
+# every run and rsyncs it away afterwards -- anything you put here is lost.
+/Assets/Editor/Project3D/
+
+# Injected scripts leave these behind mid-run
+/Assets/Editor/Project3D.meta
