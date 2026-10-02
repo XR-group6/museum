@@ -1,0 +1,73 @@
+{
+  "scope": "Data validation only; Unity compilation, editor import and XR device playback NOT tested. Preview images rendered from actual model and skin-animation data.",
+  "assets": [
+    {
+      "model": "Daughter_Adult",
+      "status": "passed",
+      "triangles": 2977,
+      "bones": 52,
+      "clips": 17,
+      "checks": [
+        "GLB chunk sizes and accessor bounds",
+        "finite geometry and unit normals",
+        "triangle indices",
+        "skin weights sum to one",
+        "acyclic parent hierarchy",
+        "unit rotation quaternions",
+        "increasing key times",
+        "matching loop endpoints"
+      ]
+    },
+    {
+      "model": "Daughter_Child",
+      "status": "passed",
+      "triangles": 2695,
+      "bones": 52,
+      "clips": 17,
+      "checks": [
+        "GLB chunk sizes and accessor bounds",
+        "finite geometry and unit normals",
+        "triangle indices",
+        "skin weights sum to one",
+        "acyclic parent hierarchy",
+        "unit rotation quaternions",
+        "increasing key times",
+        "matching loop endpoints"
+      ]
+    },
+    {
+      "model": "Father_Elder",
+      "status": "passed",
+      "triangles": 2633,
+      "bones": 52,
+      "clips": 17,
+      "checks": [
+        "GLB chunk sizes and accessor bounds",
+        "finite geometry and unit normals",
+        "triangle indices",
+        "skin weights sum to one",
+        "acyclic parent hierarchy",
+        "unit rotation quaternions",
+        "increasing key times",
+        "matching loop endpoints"
+      ]
+    },
+    {
+      "model": "Father_Young",
+      "status": "passed",
+      "triangles": 2733,
+      "bones": 52,
+      "clips": 17,
+      "checks": [
+        "GLB chunk sizes and accessor bounds",
+        "finite geometry and unit normals",
+        "triangle indices",
+        "skin weights sum to one",
+        "acyclic parent hierarchy",
+        "unit rotation quaternions",
+        "increasing key times",
+        "matching loop endpoints"
+      ]
+    }
+  ]
+}
