@@ -1,0 +1,2326 @@
+Unity Editor version:    2022.3.62f3 (96770f904ca7)
+Branch:                  2022.3/respin/2022.3.62f2-4af31df585-v2
+Build type:              Release
+Batch mode:              YES
+System name:             Linux
+Distro version:          #31~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Aug 10 09:38:02 UTC 2
+Kernel version:          7.0.0-31-generic
+Architecture:            x86_64
+Available memory:        15383 MB
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Channel LicenseClient-kan doesn't exist
+[Licensing::Module] Successfully launched the LicensingClient (PId: 1018243)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-kan" at "2026-10-02T03:23:03.901499Z"
+[SignatureVerifier] Application signature verification not supported on this platform.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.16.2+bdef8f5
+  Session Id:              2ffad1c37ab74392b0e9bb47bc222a26
+  Correlation Id:          e307a283011c0b85ee16bdfb487dd9ae
+  External correlation Id: 3625293229775834257
+  Machine Id:              Wn/7YDdpMFQ5mqLJLXH81OmuwAE=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-kan" (connect: 0.57s, validation: 0.04s, handshake: 0.00s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-kan-notifications" at "2026-10-02T03:23:03.94273Z"
+[Licensing::Module] Connected to LicensingClient (PId: 1018243, launch time: 0.00, total connection time: 0.61s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully updated license
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "F4-MPZT-RUN8-D8XE-UFUQ-XXXX"
+Pro License: NO
+Initialize udev device monitor.
+[Licensing::Client] Successfully resolved entitlement details
+
+COMMAND LINE ARGUMENTS:
+/home/kan/apps/unity-2022.3.62f3/Editor/Unity
+-batchmode
+-nographics
+-quit
+-projectPath
+/home/kan/Project3D/shared
+-logFile
+/home/kan/Project3D/shared/Logs/pipeline.log
+-executeMethod
+Project3D.Build.All
+Successfully changed project path to: /home/kan/Project3D/shared
+/home/kan/Project3D/shared
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [124777886323712]  Target information:
+
+Player connection [124777886323712]  * "[IP] 192.168.0.199 [Port] 55504 [Flags] 2 [Guid] 2771536880 [EditorId] 2771536880 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.199) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" 
+
+Player connection [124777886323712]  * "[IP] 172.17.0.1 [Port] 55504 [Flags] 2 [Guid] 2771536880 [EditorId] 2771536880 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.199) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" 
+
+Player connection [124777886323712] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [124777886323712] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[Package Manager] UpmClient::Connect -- Connected to IPC stream "Upm-1018225" after 0.2 seconds.
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 32 packages:
+  Built-in packages:
+    com.unity.modules.ai@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.ai@1.0.0)
+    com.unity.modules.androidjni@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.androidjni@1.0.0)
+    com.unity.modules.animation@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.animation@1.0.0)
+    com.unity.modules.assetbundle@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.assetbundle@1.0.0)
+    com.unity.modules.audio@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.audio@1.0.0)
+    com.unity.modules.cloth@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.cloth@1.0.0)
+    com.unity.modules.director@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.director@1.0.0)
+    com.unity.modules.imageconversion@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.imageconversion@1.0.0)
+    com.unity.modules.imgui@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.imgui@1.0.0)
+    com.unity.modules.jsonserialize@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.jsonserialize@1.0.0)
+    com.unity.modules.particlesystem@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.particlesystem@1.0.0)
+    com.unity.modules.physics@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.physics@1.0.0)
+    com.unity.modules.physics2d@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.physics2d@1.0.0)
+    com.unity.modules.screencapture@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.screencapture@1.0.0)
+    com.unity.modules.terrain@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.terrain@1.0.0)
+    com.unity.modules.terrainphysics@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.terrainphysics@1.0.0)
+    com.unity.modules.tilemap@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.tilemap@1.0.0)
+    com.unity.modules.ui@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.ui@1.0.0)
+    com.unity.modules.uielements@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.uielements@1.0.0)
+    com.unity.modules.umbra@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.umbra@1.0.0)
+    com.unity.modules.unityanalytics@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.unityanalytics@1.0.0)
+    com.unity.modules.unitywebrequest@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.unitywebrequest@1.0.0)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.unitywebrequestassetbundle@1.0.0)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.unitywebrequestaudio@1.0.0)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.unitywebrequesttexture@1.0.0)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.unitywebrequestwww@1.0.0)
+    com.unity.modules.vehicles@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.vehicles@1.0.0)
+    com.unity.modules.video@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.video@1.0.0)
+    com.unity.modules.vr@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.vr@1.0.0)
+    com.unity.modules.wind@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.wind@1.0.0)
+    com.unity.modules.xr@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.xr@1.0.0)
+    com.unity.modules.subsystems@1.0.0 (location: /home/kan/Project3D/shared/Library/PackageCache/com.unity.modules.subsystems@1.0.0)
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.11 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.62f3 (96770f904ca7)
+[Subsystems] Discovering subsystems at path /home/kan/apps/unity-2022.3.62f3/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /home/kan/Project3D/shared/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0; jobified=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+[Licensing::Client] Successfully resolved entitlement details
+Initialize mono
+Mono path[0] = '/home/kan/apps/unity-2022.3.62f3/Editor/Data/Managed'
+Mono path[1] = '/home/kan/apps/unity-2022.3.62f3/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
+Mono config path = '/home/kan/apps/unity-2022.3.62f3/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56225
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /home/kan/apps/unity-2022.3.62f3/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.006115 seconds.
+- Loaded All Assemblies, in  0.309 seconds
+Native extension for LinuxStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.360 seconds
+Domain Reload Profiling: 669ms
+	BeginReloadAssembly (94ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (5ms)
+	initialDomainReloadingComplete (80ms)
+	LoadAllAssembliesAndSetupDomain (103ms)
+		LoadAssemblies (93ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (101ms)
+			TypeCache.Refresh (99ms)
+				TypeCache.ScanAssembly (87ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (360ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (309ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			SetLoadedEditorAssemblies (9ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (215ms)
+			ProcessInitializeOnLoadMethodAttributes (67ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://unix:/tmp/ilpp.sock-3d126299f20a144bdefe85f997afb0d8
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Content root path: /home/kan/Project3D/shared/
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 35.5746ms
+Starting: /home/kan/apps/unity-2022.3.62f3/Editor/Data/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/2400b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: /home/kan/Project3D/shared
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 0s84ms
+*** Tundra build success (0.06 seconds), 0 items updated, 95 evaluated
+Total cache size 0
+Total cache size after purge 0
+AssetDatabase: script compilation time: 0.564498s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.229 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Start importing Assets/Editor/Project3D using Guid(572a84ce2c170f6a0b720efeebf0c45c) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c40b6ef13bfbe5f4ecd63337c7295af3') in 0.021663 seconds
+Start importing Assets/Editor/Project3D/UpdateScenes.cs using Guid(6030cff3b530dea2e836d8da33d861f9) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fb75d43a9fc70ef93037ec69c6207102') in 0.001005 seconds
+Start importing Assets/Editor/Project3D/ImportPostprocessor.cs using Guid(112580fa2270057a3b95ac34004e7542) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8c096c6401021492b6956813bb301c38') in 0.000777 seconds
+Start importing Assets/Editor/Project3D/Build.cs using Guid(8664ebc6c5455e947b524d7ac8ff0420) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '28dcca44732e1bdff9e58e75ac799be5') in 0.000746 seconds
+Start importing Assets/Editor/Project3D/BuildPrefabs.cs using Guid(6aa14cbf2c00658bf8c4816250762c47) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'de3f1b68d1d82eea041dd15d304cafb9') in 0.000757 seconds
+Start importing Assets/Editor/Project3D/BuildMaterials.cs using Guid(aa4735c98c4977ffc8bec89fea7d53cf) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '56cc51e351829fad93c4edb11c2cbbec') in 0.000733 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for LinuxStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.387 seconds
+Domain Reload Profiling: 617ms
+	BeginReloadAssembly (149ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (26ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (5ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (17ms)
+		LoadAssemblies (85ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (7ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (388ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (265ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (28ms)
+			ProcessInitializeOnLoadAttributes (189ms)
+			ProcessInitializeOnLoadMethodAttributes (28ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Start importing Assets/Project3D/Models/prop/thermos.fbx using Guid(9d6af7c47f523827a8d3652cb396236a) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ae36c9429896856f99a3315519826c9e') in 0.017761 seconds
+Start importing Assets/Project3D/Prefabs/prop/thermos.prefab using Guid(9dac561f70ecfc32699ed8e1dacd28ed) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '048b000e8b51aa246cb991d0c9f79f63') in 0.001882 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=698649899498ce9f0a2df4537a99f664): Total: 1.393 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=8 (actual=8, local cache=0, cache server=0)
+		Asset DB Process Time: managed=11 ms, native=124 ms
+		Asset DB Callback time: managed=57 ms, native=2 ms
+		Scripting: domain reloads=1, domain reload time=625 ms, compile time=566 ms, other=4 ms
+		Project Asset Count: scripts=103, non-scripts=237
+		Asset File Changes: new=0, changed=7, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokeBeforeRefreshCallbacks: 0.123ms
+	ApplyChangesToAssetFolders: 0.034ms
+	Scan: 28.392ms
+	OnSourceAssetsModified: 3.140ms
+	GetAllGuidsForCategorization: 0.038ms
+	CategorizeAssets: 2.666ms
+	ImportOutOfDateAssets: 441.850ms (-178.119ms without children)
+		ImportManagerImport: 53.291ms (6.989ms without children)
+			ImportInProcess: 46.272ms
+			UpdateCategorizedAssets: 0.030ms
+		CompileScripts: 566.045ms
+		ReloadNativeAssets: 0.002ms
+		UnloadImportedAssets: 0.075ms
+		ReloadImportedAssets: 0.372ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.053ms
+		InitializingProgressBar: 0.006ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.003ms
+		OnDemandSchedulerStart: 0.123ms
+	PostProcessAllAssets: 56.638ms
+	Hotreload: 0.656ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.002ms
+	UnloadStreamsBegin: 0.137ms
+	PersistCurrentRevisions: 0.058ms
+	UnloadStreamsEnd: 0.002ms
+	GenerateScriptTypeHashes: 0.006ms
+	Untracked: 858.906ms
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 4.018ms
+Initializing Unity extensions:
+[Licensing::Client] Successfully resolved entitlement details
+UpdateMenuTitleForLanguage: 10
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Project3D
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ProgressiveSceneManager::Cancel()
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (372.8 KB). Loaded Objects now: 518.
+Memory consumption went from 70.5 MB to 70.1 MB.
+Total: 2.776051 ms (FindLiveObjects: 0.036178 ms CreateObjectMapping: 0.004819 ms MarkObjects: 2.538870 ms  DeleteObjects: 0.189689 ms)
+
+Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
+[Project3D] materials: 0 created, 0 updated, 18 already current, 0 failed.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildMaterials:Build () (at Assets/Editor/Project3D/BuildMaterials.cs:142)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:42)
+
+(Filename: Assets/Editor/Project3D/BuildMaterials.cs Line: 142)
+
+Start importing Assets/Project3D/Models/environment/fishing_boat.fbx using Guid(ead85d5c01307e402b01eef84495eac8) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9c1cb497cf07dee1f9517da00f7053c2') in 0.022699 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a8aa1cbba041390e298c4399b7eb5504): Total: 0.026 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/environment/house.fbx using Guid(28d0f75eebd6cb9dbbb9e26238284b8d) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '94d22034482f10ae3bb2ee568986f186') in 0.011158 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e83f969eb98482f78a6dd4217cdfd3a7): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/environment/house_roof.fbx using Guid(a079ab5ce93c15ffc8a66fdabe54a21d) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ea7e8c38993c8e93ada03c685ec54cdb') in 0.009715 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=708a43264c6966de7acd993bd99138fe): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/environment/neighbor_house.fbx using Guid(30a9930c9acf501bf844fbfaec9493c2) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '95208e8a679e8741bee132877f6389d7') in 0.010003 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d6b39eac3361170268628dc5881a2ed2): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/environment/rowhouse.fbx using Guid(8c72cd02ec772aeb9a5ce6be3769ffd0) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8ce77f858f55170412d975609234dacd') in 0.011422 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0e2519ec799414e8abe045d3a4a7bf40): Total: 0.014 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/environment/sea.fbx using Guid(3621cdcc1301d6168b0d1bcf39d8c0d0) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5505cc7ac4361015031d23407d70fdcf') in 0.010704 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c21b572c410fce472854274074e98340): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/environment/stair.fbx using Guid(b59cf612fd9ba8826ae9aca5970e3c33) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '77f722e69c38747e94e4cbd7caab2d4b') in 0.009851 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=bac3e5bdd8e303a44842794d784f5e15): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/environment/street.fbx using Guid(b42d9bc624ad0811ab941bf1dd2ad533) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '20e4b2a546a275e7a8b2905e540c309e') in 0.009884 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=572417411fbdbea7ca00ae0351e9e6b8): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/kit/window_screen.fbx using Guid(b74a5acfd83f046fda8adb219b62cb08) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '24883ded64180eb19153f54d2095aed1') in 0.008936 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a775b46e4e4cf0363875ff7983457eef): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/ac_unit.fbx using Guid(0fecaa136d394f5a88e2807e2320b578) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f12b13b63d75ed73f617375a2112303a') in 0.009553 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d49cdae738f5259908a80ba21767976a): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/altar.fbx using Guid(76181e0ee84da81e998d257435807481) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5a5cd75b80028c189c1962c2e7f21756') in 0.009489 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3631c9be4d410bd7c8453d089a9f6136): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/ancestor_tablets.fbx using Guid(5885144f72cc8d345964b9295c1ceb2b) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd4922a7246802f91d1d283eeba958d1c') in 0.010507 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c04d71a5076c53b8f854a0861bf96c9e): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/bamboo_basket.fbx using Guid(76225cc4c2669f9c8a8381187a17ce5c) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0769ca571e538b5f74b49151bca54cab') in 0.009477 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=7b0e659e5584e4ceaae8ced44cc32ed4): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/bamboo_chair.fbx using Guid(765af50a64f7592a48ec802eb6affc44) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e5190eb81339012a303faf7eec93f51b') in 0.009136 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=deb48cfea92d8e8edabe43c9f99e5163): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/bed.fbx using Guid(80b16e91d383080178aaa54b5420d7f8) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b585ee02580748d879d959fe86672418') in 0.010699 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=86a329ab1c8251d77998658926f7d6c4): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/bench.fbx using Guid(9f67a66a9d3fa37bbad7156de022951b) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ba8adb46229dc5a6093d5549b762a3fa') in 0.009769 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=535b76ba23dc823699a1d71a599fb07b): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/bookcase.fbx using Guid(26751744e00c5b4269d5459706945610) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fc168b2d737d3b9cdd0db1a22a7cec3c') in 0.010144 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=33ec6b4aace399ed49cc875ab46a9ae4): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/candles.fbx using Guid(964c16fcb38de554ba1893e9585fc35b) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '35ebca8d34c63b70dcd17d82fbd69381') in 0.009429 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=db1558009ac6786188d929aeb09fe75d): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/cassette_recorder.fbx using Guid(7cd2fb47b6cb397cbaf43f59dc01137c) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6593910fa10f00efd497fdcb2ced6e84') in 0.009331 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3537c515a0161aa0196caf5e1ee62b60): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/coal_stove.fbx using Guid(9fccd6a4b3157401f8ec2cf12420a305) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e2eaddb30a05b4414ea0b21ef402611a') in 0.009231 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=7198f2b3ed34060a8960a0891847fd5c): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/coat_rack.fbx using Guid(8b60414788f40fe5fa04b47565073e7d) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cd8436216ae95eff17d1651622f033d0') in 0.009259 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=39c9b5e2c1ea7979686e91a31986480b): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/coffee_table.fbx using Guid(4dd8613013e064fde816702d8dadaae1) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6a1a52588cfd80ef9752779e36ce7ffd') in 0.009051 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=7ba6a10508655d57598b504977e86368): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/cot.fbx using Guid(4fc8569af682db647ae3b5fae8d4f67e) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '15c6c55d7179821a2798d75356f30672') in 0.009713 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e48bf24acf2183cd085aa4d7fad4262b): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/cupboard.fbx using Guid(bbf78e269ddd9bdcf8c616bb0154ff62) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1152bc0c284fed6ea4f728ba0ae65e72') in 0.009563 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=be04f2e6fef7d33a5b3fdf3e290896c1): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/cushion.fbx using Guid(3d3fbc706e1bf940ea2a824bef6a3286) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fe95e92d66abf3cf03dc01103e1b08c5') in 0.012642 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e3a9a1916d0a421e19e1d5fc861844eb): Total: 0.015 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/desk_chair.fbx using Guid(2459e20302207c9c4a4fb083dc1ba6d4) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dcc3211662f3e32f9f842fc295178bd9') in 0.009222 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8d2dea7920f4af71aa785b5963524751): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/dining_table.fbx using Guid(7a9baa900bc6d88f19f024f9de12eb78) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'eebf8191d16dddcf399f51bbb14e10b5') in 0.011073 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=adab055e30a3e361a942ced8a337a557): Total: 0.014 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/double_bed.fbx using Guid(c37d58bd018cef8499c7b47c4dc9c81b) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6a02fd12bed608b1dac057b0c3d156b7') in 0.009829 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=29ed30063ef7a21439d5f678abcad29b): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/dresser.fbx using Guid(ee185444e3f754afb9b76766d7129c3b) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '12a6765f1dc4a8c62fd91add1aa95f4b') in 0.009689 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=5d241ee607dd6ee7a89c0d953f774744): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/dried_fish.fbx using Guid(b1c8bebd7d4a68a0fbaafffd43ab7c52) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '085ca72a64e27c0a2032026b99f3c528') in 0.009426 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d5cdb03cba403988f9e9d2838a612391): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/firewood.fbx using Guid(3c16bc2a159c45d96942adfb30f34d7a) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4b27b7637f5ddfab8321eb4c7bd8db46') in 0.008839 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=207805fe2dd0f380baf6774b794508c5): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/fishing_net.fbx using Guid(34798ee5e83cdc565b7af5b0a3da57d0) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '41dea5141e523dc896992ccf1781d408') in 0.009481 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=09aad3dfc84e75f0291f5a3548910e7e): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/floor_drain.fbx using Guid(8517d37128117ec14a9757aed6509ca4) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '797cf0a712b56d93271ea8db87222198') in 0.009242 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=bc7cdfd9e906f64dc8e42ed451bc50ea): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/gas_cooker.fbx using Guid(dda0286be867dc29aa38233dc8612d1d) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '652edb9a0bcf82a5a88114ac87e8e135') in 0.010614 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c41780e1f0fc46b7bae988f7dd34af22): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/gas_cylinder.fbx using Guid(98a30a775fb402e8884aa49cbddad688) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e88dc77a6fb1d5a7ab2a9778d3ff9af7') in 0.009277 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8ea53d248992436e69b6538f35dcaeb2): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/harbor_scroll.fbx using Guid(d2abf6ef6f93c927989ba6eea22dc8b0) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '40692b9d7684502197958db594bf8c22') in 0.009802 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=56e91113c8d73f28786c5015d853ffa7): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/incense_burner.fbx using Guid(4afb1b88dc4717b1b962a60aebdaa1dc) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3b23483ab61ca1ae481dd4218315b628') in 0.009744 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9db782e926c5ae7a7b31e2a3987e0932): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/kitchen_counter.fbx using Guid(6276358cdf5b4185a9a1fb9aec520d1b) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a2939323b148a6b5f72f3c3e4800e1c0') in 0.009675 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=1f14ca228f8be12a2a6f151b3b2df137): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/kitchen_sink.fbx using Guid(58e09e2e874ffaf1d92519e4410ff5e7) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1876fa2659c0f75fee465b8494d60c98') in 0.009484 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=da5cbe4c043c3c0c2b236aba8f2d9135): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/laundry_frame.fbx using Guid(c744864ddb66404ba99c3c076884d91f) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1517f8100fadb2339161a0d915bda94d') in 0.008796 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=b07329b06aa38daf99bbd22f7042b40c): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/living_cabinet.fbx using Guid(d69b04766ba06e0f9a0850e975237c58) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e9f64b5e6c3e2810f27f5662783223f0') in 0.009338 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=031f204260a8902be8f63c220919e6b4): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/marine_barometer.fbx using Guid(3587e27eabd6d5720b7a9e5909a60092) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e0cc53724d216c706db37036d60aa313') in 0.010773 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=622e42ef0dedbe1c2862561d388e6094): Total: 0.014 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/mosquito_coil.fbx using Guid(303687dbba9f4817c860a89a70da4f38) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2b2b55ce7d4b6109dc09ce09bc99fca4') in 0.010174 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=939aa69e320f0ff0dacff9b99bc1dcbf): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/oar.fbx using Guid(106aaedf6b155fba2aa94b256299e047) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7f262af3fa878248d5371c3d98593de0') in 0.010108 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=cd96675f013aa0858a56be7961519888): Total: 0.014 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/oil_lamp.fbx using Guid(803ec7cd0d1650dd893909b25e8f75b2) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a5407896c48e0ddb8f8b6bb8a5caa5c4') in 0.010240 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9bfc3473e6f66036cb93e3d5065403cf): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/pickle_crock.fbx using Guid(42a38001412d5f6e18592594e9cd65dd) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1afde939dca1d1055ed4146958c31d1a') in 0.009088 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2c27e3e9801f450f8a6a547ec848fa19): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/radio.fbx using Guid(a040edc87f203f4c5b970d91df4e9027) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bc70c601cab03491e4ad98a4123ff6f3') in 0.009473 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=72c50728239281a6ba2cd047680ecb25): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/refrigerator.fbx using Guid(2e04b8e0e7f13325c9fd2b8cb74e1a5f) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '845b2886828f481c724bfc1ed0d05164') in 0.009205 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3cc5af20b52c0bb6692a382b34839709): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/rice_cooker.fbx using Guid(d762971a3c51b7b6f896b6535e1d31fc) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '426f21699f6f24c3a01731c4b37f46ac') in 0.009306 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=51ce94053e3fa9359ba9708580fffa5a): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/rice_jar.fbx using Guid(4bc4137ac9087541880ba1a775ad7db2) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0838d2e58b40a204199d601cc5ea2683') in 0.009480 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3110e02a7d1a302828ed7858462e63b2): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/shadow_box.fbx using Guid(5776ea60c54555eaeab2061077c40f49) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5b3d3c5cbfc0f8f702ce7dcc0a5c02f0') in 0.009843 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ce0038feebbfbba8d9d9f20691d8f570): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/shop_shutter.fbx using Guid(3540011e99b53e5e09728d5e82c5d53f) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'abda9a4d83682db92d9d08c87e50e095') in 0.010425 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8b0b5a4260817bce7a85c4d73d809c0d): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/shower.fbx using Guid(c8cee0297c25ecd69881a094cd1bfa05) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '824df6dd95b9767f23240057718e5480') in 0.009607 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c66532fe81fbfe2c5937d9b1e43e82fe): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/side_table.fbx using Guid(9cd5025b0c9776aa590f2b3bee69ebe9) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8561867b71994f5060645e4758e9938b') in 0.009193 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=358d8f15660b4fd42b8ba38d6faf07d5): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/sink.fbx using Guid(5ee57c9246b8ff8b6b6f9ec93aa0a86f) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fd1e71ab62a6110a500d27b45c7fd16d') in 0.011269 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=46aa1445598a6a3078fc4c39d86dde5a): Total: 0.014 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/sofa.fbx using Guid(1e259a5eb914941a28b42c27b288bb4d) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'de076e904a5d81fbec277eb118657ee3') in 0.009466 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c5281dd91c0aafeb4861ccd9c56c314a): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/stool.fbx using Guid(706fa2b7065248099a0f870fd14ca88f) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '11f965c4c7ade08404a3f9a2c376cb3e') in 0.009139 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d7b3fffe3cd02b6c690066832d618bbf): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/stove.fbx using Guid(5cf8c34d70f122562b45ae25e98deecf) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3bf637a5d4a800ad48fa4e0703dd525f') in 0.010316 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=6725290c54397cde2a9b2598c91483fa): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/stove_flue.fbx using Guid(1622c9cc2d6c339b2885e79bb5d4ed33) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00ee1ddd67cd24400534dc9e5cdadc2c') in 0.009068 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=7a095a8ceb6740d79ae01ff141e74650): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/straw_cape.fbx using Guid(b6eec7e102ebe5931894da27a1668d3b) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6677354deb77a2b53df739f52fd1ff4d') in 0.008892 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c5c01fd9881dc614199448ad50205867): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/study_desk.fbx using Guid(cb9ce2a4761dd468ea164be941c2c2ee) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd5ca92dd8314bb9025c0c374849accad') in 0.009341 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0861efc817e0bfb10bd329138907c08c): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/suitcase.fbx using Guid(44b7372d48e4d5a30b7efd703d72c188) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7a5af979f44efb29fcb219c777d3e745') in 0.009678 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4bd603ca48f474d8bbfebf820176ee48): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/tea_set.fbx using Guid(fc4ccf1ca1b95011dac1f19e2ac94508) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7d65995efb11efc694fb0800f0b1a746') in 0.009445 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c8713d9015a452979ada764fefbd177a): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/telephone.fbx using Guid(bdae9a7af78694a9fa7f0ab85fbd53fa) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c8f0928dc2c2dbce5c60cd7de764adb1') in 0.009191 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8d00016a90923ed568f9e4da5916a41c): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/television.fbx using Guid(af3022741f199f69e81186a15cb838b1) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3ceb1c6a6eaf0aa089ea87385407a90b') in 0.009488 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=cfafdb5ccf0546d49bc7adae589a8264): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/terrace_planter.fbx using Guid(c9669ec49e005c61e938f7c47b4f5ab4) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f9aa926f97f31887271cdcc16327013e') in 0.009464 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4a2dc9c487a90beed8f3c952cf8ce11f): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/thermos.fbx using Guid(9d6af7c47f523827a8d3652cb396236a) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ae36c9429896856f99a3315519826c9e') in 0.010041 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c511c7a3e6e1f596d86c991d24e3189f): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/toilet.fbx using Guid(a4a5ac719d96d0c7fb1b4cf0dca7a8a3) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '829e0b6690c768c1a32571e342c94e13') in 0.010347 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ea9328858a4045cfd93f69755dedf276): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/travel_bag.fbx using Guid(cdf67df7e52838868bf80e24b39c5db2) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '835d18a7376ed7f5026cdbc5fe1add78') in 0.009943 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9b7d5047bb26446479edbf033f0aec58): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/travel_bundle.fbx using Guid(21ae8bfe9c41d5b9595d68ddfc34f985) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '42f84bd4f3fb110a82f72ca5e4d8d7db') in 0.009497 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9110f6613cbd188c8b6d63cde8cd6b8d): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/wall_calendar.fbx using Guid(4badf507a2377d308b22018ee85833a4) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4e2dcb7b9ef3ec34528dace5331e5198') in 0.009988 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=aee8bf4ae3388895eae058a866bf5190): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/wall_clock.fbx using Guid(60c7734c98901cc7b87eba5154f0263c) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a844bbde6f02077430b5e7d2d9488771') in 0.009379 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=310ad9a91a522aaaf8a17b23f99145a8): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/wall_mirror.fbx using Guid(36c8accb2375338c0866ee28f3945215) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b040510c1b7fa73f6257f8a88e94989d') in 0.009009 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9efb6f8fb4218868ebb7a0ffb930f4a5): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/wall_shelf.fbx using Guid(cee7469b5342cbbe4a1839a18ff54816) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0c877b9026ca74eb0f28f1cf8c149286') in 0.008928 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2d5c200bbc953f8639cb741a832ffd4d): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/wardrobe.fbx using Guid(a3edd8bf2f0da11f495f60773df1e343) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2fcc98dac0d3b123f6cdc1e67de12800') in 0.009203 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=18344b442adc6597d97d500f7bbf3350): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/wash_stand.fbx using Guid(06b67d1a8e2ad6684ab4186c0a415820) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '508cb4cbcf8722726c8b421bb7c4c6b6') in 0.009288 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2e8ca3929e0b23db8b0cedb872fbcb09): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/washbasin.fbx using Guid(bf3f31813f86283fc85c69f3a86fc951) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'af91ff6582f5dbf6ad17be56c1e94499') in 0.009258 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=138ebad1b1edf19e38ad71d68f3ed0c0): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/water_jar.fbx using Guid(9e3579298b472b27787638bfbd6f9590) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e94fc2dfab0e759779438bae947f2d2d') in 0.009826 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=5f8bac49892e0ba1599094fa84157553): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/water_tank.fbx using Guid(204e97121234f80c8abb0d0270e79f6e) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f8edda906d72d456d0cc69dfebba1947') in 0.009096 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a6d318ec93a8ae25d936ff7ff4f76dd4): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/window_curtain.fbx using Guid(e2fce480d431262b291f8c71aacbcea3) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4cc80ca5a3f8e6ef48615fef157155da') in 0.010118 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ef1e0012e9c2025ce90e7cac6f212cb7): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Project3D/Models/prop/wooden_bucket.fbx using Guid(66335a444c8bff6e8a58fe6b3f679b9e) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '484efb365df9ff1c4d4d486b2da8edb9') in 0.009506 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4b5736bd84c880ac782980fbcefbcc59): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] reimported 81 models now that materials exist, so their slots remap by name.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.Build:ReimportModels () (at Assets/Editor/Project3D/Build.cs:98)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:51)
+
+(Filename: Assets/Editor/Project3D/Build.cs Line: 98)
+
+Asset Pipeline Refresh (id=e259099474736bd8483ec1862e2af4a0): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/environment/fishing_boat.prefab mesh='fishing_boat' verts=26289 tris=13424 size=(2.8400,3.6400,9.1689) meshbox=(-0.0142,-0.0467,0.0000)..(0.0142,0.0450,0.0364) mats=wood_dark|wood_mid|wood_light|metal_iron|glass|cloth_red|off_white|stone_grey|sand
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=db420b30642e82e7caa9743da1e31fda): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/environment/house.prefab mesh='house' verts=2645 tris=1352 size=(4.5200,3.8500,5.6000) meshbox=(-0.0226,-0.0280,0.0000)..(0.0226,0.0280,0.0385) mats=stone_grey|off_white|wood_mid|wood_dark|wood_light
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=5c2106c9678cbe9d3be6738fc5e4a15f): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/environment/house_roof.prefab mesh='house_roof' verts=716 tris=372 size=(5.5900,2.2363,6.8200) meshbox=(-0.0280,-0.0341,0.0246)..(0.0280,0.0341,0.0470) mats=tile_red|wood_dark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=cbec9fc239d183e22a0f48a7dd81ed74): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/environment/neighbor_house.prefab mesh='neighbor_house' verts=2568 tris=1368 size=(5.1000,8.3000,11.4000) meshbox=(-0.0255,-0.0570,0.0000)..(0.0255,0.0570,0.0830) mats=stone_grey|off_white|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=aa7cbc23dc1888a3389d17cd99f5cb99): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/environment/rowhouse.prefab mesh='rowhouse' verts=3182 tris=1692 size=(5.1000,8.3000,11.4000) meshbox=(-0.0255,-0.0570,0.0000)..(0.0255,0.0570,0.0830) mats=stone_grey|off_white|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=1c41b4ccc1b0b8cf8add7ebeb6ef6508): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/environment/sea.prefab mesh='sea' verts=1586 tris=1728 size=(24.0000,0.3950,24.0000) meshbox=(-0.1200,-0.1200,0.0000)..(0.1200,0.1200,0.0040) mats=cloth_blue
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=9318d4a9842dd80a58202c61fcd17abf): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/environment/stair.prefab mesh='stair' verts=1022 tris=600 size=(1.5000,6.7152,2.9800) meshbox=(0.0085,-0.0228,0.0015)..(0.0235,0.0070,0.0687) mats=stone_grey|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=adfafd6f151af47c695febbde39235ab): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/environment/street.prefab mesh='street' verts=88 tris=48 size=(24.0000,0.2000,9.2000) meshbox=(-0.1200,-0.0400,0.0000)..(0.1200,0.0520,0.0020) mats=stone_dark|stone_grey
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=67e8996e87d7588fc8bf923f8dd55b66): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/kit/window_screen.prefab mesh='window_screen' verts=216 tris=108 size=(1.1400,0.8800,0.0900) meshbox=(-0.0057,0.0000,0.0000)..(0.0057,0.0009,0.0088) mats=wood_dark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=cf6c2e7fb175cd5149c77a828f1f0ef1): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/ac_unit.prefab mesh='ac_unit' verts=168 tris=84 size=(0.6800,0.5400,0.5800) meshbox=(-0.0034,-0.0036,0.0000)..(0.0034,0.0022,0.0054) mats=metal_rust|off_white|metal_steel|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=11cf67488b02aa2189b868958a40861a): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/altar.prefab mesh='altar' verts=336 tris=168 size=(1.2000,0.8500,0.5500) meshbox=(-0.0060,-0.0028,0.0000)..(0.0060,0.0028,0.0085) mats=wood_dark|wood_mid
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=fbddad19cb466e63cbf18d464fb4fe7b): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/ancestor_tablets.prefab mesh='ancestor_tablets' verts=312 tris=156 size=(0.4000,0.3800,0.1600) meshbox=(-0.0020,-0.0008,0.0000)..(0.0020,0.0008,0.0038) mats=wood_dark|wood_mid|cloth_red
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=605f6df69238c68358c5d9008ccb2ece): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/bamboo_basket.prefab mesh='bamboo_basket' verts=1092 tris=612 size=(0.5100,0.6500,0.5100) meshbox=(-0.0026,-0.0026,0.0000)..(0.0026,0.0026,0.0065) mats=sand|bark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=c62cc381f56df3081be50d491748c1a5): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/bamboo_chair.prefab mesh='bamboo_chair' verts=360 tris=180 size=(0.4200,0.9200,0.4000) meshbox=(-0.0021,-0.0020,0.0000)..(0.0021,0.0020,0.0092) mats=wood_mid|sand
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=d9638ba42ebceb5c3b9531cff5c6c8cc): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/bed.prefab mesh='bed' verts=528 tris=264 size=(1.0400,1.8500,1.9000) meshbox=(-0.0052,-0.0095,0.0000)..(0.0052,0.0095,0.0185) mats=wood_mid|wood_dark|off_white|cloth_red
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=002e9b46869981957b517bbb6d0ddbc2): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/bench.prefab mesh='bench' verts=168 tris=84 size=(1.1000,0.4500,0.2800) meshbox=(-0.0055,-0.0014,0.0000)..(0.0055,0.0014,0.0045) mats=wood_mid|wood_dark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=fdef92b8905c0fbaaae36f96674df18e): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/bookcase.prefab mesh='bookcase' verts=336 tris=168 size=(0.9000,1.6400,0.3000) meshbox=(-0.0045,-0.0015,0.0000)..(0.0045,0.0015,0.0164) mats=wood_mid|wood_dark|cloth_red|cloth_blue|sand|charcoal|off_white
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=6c761138a4f98ec74abc4bd6cd24a8c4): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/candles.prefab mesh='candles' verts=692 tris=448 size=(0.3000,0.3300,0.1000) meshbox=(-0.0015,-0.0005,0.0000)..(0.0015,0.0005,0.0033) mats=metal_iron|cloth_red|sand
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=59f83c58bb63c1a19a316a138a74d9ce): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/cassette_recorder.prefab mesh='cassette_recorder' verts=184 tris=96 size=(0.3400,0.3000,0.1100) meshbox=(-0.0017,-0.0005,0.0000)..(0.0017,0.0006,0.0030) mats=charcoal|metal_steel|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=3472f3a738a88329aa02c84e5fbb5e70): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/coal_stove.prefab mesh='coal_stove' verts=343 tris=200 size=(0.4600,2.5500,0.4600) meshbox=(-0.0023,-0.0023,0.0000)..(0.0023,0.0023,0.0255) mats=metal_iron|metal_rust
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=948e8dd0432ae56b892ca6d836c6f478): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/coat_rack.prefab mesh='coat_rack' verts=246 tris=144 size=(0.4000,1.7900,0.4000) meshbox=(-0.0020,-0.0020,0.0000)..(0.0020,0.0020,0.0179) mats=wood_dark|wood_mid
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=7d76f021693ab6572bed18e0dfa55fbc): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/coffee_table.prefab mesh='coffee_table' verts=144 tris=72 size=(1.0500,0.4200,0.5500) meshbox=(-0.0052,-0.0028,0.0000)..(0.0052,0.0028,0.0042) mats=wood_dark|wood_mid
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=3fa19bb2e948d097382bc26e452ac587): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/cot.prefab mesh='cot' verts=280 tris=144 size=(1.9000,0.9800,0.8500) meshbox=(-0.0095,-0.0043,0.0000)..(0.0095,0.0043,0.0098) mats=wood_mid|wood_light|off_white|wood_dark|cloth_blue
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=8663ef499bf6bd5318070a67f7926cc0): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/cupboard.prefab mesh='cupboard' verts=384 tris=192 size=(0.8600,1.2400,0.4800) meshbox=(-0.0043,-0.0023,0.0000)..(0.0043,0.0025,0.0124) mats=wood_mid|wood_dark|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=3fe8f45542ed69512895f50395483ac0): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/cushion.prefab mesh='cushion' verts=296 tris=192 size=(0.4700,0.1450,0.4700) meshbox=(-0.0024,-0.0024,0.0000)..(0.0024,0.0024,0.0015) mats=cloth_red
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=bd3738096632b1ce58e9b224baff4fff): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/desk_chair.prefab mesh='desk_chair' verts=216 tris=108 size=(0.4200,0.8600,0.4200) meshbox=(-0.0021,-0.0021,0.0000)..(0.0021,0.0021,0.0086) mats=wood_mid|wood_light
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=6310bbf824443c1278f66062aa75ad40): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/dining_table.prefab mesh='dining_table' verts=336 tris=168 size=(0.9000,0.8500,0.9000) meshbox=(-0.0045,-0.0045,0.0000)..(0.0045,0.0045,0.0085) mats=wood_dark|wood_mid
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=86b575c48c0987cb2bc148db5237fc2b): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/double_bed.prefab mesh='double_bed' verts=336 tris=168 size=(2.0300,0.9200,1.5000) meshbox=(-0.0100,-0.0075,0.0000)..(0.0103,0.0075,0.0092) mats=wood_mid|wood_light|off_white|wood_dark|cloth_red
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=6493f07589e7d28148d17e88467d8f5d): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/dresser.prefab mesh='dresser' verts=264 tris=132 size=(1.1400,1.5800,0.5200) meshbox=(-0.0057,-0.0025,0.0000)..(0.0057,0.0027,0.0158) mats=wood_dark|wood_mid|metal_steel|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=1ad71e7a2eedaaa7dbe8f375c34887bc): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/dried_fish.prefab mesh='dried_fish' verts=974 tris=624 size=(0.6000,0.2100,0.0600) meshbox=(-0.0030,-0.0003,0.0000)..(0.0030,0.0003,0.0021) mats=sand
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=e32aadc945fc03d6d9c7fc7e15ef35fb): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/firewood.prefab mesh='firewood' verts=224 tris=144 size=(0.5000,0.2700,0.4500) meshbox=(-0.0025,-0.0023,0.0000)..(0.0025,0.0023,0.0027) mats=bark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=06e3744c9e3ca944a8bb2f24efd05b05): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/fishing_net.prefab mesh='fishing_net' verts=606 tris=336 size=(1.5000,1.7500,0.0700) meshbox=(-0.0075,-0.0004,0.0000)..(0.0075,0.0004,0.0175) mats=wood_dark|sand|bark|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=79f583ce23f14ac6394000dc06b9bea7): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/floor_drain.prefab mesh='floor_drain' verts=100 tris=64 size=(0.1500,0.0350,0.1500) meshbox=(-0.0008,-0.0008,0.0000)..(0.0008,0.0008,0.0004) mats=metal_iron|charcoal
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=69ce7c04cc3879db29100917d70d1776): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/gas_cooker.prefab mesh='gas_cooker' verts=284 tris=156 size=(0.7200,0.8800,0.4550) meshbox=(-0.0036,-0.0022,0.0000)..(0.0036,0.0024,0.0088) mats=metal_steel|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=148777a970dde4e6a82f8a10902eda27): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/gas_cylinder.prefab mesh='gas_cylinder' verts=174 tris=108 size=(0.3300,0.7000,0.3300) meshbox=(-0.0017,-0.0017,0.0000)..(0.0017,0.0017,0.0070) mats=charcoal|metal_iron|metal_steel
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=14e3d53c6f2a1c21da298403cc2ce739): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/harbor_scroll.prefab mesh='harbor_scroll' verts=264 tris=132 size=(0.6000,0.7350,0.0655) meshbox=(-0.0030,-0.0002,0.0017)..(0.0030,0.0005,0.0090) mats=wood_dark|off_white|cloth_blue|stone_grey|cloth_red|charcoal
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=a6909183107b6af52b77a93f21dbb32a): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/incense_burner.prefab mesh='incense_burner' verts=1401 tris=888 size=(0.2600,0.4099,0.2300) meshbox=(-0.0013,-0.0012,0.0000)..(0.0013,0.0012,0.0041) mats=stone_grey|stone_dark|cloth_red
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=51cd2f1d6a58faf6886b40d09b8a9f64): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/kitchen_counter.prefab mesh='kitchen_counter' verts=264 tris=132 size=(1.6400,0.9000,0.6780) meshbox=(-0.0082,-0.0032,0.0000)..(0.0082,0.0036,0.0090) mats=charcoal|wood_mid|stone_grey|wood_dark|metal_steel
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=df54bd088ba08b9ada78de4414a614aa): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/kitchen_sink.prefab mesh='kitchen_sink' verts=168 tris=84 size=(0.8000,0.4000,0.5000) meshbox=(-0.0040,-0.0025,0.0000)..(0.0040,0.0025,0.0040) mats=metal_steel|stone_dark|metal_iron|metal_rust
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=1a3d4f84a9f92e23c896dbf765e35f4f): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/laundry_frame.prefab mesh='laundry_frame' verts=168 tris=84 size=(1.1400,1.7000,0.1000) meshbox=(-0.0057,-0.0005,0.0000)..(0.0057,0.0005,0.0170) mats=metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=024f8411bdcc92cf2bd0a3ee6b30dc42): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/living_cabinet.prefab mesh='living_cabinet' verts=216 tris=108 size=(1.2400,0.6600,0.4920) meshbox=(-0.0062,-0.0023,0.0000)..(0.0062,0.0026,0.0066) mats=wood_dark|wood_mid|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=bac50a9ff210e2c89b5ecf60c94bf127): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/marine_barometer.prefab mesh='marine_barometer' verts=268 tris=156 size=(0.2900,0.2900,0.1020) meshbox=(-0.0015,0.0000,0.0000)..(0.0015,0.0010,0.0029) mats=wood_dark|off_white|cloth_red|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=d96fccd9aadbf62638278c0bc9a7f96d): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/mosquito_coil.prefab mesh='mosquito_coil' verts=98 tris=56 size=(0.1200,0.0550,0.1200) meshbox=(-0.0006,-0.0006,0.0000)..(0.0006,0.0006,0.0006) mats=metal_steel|leaf_deep
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=f8510dd26703b64b79067fe285a09b30): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/oar.prefab mesh='oar' verts=906 tris=576 size=(0.2300,0.1000,2.2400) meshbox=(-0.0012,0.0000,0.0000)..(0.0012,0.0224,0.0010) mats=wood_light|sand|metal_iron|wood_dark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=359beef400b6b6da18538dcb7fcd6561): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/oil_lamp.prefab mesh='oil_lamp' verts=858 tris=524 size=(0.1500,0.3450,0.1500) meshbox=(-0.0008,-0.0008,0.0000)..(0.0008,0.0008,0.0035) mats=metal_iron|charcoal|metal_steel|sand
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=4002d11e15450413e9b69cf4e3314a71): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/pickle_crock.prefab mesh='pickle_crock' verts=370 tris=240 size=(0.3400,0.3700,0.3400) meshbox=(-0.0017,-0.0017,0.0000)..(0.0017,0.0017,0.0037) mats=stone_dark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=b481a669b61790ae8a247383071113d8): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/radio.prefab mesh='radio' verts=216 tris=108 size=(0.3800,0.2800,0.2650) meshbox=(-0.0019,-0.0011,0.0000)..(0.0019,0.0016,0.0028) mats=wood_dark|metal_iron|off_white|charcoal
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=476a4d6a0e1f97b3b8d67c07f4cea12b): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/refrigerator.prefab mesh='refrigerator' verts=144 tris=72 size=(0.5800,1.3400,0.7300) meshbox=(-0.0029,-0.0031,0.0000)..(0.0029,0.0042,0.0134) mats=metal_iron|off_white|metal_steel
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=104766204a04a69f3b912ef4ced0a44c): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/rice_cooker.prefab mesh='rice_cooker' verts=220 tris=132 size=(0.4000,0.3000,0.3500) meshbox=(-0.0020,-0.0018,0.0000)..(0.0020,0.0018,0.0030) mats=metal_steel|wood_dark|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=5b478029bc4b8385ca34659098f89588): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/rice_jar.prefab mesh='rice_jar' verts=734 tris=472 size=(0.5200,0.5300,0.5200) meshbox=(-0.0026,-0.0026,0.0000)..(0.0026,0.0026,0.0053) mats=stone_dark|wood_dark|stone_grey
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=ba45bb44762d65c0c890255ed378e6cd): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/shadow_box.prefab mesh='shadow_box' verts=264 tris=132 size=(0.6600,0.3600,0.2200) meshbox=(-0.0033,0.0000,0.0000)..(0.0033,0.0022,0.0036) mats=wood_dark|metal_steel|charcoal|wood_mid|wood_light|off_white
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=2afd01e4fe26a0016afb350588400205): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/shop_shutter.prefab mesh='shop_shutter' verts=168 tris=84 size=(2.6000,2.8000,0.3200) meshbox=(-0.0130,0.0000,0.0000)..(0.0130,0.0032,0.0280) mats=metal_steel|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=3ee205816e3ea2dca8cee2a3873949fa): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/shower.prefab mesh='shower' verts=170 tris=92 size=(0.3400,2.0500,0.3900) meshbox=(-0.0017,0.0000,0.0000)..(0.0017,0.0039,0.0205) mats=metal_steel|metal_rust
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=fe5ea0f106940185fbccce54d5f0f974): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/side_table.prefab mesh='side_table' verts=144 tris=72 size=(0.4800,0.6000,0.4800) meshbox=(-0.0024,-0.0024,0.0000)..(0.0024,0.0024,0.0060) mats=wood_mid|wood_dark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=301c99d9b25bab363b9bd2447bdf7406): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/sink.prefab mesh='sink' verts=216 tris=120 size=(0.6800,1.1000,0.5600) meshbox=(-0.0034,-0.0028,0.0000)..(0.0034,0.0028,0.0110) mats=stone_grey|stone_dark|metal_iron|metal_steel
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=a5dbfa21006e7025d903f648bb033918): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/sofa.prefab mesh='sofa' verts=286 tris=144 size=(1.8000,0.8000,0.8200) meshbox=(-0.0090,-0.0044,0.0000)..(0.0090,0.0038,0.0080) mats=wood_dark|wood_mid|cloth_blue
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=c50aa0afd4d6b1cf4af6c27ef1cfed6e): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/stool.prefab mesh='stool' verts=240 tris=120 size=(0.3200,0.4500,0.3200) meshbox=(-0.0016,-0.0016,0.0000)..(0.0016,0.0016,0.0045) mats=wood_mid|wood_dark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=70f49ad2f50d1928d8c6f94a798e4db8): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/stove.prefab mesh='stove' verts=464 tris=276 size=(1.2000,2.2000,0.8000) meshbox=(-0.0060,-0.0040,0.0000)..(0.0060,0.0040,0.0220) mats=stone_grey|stone_dark|charcoal|bark|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=1c8a28afae118b84b9667257e3ce2947): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/stove_flue.prefab mesh='stove_flue' verts=222 tris=144 size=(0.2600,1.0200,0.2600) meshbox=(-0.0013,-0.0013,0.0000)..(0.0013,0.0013,0.0102) mats=stone_dark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=3cf2ceedf20667e59b5434faa6a0f2fc): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/straw_cape.prefab mesh='straw_cape' verts=291 tris=156 size=(0.8000,1.5700,0.1800) meshbox=(-0.0040,-0.0009,0.0000)..(0.0040,0.0009,0.0157) mats=sand
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=7d62f136fa654a8d6afe13308418637b): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/study_desk.prefab mesh='study_desk' verts=264 tris=132 size=(1.1200,0.8200,0.5700) meshbox=(-0.0056,-0.0028,0.0000)..(0.0056,0.0029,0.0082) mats=wood_mid|wood_dark|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=2799c24d91555f851aec70713f35a13c): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/suitcase.prefab mesh='suitcase' verts=504 tris=252 size=(0.7400,0.3250,0.2980) meshbox=(-0.0037,-0.0014,0.0000)..(0.0037,0.0016,0.0033) mats=bark|metal_iron|metal_steel|charcoal
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=fa81f1987a243d359aad0e1e083e4ab7): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/tea_set.prefab mesh='tea_set' verts=936 tris=600 size=(0.3100,0.1500,0.3100) meshbox=(-0.0016,-0.0016,0.0000)..(0.0016,0.0016,0.0015) mats=wood_dark|off_white
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=b1cf29b65af0ceab88b8db3dd67e1305): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/telephone.prefab mesh='telephone' verts=134 tris=72 size=(0.2300,0.1480,0.1700) meshbox=(-0.0012,-0.0009,0.0000)..(0.0012,0.0009,0.0015) mats=charcoal|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=e177b5bca689f25bf87b1224770d5ff4): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/television.prefab mesh='television' verts=240 tris=120 size=(0.7000,0.8600,0.4900) meshbox=(-0.0035,-0.0023,0.0000)..(0.0035,0.0026,0.0086) mats=wood_dark|wood_mid|charcoal|metal_steel
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=6587483e2152e96dcbdf3951d1a54e44): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/terrace_planter.prefab mesh='terrace_planter' verts=220 tris=128 size=(0.4200,0.7800,0.3804) meshbox=(-0.0022,-0.0019,0.0000)..(0.0020,0.0019,0.0078) mats=metal_rust|bark|leaf_deep|leaf_mid
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=8630f53ef15ec80939daed65d7999123): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/thermos.prefab mesh='thermos' verts=882 tris=540 size=(0.1810,0.4100,0.1520) meshbox=(-0.0011,-0.0008,0.0000)..(0.0008,0.0008,0.0041) mats=metal_iron|cloth_red|off_white|metal_steel
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=805e70173fe00da14ad3cecd7c47598b): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/toilet.prefab mesh='toilet' verts=246 tris=144 size=(0.4500,0.8200,0.8000) meshbox=(-0.0024,0.0001,0.0000)..(0.0021,0.0081,0.0082) mats=off_white|metal_steel
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=d8bca6bf22e64fa6da7721c3e0203075): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/travel_bag.prefab mesh='travel_bag' verts=1304 tris=660 size=(0.8140,0.4900,0.6100) meshbox=(-0.0041,-0.0032,0.0000)..(0.0041,0.0029,0.0049) mats=wood_mid|sand|cloth_red|cloth_blue|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=38e466e2424d65110a17856ba84c8f91): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/travel_bundle.prefab mesh='travel_bundle' verts=360 tris=180 size=(0.6200,0.3600,0.3200) meshbox=(-0.0031,-0.0016,0.0000)..(0.0031,0.0016,0.0036) mats=cloth_blue|sand|charcoal
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=db1ee7b878db01ef18cf12a58e706136): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/wall_calendar.prefab mesh='wall_calendar' verts=48 tris=24 size=(0.2000,0.3000,0.0300) meshbox=(-0.0010,0.0000,0.0000)..(0.0010,0.0003,0.0030) mats=wood_dark|off_white
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=9d706c609e2c69795ab5daca5b5b2d8c): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/wall_clock.prefab mesh='wall_clock' verts=196 tris=120 size=(0.3200,0.3200,0.0900) meshbox=(-0.0016,0.0000,0.0000)..(0.0016,0.0009,0.0032) mats=wood_dark|off_white|charcoal
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=e66ec3ee3e1c01cedb6ce3459501c481): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/wall_mirror.prefab mesh='wall_mirror' verts=48 tris=24 size=(0.5200,0.7200,0.0440) meshbox=(-0.0026,0.0000,0.0000)..(0.0026,0.0004,0.0072) mats=wood_mid|metal_steel
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=51f4aaca6f535b27fb19b42009b6e3e8): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/wall_shelf.prefab mesh='wall_shelf' verts=96 tris=48 size=(1.0000,0.1400,0.2400) meshbox=(-0.0050,-0.0012,0.0000)..(0.0050,0.0012,0.0014) mats=wood_mid|wood_dark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=dd250cb44d46ff96096f022e57083144): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/wardrobe.prefab mesh='wardrobe' verts=288 tris=144 size=(0.9600,1.8600,0.6400) meshbox=(-0.0048,-0.0031,0.0000)..(0.0048,0.0033,0.0186) mats=wood_mid|wood_dark|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=45704fef21d8c924fb4591cb0589c75d): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/wash_stand.prefab mesh='wash_stand' verts=336 tris=180 size=(0.5600,1.2000,0.4800) meshbox=(-0.0028,-0.0023,0.0000)..(0.0028,0.0025,0.0120) mats=wood_mid|off_white|metal_steel
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=0c8e30d986ee2ac04bf84fab8e716d43): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/washbasin.prefab mesh='washbasin' verts=192 tris=108 size=(0.5400,0.9400,0.4400) meshbox=(-0.0027,0.0000,0.0000)..(0.0027,0.0044,0.0094) mats=off_white|metal_iron|metal_steel
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=96adbb0e64de7e3f9893c0e7c56d0b1b): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/water_jar.prefab mesh='water_jar' verts=1690 tris=984 size=(0.5200,0.6000,0.5200) meshbox=(-0.0026,-0.0026,0.0000)..(0.0026,0.0026,0.0060) mats=stone_grey|stone_dark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=78aa80dcba5c0ae4e81eb8df4732a164): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/water_tank.prefab mesh='water_tank' verts=268 tris=156 size=(1.1400,1.4000,1.1400) meshbox=(-0.0057,-0.0057,0.0000)..(0.0057,0.0057,0.0140) mats=metal_steel|metal_iron
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=ce1ff49d77ca85eaf88be63f66921129): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/window_curtain.prefab mesh='window_curtain' verts=120 tris=60 size=(1.4000,1.2400,0.0500) meshbox=(-0.0070,-0.0002,0.0000)..(0.0070,0.0004,0.0124) mats=cloth_red|wood_dark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+Asset Pipeline Refresh (id=25f9ca35e435a62aca84a4c2e71f16d5): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Project3D] PREFAB Assets/Project3D/Prefabs/prop/wooden_bucket.prefab mesh='wooden_bucket' verts=294 tris=180 size=(0.3260,0.3400,0.3000) meshbox=(-0.0016,-0.0015,0.0000)..(0.0016,0.0015,0.0034) mats=wood_mid|metal_iron|wood_dark
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:182)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 182)
+
+[Project3D] prefabs: 0 created, 81 updated, 0 failed, 35864 triangles total.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.BuildPrefabs:Build () (at Assets/Editor/Project3D/BuildPrefabs.cs:197)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:53)
+
+(Filename: Assets/Editor/Project3D/BuildPrefabs.cs Line: 197)
+
+Opening scene 'Assets/Project3D/Scenes/scene_02.unity'
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Project3D/Scenes/scene_02.unity'
+	Deserialize:            1.610 ms
+	Integration:            5.887 ms
+	Integration of assets:  0.031 ms
+	Thread Wait Time:       0.008 ms
+	Total Operation Time:   7.536 ms
+Unloading 786 unused Assets / (120.0 KB). Loaded Objects now: 1066.
+Memory consumption went from 76.1 MB to 75.9 MB.
+Total: 3.110661 ms (FindLiveObjects: 0.076965 ms CreateObjectMapping: 0.023746 ms MarkObjects: 2.574769 ms  DeleteObjects: 0.427429 ms)
+
+[Project3D] SCENE Assets/Project3D/Scenes/scene_02.unity placements=32 missing=0 bad=0 changed=0 bounds_want=(5.590,4.700,6.820) bounds_got=(5.590,4.700,6.820)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.UpdateScenes:BuildOne (string) (at Assets/Editor/Project3D/UpdateScenes.cs:407)
+Project3D.UpdateScenes:Build () (at Assets/Editor/Project3D/UpdateScenes.cs:157)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:63)
+
+(Filename: Assets/Editor/Project3D/UpdateScenes.cs Line: 407)
+
+Opening scene 'Assets/Project3D/Scenes/scene_04.unity'
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Project3D/Scenes/scene_04.unity'
+	Deserialize:            2.366 ms
+	Integration:            14.683 ms
+	Integration of assets:  0.051 ms
+	Thread Wait Time:       -0.005 ms
+	Total Operation Time:   17.095 ms
+Unloading 125 unused Assets / (20.5 KB). Loaded Objects now: 1424.
+Memory consumption went from 82.0 MB to 82.0 MB.
+Total: 2.603194 ms (FindLiveObjects: 0.072076 ms CreateObjectMapping: 0.018228 ms MarkObjects: 2.415111 ms  DeleteObjects: 0.090514 ms)
+
+[Project3D] SCENE Assets/Project3D/Scenes/scene_04.unity placements=74 missing=0 bad=0 changed=0 bounds_want=(24.000,8.300,20.600) bounds_got=(24.000,8.300,20.600)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.UpdateScenes:BuildOne (string) (at Assets/Editor/Project3D/UpdateScenes.cs:407)
+Project3D.UpdateScenes:Build () (at Assets/Editor/Project3D/UpdateScenes.cs:157)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:63)
+
+(Filename: Assets/Editor/Project3D/UpdateScenes.cs Line: 407)
+
+Opening scene 'Assets/Project3D/Scenes/scene_03.unity'
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Unloading 93 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Project3D/Scenes/scene_03.unity'
+	Deserialize:            0.527 ms
+	Integration:            4.257 ms
+	Integration of assets:  0.025 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   4.825 ms
+Unloading 656 unused Assets / (162.3 KB). Loaded Objects now: 716.
+Memory consumption went from 75.4 MB to 75.2 MB.
+Total: 2.493124 ms (FindLiveObjects: 0.053079 ms CreateObjectMapping: 0.033314 ms MarkObjects: 2.073448 ms  DeleteObjects: 0.326228 ms)
+
+[Project3D] SCENE Assets/Project3D/Scenes/scene_03.unity placements=12 missing=0 bad=0 changed=0 bounds_want=(24.000,3.640,24.000) bounds_got=(24.000,3.640,24.000)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Project3D.UpdateScenes:BuildOne (string) (at Assets/Editor/Project3D/UpdateScenes.cs:407)
+Project3D.UpdateScenes:Build () (at Assets/Editor/Project3D/UpdateScenes.cs:157)
+Project3D.Build:All () (at Assets/Editor/Project3D/Build.cs:63)
+
+(Filename: Assets/Editor/Project3D/UpdateScenes.cs Line: 407)
+
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-kan-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-kan channel disconnected successfully.
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+Cleanup mono
+debugger-agent: Unable to listen on 48
+[Performance] Application.InitializeProject                                                                                  :        1 samples, Peak.  2.59 s (1.0x), Avg.  2.59 s, Total. 2.586 s (26.0%)
+[Performance] Application.PackageManager.StartServer                                                                         :        1 samples, Peak.  1.68 ms (1.0x), Avg.  1.68 ms, Total. 1.682 ms (0.0%)
+[Performance] Application.AcquireProjectLock                                                                                 :        1 samples, Peak.   527 us (1.0x), Avg.   527 us, Total. 526.8 us (0.0%)
+[Performance] Application.InitializeEngineNoGraphics                                                                         :        1 samples, Peak.  42.7 ms (1.0x), Avg.  42.7 ms, Total. 42.69 ms (0.4%)
+[Performance] Application.PackageManager.Initialize                                                                          :        1 samples, Peak.   200 ms (1.0x), Avg.   200 ms, Total. 200.3 ms (2.0%)
+[Performance] Connecting to Package Manager                                                                                  :       21 samples, Peak.  23.4 us (5.9x), Avg.  3.99 us, Total. 83.74 us (0.0%)
+[Performance] Application.EngineGraphics.Initialize                                                                          :        1 samples, Peak.  16.5 ms (1.0x), Avg.  16.5 ms, Total. 16.52 ms (0.2%)
+[Performance] Application.GI.Initialize                                                                                      :        1 samples, Peak.  3.48 ms (1.0x), Avg.  3.48 ms, Total. 3.478 ms (0.0%)
+[Performance] Application.LoadAllDefaultResourcesFromEditor                                                                  :        1 samples, Peak.  1.52 ms (1.0x), Avg.  1.52 ms, Total. 1.515 ms (0.0%)
+[Performance] Application.LoadMonoAssemblies                                                                                 :        1 samples, Peak.   684 ms (1.0x), Avg.   684 ms, Total. 684.3 ms (6.9%)
+[Performance] RestoreManagedReferences                                                                                       :        2 samples, Peak.  67.4 ms (2.0x), Avg.  33.7 ms, Total. 67.37 ms (0.7%)
+[Performance] InitializeOnLoad AssetStoreContext                                                                             :        2 samples, Peak.  35.4 ms (1.0x), Avg.  34.3 ms, Total. 68.64 ms (0.7%)
+[Performance] InitializeOnLoad DrivenRectTransformUndo                                                                       :        2 samples, Peak.   344 us (1.0x), Avg.   335 us, Total. 670.8 us (0.0%)
+[Performance] InitializeOnLoad UISystemProfilerRenderService                                                                 :        2 samples, Peak.  9.85 us (1.1x), Avg.  8.73 us, Total. 17.46 us (0.0%)
+[Performance] InitializeOnLoad SceneSearch                                                                                   :        2 samples, Peak.   250 us (1.0x), Avg.   243 us, Total. 486.7 us (0.0%)
+[Performance] InitializeOnLoad NativeFormatImporterUtility                                                                   :        2 samples, Peak.  4.18 ms (1.1x), Avg.  3.66 ms, Total. 7.326 ms (0.1%)
+[Performance] InitializeOnLoad ManagedDebuggerWindow                                                                         :        2 samples, Peak.  1.75 ms (1.1x), Avg.  1.64 ms, Total. 3.279 ms (0.0%)
+[Performance] InitializeOnLoad SearchService                                                                                 :        2 samples, Peak.   162 us (1.0x), Avg.   155 us, Total. 310.0 us (0.0%)
+[Performance] InitializeOnLoad WindowLayout                                                                                  :        2 samples, Peak.  1.40 ms (1.0x), Avg.  1.35 ms, Total. 2.706 ms (0.0%)
+[Performance] InitializeOnLoad PoolManager                                                                                   :        2 samples, Peak.   778 us (1.0x), Avg.   777 us, Total. 1.555 ms (0.0%)
+[Performance] InitializeOnLoad CloudBuild                                                                                    :        2 samples, Peak.  8.45 us (1.2x), Avg.  6.81 us, Total. 13.62 us (0.0%)
+[Performance] InitializeOnLoad MixerEffectDefinitionReloader                                                                 :        2 samples, Peak.  3.39 ms (1.2x), Avg.  2.75 ms, Total. 5.505 ms (0.1%)
+[Performance] InitializeOnLoad SettingsService                                                                               :        2 samples, Peak.  12.9 us (1.1x), Avg.  11.5 us, Total. 23.05 us (0.0%)
+[Performance] InitializeOnLoad ProjectSearch                                                                                 :        2 samples, Peak.   125 us (1.1x), Avg.   118 us, Total. 235.3 us (0.0%)
+[Performance] InitializeOnLoad CacheServerWindow                                                                             :        2 samples, Peak.  19.6 us (1.2x), Avg.  16.4 us, Total. 32.90 us (0.0%)
+[Performance] InitializeOnLoad EditMode                                                                                      :        2 samples, Peak.   830 us (1.1x), Avg.   779 us, Total. 1.557 ms (0.0%)
+[Performance] InitializeOnLoad UnityConnect                                                                                  :        2 samples, Peak.   188 us (1.1x), Avg.   175 us, Total. 349.6 us (0.0%)
+[Performance] InitializeOnLoad ManagedDebugger                                                                               :        2 samples, Peak.  2.79 us (1.2x), Avg.  2.37 us, Total. 4.749 us (0.0%)
+[Performance] InitializeOnLoad ShortcutIntegration                                                                           :        2 samples, Peak.   118 us (1.0x), Avg.   117 us, Total. 234.8 us (0.0%)
+[Performance] InitializeOnLoad AddComponentWindow                                                                            :        2 samples, Peak.   248 us (1.0x), Avg.   243 us, Total. 486.7 us (0.0%)
+[Performance] InitializeOnLoad PlayModeDownload                                                                              :        2 samples, Peak.  8.74 ms (1.9x), Avg.  4.59 ms, Total. 9.171 ms (0.1%)
+[Performance] InitializeOnLoad MenuItems                                                                                     :        2 samples, Peak.   171 us (1.1x), Avg.   159 us, Total. 318.1 us (0.0%)
+[Performance] InitializeOnLoad PrefabInstanceChangedListener                                                                 :        2 samples, Peak.   362 us (1.1x), Avg.   327 us, Total. 654.4 us (0.0%)
+[Performance] InitializeOnLoad ObjectSelectorSearch                                                                          :        2 samples, Peak.   115 us (1.1x), Avg.   103 us, Total. 205.1 us (0.0%)
+[Performance] InitializeOnLoad EditorMonitor                                                                                 :        2 samples, Peak.  1.19 ms (1.2x), Avg.   953 us, Total. 1.906 ms (0.0%)
+[Performance] InitializeOnLoad RetainedMode                                                                                  :        2 samples, Peak.  3.70 ms (1.0x), Avg.  3.54 ms, Total. 7.087 ms (0.1%)
+[Performance] InitializeOnLoad EditorShaderLoader                                                                            :        2 samples, Peak.  1.04 ms (1.0x), Avg.  1.02 ms, Total. 2.043 ms (0.0%)
+[Performance] InitializeOnLoad EditorDelegateRegistration                                                                    :        2 samples, Peak.   929 us (1.1x), Avg.   838 us, Total. 1.677 ms (0.0%)
+[Performance] InitializeOnLoad UIDocumentHierarchyWatcher                                                                    :        2 samples, Peak.   188 us (1.0x), Avg.   181 us, Total. 362.9 us (0.0%)
+[Performance] InitializeOnLoad LiveReloadTrackerCreator                                                                      :        2 samples, Peak.   395 us (1.3x), Avg.   309 us, Total. 618.7 us (0.0%)
+[Performance] InitializeOnLoad UxmlObjectEditorFactories                                                                     :        2 samples, Peak.   588 us (1.2x), Avg.   480 us, Total. 960.9 us (0.0%)
+[Performance] InitializeOnLoad UXMLEditorFactories                                                                           :        2 samples, Peak.  98.2 ms (1.1x), Avg.  92.8 ms, Total. 185.6 ms (1.9%)
+[Performance] InitializeOnLoad PurchasingService                                                                             :        2 samples, Peak.  9.63 ms (1.0x), Avg.  9.28 ms, Total. 18.55 ms (0.2%)
+[Performance] InitializeOnLoad CloudBuildPoller                                                                              :        2 samples, Peak.   215 us (1.0x), Avg.   208 us, Total. 416.7 us (0.0%)
+[Performance] InitializeOnLoad EditorGameServicesAnalytics                                                                   :        2 samples, Peak.  3.14 ms (1.1x), Avg.  2.99 ms, Total. 5.984 ms (0.1%)
+[Performance] InitializeOnLoad AnalyticsService                                                                              :        2 samples, Peak.   394 us (1.0x), Avg.   388 us, Total. 776.8 us (0.0%)
+[Performance] InitializeOnLoad BuildService                                                                                  :        2 samples, Peak.   369 us (1.0x), Avg.   366 us, Total. 733.0 us (0.0%)
+[Performance] InitializeOnLoad AdsService                                                                                    :        2 samples, Peak.   820 us (1.0x), Avg.   806 us, Total. 1.613 ms (0.0%)
+[Performance] InitializeOnLoad UDPService                                                                                    :        2 samples, Peak.   367 us (1.0x), Avg.   367 us, Total. 733.3 us (0.0%)
+[Performance] InitializeOnLoad CrashService                                                                                  :        2 samples, Peak.   375 us (1.0x), Avg.   365 us, Total. 730.0 us (0.0%)
+[Performance] InitializeOnLoad ServicesRepository                                                                            :        2 samples, Peak.  1.47 us (1.0x), Avg.  1.43 us, Total. 2.863 us (0.0%)
+[Performance] InitializeOnLoad SearchWindow                                                                                  :        2 samples, Peak.   242 us (1.1x), Avg.   222 us, Total. 443.4 us (0.0%)
+[Performance] InitializeOnLoad SearchMonitor                                                                                 :        2 samples, Peak.  4.33 ms (1.0x), Avg.  4.20 ms, Total. 8.407 ms (0.1%)
+[Performance] InitializeOnLoad CustomIndexers                                                                                :        2 samples, Peak.  23.7 ms (1.1x), Avg.  22.2 ms, Total. 44.45 ms (0.4%)
+[Performance] InitializeOnLoad ParameterControllerEditor                                                                     :        2 samples, Peak.  16.7 us (1.0x), Avg.  16.3 us, Total. 32.69 us (0.0%)
+[Performance] InitializeOnLoad LayerSettingsWindow                                                                           :        2 samples, Peak.  27.7 us (1.7x), Avg.  16.7 us, Total. 33.31 us (0.0%)
+[Performance] InitializeOnLoad PackageManagerHookGUIDConverter.RegisterPackagesEventHandler                                  :        2 samples, Peak.  1.33 ms (1.7x), Avg.   794 us, Total. 1.588 ms (0.0%)
+[Performance] InitializeOnLoad EditorDragAndDrop.RegisterEditorClient                                                        :        2 samples, Peak.   381 us (1.0x), Avg.   379 us, Total. 759.0 us (0.0%)
+[Performance] InitializeOnLoad EditorEventCallbacks.InitializeFontAssetResourceChangeCallBacks                               :        2 samples, Peak.  1.70 ms (1.0x), Avg.  1.67 ms, Total. 3.340 ms (0.0%)
+[Performance] InitializeOnLoad SceneTemplateService.Init                                                                     :        2 samples, Peak.  2.50 ms (1.1x), Avg.  2.34 ms, Total. 4.685 ms (0.0%)
+[Performance] InitializeOnLoad DiagnosticSwitchesConsoleMessage.Init                                                         :        2 samples, Peak.  5.64 ms (1.5x), Avg.  3.71 ms, Total. 7.424 ms (0.1%)
+[Performance] InitializeOnLoad PackageManagerWindow.EditorInitializedInSafeMode                                              :        2 samples, Peak.  40.4 ms (2.0x), Avg.  20.4 ms, Total. 40.80 ms (0.4%)
+[Performance] InitializeOnLoad MemoryProfilerCompilationGuard.InjectCompileGuard                                             :        2 samples, Peak.   350 us (1.0x), Avg.   339 us, Total. 679.0 us (0.0%)
+[Performance] InitializeOnLoad AssetPostprocessingInternal.RefreshCustomDependencies                                         :        2 samples, Peak.  4.09 ms (1.0x), Avg.  3.99 ms, Total. 7.986 ms (0.1%)
+[Performance] InitializeOnLoad SysrootManager.Initialize                                                                     :        2 samples, Peak.  13.7 us (1.1x), Avg.  12.4 us, Total. 24.72 us (0.0%)
+[Performance] InitializeOnLoad ScopedRegistryAddedPopup.SubscribeToRegistriesAdded                                           :        2 samples, Peak.  13.4 ms (2.0x), Avg.  6.79 ms, Total. 13.59 ms (0.1%)
+[Performance] InitializeOnLoad EditorWindow.Initialize                                                                       :        2 samples, Peak.   458 us (1.0x), Avg.   452 us, Total. 904.2 us (0.0%)
+[Performance] InitializeOnLoad ToolShortcutContext.Init                                                                      :        2 samples, Peak.   297 us (1.0x), Avg.   290 us, Total. 580.6 us (0.0%)
+[Performance] InitializeOnLoad SceneVisibilityManager.Initialize                                                             :        2 samples, Peak.  9.53 ms (1.8x), Avg.  5.42 ms, Total. 10.85 ms (0.1%)
+[Performance] AssemblyReloadEvents.afterAssemblyReload: UnityEditor.SceneTemplate.SceneTemplateService.AfterAssemblyReload   :        2 samples, Peak.  4.69 ms (1.8x), Avg.  2.58 ms, Total. 5.169 ms (0.1%)
+[Performance] ProcessService.EditorAfterLoadAllAssemblies                                                                    :        2 samples, Peak.   542 us (1.2x), Avg.   467 us, Total. 934.7 us (0.0%)
+[Performance] Application.ReadLicenseInfo                                                                                    :        1 samples, Peak.  11.8 ms (1.0x), Avg.  11.8 ms, Total. 11.75 ms (0.1%)
+[Performance] Application.InitialRefresh                                                                                     :        1 samples, Peak.  1.39 s (1.0x), Avg.  1.39 s, Total. 1.393 s (14.0%)
+[Performance] BuilderAssetModificationProcessor.OnWillCreateAsset                                                            :        6 samples, Peak.  1.34 ms (5.8x), Avg.   233 us, Total. 1.399 ms (0.0%)
+[Performance] ShaderImporter.SourceAssetModified                                                                             :        2 samples, Peak.  1.96 us (1.0x), Avg.  1.92 us, Total. 3.841 us (0.0%)
+[Performance] ShaderIncludeImporter.SourceAssetModified                                                                      :        2 samples, Peak.  2.38 us (1.1x), Avg.  2.13 us, Total. 4.260 us (0.0%)
+[Performance] Compiling Scripts                                                                                              :        1 samples, Peak.   565 ms (1.0x), Avg.   565 ms, Total. 564.5 ms (5.7%)
+[Performance] AssemblyReloadEvents.beforeAssemblyReload: UnityEditor.SceneTemplate.SceneTemplateService.BeforeAssemblyReload :        1 samples, Peak.   908 us (1.0x), Avg.   908 us, Total. 908.3 us (0.0%)
+[Performance] PresetManagerPostProcessor.OnPreprocessAsset                                                                   :       89 samples, Peak.  3.12 ms (69.0x), Avg.  45.2 us, Total. 4.024 ms (0.0%)
+[Performance] CancelSplashScreenOnAssetChange.OnPreprocessAsset                                                              :       89 samples, Peak.   323 us (43.7x), Avg.  7.39 us, Total. 657.6 us (0.0%)
+[Performance] DidReloadScriptsAdvancedDropdownWindow.OnScriptReload                                                          :        1 samples, Peak.   403 us (1.0x), Avg.   403 us, Total. 402.6 us (0.0%)
+[Performance] ModelImporter.Import                                                                                           :       82 samples, Peak.  20.3 ms (2.3x), Avg.  8.97 ms, Total. 735.2 ms (7.4%)
+[Performance] ImportPostprocessor.OnPreprocessModel                                                                          :       82 samples, Peak.  1.94 ms (58.1x), Avg.  33.5 us, Total. 2.745 ms (0.0%)
+[Performance] TreeAOImporter.OnPostprocessModel                                                                              :       82 samples, Peak.  1.53 ms (52.6x), Avg.  29.1 us, Total. 2.383 ms (0.0%)
+[Performance] AssetDatabase.ImportAssets                                                                                     :       88 samples, Peak.  2.86 us (1.5x), Avg.  1.85 us, Total. 162.9 us (0.0%)
+[Performance] VersionControl.Task.Wait                                                                                       :        1 samples, Peak.  4.68 us (1.0x), Avg.  4.68 us, Total. 4.679 us (0.0%)
+[Performance] BuilderAssetPostprocessor.OnPostprocessAllAssets                                                               :      164 samples, Peak.  3.06 ms (39.3x), Avg.  77.7 us, Total. 12.75 ms (0.1%)
+[Performance] ArtifactBrowserPostProcessor.OnPostprocessAllAssets                                                            :      164 samples, Peak.   593 us (42.4x), Avg.  14.0 us, Total. 2.294 ms (0.0%)
+[Performance] AssetEvents.OnPostprocessAllAssets                                                                             :      328 samples, Peak.   293 us (31.2x), Avg.  9.41 us, Total. 3.088 ms (0.0%)
+[Performance] AudioMixerPostprocessor.OnPostprocessAllAssets                                                                 :      164 samples, Peak.   496 us (41.2x), Avg.  12.0 us, Total. 1.973 ms (0.0%)
+[Performance] StyleCatalogPostProcessor.OnPostprocessAllAssets                                                               :      164 samples, Peak.  24.3 ms (79.5x), Avg.   306 us, Total. 50.11 ms (0.5%)
+[Performance] BuildCatalog                                                                                                   :        1 samples, Peak.  22.9 ms (1.0x), Avg.  22.9 ms, Total. 22.90 ms (0.2%)
+[Performance] ModelImporterPostProcessor.OnPostprocessAllAssets                                                              :      164 samples, Peak.  3.42 ms (19.4x), Avg.   177 us, Total. 28.98 ms (0.3%)
+[Performance] RetainedModeAssetPostprocessor.OnPostprocessAllAssets                                                          :      164 samples, Peak.  2.77 ms (57.4x), Avg.  48.3 us, Total. 7.925 ms (0.1%)
+[Performance] AssetChangedListener.OnPostprocessAllAssets                                                                    :      164 samples, Peak.  3.49 ms (54.0x), Avg.  64.7 us, Total. 10.62 ms (0.1%)
+[Performance] SpeedTreePostProcessor.OnPostprocessAllAssets                                                                  :      164 samples, Peak.   259 us (14.4x), Avg.  18.0 us, Total. 2.951 ms (0.0%)
+[Performance] TextAssetPostProcessor.OnPostprocessAllAssets                                                                  :      164 samples, Peak.   622 us (32.1x), Avg.  19.4 us, Total. 3.179 ms (0.0%)
+[Performance] SyncVS.PostprocessSyncProject                                                                                  :       82 samples, Peak.  2.89 ms (73.5x), Avg.  39.3 us, Total. 3.222 ms (0.0%)
+[Performance] Application.ImportPackagesAndSetTemplateWhenCreatingProject                                                    :        1 samples, Peak.  11.5 ms (1.0x), Avg.  11.5 ms, Total. 11.53 ms (0.1%)
+[Performance] Application.SyncCurrentColorSpace                                                                              :        1 samples, Peak.  3.51 ms (1.0x), Avg.  3.51 ms, Total. 3.511 ms (0.0%)
+[Performance] Application.OnUsbDevicesChanged                                                                                :        1 samples, Peak.  4.06 ms (1.0x), Avg.  4.06 ms, Total. 4.061 ms (0.0%)
+[Performance] Application.AssetInstanceCacheUpdate                                                                           :        1 samples, Peak.  1.47 us (1.0x), Avg.  1.47 us, Total. 1.466 us (0.0%)
+[Performance] Application.UnityExtensions.Initialize                                                                         :        1 samples, Peak.   579 us (1.0x), Avg.   579 us, Total. 579.5 us (0.0%)
+[Performance] CodeEditorProjectSync.SyncEditorProject                                                                        :        1 samples, Peak.   182 us (1.0x), Avg.   182 us, Total. 182.4 us (0.0%)
+[Performance] Application.ExecuteStartups                                                                                    :        1 samples, Peak.  33.1 ms (1.0x), Avg.  33.1 ms, Total. 33.09 ms (0.3%)
+[Performance] Menu.RegisterMenuInterface                                                                                     :       26 samples, Peak.  1.96 us (1.4x), Avg.  1.44 us, Total. 37.50 us (0.0%)
+[Performance] Gizmo.RebuildRenderers                                                                                         :        1 samples, Peak.  32.6 ms (1.0x), Avg.  32.6 ms, Total. 32.60 ms (0.3%)
+[Performance] Gizmo.AddGizmoRenderers                                                                                        :       19 samples, Peak.  1.97 ms (12.0x), Avg.   165 us, Total. 3.130 ms (0.0%)
+[Performance] Application.editorInitializingProject                                                                          :        1 samples, Peak.  13.4 ms (1.0x), Avg.  13.4 ms, Total. 13.44 ms (0.1%)
+[Performance] Application.InitializeMenu                                                                                     :        1 samples, Peak.  50.8 ms (1.0x), Avg.  50.8 ms, Total. 50.79 ms (0.5%)
+[Performance] Menu.RebuildAll                                                                                                :        1 samples, Peak.  50.8 ms (1.0x), Avg.  50.8 ms, Total. 50.78 ms (0.5%)
+[Performance] Menu.BuildRegisteredMenuInterfaces                                                                             :        1 samples, Peak.  50.0 ms (1.0x), Avg.  50.0 ms, Total. 49.98 ms (0.5%)
+[Performance] Menu.FilterMenuItem                                                                                            :      445 samples, Peak.  16.0 ms (423.9x), Avg.  37.8 us, Total. 16.83 ms (0.2%)
+[Performance] UpdateAllMenus                                                                                                 :        1 samples, Peak.   655 us (1.0x), Avg.   655 us, Total. 655.3 us (0.0%)
+[Performance] EditorSceneManager.sceneClosing: UnityEditor.SceneVisibilityManager.EditorSceneManagerOnSceneClosing           :        4 samples, Peak.   570 us (3.9x), Avg.   145 us, Total. 580.8 us (0.0%)
+[Performance] GUIView.RepaintAll.PlayerLoopController                                                                        :        1 samples, Peak.  1.89 us (1.0x), Avg.  1.89 us, Total. 1.886 us (0.0%)
+[Performance] EditorSceneManager.newSceneCreated: UnityEditor.SceneTemplate.SceneTemplateService.OnNewSceneCreated           :        1 samples, Peak.   324 us (1.0x), Avg.   324 us, Total. 324.5 us (0.0%)
+[Performance] EditorSceneManager.newSceneCreated: UnityEditor.SceneVisibilityManager.EditorSceneManagerOnNewSceneCreated     :        1 samples, Peak.   397 us (1.0x), Avg.   397 us, Total. 397.2 us (0.0%)
+[Performance] EditorSceneManager.newSceneCreated: UnityEditor.SceneManagement.StageNavigationManager.OnNewSceneCreated       :        1 samples, Peak.   114 us (1.0x), Avg.   114 us, Total. 114.1 us (0.0%)
+[Performance] Application.InvokeFinishedLoadingProject                                                                       :        1 samples, Peak.   629 us (1.0x), Avg.   629 us, Total. 629.3 us (0.0%)
+[Performance] ProcessService.OnProjectLoaded                                                                                 :        1 samples, Peak.  36.5 us (1.0x), Avg.  36.5 us, Total. 36.53 us (0.0%)
+[Performance] BuilderAssetModificationProcessor.OnWillSaveAssets                                                             :       86 samples, Peak.   516 us (48.1x), Avg.  10.7 us, Total. 922.9 us (0.0%)
+[Performance] TerrainModificationProcessor.OnWillSaveAssets                                                                  :       86 samples, Peak.   966 us (68.4x), Avg.  14.1 us, Total. 1.214 ms (0.0%)
+[Performance] AssetDatabase.ImportAsset                                                                                      :       81 samples, Peak.  26.0 ms (2.1x), Avg.  12.3 ms, Total. 999.6 ms (10.0%)
+[Performance] EditorSceneManager.sceneOpening: UnityEditor.SceneVisibilityManager.EditorSceneManagerOnSceneOpening           :        3 samples, Peak.   315 us (2.9x), Avg.   109 us, Total. 326.3 us (0.0%)
+[Performance] Inspector.InitOrRebuild                                                                                        :        3 samples, Peak.   469 us (2.2x), Avg.   214 us, Total. 642.3 us (0.0%)
+[Performance] EditorSceneManager.sceneOpened: UnityEditor.SceneTemplate.SceneTemplateService.OnSceneOpened                   :        3 samples, Peak.   310 us (3.0x), Avg.   105 us, Total. 314.4 us (0.0%)
+[Performance] EditorSceneManager.sceneOpened: UnityEditor.SceneVisibilityManager.EditorSceneManagerOnSceneOpened             :        3 samples, Peak.   160 us (2.9x), Avg.  55.5 us, Total. 166.5 us (0.0%)
+[Performance] EditorSceneManager.sceneOpened: UnityEditor.SceneManagement.StageNavigationManager.OnSceneOpened               :        3 samples, Peak.   115 us (2.9x), Avg.  39.7 us, Total. 119.2 us (0.0%)
+[Performance] Application.Shutdown.SaveDefaultWindowPreferences                                                              :        1 samples, Peak.   121 us (1.0x), Avg.   121 us, Total. 121.4 us (0.0%)
+[Performance] Application.Shutdown.SaveSceneManagerSetup                                                                     :        1 samples, Peak.  73.1 us (1.0x), Avg.  73.1 us, Total. 73.12 us (0.0%)
+[Performance] Application.Shutdown.CleanupAllContainerWindows                                                                :        1 samples, Peak.  1.88 us (1.0x), Avg.  1.88 us, Total. 1.885 us (0.0%)
+[Performance] EditorApplication.quitting: callback in UnityEditor.TextCore.Text.EditorEventCallbacks                         :        1 samples, Peak.  1.75 ms (1.0x), Avg.  1.75 ms, Total. 1.751 ms (0.0%)
+[Performance] Application.Shutdown.PauseProfilerSession                                                                      :        1 samples, Peak.  32.9 us (1.0x), Avg.  32.9 us, Total. 32.89 us (0.0%)
+[Performance] Application.Shutdown.PauseAssetImportWorkers                                                                   :        1 samples, Peak.  76.5 us (1.0x), Avg.  76.5 us, Total. 76.48 us (0.0%)
+[Performance] Application.Shutdown.SaveAssets                                                                                :        1 samples, Peak.   451 us (1.0x), Avg.   451 us, Total. 451.1 us (0.0%)
+[Performance] Application.Shutdown.CleanupRenderPipeline                                                                     :        1 samples, Peak.  3.77 us (1.0x), Avg.  3.77 us, Total. 3.771 us (0.0%)
+[Performance] Application.Shutdown.StopPreloadManager                                                                        :        1 samples, Peak.  10.1 ms (1.0x), Avg.  10.1 ms, Total. 10.08 ms (0.1%)
+[Performance] Application.Shutdown.DestroyWorld                                                                              :        1 samples, Peak.   436 us (1.0x), Avg.   436 us, Total. 435.5 us (0.0%)
+[Performance] Application.Shutdown.CleanupAfterLoad                                                                          :        1 samples, Peak.  8.67 ms (1.0x), Avg.  8.67 ms, Total. 8.670 ms (0.1%)
+[Performance] Application.Shutdown.Progress                                                                                  :        1 samples, Peak.  13.8 us (1.0x), Avg.  13.8 us, Total. 13.83 us (0.0%)
+[Performance] Application.Shutdown.GICleanupManagers                                                                         :        1 samples, Peak.  1.56 ms (1.0x), Avg.  1.56 ms, Total. 1.560 ms (0.0%)
+[Performance] Application.Shutdown.MenuCleanupClass                                                                          :        1 samples, Peak.   182 us (1.0x), Avg.   182 us, Total. 182.4 us (0.0%)
+[Performance] Application.Shutdown.ADBSaveStateBeforeShutdown                                                                :        1 samples, Peak.  5.80 us (1.0x), Avg.  5.80 us, Total. 5.797 us (0.0%)
+[Performance] Application.Shutdown.RemoteShutdown                                                                            :        1 samples, Peak.  2.79 us (1.0x), Avg.  2.79 us, Total. 2.793 us (0.0%)
+[Performance] Application.Shutdown.CleanupVCProvider                                                                         :        1 samples, Peak.  10.5 us (1.0x), Avg.  10.5 us, Total. 10.48 us (0.0%)
+[Performance] Application.Shutdown.InputShutdown                                                                             :        1 samples, Peak.  3.28 us (1.0x), Avg.  3.28 us, Total. 3.283 us (0.0%)
+[Performance] Application.Shutdown.GizmoManagerDestroy                                                                       :        1 samples, Peak.   955 us (1.0x), Avg.   955 us, Total. 954.8 us (0.0%)
+[Performance] Application.Shutdown.ProfilerSession                                                                           :        1 samples, Peak.   327 us (1.0x), Avg.   327 us, Total. 326.6 us (0.0%)
+[Performance] Application.Shutdown.ReleaseGfxWindowOnAllGUIViews                                                             :        1 samples, Peak.  4.19 us (1.0x), Avg.  4.19 us, Total. 4.190 us (0.0%)
+[Performance] Application.Shutdown.CleanupEngine                                                                             :        1 samples, Peak.   126 ms (1.0x), Avg.   126 ms, Total. 126.2 ms (1.3%)
+[Performance] Application.Shutdown.CleanupAssetDatabase                                                                      :        1 samples, Peak.  5.02 ms (1.0x), Avg.  5.02 ms, Total. 5.016 ms (0.1%)
+[Performance] Application.Shutdown.ScriptCompilationCleanUp                                                                  :        1 samples, Peak.  2.11 s (1.0x), Avg.  2.11 s, Total. 2.106 s (21.2%)
+[Performance] Application.Shutdown.DestroyJobSystem                                                                          :        1 samples, Peak.   336 us (1.0x), Avg.   336 us, Total. 335.6 us (0.0%)
+[Performance] Application.Shutdown.CleanupPersistentManager                                                                  :        1 samples, Peak.   987 us (1.0x), Avg.   987 us, Total. 987.3 us (0.0%)
+[Performance] Application.Shutdown.CleanupAsyncReadManager                                                                   :        1 samples, Peak.   238 us (1.0x), Avg.   238 us, Total. 238.2 us (0.0%)
+[Performance] Application.Shutdown.CleanupMono                                                                               :        1 samples, Peak.  39.5 ms (1.0x), Avg.  39.5 ms, Total. 39.45 ms (0.4%)
+[Performance] Application.Shutdown.CleanupStdConverters                                                                      :        1 samples, Peak.  15.4 us (1.0x), Avg.  15.4 us, Total. 15.36 us (0.0%)
+[Performance] Application.Shutdown.UnloadAllPlatformSupportModuleNativeDlls                                                  :        1 samples, Peak.  2.44 us (1.0x), Avg.  2.44 us, Total. 2.444 us (0.0%)
+[Performance] Application.Shutdown.UnloadAllPlatformSupportNativeLibraries                                                   :        1 samples, Peak.  1.89 us (1.0x), Avg.  1.89 us, Total. 1.886 us (0.0%)
+[Performance] Application.Shutdown.CleanupAutoDocumentation                                                                  :        1 samples, Peak.   269 us (1.0x), Avg.   269 us, Total. 269.0 us (0.0%)
+[Performance] Application.Shutdown.ShaderNameManagerDestroy                                                                  :        1 samples, Peak.  64.8 us (1.0x), Avg.  64.8 us, Total. 64.81 us (0.0%)
+[Performance] Application.Shutdown.CleanupCacheServer                                                                        :        1 samples, Peak.  2.37 us (1.0x), Avg.  2.37 us, Total. 2.374 us (0.0%)
+[Performance] Application.Shutdown.Virtualization_Shutdown                                                                   :        1 samples, Peak.  1.89 us (1.0x), Avg.  1.89 us, Total. 1.886 us (0.0%)
+[Performance] Application.Shutdown.DevConnections                                                                            :        1 samples, Peak.  79.7 us (1.0x), Avg.  79.7 us, Total. 79.69 us (0.0%)
+[Package Manager] Server::Kill -- Server was shutdown
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+Memory Statistics:
+[ALLOC_TEMP_TLS] TLS Allocator
+  StackAllocators : 
+    [ALLOC_TEMP_CurlRequest]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_MAIN]
+      Initial Block Size 16.0 MB
+      Current Block Size 16.0 MB
+      Peak Allocated Bytes 9.4 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 8]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 4]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 5]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 10]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 3]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_BatchDeleteObjects]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 11]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_REST Message Handler]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_CoreBusinessMetricsCache]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 8.0 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 13]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 2]
+      Initial Block Size 32.0 KB
+      Current Block Size 180.0 KB
+      Peak Allocated Bytes 177.9 KB
+      Overflow Count 0
+    [ALLOC_TEMP_AssetDatabase.IOService]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 10]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 12]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Loading.PreloadManager]
+      Initial Block Size 32.0 MB
+      Current Block Size 32.0 MB
+      Peak Allocated Bytes 2.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_AUDIO_FMOD PulseAudio Mixer]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 14]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 3]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 7]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 5]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 13]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 2]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 6]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 11]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 0]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 6]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 5]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 9]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_EnlightenWorker] x 8
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 8]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 9]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 1]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Loading.AsyncRead]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 128 B
+      Overflow Count 0
+    [ALLOC_TEMP_Profiler.Dispatcher]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 10]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 6]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 9]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 1]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 1.7 KB
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 11]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_AUDIO_FMOD stream thread]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 2]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 7]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 8]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 15]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 0]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 3]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 14]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_EditorTaskManager]
+      Initial Block Size 64.0 KB
+      Current Block Size 68.0 KB
+      Peak Allocated Bytes 64.0 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 15]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 1]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 4]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 12]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_HTTP REST Server]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 70 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 12]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_BakingJobs.Worker 13]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_AssetGarbageCollectorHelper] x 15
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 0]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 4]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 14]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 7]
+      Initial Block Size 256.0 KB
+      Current Block Size 1.0 MB
+      Peak Allocated Bytes 1.0 MB
+      Overflow Count 0
+    [ALLOC_TEMP_CloudJob.Worker 0]
+      Initial Block Size 32.0 KB
+      Current Block Size 36.0 KB
+      Peak Allocated Bytes 17.2 KB
+      Overflow Count 0
+[ALLOC_MEMORYPROFILER]
+  Requested Block Size 1.0 MB
+  Peak Block count 1
+  Peak Allocated memory 64.1 KB
+  Peak Large allocation bytes 0 B
+[ALLOC_DEFAULT] Dual Thread Allocator
+  Peak main deferred allocation count 202
+    [ALLOC_BUCKET]
+      Large Block size 32.0 MB
+      Used Block count 1
+      Peak Allocated bytes 4.5 MB
+    [ALLOC_DEFAULT_MAIN]
+      Requested Block Size 16.0 MB
+      Peak Block count 3
+      Peak Allocated memory 36.0 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_DEFAULT_THREAD]
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 4.2 MB
+      Peak Large allocation bytes 0 B
+[ALLOC_TEMP_JOB_1_FRAME]
+  Initial Block Size 2.0 MB
+  Used Block Count 0
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_2_FRAMES]
+  Initial Block Size 2.0 MB
+  Used Block Count 0
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_4_FRAMES (JobTemp)]
+  Initial Block Size 2.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_ASYNC (Background)]
+  Initial Block Size 1.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_GFX] Dual Thread Allocator
+  Peak main deferred allocation count 59
+    [ALLOC_BUCKET]
+      Large Block size 32.0 MB
+      Used Block count 1
+      Peak Allocated bytes 4.5 MB
+    [ALLOC_GFX_MAIN]
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 11.1 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_GFX_THREAD]
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 6.3 KB
+      Peak Large allocation bytes 0 B
+[ALLOC_CACHEOBJECTS] Dual Thread Allocator
+  Peak main deferred allocation count 1029
+    [ALLOC_BUCKET]
+      Large Block size 32.0 MB
+      Used Block count 1
+      Peak Allocated bytes 4.5 MB
+    [ALLOC_CACHEOBJECTS_MAIN]
+      Requested Block Size 4.0 MB
+      Peak Block count 3
+      Peak Allocated memory 20.1 MB
+      Peak Large allocation bytes 10.7 MB
+    [ALLOC_CACHEOBJECTS_THREAD]
+      Requested Block Size 4.0 MB
+      Peak Block count 1
+      Peak Allocated memory 347.1 KB
+      Peak Large allocation bytes 0 B
+[ALLOC_TYPETREE] Dual Thread Allocator
+  Peak main deferred allocation count 1863
+    [ALLOC_BUCKET]
+      Large Block size 32.0 MB
+      Used Block count 1
+      Peak Allocated bytes 4.5 MB
+    [ALLOC_TYPETREE_MAIN]
+      Requested Block Size 2.0 MB
+      Peak Block count 2
+      Peak Allocated memory 3.8 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_TYPETREE_THREAD]
+      Requested Block Size 2.0 MB
+      Peak Block count 0
+      Peak Allocated memory 0 B
+      Peak Large allocation bytes 0 B
+[ALLOC_PROFILER]
+  Requested Block Size 16.0 MB
+  Peak Block count 1
+  Peak Allocated memory 411.6 KB
+  Peak Large allocation bytes 0 B
+    [ALLOC_PROFILER_BUCKET]
+      Large Block size 32.0 MB
+      Used Block count 1
+      Peak Allocated bytes 4.2 KB
+[ALLOC_PROFILER_EDITOR]
+  Requested Block Size 1.0 MB
+  Peak Block count 0
+  Peak Allocated memory 0 B
+  Peak Large allocation bytes 0 B
+    [ALLOC_PROFILER_BUCKET]
+      Large Block size 32.0 MB
+      Used Block count 1
+      Peak Allocated bytes 4.2 KB
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1790911393313,"processId":1018225,"allocatedMemory":7003565,"memoryLabels":[{"Default":20071},{"Permanent":16322},{"Thread":1083572},{"Manager":32322},{"VertexData":12},{"Geometry":280},{"Texture":176},{"Shader":69245},{"Material":24},{"GfxDevice":36336},{"Animation":360},{"Audio":3976},{"FontEngine":336},{"Physics":513},{"Serialization":732},{"Input":26816},{"JobScheduler":34648},{"Mono":40},{"ScriptingNativeRuntime":191920},{"BaseObject":1629820},{"Resource":1064},{"Renderer":2352},{"Transform":48},{"File":9543},{"WebCam":40},{"Culling":40},{"Terrain":1025},{"Wind":24},{"String":139832},{"DynamicArray":55113},{"HashMap":71739},{"Utility":2664422},{"Curl":1112},{"PoolAlloc":1496},{"AI":72},{"TypeTree":5061},{"ScriptManager":640},{"RuntimeInitializeOnLoadManager":80},{"SpriteAtlas":128},{"GI":3632},{"Director":7928},{"CloudService":56120},{"WebRequest":720},{"VR":45769},{"SceneManager":600},{"Video":72},{"LazyScriptCache":40},{"NativeArray":12},{"Camera":25},{"Secure":5337},{"SerializationCache":1576},{"APIUpdating":11856},{"Subsystems":392},{"VirtualTexturing":57560},{"StaticSafetyDebugInfo":327680},{"EditorGui":56},{"EditorUtility":10223},{"VersionControl":4},{"Undo":736},{"AssetDatabase":323429},{"RestService":1518},{"EditorGi":376},{"License":3584},{"UnityConnect":25496},{"Collab":641},{"Upm":1856},{"DrivenProperties":96},{"LocalIPC":210},{"ProfilerEditor":10951},{"CoreBusinessMetrics":3638},{"AssetReference":40},{"IPCStream":40}]}
