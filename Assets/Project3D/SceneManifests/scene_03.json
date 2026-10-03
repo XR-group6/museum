@@ -1,0 +1,325 @@
+{
+  "bounds": {
+    "dims": [
+      24.0,
+      24.0,
+      3.64
+    ],
+    "max": [
+      12.0,
+      12.0,
+      3.19
+    ],
+    "min": [
+      -12.0,
+      -12.0,
+      -0.45
+    ]
+  },
+  "placements": [
+    {
+      "asset": "fishing_boat",
+      "at": [
+        0.0,
+        0.0,
+        -0.45
+      ],
+      "bounds": {
+        "max": [
+          1.42,
+          4.4965,
+          3.19
+        ],
+        "min": [
+          -1.42,
+          -4.6724,
+          -0.45
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "fishing_boat",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "sea",
+      "at": [
+        0.0,
+        0.0,
+        -0.36
+      ],
+      "bounds": {
+        "max": [
+          12.0,
+          12.0,
+          0.035
+        ],
+        "min": [
+          -12.0,
+          -12.0,
+          -0.36
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "sea",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "travel_bag",
+      "at": [
+        -0.42,
+        -3.26,
+        0.85
+      ],
+      "bounds": {
+        "max": [
+          -0.013,
+          -2.97,
+          1.34
+        ],
+        "min": [
+          -0.827,
+          -3.58,
+          0.85
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "travel_bag",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "travel_bundle",
+      "at": [
+        -0.42,
+        -3.26,
+        0.87
+      ],
+      "bounds": {
+        "max": [
+          -0.11,
+          -3.1,
+          1.23
+        ],
+        "min": [
+          -0.73,
+          -3.42,
+          0.87
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "travel_bundle",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "incense_burner",
+      "at": [
+        -0.42,
+        -3.26,
+        1.23
+      ],
+      "bounds": {
+        "max": [
+          -0.29,
+          -3.145,
+          1.6399
+        ],
+        "min": [
+          -0.55,
+          -3.375,
+          1.23
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "incense_burner",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "oil_lamp",
+      "at": [
+        0.55,
+        -3.4,
+        0.87
+      ],
+      "bounds": {
+        "max": [
+          0.625,
+          -3.325,
+          1.215
+        ],
+        "min": [
+          0.475,
+          -3.475,
+          0.87
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "oil_lamp",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "rice_jar",
+      "at": [
+        0.55,
+        -2.85,
+        0.87
+      ],
+      "bounds": {
+        "max": [
+          0.81,
+          -2.59,
+          1.4
+        ],
+        "min": [
+          0.29,
+          -3.11,
+          0.87
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rice_jar",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "water_jar",
+      "at": [
+        -0.55,
+        -2.62,
+        0.87
+      ],
+      "bounds": {
+        "max": [
+          -0.29,
+          -2.36,
+          1.47
+        ],
+        "min": [
+          -0.81,
+          -2.88,
+          0.87
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "water_jar",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "bamboo_basket",
+      "at": [
+        0.55,
+        -2.1,
+        0.87
+      ],
+      "bounds": {
+        "max": [
+          0.805,
+          -1.845,
+          1.52
+        ],
+        "min": [
+          0.295,
+          -2.355,
+          0.87
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bamboo_basket",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "oar",
+      "at": [
+        0.0,
+        -2.92,
+        0.87
+      ],
+      "bounds": {
+        "max": [
+          0.115,
+          -0.68,
+          0.97
+        ],
+        "min": [
+          -0.115,
+          -2.92,
+          0.87
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "oar",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "suitcase",
+      "at": [
+        0.55,
+        -1.3,
+        0.87
+      ],
+      "bounds": {
+        "max": [
+          0.92,
+          -1.14,
+          1.195
+        ],
+        "min": [
+          0.18,
+          -1.438,
+          0.87
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "suitcase",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "thermos",
+      "at": [
+        -0.6,
+        -1.2,
+        0.87
+      ],
+      "bounds": {
+        "max": [
+          -0.495,
+          -1.124,
+          1.28
+        ],
+        "min": [
+          -0.676,
+          -1.276,
+          0.87
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "thermos",
+      "room": null,
+      "rz": 0.0
+    }
+  ],
+  "scene": "scene_03",
+  "title": "Crossing the sea -- the cabin of a Fujian fishing boat under way",
+  "units": "meters",
+  "up": "Z"
+}
