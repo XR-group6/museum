@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/IncenseCharacters/Generated/CastDemo.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
