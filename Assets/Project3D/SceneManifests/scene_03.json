@@ -1,22 +1,72 @@
 {
   "bounds": {
     "dims": [
-      24.0,
-      24.0,
-      3.64
+      92.0,
+      98.0,
+      9.874
     ],
     "max": [
-      12.0,
-      12.0,
-      3.19
+      46.0,
+      49.0,
+      6.274
     ],
     "min": [
-      -12.0,
-      -12.0,
-      -0.45
+      -46.0,
+      -49.0,
+      -3.6
     ]
   },
   "placements": [
+    {
+      "asset": "strait_water",
+      "at": [
+        0.0,
+        0.0,
+        -0.36
+      ],
+      "bounds": {
+        "max": [
+          46.0,
+          49.0,
+          0.035
+        ],
+        "min": [
+          -46.0,
+          -49.0,
+          -3.4
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "strait_water",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "strait_ground",
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          14.0,
+          11.0,
+          0.67
+        ],
+        "min": [
+          -46.0,
+          -49.0,
+          -3.5
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "strait_ground",
+      "room": null,
+      "rz": 0.0
+    },
     {
       "asset": "fishing_boat",
       "at": [
@@ -39,31 +89,6 @@
       "container": true,
       "mount": "floor",
       "name": "fishing_boat",
-      "room": null,
-      "rz": 0.0
-    },
-    {
-      "asset": "sea",
-      "at": [
-        0.0,
-        0.0,
-        -0.36
-      ],
-      "bounds": {
-        "max": [
-          12.0,
-          12.0,
-          0.035
-        ],
-        "min": [
-          -12.0,
-          -12.0,
-          -0.36
-        ]
-      },
-      "container": true,
-      "mount": "floor",
-      "name": "sea",
       "room": null,
       "rz": 0.0
     },
@@ -114,7 +139,7 @@
       "container": false,
       "mount": "floor",
       "name": "travel_bundle",
-      "room": null,
+      "room": "cabin",
       "rz": 0.0
     },
     {
@@ -139,7 +164,7 @@
       "container": false,
       "mount": "surface",
       "name": "incense_burner",
-      "room": null,
+      "room": "cabin",
       "rz": 0.0
     },
     {
@@ -164,7 +189,7 @@
       "container": false,
       "mount": "floor",
       "name": "oil_lamp",
-      "room": null,
+      "room": "cabin",
       "rz": 0.0
     },
     {
@@ -189,7 +214,7 @@
       "container": false,
       "mount": "floor",
       "name": "rice_jar",
-      "room": null,
+      "room": "cabin",
       "rz": 0.0
     },
     {
@@ -214,7 +239,7 @@
       "container": false,
       "mount": "floor",
       "name": "water_jar",
-      "room": null,
+      "room": "cabin",
       "rz": 0.0
     },
     {
@@ -239,7 +264,7 @@
       "container": false,
       "mount": "floor",
       "name": "bamboo_basket",
-      "room": null,
+      "room": "cabin",
       "rz": 0.0
     },
     {
@@ -264,7 +289,7 @@
       "container": false,
       "mount": "floor",
       "name": "oar",
-      "room": null,
+      "room": "cabin",
       "rz": 0.0
     },
     {
@@ -289,7 +314,7 @@
       "container": false,
       "mount": "floor",
       "name": "suitcase",
-      "room": null,
+      "room": "cabin",
       "rz": 0.0
     },
     {
@@ -314,8 +339,858 @@
       "container": false,
       "mount": "floor",
       "name": "thermos",
-      "room": null,
+      "room": "cabin",
       "rz": 0.0
+    },
+    {
+      "asset": "cottage_b",
+      "at": [
+        -40.920868,
+        -26.92087,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -36.2142,
+          -22.1972,
+          5.52
+        ],
+        "min": [
+          -45.6275,
+          -31.6445,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coast_house_01",
+      "room": "coast",
+      "rz": -39.0
+    },
+    {
+      "asset": "house",
+      "at": [
+        -30.293171,
+        -35.293171,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -26.7152,
+          -31.7152,
+          4.52
+        ],
+        "min": [
+          -33.8711,
+          -38.8711,
+          0.67
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "coast_house_02",
+      "room": "coast",
+      "rz": -45.0
+    },
+    {
+      "asset": "cottage_c",
+      "at": [
+        -20.588989,
+        -44.588989,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -16.585,
+          -40.7254,
+          5.22
+        ],
+        "min": [
+          -24.593,
+          -48.4525,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coast_house_03",
+      "room": "coast",
+      "rz": -52.0
+    },
+    {
+      "asset": "village_house",
+      "at": [
+        -41.548954,
+        -37.548954,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -37.1402,
+          -33.216,
+          5.37
+        ],
+        "min": [
+          -45.9578,
+          -41.882,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coast_house_04",
+      "room": "coast",
+      "rz": -50.0
+    },
+    {
+      "asset": "cottage_c",
+      "at": [
+        -30.582108,
+        -43.582108,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -26.7007,
+          -39.5802,
+          5.22
+        ],
+        "min": [
+          -34.4635,
+          -47.584,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coast_house_05",
+      "room": "coast",
+      "rz": -39.0
+    },
+    {
+      "asset": "house_roof",
+      "at": [
+        -30.293171,
+        -35.293171,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -25.9056,
+          -30.9056,
+          5.37
+        ],
+        "min": [
+          -34.6808,
+          -39.6808,
+          3.1337
+        ]
+      },
+      "container": true,
+      "mount": "surface",
+      "name": "coast_roof_03",
+      "room": "coast",
+      "rz": -45.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -35.291626,
+        -29.791628,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -34.3106,
+          -28.9847,
+          5.17
+        ],
+        "min": [
+          -36.1635,
+          -30.7285,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coast_tree_01",
+      "room": "coast",
+      "rz": -5.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -35.512444,
+        -33.512444,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -34.3152,
+          -32.453,
+          5.17
+        ],
+        "min": [
+          -36.5502,
+          -34.63,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coast_tree_02",
+      "room": "coast",
+      "rz": 25.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -36.001965,
+        -37.001965,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -34.8554,
+          -35.9932,
+          5.17
+        ],
+        "min": [
+          -37.0905,
+          -38.1702,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coast_tree_03",
+      "room": "coast",
+      "rz": -25.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -42.231686,
+        -46.731686,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -40.9741,
+          -45.5734,
+          5.17
+        ],
+        "min": [
+          -43.3202,
+          -47.9047,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coast_tree_04",
+      "room": "coast",
+      "rz": 40.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -35.824505,
+        -44.324505,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -34.7691,
+          -43.436,
+          5.17
+        ],
+        "min": [
+          -36.7409,
+          -45.3104,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coast_tree_05",
+      "room": "coast",
+      "rz": 10.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -25.812807,
+        -37.812809,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -24.6324,
+          -36.7317,
+          5.17
+        ],
+        "min": [
+          -26.9784,
+          -39.063,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coast_tree_06",
+      "room": "coast",
+      "rz": -40.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -25.807053,
+        -39.807053,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -24.8871,
+          -39.0671,
+          5.17
+        ],
+        "min": [
+          -26.6071,
+          -40.6671,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coast_tree_07",
+      "room": "coast",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -15.517577,
+        -47.517578,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -14.4,
+          -46.5486,
+          5.17
+        ],
+        "min": [
+          -16.5635,
+          -48.6404,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coast_tree_08",
+      "room": "coast",
+      "rz": -20.0
+    },
+    {
+      "asset": "wooden_pier",
+      "at": [
+        -23.777847,
+        -36.277847,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -16.6361,
+          -29.1361,
+          1.02
+        ],
+        "min": [
+          -24.5839,
+          -37.084,
+          -1.03
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "pier",
+      "room": null,
+      "rz": -45.0
+    },
+    {
+      "asset": "mooring_post",
+      "at": [
+        -35.300549,
+        -27.30055,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -35.0884,
+          -27.0884,
+          1.57
+        ],
+        "min": [
+          -35.5127,
+          -27.5127,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "post_01",
+      "room": "coast",
+      "rz": -45.0
+    },
+    {
+      "asset": "mooring_post",
+      "at": [
+        -30.687801,
+        -31.187801,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -30.4757,
+          -30.9757,
+          1.57
+        ],
+        "min": [
+          -30.8999,
+          -31.3999,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "post_02",
+      "room": "coast",
+      "rz": -45.0
+    },
+    {
+      "asset": "mooring_post",
+      "at": [
+        -25.541649,
+        -35.541649,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -25.3295,
+          -35.3295,
+          1.57
+        ],
+        "min": [
+          -25.7538,
+          -35.7538,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "post_03",
+      "room": "coast",
+      "rz": -45.0
+    },
+    {
+      "asset": "mooring_post",
+      "at": [
+        -22.343206,
+        -38.343208,
+        0.67
+      ],
+      "bounds": {
+        "max": [
+          -22.1311,
+          -38.1311,
+          1.57
+        ],
+        "min": [
+          -22.5553,
+          -38.5553,
+          0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "post_04",
+      "room": "coast",
+      "rz": -45.0
+    },
+    {
+      "asset": "sampan",
+      "at": [
+        -24.617544,
+        -25.617544,
+        -0.13
+      ],
+      "bounds": {
+        "max": [
+          -23.5472,
+          -23.1372,
+          0.83
+        ],
+        "min": [
+          -25.6893,
+          -28.088,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "sampan_moor_01",
+      "room": "water",
+      "rz": 8.0
+    },
+    {
+      "asset": "sampan",
+      "at": [
+        -13.882871,
+        -33.88287,
+        -0.13
+      ],
+      "bounds": {
+        "max": [
+          -12.9315,
+          -31.4271,
+          0.83
+        ],
+        "min": [
+          -14.8333,
+          -36.3287,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "sampan_moor_02",
+      "room": "water",
+      "rz": -5.0
+    },
+    {
+      "asset": "sampan",
+      "at": [
+        -11.228018,
+        -37.228016,
+        -0.13
+      ],
+      "bounds": {
+        "max": [
+          -10.0407,
+          -34.73,
+          0.83
+        ],
+        "min": [
+          -12.4173,
+          -39.7163,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "sampan_moor_03",
+      "room": "water",
+      "rz": 11.0
+    },
+    {
+      "asset": "working_boat",
+      "at": [
+        -20.0,
+        2.0,
+        -0.24
+      ],
+      "bounds": {
+        "max": [
+          -15.9195,
+          4.898,
+          4.31
+        ],
+        "min": [
+          -24.0805,
+          -0.898,
+          -0.16
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "boat_01",
+      "room": null,
+      "rz": 118.0
+    },
+    {
+      "asset": "working_boat",
+      "at": [
+        -12.0,
+        26.0,
+        -0.24
+      ],
+      "bounds": {
+        "max": [
+          -7.9522,
+          29.0009,
+          4.31
+        ],
+        "min": [
+          -16.0478,
+          22.9991,
+          -0.16
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "boat_02",
+      "room": null,
+      "rz": 60.0
+    },
+    {
+      "asset": "working_boat",
+      "at": [
+        16.0,
+        13.0,
+        -0.24
+      ],
+      "bounds": {
+        "max": [
+          17.9586,
+          17.1615,
+          4.31
+        ],
+        "min": [
+          14.0414,
+          8.8385,
+          -0.16
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "boat_03",
+      "room": null,
+      "rz": -12.0
+    },
+    {
+      "asset": "working_boat",
+      "at": [
+        22.0,
+        6.0,
+        -0.24
+      ],
+      "bounds": {
+        "max": [
+          26.1615,
+          7.9586,
+          4.31
+        ],
+        "min": [
+          17.8385,
+          4.0414,
+          -0.16
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "boat_04",
+      "room": null,
+      "rz": 78.0
+    },
+    {
+      "asset": "working_boat",
+      "at": [
+        14.0,
+        36.0,
+        -0.24
+      ],
+      "bounds": {
+        "max": [
+          18.1082,
+          37.5629,
+          4.31
+        ],
+        "min": [
+          9.8918,
+          34.4371,
+          -0.16
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "boat_05",
+      "room": null,
+      "rz": -96.0
+    },
+    {
+      "asset": "working_boat",
+      "at": [
+        30.0,
+        -4.0,
+        -0.24
+      ],
+      "bounds": {
+        "max": [
+          33.8679,
+          -0.625,
+          4.31
+        ],
+        "min": [
+          26.1321,
+          -7.375,
+          -0.16
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "boat_06",
+      "room": null,
+      "rz": 52.0
+    },
+    {
+      "asset": "sea_island",
+      "at": [
+        16.0,
+        -26.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          24.814,
+          -17.691,
+          6.274
+        ],
+        "min": [
+          6.7423,
+          -34.4398,
+          -3.6
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "island_1",
+      "room": null,
+      "rz": 24.0
+    },
+    {
+      "asset": "sea_island",
+      "at": [
+        -30.0,
+        16.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -20.7945,
+          25.3076,
+          6.274
+        ],
+        "min": [
+          -39.5293,
+          7.0227,
+          -3.6
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "island_2",
+      "room": null,
+      "rz": -38.0
+    },
+    {
+      "asset": "sea_islet",
+      "at": [
+        2.0,
+        30.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          7.3772,
+          35.1638,
+          4.325
+        ],
+        "min": [
+          -3.6319,
+          24.731,
+          -3.6
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "islet_1",
+      "room": null,
+      "rz": 30.0
+    },
+    {
+      "asset": "sea_rock",
+      "at": [
+        -9.0,
+        6.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -5.6265,
+          9.4076,
+          2.43
+        ],
+        "min": [
+          -12.6575,
+          2.2457,
+          -3.2
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rock_1",
+      "room": null,
+      "rz": 15.0
+    },
+    {
+      "asset": "sea_rock",
+      "at": [
+        33.0,
+        -14.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          36.5558,
+          -10.188,
+          2.43
+        ],
+        "min": [
+          29.074,
+          -17.5592,
+          -3.2
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rock_2",
+      "room": null,
+      "rz": -70.0
+    },
+    {
+      "asset": "sea_rock",
+      "at": [
+        14.0,
+        30.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          18.0608,
+          33.876,
+          2.43
+        ],
+        "min": [
+          9.8665,
+          25.6817,
+          -3.2
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rock_3",
+      "room": null,
+      "rz": 45.0
     }
   ],
   "scene": "scene_03",
