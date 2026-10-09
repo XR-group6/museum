@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Father_Young",
+    "vertices": 5503,
+    "triangles": 2733,
+    "bones": 52,
+    "clips": 17,
+    "height_m": 1.767
+  },
+  {
+    "name": "Father_Elder",
+    "vertices": 5453,
+    "triangles": 2633,
+    "bones": 52,
+    "clips": 17,
+    "height_m": 1.723
+  },
+  {
+    "name": "Daughter_Child",
+    "vertices": 5271,
+    "triangles": 2695,
+    "bones": 52,
+    "clips": 17,
+    "height_m": 1.135
+  },
+  {
+    "name": "Daughter_Adult",
+    "vertices": 6413,
+    "triangles": 2977,
+    "bones": 52,
+    "clips": 17,
+    "height_m": 1.647
+  }
+]

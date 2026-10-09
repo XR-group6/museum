@@ -3,3 +3,8 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+
+# Unity generated directories (regenerated on open; do not commit)
+Library/
+Temp/
+Logs/
