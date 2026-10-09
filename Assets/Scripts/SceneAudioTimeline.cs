@@ -11,6 +11,7 @@ public class SceneAudioTimeline : MonoBehaviour
 {
     public TimelineAsset timeline;
     public AudioClip ambience;
+    public AudioClip voiceOver;
     public bool playOnStart;
     public string nextScene;
     [Tooltip("Optional animation director that determines when this scene is finished.")]
@@ -23,6 +24,7 @@ public class SceneAudioTimeline : MonoBehaviour
     private double animationDuration;
     private bool audioFinished, animationFinished;
     private float remainingDelay;
+    private bool delayStarted;
 
     void Awake()
     {
@@ -74,6 +76,30 @@ public class SceneAudioTimeline : MonoBehaviour
 
     IEnumerator PlaySequence()
     {
+        if (voiceOver)
+        {
+            if (!Application.CanStreamedLevelBeLoaded(nextScene)) { Fail("Next scene is absent from Build Settings: " + nextScene); yield break; }
+            if (completionDirector)
+            {
+                if (completionDirector == director || !completionDirector.playableAsset || !completionDirector.isActiveAndEnabled)
+                { Fail("Animation completion director must be a separate active director with a Timeline."); yield break; }
+                animationDuration = completionDirector.playableAsset.duration;
+                if (double.IsNaN(animationDuration) || double.IsInfinity(animationDuration) || animationDuration <= 0)
+                { Fail("Animation Timeline must have a finite positive duration."); yield break; }
+            }
+            yield return Load(voiceOver);
+            if (voiceOver.loadState != AudioDataLoadState.Loaded) { loading = false; yield break; }
+            source.Stop(); source.clip = voiceOver; source.loop = false; source.pitch = 1; source.time = 0;
+            if (completionDirector)
+            {
+                completionDirector.timeUpdateMode = DirectorUpdateMode.DSPClock;
+                completionDirector.extrapolationMode = DirectorWrapMode.Hold;
+                completionDirector.time = 0; completionDirector.Play();
+            }
+            source.Play(); playing = true; loading = false;
+            audioFinished = false; animationFinished = !completionDirector; delayStarted = false;
+            yield break;
+        }
         var tracks = timeline ? timeline.GetOutputTracks().ToArray() : new TrackAsset[0];
         if (tracks.Length != 1 || !(tracks[0] is AudioTrack)) { Fail("Timeline must contain exactly one AudioTrack."); yield break; }
         var clips = tracks[0].GetClips().ToArray();
@@ -90,8 +116,6 @@ public class SceneAudioTimeline : MonoBehaviour
             animationDuration = completionDirector.playableAsset.duration;
             if (double.IsNaN(animationDuration) || double.IsInfinity(animationDuration) || animationDuration <= 0)
             { Fail("Animation Timeline must have a finite positive duration."); yield break; }
-            if (segment.duration < animationDuration + Mathf.Max(0, delayAfterAnimation))
-            { Fail("Audio Timeline is too short to cover the animation and the scene transition delay. Extend its audio clip duration."); yield break; }
         }
         yield return Load(asset.clip);
         if (asset.clip.loadState != AudioDataLoadState.Loaded) { loading = false; yield break; }
@@ -114,6 +138,7 @@ public class SceneAudioTimeline : MonoBehaviour
         }
         source.Play(); duration = segment.duration; playing = true; loading = false;
         audioFinished = false; animationFinished = false;
+        delayStarted = false;
         Debug.Log("[Museum] Playing " + asset.clip.name + " for " + duration + " seconds, next: " + nextScene, this);
     }
 
@@ -122,21 +147,20 @@ public class SceneAudioTimeline : MonoBehaviour
     {
         if (!playing) return;
         // Audio keeps its own clip duration even when animation controls scene completion.
-        if (!audioFinished && director.time >= duration - 0.001)
+        if (!audioFinished && (voiceOver ? !source.isPlaying : director.time >= duration - 0.001))
         {
             source.Stop(); audioFinished = true;
         }
         if (completionDirector)
         {
-            if (!animationFinished)
+            animationFinished = completionDirector.time >= animationDuration - 0.001;
+            if (!audioFinished || !animationFinished) return;
+            if (!delayStarted)
             {
-                if (completionDirector.time < animationDuration - 0.001) return;
-                animationFinished = true;
-                remainingDelay = Mathf.Max(0, delayAfterAnimation);
-                Debug.Log("[Museum] Animation finished; waiting " + remainingDelay + " seconds before " + nextScene, this);
+                delayStarted = true; remainingDelay = Mathf.Max(0, delayAfterAnimation);
                 if (remainingDelay > 0) return;
             }
-            else remainingDelay -= Time.deltaTime;
+            else remainingDelay -= Time.unscaledDeltaTime;
             if (remainingDelay > 0) return;
         }
         else if (!audioFinished) return;
