@@ -1,106 +1,76 @@
 # MIGRATION_README
 
-**Read this once, before your next `git pull`, if you have ever edited
-`Assets/Project3D/Scenes/` in this project.**
+**Read this before your next `git pull` if you have ever edited a scene in
+`Assets/Project3D/Scenes/`.**
 
-If you are cloning for the first time: you can ignore this file. The scenes you get are
-already in the new form and open standalone.
+Cloning for the first time? Skip it — the project you get is already in the new
+form and opens standalone.
 
-- [What changed](#what-changed)
-- [Before you pull](#before-you-pull)
-- [Pull, and keep your scenes](#pull-and-keep-your-scenes)
-- [Run the migration](#run-the-migration)
-- [What is kept, and how](#what-is-kept-and-how)
-- [What is deleted, and the backups](#what-is-deleted-and-the-backups)
-- [If something goes wrong](#if-something-goes-wrong)
+## What changed, in one paragraph
 
-## What changed
+A room is no longer stored as a list of objects inside `Scenes/scene_01.unity`. It is
+stored as a **prefab** — `Prefabs/scenes/scene_01.prefab`, the whole arrangement — and
+the scene file holds a **single instance of that prefab**. The room is the same room,
+with the same objects in the same places. The difference is that the pipeline can now
+change the layout by rewriting the prefab, so the scene file you edit is never
+rewritten again.
 
-- **Scenes 01 and 02 are delivered *thin* now.** The whole room's arrangement lives in
-  `Assets/Project3D/Prefabs/scenes/scene_01.prefab`, and
-  `Assets/Project3D/Scenes/scene_01.unity` holds a single instance of that prefab.
-  It is the same room, the same objects, the same positions — but the pipeline can now
-  change the *layout* by rewriting the prefab, and the file you edit is never rewritten
-  again. Anything you add to the scene survives as a prefab-instance override.
-- **Scenes 03 and 04 are retired.** The pipeline no longer builds them, so they are
-  deleted from the delivery rather than left to rot against a `Models/` that keeps
-  moving. They will be rebuilt later; if you need your edits, they are in your git
-  history and the migration backs them up on your machine before deleting.
-- **The models nothing references are gone too** (60 files: scene 03/04's, plus a few
-  dropped elsewhere), and they are listed in
-  `Assets/Project3D/Update/orphans.json` so the deletion is auditable rather than
-  mysterious.
+That matters when you pull: the new scene file replaces the one you have been working
+in. Your objects are not in it. The fix is to keep your own copy of every scene you
+touched and let the migration tool build the new form out of it.
 
-Nothing else about the project changes: same paths, same mesh names, same material
-slots, same scene GUIDs.
+The tool is part of this project: `Assets/Project3D/Editor/MigrateScene.cs`. It is
+Unity-only and needs nothing from the pipeline — it runs in your checkout, on your
+machine, and nothing of yours is sent anywhere.
 
-## Before you pull
-
-Commit or stash, so nothing is lost and you can always get your scene back:
+## Step 1 — save your work
 
 ```bash
 cd <your>/<copy>/of/this/project
 git add -A && git commit -m "wip: before scene migration"   # or: git stash
-git rev-parse HEAD > /tmp/migration-mine                     # remember your own commit
+git rev-parse HEAD > /tmp/migration-mine                     # remember your commit
 ```
 
-If you have never touched `Assets/Project3D/Scenes/`, you can skip straight to pulling:
-git will fast-forward and there is nothing to migrate.
-
-## Pull, and keep your scenes
+## Step 2 — pull, keeping your own scene files
 
 ```bash
-git fetch
-git pull
+git fetch && git pull
 ```
 
-Expect one of two things on `Assets/Project3D/Scenes/scene_01.unity` (and `scene_02`):
+Git will either conflict on `Scenes/scene_01.unity` or auto-merge it cleanly. Both are
+normal, and **the clean merge is the one to watch for**: a merged scene can hold both
+your objects and the pipeline's new prefab — the room twice.
 
-1. **A merge conflict.** Normal: both sides rewrote the file.
-2. **A clean auto-merge.** Also normal, and *also* not what you want — a merged scene can
-   end up holding both your objects and the pipeline's new prefab, i.e. the room twice.
-
-Either way, the fix is the same: **keep your own copy of every scene you worked in, and
-take the pipeline's changes to everything else.**
+Either way, the answer is the same: keep your copy of any scene you worked in, and take
+the pipeline's version of everything else.
 
 ```bash
-MINE=$(cat /tmp/migration-mine)
-git checkout "$MINE" -- Assets/Project3D/Scenes/scene_01.unity
-git checkout "$MINE" -- Assets/Project3D/Scenes/scene_02.unity
-git add -A && git commit
+git checkout "$(cat /tmp/migration-mine)" -- Assets/Project3D/Scenes/scene_01.unity
+git checkout "$(cat /tmp/migration-mine)" -- Assets/Project3D/Scenes/scene_02.unity
+git add -A && git commit -m "keep my scenes for the migration"
 ```
 
-Why keep yours? Because the tool in the next step *builds the new thin scene out of your
-inline one*, carrying your objects and components onto the prefab instance. If git hands
+Your scene file is still the **old inline form**. That is what the tool needs: it reads
+that file and rebuilds it as the new thin form, carrying your work across. If git hands
 you the pipeline's thin file instead, the tool will correctly report "already thin —
-nothing to do" and your local work in that scene is only in history.
+nothing to do", and your local work stays only in git history.
 
-And if you have your own edits in scene 03 or 04 and want a backup before they go, pull
-them back too — the retirement pass copies a file it is about to delete:
-
-```bash
-git checkout "$MINE" -- Assets/Project3D/Scenes/scene_03.unity
-git checkout "$MINE" -- Assets/Project3D/Scenes/scene_04.unity
-```
-
-## Run the migration
+## Step 3 — run the migration
 
 1. Open the project in the Unity version named in `ProjectSettings/ProjectVersion.txt`.
-2. **Close scene 01–04 if any of them is open** — the tool refuses to delete a scene
-   that is open in the editor.
-3. `Project3D ▸ Migrate Scene ▸ Dry Run (all pending)`. Read the Console. Nothing is
-   written; this is what it would do.
+2. Close scenes 01 and 02 if they are open in the editor.
+3. `Project3D ▸ Migrate Scene ▸ Dry Run (all pending)`. Read the Console — it writes
+   nothing, it tells you what it would do.
 4. `Project3D ▸ Migrate Scene ▸ Apply (all pending)`.
-5. Read the Console (`[Project3D] migrate:` and `[Project3D] retire:` lines), then the
-   reports:
+5. Read the reports it wrote:
 
-   - `Assets/Project3D/Update/scene_01.migration.json` (and `scene_02`) — what was
-     wrapped, what was kept, what was carried.
-   - `Assets/Project3D/Update/retired.json` — what was deleted, and anything that was
-     kept because one of your scenes still uses it.
-   - `Assets/Project3D/Update/pipeline.json` and `Update/scene_01.changes.json` — the
-     publish's own summary of what moved, appeared or disappeared per scene.
-6. Open both scenes and check them. Then commit — this is your migration commit:
+   | File | What it says |
+   |---|---|
+   | `Assets/Project3D/Update/scene_01.migration.json` | what was wrapped, kept and carried |
+   | `Assets/Project3D/Update/scene_01.changes.json` | what the publish moved, added or removed |
+   | `Assets/Project3D/Update/pipeline.json` | the publish's own summary |
+
+6. Open both scenes and check them, then commit — this is your migration commit:
 
    ```bash
    git add -A && git commit -m "migrate scene_01 and scene_02 to the thin form"
@@ -117,51 +87,58 @@ Unity -batchmode -nographics -quit -projectPath <path/to/this/project> \
 
 ## What is kept, and how
 
-- **Your objects are never touched.** Anything outside `Assets/Project3D/Prefabs/` —
-  plus the three pipeline roots `Project3D Lighting`, `Project3D Probes` and
-  `Project3D Post` — is yours by the same ownership rule the daily publish uses.
-  Cameras, lights, colliders, scripts, terrain, VFX, your own prefabs: untouched.
-- **Your nudges stay yours.** If you moved a pipeline object, the tool writes its
-  position onto the prefab's copy as an **instance override**, never into the prefab.
-  Your tweak therefore cannot leak into anyone else's copy, and it survives future
-  publishes.
+- **Your objects are never touched.** Anything that is not part of the pipeline's room —
+  plus its three rigs `Project3D Lighting`, `Project3D Probes` and `Project3D Post` — is
+  yours by the same ownership rule the daily publish uses. Cameras, lights, colliders,
+  scripts, terrain, VFX, your own prefabs: untouched.
+- **A placement you moved goes back to the published position.** The published layout is
+  the standard: where an object sits is what the update says, not what your checkout left
+  it at. The move is *not* quietly kept — it is undone and named in the report, so a room
+  re-modelled upstream never arrives with its furniture at last year's coordinates.
+  Anything you moved **inside** a placement is kept: the layout speaks in placements, so
+  a sub-object's transform is yours.
 - **Your components come across.** A component you attached to a pipeline object is
-  copied onto that object's copy under the prefab instance.
-- **Nothing moves, nothing is renamed, no GUID changes.** Every object's world
-  transform is checked before and after, and the scene's own GUID is preserved — so
-  build settings, addressables and anything else referencing the scene keep working.
+  copied onto that object's copy as an *instance override* under the prefab instance,
+  never baked into the prefab — so it cannot leak into anyone else's copy.
+- **Nothing is renamed or re-GUIDed.** Every object keeps the name it had, and the
+  scene's own GUID is preserved, so build settings, addressables and anything else
+  pointing at the scene keep working.
 
-## What is deleted, and the backups
+## If the run cannot carry something
 
-- `Scenes/scene_03.unity`, `Scenes/scene_04.unity`, and their scene prefabs and
-  manifests.
-- The model files the pipeline retired, but only those **no scene in your project still
-  references**. Anything yours still uses is kept and named in `Update/retired.json`.
-- Everything deleted is copied first to `Assets/Project3D/Backups/<timestamp>/` as
-  `<name>.bak` plus `.meta.bak`. That folder is gitignored — it is your local undo, not
-  something to commit, and you can delete it once your migration commit is pushed.
+The tool **carries on and names what it could not do**. A pipeline object the published
+room has no counterpart for is removed rather than left behind; an override it cannot
+hold exactly is reported. Neither is a refusal. Nothing is dropped quietly — every
+un-carried item, every one of your objects the swap removes, and every reference left
+dangling (a camera you pointed at a room object, a child you added to one) is written to
+`Update/<scene>.migration.json` and printed to the Console. The worst outcome is a scene
+that changed with every such item *pointed at*, never a scene that changed in a way
+nobody can see.
 
-## If something goes wrong
+Only the cases with nothing to migrate stop the run, and they change nothing:
 
-The migration is **fail-closed**. If any object would move, if a placement cannot be
-found in the published prefab, or if a component would be dropped, it restores the
-backup and stops with a named reason — a refused migration changes nothing and can be
-re-run once the cause is dealt with. The reasons you are most likely to meet:
-
-| Message | What to do |
+| Message | What it means |
 |---|---|
 | `... is open in the editor. Close it and run again` | Close that scene, re-run. |
-| `no pipeline-owned roots found` | The scene is already thin (fine, nothing to do) or was never pipeline-built. Do not force it. |
-| `no child named '...' in .../scenes/scene_01.prefab` | The pipeline's prefab and your scene disagree. Take the pipeline's scene file for that scene and re-apply your work as overrides, or ask. |
 | `already thin -- ... Nothing to do` | Not an error. You are done with that scene. |
-| `neither Assets/Project3D/SceneManifests/ nor .../Update/pipeline.json exists` | This project has not been synced — you are not in the project this file is about. |
+| `no pipeline-owned roots found` | The scene is already thin, or was never pipeline-built. Do not force it. |
+| `no Assets/Project3D/SceneManifests/ -- this project has not been synced by the pipeline` | You are not in the project this file is about. |
+| `neither Assets/Project3D/SceneManifests/ nor Assets/Project3D/Update/pipeline.json exists` | Same thing. |
 
-`Project3D ▸ Migrate Scene ▸ Retire -- dry run (what would be deleted)` shows the
-retirement half on its own, without touching anything.
+A placement the tool cannot match to the published prefab is no longer a refusal: it is
+reported as `removed` or `drifted` in `Update/<scene>.migration.json` and the run
+continues. Read that file rather than the Console if you want the full list.
 
-**Finally:** `Assets/Project3D/Editor/MigrateScene.cs` is shipped only while there is
-something to run. Once no scene is pending and nothing is retired, a later publish
-removes it — so do not build anything of your own on top of it.
+The tool also removes scenes the pipeline has retired, after copying them to
+`Assets/Project3D/Backups/<timestamp>/` (gitignored, local, safe to delete). A retired
+scene still present in an old checkout of yours is deleted on the same run; a scene that
+is already gone is simply nothing to do.
+
+**`Assets/Project3D/Editor/MigrateScene.cs` ships with this project and stays here.** It
+used to arrive only while a migration was live and be removed afterwards. It is now part
+of every delivery, because the project is handed over wholesale and a tool that is present
+on only some publishes cannot be relied on. It is still the pipeline's file, and a later
+publish overwrites it — put your own work in your own scripts, not on top of this one.
 
 <!-- Maintainers: this document describes MigrateScene.cs, whose source of truth is the
      pipeline repository (unity-scripts/Editor/Project3D/MigrateScene.cs). If you change

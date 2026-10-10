@@ -23,6 +23,7 @@ Assets/Project3D/
   Scenes/               *.unity — scene_01, scene_02
   SceneManifests/       *.json — what a scene means to contain, per scene
   Update/               *.json — what the last publish changed
+  Editor/               MigrateScene.cs — the one-time fat->thin migration tool
   Backups/              written by the migration tool; gitignored, local only
 Assets/Editor/          your own editor scripts. Project3D/ inside it is
                         gitignored — the pipeline injects and removes it.
@@ -51,8 +52,8 @@ update a room's layout without rewriting the scene file you edit.
 **If you already had this project and edited scene 01 or 02, read
 [`MIGRATION_README.md`](MIGRATION_README.md) before you pull.** It is a one-time,
 in-your-own-checkout step that wraps your scene in the published prefab and carries
-your cameras, components and nudges across. Scenes 03 and 04 are retired and are
-deleted the same way (after a backup).
+your cameras, components and nudges across. Scenes 03 and 04 have been retired and
+are gone from this delivery; there is nothing to migrate for them.
 
 ## Working in it
 

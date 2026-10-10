@@ -51,22 +51,37 @@ namespace Project3D
     /// What it does, and what it promises
     /// ----------------------------------
     /// The prefab it wraps the scene around is generated from the **same manifest** the
-    /// loose objects were, so the migration is a pure reparent: no object moves a
-    /// millimetre, every object keeps the name it had, and every GUID is unchanged. The
-    /// only structural difference is that the pipeline-owned roots become children of one
-    /// instance of the scene prefab. A consumer's cameras, VFX, NPCs and their own
-    /// prefabs are never touched.
+    /// loose objects were, so an unmoved scene migrates as a pure reparent: every object
+    /// keeps the name it had, every GUID is unchanged, and the only structural difference is
+    /// that the pipeline-owned roots become children of one instance of the scene prefab.
+    /// A consumer's cameras, VFX, NPCs and their own prefabs are never touched.
     ///
-    /// The consumer's deltas -- a nudge to a placement, a component they attached -- are
-    /// re-applied as **instance overrides**, never baked into the prefab, because baking
-    /// would leak one consumer's tweak into everyone else's copy.
+    /// A component the consumer attached to a placement is copied onto the prefab's copy as
+    /// an **instance override**, never baked into the prefab, because baking would leak one
+    /// consumer's work into everyone else's copy. **A nudge is not carried, and that is
+    /// deliberate: the published layout is the standard.** Where the object sits is what the
+    /// update says, not what the checkout left it at, so a moved placement is put back on
+    /// the published pose and the move is named as a finding rather than silently kept -- a
+    /// layout that only some consumers have is not a layout the pipeline can reason about,
+    /// and a room re-modelled upstream would otherwise arrive with its furniture at
+    /// last-year's coordinates. Components still come across, and so does anything the
+    /// consumer moved *inside* a placement -- the layout speaks in placements, so a nudged
+    /// sub-object is not the pipeline's business. It is the placement's own transform that
+    /// the published room owns.
     ///
-    /// It is **fail-closed**. Every owned object's world transform must be byte-identical
-    /// before and after, and every override it claims to carry must round-trip. If any
-    /// object would move, or any object the prefab should contain cannot be found, the
-    /// migration **stops, restores the backup and reports** rather than applying. The
-    /// worst outcome is a refused migration with a named reason, never a scene that
-    /// quietly changed in a way nobody can point to.
+    /// It **carries on per-object, and reports what it could not do**. Every owned object's
+    /// transform is re-asserted and read back, and every override it carries is checked --
+    /// but a discrepancy is a *finding*, not a refusal: an object the published room has no
+    /// counterpart for is named and the run continues, and so is one that would not hold the
+    /// published pose. **The published room is the standard**: an owned object the update no
+    /// longer carries is removed rather than left behind, and a nudge is undone rather than
+    /// honoured. Only the cases with nothing to migrate -- no scene, no prefab, no owned
+    /// object, or the scene open in the editor -- stop the run. It never deletes a consumer's
+    /// own *top-level* object, and everything it could not carry, plus everything the swap
+    /// removes or leaves dangling (a camera you pointed at a room object, an added child of
+    /// one), is named in `Update/&lt;scene&gt;.migration.json` and in the Console. The worst outcome
+    /// is therefore a scene that changed with every un-carried item *pointed at*, never a
+    /// scene that quietly changed in a way nobody can point to.
     ///
     ///     Project3D &gt; Migrate Scene &gt; Dry Run (all pending)   -- computes and reports,
     ///                                                          writes nothing
@@ -128,9 +143,12 @@ namespace Project3D
         const string ProbesRootName   = "Project3D Probes";
         const string PostRootName     = "Project3D Post";
 
-        // A placement whose world position drifts by more than this (1e-4 m, a tenth of
-        // a millimetre) has moved, and the migration refuses rather than silently
-        // relocating someone's work.
+        // Two poses are the same when they are within these. A tenth of a millimetre of
+        // position, a hair of scale, a hundredth of a degree of yaw -- tight enough that a
+        // hit is a real finding and not YAML float text round-tripping, which is why the
+        // comparison is a tolerance rather than an equality. They are used twice: to decide
+        // whether the consumer had moved an object at all (so the move can be named as
+        // dropped), and to check the published pose actually took.
         const float PositionEpsilon = 1e-8f;   // squared metres
         const float ScaleEpsilon    = 1e-8f;   // squared factor
         const float AngleEpsilon    = 0.01f;   // degrees
@@ -179,7 +197,9 @@ namespace Project3D
         class Entry
         {
             public string name;
-            public string kind;     // "placement" | "root" | "component"
+            public string kind;     // "placement" | "root" | "component" | "kept"
+                                    // | "removed" | "nudge-dropped" | "drifted"
+                                    // | "destroyed" | "reference" | "animation"
             public string detail;   // human detail, e.g. the component type name
         }
 
@@ -195,7 +215,12 @@ namespace Project3D
             public Entry[] kept;        // consumer objects, left exactly where they were
             public Entry[] migrated;    // pipeline roots wrapped into the prefab instance
             public Entry[] carried;     // components moved from a loose root onto its copy
-            public Entry[] not_carried; // named, never silently dropped
+            public Entry[] not_carried; // what did not carry while the rest applied -- a removed
+                                        // object, a move the layout overrode, a pose that would
+                                        // not take. Named, never silently dropped
+            public Entry[] broken;      // objects the swap removes (a removed pipeline object, a
+                                        // consumer child under one) and the references it orphans
+            public bool partial;        // true when not_carried or broken is non-empty
         }
 
         // --- entry points ------------------------------------------------------------
@@ -225,9 +250,14 @@ namespace Project3D
                     "For every scene this project still holds in the old inline form, " +
                     "whose scene prefab the pipeline has published: reparent its pipeline " +
                     "objects under one instance of that prefab. Your own cameras, " +
-                    "components and prefabs are carried across, and a nudge to a placement " +
-                    "is kept as an override. Each .unity is backed up first, and a scene " +
-                    "that cannot be carried whole is refused rather than half-moved.\n\n" +
+                    "components and prefabs are carried across. A placement you moved goes " +
+                    "back to the position the published layout gives it: the layout is the " +
+                    "standard, so a nudge is dropped rather than kept, and named when it is. " +
+                    "Each .unity is backed up first, and the run " +
+                    "carries on past anything it cannot place exactly -- naming every such " +
+                    "object, every consumer object the swap removes, and every reference it " +
+                    "leaves dangling, in Update/<scene>.migration.json rather than refusing " +
+                    "to move at all.\n\n" +
                     "For every scene the pipeline has retired: delete it, after backing it " +
                     "up. Models that nothing in the project references go too. Anything of " +
                     "yours that still uses one is left alone and named in the report.\n\n" +
@@ -295,10 +325,18 @@ namespace Project3D
             var bad = 0;
             foreach (var name in pending)
             {
-                if (!MigrateOne(name, dryRun, out var note))
+                if (!MigrateOne(name, dryRun, out var note, out var partial))
                 {
                     bad++;
                     Debug.LogError($"[Project3D] migrate {name}: REFUSED -- {note}");
+                }
+                else if (partial)
+                {
+                    // Applied, but not whole. Loud on purpose: the report is the worklist,
+                    // and a run that quietly left objects behind is the outcome this tool
+                    // exists to prevent.
+                    Debug.LogWarning($"[Project3D] migrate {name}: applied WITH FINDINGS -- " +
+                                     $"{note}  See {UpdateRoot}/{name}.migration.json.");
                 }
                 else
                 {
@@ -379,9 +417,10 @@ namespace Project3D
 
         // --- the migration of one scene ----------------------------------------------
 
-        static bool MigrateOne(string name, bool dryRun, out string note)
+        static bool MigrateOne(string name, bool dryRun, out string note, out bool partial)
         {
             note = null;
+            partial = false;
             var scenePath = $"{ScenesRoot}/{name}.unity";
             var prefabPath = $"{PrefabsRoot}/{ScenePrefabsFolder}/{name}.prefab";
 
@@ -416,12 +455,14 @@ namespace Project3D
             // instance root is under Prefabs/. A plain root is ours only if it is one of
             // the three named roots the pipeline creates without a prefab.
             var owned = roots.Where(IsOurs).ToList();
-            var kept = roots.Where(r => !IsOurs(r)).Select(r => r.name).ToList();
+            var keptRoots = roots.Where(r => !IsOurs(r)).ToList();
+            var kept = keptRoots.Select(r => r.name).ToList();
             if (owned.Count == 0)
             {
                 note = "no pipeline-owned roots found. Either the scene is already thin " +
                        "(with a differently-named prefab) or it was never built by the " +
-                       "pipeline -- refusing to guess.";
+                       "pipeline -- nothing to wrap.";
+                Abort(scene, scenePath, null);
                 return false;
             }
 
@@ -436,10 +477,8 @@ namespace Project3D
                 migrated = new Entry[0],
                 carried = new Entry[0],
                 not_carried = new Entry[0],
+                broken = new Entry[0],
             };
-
-            // World transforms before anything moves, for the fail-closed check.
-            var before = Snapshot(owned);
 
             // Back up the raw .unity bytes *before* touching it -- belt to git's braces.
             // A `.bak` file, not a `.unity`: Unity ignores an extension it does not
@@ -456,43 +495,77 @@ namespace Project3D
             var carried = new List<Entry>();
             var notCarried = new List<Entry>();
             var doomed = new List<GameObject>();
+            // The prefab copy each doomed root was matched to, so the breakage scan can
+            // tell the consumer's additions from the room's own objects by name.
+            var matched = new Dictionary<GameObject, Transform>();
 
             foreach (var loose in owned)
             {
                 var child = FindChild(instance.transform, loose.name);
                 if (child == null)
                 {
-                    // Fail-closed: an object the prefab should contain is missing, so we
-                    // cannot promise its transform survives. Stop rather than drop it.
+                    // The published room has no counterpart for this object, so the update
+                    // is the standard and the loose object goes rather than lingering as
+                    // content the pipeline removed. Nothing is left duplicated: the room
+                    // carries no copy of it. A consumer object that merely *looks*
+                    // pipeline-owned -- a placement they renamed, a paste of one -- is
+                    // restored to the published form, because the prefab's own copy (under
+                    // its published name) is a child of the instance and stays. Anything
+                    // the consumer attached *under* the doomed root is named by the
+                    // breakage scan below, and the scene file is backed up first.
                     notCarried.Add(new Entry
                     {
                         name = loose.name,
-                        kind = "unmatched",
-                        detail = $"no child named '{loose.name}' in {prefabPath}",
+                        kind = "removed",
+                        detail = $"the published room has no '{loose.name}'; removed to match " +
+                                 $"{prefabPath} (dropped by the update, or renamed)",
                     });
+                    doomed.Add(loose);
                     continue;
                 }
+                matched[loose] = child;
 
-                // The consumer's deltas: any nudge is kept by writing the loose object's
-                // world transform onto the prefab's copy and recording it as an override,
-                // never baking it into the prefab.
-                var wanted = PoseOf(loose);
-                Apply(child.gameObject, wanted);
-                PrefabUtility.RecordPrefabInstancePropertyModifications(child.gameObject);
-                var got = PoseOf(child.gameObject);
-                if (!SamePose(wanted, got))
-                {
-                    notCarried.Add(new Entry
-                    {
-                        name = loose.name,
-                        kind = "transform",
-                        detail = "the prefab copy would not take the object's transform",
-                    });
-                    continue;
-                }
+                // Where the published room puts it, read *before* anything is carried, so
+                // nothing the consumer set can have moved it. This is the pose the object
+                // ends at: the published layout is the standard.
+                var published = PoseOf(child.gameObject);
 
+                // The consumer's components and overrides, replayed onto the prefab copy.
+                // A nudge lives in that same override list -- the loose placement is itself
+                // a prefab instance, so its root transform override is one of the
+                // modifications -- which is why the pose is written back afterwards rather
+                // than before. Mirrors `UpdateScenes.CarryComponents`.
                 foreach (var component in CarryComponents(loose, child.gameObject))
                     carried.Add(new Entry { name = loose.name, kind = "component", detail = component });
+
+                // ... and then the published pose is re-asserted, so the replay cannot drag
+                // the object to where the consumer left it. Writing the published value
+                // stores no override at all -- an override is a difference from the prefab,
+                // and this is now exactly the prefab's value. The nudge being undone is
+                // named, so it is a worklist item rather than a silent move.
+                if (!SamePose(published, PoseOf(loose)))
+                    notCarried.Add(new Entry
+                    {
+                        name = loose.name,
+                        kind = "nudge-dropped",
+                        detail = "you moved this object; the published layout is the " +
+                                 "standard, so it sits where the update puts it",
+                    });
+                Apply(child.gameObject, published);
+                PrefabUtility.RecordPrefabInstancePropertyModifications(child.gameObject);
+                if (!SamePose(published, PoseOf(child.gameObject)))
+                {
+                    // The object survives -- on the prefab copy -- so only its transform is
+                    // in question. Recorded and carried on; the loose original is still
+                    // retired below, so it does not linger as a duplicate.
+                    notCarried.Add(new Entry
+                    {
+                        name = loose.name,
+                        kind = "drifted",
+                        detail = "the prefab copy would not hold the published transform; " +
+                                 "check it in the opened scene",
+                    });
+                }
 
                 migrated.Add(new Entry
                 {
@@ -503,40 +576,23 @@ namespace Project3D
                 doomed.Add(loose);
             }
 
+            // There is deliberately no *before/after* comparison of the whole room, which is
+            // what the old whole-scene abort was. It would now be a comparison against a
+            // state the migration is meant to leave: a nudge is undone on purpose, so
+            // "this object is not where it started" is the intended outcome and not a
+            // finding. What is checked instead is per object and against the published
+            // pose, in the loop above.
+
+            // What the swap is about to take away or orphan, computed while those objects
+            // still exist, so a dry run reports it on the same terms as an apply.
+            var broken = CollectBreakage(instance, doomed, matched, keptRoots);
+
             report.migrated = migrated.ToArray();
             report.carried = carried.ToArray();
             report.not_carried = notCarried.ToArray();
-
-            if (notCarried.Count > 0)
-            {
-                report.reason =
-                    $"{notCarried.Count} object(s) could not be carried: " +
-                    string.Join(", ", notCarried.Select(e => $"{e.name} ({e.detail})"));
-                WriteReport(name, report);
-                Abort(scene, scenePath, backupPath);
-                note = report.reason + " -- nothing was changed.";
-                return false;
-            }
-
-            // Fail-closed, the whole-scene check: every owned object's world transform
-            // must be exactly where it was. The per-object check above covers a lost
-            // nudge; this covers a move that happened to any of them.
-            var after = SnapshotKeeping(instance.transform, owned.Select(o => o.name));
-            foreach (var pair in before)
-            {
-                if (!after.TryGetValue(pair.Key, out var now) || !SamePose(pair.Value, now))
-                {
-                    report.reason = $"'{pair.Key}' moved during the migration " +
-                                    "(its world transform is not byte-identical)";
-                    notCarried.Add(new Entry { name = pair.Key, kind = "transform-verify",
-                                               detail = report.reason });
-                    report.not_carried = notCarried.ToArray();
-                    WriteReport(name, report);
-                    Abort(scene, scenePath, backupPath);
-                    note = report.reason + " -- nothing was changed.";
-                    return false;
-                }
-            }
+            report.broken = broken.ToArray();
+            report.partial = notCarried.Count > 0 || broken.Count > 0;
+            partial = report.partial;
 
             if (dryRun)
             {
@@ -545,7 +601,8 @@ namespace Project3D
                 WriteReport(name, report);
                 EditorSceneManager.CloseScene(scene, removeScene: true);
                 note = $"dry run: would wrap {migrated.Count} object(s) under " +
-                       $"{prefabPath}, keeping {kept.Count} consumer object(s).";
+                       $"{prefabPath}, keeping {kept.Count} consumer object(s)" +
+                       Findings(notCarried.Count, broken.Count) + ".";
                 return true;
             }
 
@@ -559,7 +616,8 @@ namespace Project3D
             WriteReport(name, report);
             note = $"migrated: {migrated.Count} object(s) now under {prefabPath}; " +
                    $"{kept.Count} consumer object(s) untouched; " +
-                   $"{carried.Count} component(s) carried; backup at {backupPath}.";
+                   $"{carried.Count} component(s) carried" +
+                   Findings(notCarried.Count, broken.Count) + "; backup at {backupPath}.";
             return true;
         }
 
@@ -615,7 +673,7 @@ namespace Project3D
             return null;
         }
 
-        // --- transforms, byte-identically --------------------------------------------
+        // --- where an object is -------------------------------------------------------
 
         struct Pose
         {
@@ -631,6 +689,12 @@ namespace Project3D
             scale = go.transform.lossyScale,
         };
 
+        /// <summary>
+        /// Put an object back on a pose it was measured at. Position and rotation are world
+        /// and scale is local, which is only the same thing because the prefab instance the
+        /// object sits under is forced to identity -- the parent chain contributes nothing,
+        /// so a world pose and a local one coincide.
+        /// </summary>
         static void Apply(GameObject go, Pose pose)
         {
             go.transform.position = pose.position;
@@ -643,39 +707,46 @@ namespace Project3D
             (a.scale - b.scale).sqrMagnitude < ScaleEpsilon &&
             Quaternion.Angle(a.rotation, b.rotation) < AngleEpsilon;
 
-        static Dictionary<string, Pose> Snapshot(IEnumerable<GameObject> roots)
-        {
-            var map = new Dictionary<string, Pose>();
-            foreach (var go in roots) map[go.name] = PoseOf(go);
-            return map;
-        }
-
-        /// <summary>The same map, sampled from the prefab copy each name now resolves to.</summary>
-        static Dictionary<string, Pose> SnapshotKeeping(Transform instance, IEnumerable<string> names)
-        {
-            var map = new Dictionary<string, Pose>();
-            foreach (var name in names)
-            {
-                var child = FindChild(instance, name);
-                if (child != null) map[name] = PoseOf(child.gameObject);
-            }
-            return map;
-        }
-
         // --- components the consumer attached ----------------------------------------
 
         /// <summary>
-        /// Move any component on <paramref name="from"/> that <paramref name="to"/> lacks.
+        /// Move a consumer's additions from a loose root onto its prefab copy: the
+        /// overrides they made to the prefab's own components and children (a moved
+        /// sub-object, a resized collider), and any component the prefab does not already
+        /// provide.
         ///
         /// The consumer's component is the reason the object existed to them, so it
         /// follows the object across. A component the prefab already provides is left
         /// alone -- the prefab's is authoritative, and pasting the loose one over it
         /// would fight the layout. Uses Unity's own copy/paste rather than reflecting
         /// over fields, so a component type this tool has never heard of still moves.
+        ///
+        /// The two halves mirror `UpdateScenes.CarryComponents`: `from` and `to` are
+        /// instances of the *same* source prefab, so the property modifications replay
+        /// exactly. **The replay carries a nudge to the root as well as everything else**,
+        /// because a loose placement is itself an instance and its root transform override
+        /// is one of the modifications -- which is why the caller writes the published pose
+        /// back *after* this returns, undoing it. Do not carry the pose here: the layout is
+        /// the standard, and this is the code that would quietly restore last-year's
+        /// coordinates to a re-modelled room.
         /// </summary>
         static List<string> CarryComponents(GameObject from, GameObject to)
         {
             var moved = new List<string>();
+
+            // The consumer's overrides on the placement's own components and children --
+            // a moved sub-object, a resized collider. Empty for a plain root, which is not
+            // a prefab instance and carries none. The list is replayed whole, transform
+            // entries and all, because the caller writes the published pose back over the
+            // top; reporting the raw count rather than a filtered one keeps this honest
+            // about what was replayed.
+            var modifications = PrefabUtility.GetPropertyModifications(from);
+            if (modifications != null && modifications.Length > 0)
+            {
+                PrefabUtility.SetPropertyModifications(to, modifications);
+                moved.Add($"{modifications.Length} override(s) replayed");
+            }
+
             foreach (var component in from.GetComponents<Component>())
             {
                 if (component == null || component is Transform) continue;
@@ -686,6 +757,174 @@ namespace Project3D
                 moved.Add(type.Name);
             }
             return moved;
+        }
+
+        // --- what the swap takes away, and what it orphans ---------------------------
+        //
+        // Two failures used to be silent, and are why this part of the report exists: a
+        // consumer's object *under* a pipeline root is destroyed with its parent (the whole
+        // subtree goes at the `DestroyImmediate` below, and `CarryComponents` never walks
+        // descendants), and a reference from a consumer object to a pipeline object dangles
+        // once the loose object is destroyed and the prefab's own copy takes its place. The
+        // scan runs while the loose objects still exist, so a dry run reports it on the same
+        // terms as an apply, and it names rather than counts.
+
+        /// <summary>
+        /// The consumer's objects the swap will destroy, and the references it will orphan.
+        /// </summary>
+        static List<Entry> CollectBreakage(
+            GameObject instance, IList<GameObject> doomed,
+            IDictionary<GameObject, Transform> matched, IList<GameObject> keptRoots)
+        {
+            var found = new List<Entry>();
+
+            // Every object about to cease to exist: each doomed root and its whole subtree,
+            // inactive included. This is what a surviving reference can dangle *onto*.
+            var doomedSet = new HashSet<int>();
+            foreach (var root in doomed)
+                foreach (var t in root.GetComponentsInChildren<Transform>(true))
+                    doomedSet.Add(t.gameObject.GetInstanceID());
+
+            // The consumer's objects among them: present under a doomed root, absent from
+            // the room's copy of it. Compared by relative path, so a *renamed* pipeline
+            // child reads as the consumer's addition (which it is to this tool -- the
+            // migration does not carry a rename) and an object added at any depth is caught.
+            foreach (var root in doomed)
+            {
+                // The room's copy of this root, or the empty set when the published room
+                // has no counterpart for it at all -- every object under a root the update
+                // dropped is one the update does not carry, so all of them are named.
+                var room = matched.TryGetValue(root, out var copy) && copy != null
+                    ? RelativePaths(copy)
+                    : new HashSet<string>();
+                foreach (var path in RelativePaths(root.transform))
+                    if (!room.Contains(path))
+                        found.Add(new Entry
+                        {
+                            name = path,
+                            kind = "destroyed",
+                            // The root's own path is absent only when the room has no copy
+                            // of the root at all -- it was removed, not emptied. Every
+                            // deeper path is a child the room's copy does not have.
+                            detail = path == root.name
+                                ? $"the pipeline's '{root.name}' is not in the update; removed"
+                                : $"under '{root.name}'; not in the published room",
+                        });
+            }
+
+            // The references that cross from a survivor to a casualty. A reference among
+            // survivors is fine; a reference among casualties dies with them. The instance's
+            // own components are scanned too, because a component the consumer attached to a
+            // placement was carried onto its copy -- and a carried reference to a doomed
+            // object dangles exactly the same way.
+            var survivors = new List<GameObject>(keptRoots) { instance };
+            foreach (var root in survivors)
+                foreach (var t in root.GetComponentsInChildren<Transform>(true))
+                    foreach (var component in t.GetComponents<Component>())
+                        CollectDangling(component, doomedSet, found);
+
+            return found;
+        }
+
+        /// <summary>
+        /// One component's serialized object references that point into <paramref name="doomed"/>.
+        ///
+        /// Walks the whole serialized tree with `Next(true)`, not `NextVisible(true)`: the
+        /// references that matter most here are array *elements* -- a `UnityEvent`'s
+        /// `m_Target`, a `PlayableDirector`'s `m_SceneBindings[].value` -- and `NextVisible`
+        /// does not descend into an array that is not expanded in the inspector. `so.Update()`
+        /// first, so effective (override-correct) values are read.
+        ///
+        /// `objectReferenceValue` is used rather than the raw instance ID: it resolves to the
+        /// live object, which is what the membership test needs, and the cost is trivial at
+        /// this size. `EditorUtility.IsPersistent` filters a reference to a project asset (a
+        /// prefab, a mesh, a clip), which never dangles -- checked before the membership test
+        /// so an ordinary asset reference is never reported.
+        /// </summary>
+        static void CollectDangling(Component component, HashSet<int> doomed, List<Entry> found)
+        {
+            if (component == null) return;   // a missing script leaves a null slot
+            var type = component.GetType();
+
+            try
+            {
+                var so = new SerializedObject(component);
+                so.Update();
+                var prop = so.GetIterator();
+                var guard = 0;
+                while (prop.Next(true) && guard++ < 100000)
+                {
+                    if (prop.propertyType != SerializedPropertyType.ObjectReference) continue;
+                    var target = prop.objectReferenceValue;
+                    if (target == null || EditorUtility.IsPersistent(target)) continue;
+                    var go = target as GameObject ?? (target as Component)?.gameObject;
+                    if (go == null || !doomed.Contains(go.GetInstanceID())) continue;
+                    found.Add(new Entry
+                    {
+                        name = component.gameObject.name,
+                        kind = "reference",
+                        detail = $"{type.Name}.{prop.propertyPath} -> '{go.name}'",
+                    });
+                }
+            }
+            catch (Exception)
+            {
+                // A component with no serializable form, or a transient one, is skipped
+                // rather than allowed to stop the scan.
+            }
+
+            // A legacy `Animation` binds by transform *path*, which the walk above cannot see
+            // -- and a camera pan or a moving prop is exactly the case the owner raised. The
+            // path is resolved against this object as the clip's root.
+            if (component is Animation animation && animation.GetClipCount() > 0)
+            {
+                foreach (var clip in EnumerateClips(animation))
+                    foreach (var binding in AnimationUtility.GetCurveBindings(clip))
+                    {
+                        var animated = AnimationUtility.GetAnimatedObject(animation.gameObject, binding);
+                        if (animated == null || EditorUtility.IsPersistent(animated)) continue;
+                        var go = animated as GameObject ?? (animated as Component)?.gameObject;
+                        if (go == null || !doomed.Contains(go.GetInstanceID())) continue;
+                        found.Add(new Entry
+                        {
+                            name = component.gameObject.name,
+                            kind = "animation",
+                            detail = $"{clip.name}: {binding.path} -> '{go.name}'",
+                        });
+                    }
+            }
+        }
+
+        /// <summary>The clips a legacy `Animation` component holds.</summary>
+        static IEnumerable<AnimationClip> EnumerateClips(Animation animation)
+        {
+            foreach (AnimationState state in animation)
+                if (state != null && state.clip != null)
+                    yield return state.clip;
+        }
+
+        /// <summary>Every object's `/`-joined path below <paramref name="root"/>, root included.</summary>
+        static HashSet<string> RelativePaths(Transform root)
+        {
+            var paths = new HashSet<string>();
+            void Walk(Transform t, string prefix)
+            {
+                var path = prefix.Length == 0 ? t.name : prefix + "/" + t.name;
+                paths.Add(path);
+                for (int i = 0; i < t.childCount; i++) Walk(t.GetChild(i), path);
+            }
+            Walk(root, "");
+            return paths;
+        }
+
+        /// <summary>The "with findings" tail of a summary line, empty when there are none.</summary>
+        static string Findings(int notCarried, int broken)
+        {
+            if (notCarried == 0 && broken == 0) return "";
+            var parts = new List<string>();
+            if (notCarried > 0) parts.Add($"{notCarried} not carried");
+            if (broken > 0) parts.Add($"{broken} broken (see the report)");
+            return "; " + string.Join(", ", parts);
         }
 
         // --- retiring a scene, and the models nothing uses any more -------------------
@@ -775,6 +1014,8 @@ namespace Project3D
                     migrated = new Entry[0],
                     carried = new Entry[0],
                     not_carried = new Entry[0],
+                    broken = new Entry[0],
+                    partial = false,
                 });
             }
 

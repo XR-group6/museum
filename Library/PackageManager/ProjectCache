@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639264514500000000
+      ticks: 639272780670000000
     m_Hash: 2405387192
   m_LockFileStatus:
     m_FilePath: /home/kan/Project3D/shared/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639264644080000000
+      ticks: 639272780670000000
     m_Hash: 517873031
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
