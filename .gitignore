@@ -3,3 +3,13 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+
+# Written into your own checkout by Project3D > Migrate Scene
+# (Assets/Project3D/Editor/MigrateScene.cs): local undo copies of what it
+# deleted. Not something to commit. See MIGRATION_README.md.
+Assets/Project3D/Backups/
+
+# Injected build scripting. It exists only while `make unity`/`unity-stage` is
+# running, and the pipeline deletes it again; CLAUDE.md says this is ignored on
+# purpose, and until now nothing actually said so. Never commit it.
+Assets/Editor/Project3D/
