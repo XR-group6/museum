@@ -109,7 +109,7 @@ Material:
     - _AddTexUVS: 0
     - _AddTexUspeed: 0
     - _AddTexVspeed: 0
-    - _AlphaAdd: 0
+    - _AlphaAdd: 1
     - _CAddTexUV: 0
     - _CAddTexUVT: 1
     - _CenterU: 0.5
@@ -155,7 +155,7 @@ Material:
     - _DistortTexAR: 1
     - _DistortTex_Uspeed: -0.1
     - _DistortTex_Vspeed: -0.05
-    - _Dst: 10
+    - _Dst: 1
     - _EdgeLength: 2
     - _FNLfanxiangkaiguan: 0
     - _Face: 1
@@ -198,7 +198,7 @@ Material:
     - _Parallax: 0
     - _Pass: 0
     - _Reference: 0
-    - _Scr: 5
+    - _Scr: 1
     - _ScreenAsMain: 0
     - _StaticNormalOffset: 0
     - _StaticNormalScale: 0
@@ -237,7 +237,7 @@ Material:
     - _DIssloveColor: {r: 0.5113207, g: 0.6790451, b: 1, a: 1}
     - _DepthColor: {r: 0, g: 0, b: 0, a: 0}
     - _Dir: {r: 0, g: 0, b: 0, a: 0}
-    - _MainColor: {r: 0.9471494, g: 6.0147395, b: 10.680627, a: 1}
+    - _MainColor: {r: 0.074166164, g: 0.85768676, b: 1.5723269, a: 1}
     - _MainTexRefine: {r: 1, g: 1, b: 2, a: 0}
     - _TexCenter: {r: 0, g: 0, b: 0, a: 0}
     - _fnl_color: {r: 1, g: 1, b: 1, a: 0}

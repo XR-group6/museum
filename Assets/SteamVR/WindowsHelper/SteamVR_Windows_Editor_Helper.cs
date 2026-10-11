@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System;
+using System.Reflection;
 
 namespace Valve.VR
 {
@@ -20,19 +21,37 @@ namespace Valve.VR
         {
 #if UNITY_EDITOR
     #if UNITY_STANDALONE_WIN
-            const string userChoice = @"Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice";
-            using (Microsoft.Win32.RegistryKey userChoiceKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(userChoice))
+            try
             {
-                if (userChoiceKey == null)
-                {
-                    return BrowserApplication.Unknown;
-                }
+                const string userChoice = @"Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice";
 
-                object progIdValue = userChoiceKey.GetValue("Progid");
-                if (progIdValue == null)
-                {
+                // 通过反射访问注册表，避免编译期依赖 Microsoft.Win32.Registry 程序集
+                Type registryType = Type.GetType("Microsoft.Win32.Registry, Microsoft.Win32.Registry, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a");
+                if (registryType == null)
+                    registryType = Type.GetType("Microsoft.Win32.Registry");
+                if (registryType == null)
                     return BrowserApplication.Unknown;
-                }
+
+                PropertyInfo currentUserProp = registryType.GetProperty("CurrentUser", BindingFlags.Public | BindingFlags.Static);
+                if (currentUserProp == null)
+                    return BrowserApplication.Unknown;
+
+                object currentUser = currentUserProp.GetValue(null, null);
+                MethodInfo openSubKey = currentUser.GetType().GetMethod("OpenSubKey", new[] { typeof(string) });
+                object userChoiceKey = openSubKey.Invoke(currentUser, new object[] { userChoice });
+
+                if (userChoiceKey == null)
+                    return BrowserApplication.Unknown;
+
+                MethodInfo getValue = userChoiceKey.GetType().GetMethod("GetValue", new[] { typeof(string) });
+                object progIdValue = getValue.Invoke(userChoiceKey, new object[] { "Progid" });
+
+                IDisposable disposable = userChoiceKey as IDisposable;
+                if (disposable != null)
+                    disposable.Dispose();
+
+                if (progIdValue == null)
+                    return BrowserApplication.Unknown;
 
                 string browserId = progIdValue.ToString().ToLower();
 
@@ -50,6 +69,10 @@ namespace Valve.VR
                     return BrowserApplication.Edge;
                 else
                     return BrowserApplication.Unknown;
+            }
+            catch
+            {
+                return BrowserApplication.Unknown;
             }
     #else
             return BrowserApplication.Firefox;

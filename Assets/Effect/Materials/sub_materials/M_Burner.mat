@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Dissolve_Tex:
-        m_Texture: {fileID: 2800000, guid: 974243771261a5045866e2023ec7393e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 77b316197bcca754c983ae7031a35087, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Main_Tex:
@@ -62,24 +62,28 @@ Material:
     - _BUILTIN_ZWriteControl: 0
     - _ClipRate: 0.3
     - _Dissolve_Amount: 1
-    - _Dissolve_Scale: 0.03
-    - _Edge_Width: 0.03
+    - _Dissolve_Scale: -0.219
+    - _Edge_Width: 0.002
     - _Emission: 1
-    - _Emission_Intensity: 1
+    - _Emission_Intensity: 20
+    - _Float: 10
+    - _Fresnel_Intensity: 1
+    - _Fresnel_Power: 4.25
     - _Noise_Intensity: 0.27
     - _UV: 0
     m_Colors:
-    - _Color: {r: 1.4980391, g: 1.4980391, b: 1.4980391, a: 0}
+    - _Color: {r: 10.680627, g: 10.680627, b: 10.680627, a: 0}
     - _Dissolve_Tex_Offest: {r: 0, g: 0.27, b: 0, a: 0}
-    - _Dissolve_Tex_Tile: {r: 1, g: 1, b: 0, a: 0}
-    - _Edge_Color: {r: 0.79559743, g: 0.8869775, b: 1, a: 0}
+    - _Dissolve_Tex_Tile: {r: 3, g: 0.1, b: 0, a: 0}
+    - _Edge_Color: {r: 1, g: 0.5502357, b: 0, a: 0}
+    - _Fresnel_Color: {r: 1, g: 0.895221, b: 0.3075471, a: 0}
     - _Main_Tex_Speed: {r: 0.1, g: 0.05, b: 0, a: 0}
     - _Main_Tex_UV: {r: 1, g: 1, b: 0, a: 0}
     - _Main_UV_Flow: {r: 0.02, g: 0.02, b: 0, a: 0}
     - _Main_UV_Tile: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _Mask_Tex_Offest: {r: 0, g: 0, b: 0, a: 0}
     - _Mask_Tex_Tile: {r: 1, g: 1, b: 0, a: 0}
-    - _Noise_Flow: {r: 0, g: -0.17, b: 0, a: 0}
+    - _Noise_Flow: {r: 0.02, g: -0.05, b: 0, a: 0}
     - _Noise_Tile: {r: 1, g: 3, b: 0, a: 0}
     - _Noise_UV_Flow: {r: 0, g: 0, b: 0, a: 0}
     - _Noise_UV_Tile: {r: 1, g: 1, b: 0, a: 0}

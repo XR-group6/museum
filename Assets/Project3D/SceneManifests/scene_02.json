@@ -1,0 +1,9312 @@
+{
+  "bounds": {
+    "dims": [
+      93.5233,
+      99.413,
+      20.507
+    ],
+    "max": [
+      45.9128,
+      48.75,
+      18.807
+    ],
+    "min": [
+      -47.6106,
+      -50.663,
+      -1.7
+    ]
+  },
+  "lighting": {
+    "accents": [
+      {
+        "at": [
+          0.0,
+          -2.11,
+          1.31
+        ],
+        "colour": [
+          1.0,
+          0.72,
+          0.42
+        ],
+        "energy": 6.0,
+        "name": "candle_flame",
+        "range": 2.5
+      },
+      {
+        "at": [
+          1.9,
+          1.56,
+          0.42
+        ],
+        "colour": [
+          1.0,
+          0.55,
+          0.25
+        ],
+        "energy": 20.0,
+        "name": "stove_fire",
+        "range": 3.0
+      }
+    ],
+    "fill": null,
+    "lights": [],
+    "world": null
+  },
+  "placements": [
+    {
+      "asset": "village_ground",
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          45.75,
+          48.75,
+          15.9142
+        ],
+        "min": [
+          -45.75,
+          -48.75,
+          -1.2
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "village_ground",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "house",
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          2.76,
+          2.8,
+          3.85
+        ],
+        "min": [
+          -2.76,
+          -2.8,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "house_roof",
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          3.295,
+          3.41,
+          4.7
+        ],
+        "min": [
+          -3.295,
+          -3.41,
+          2.4637
+        ]
+      },
+      "container": true,
+      "mount": "surface",
+      "name": "house_roof",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "stove_flue",
+      "at": [
+        2.3,
+        2.2,
+        2.3
+      ],
+      "bounds": {
+        "max": [
+          2.43,
+          2.33,
+          3.32
+        ],
+        "min": [
+          2.17,
+          2.07,
+          2.3
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "stove_flue",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "cottage_b",
+      "at": [
+        -9.0,
+        -1.1,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -5.41,
+          2.5941,
+          4.85
+        ],
+        "min": [
+          -12.59,
+          -4.7941,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_01",
+      "room": "village",
+      "rz": -5.19
+    },
+    {
+      "asset": "cottage_c",
+      "at": [
+        8.4,
+        -1.35,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          11.4078,
+          2.2863,
+          4.55
+        ],
+        "min": [
+          5.3922,
+          -4.9863,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_02",
+      "room": "village",
+      "rz": -11.95
+    },
+    {
+      "asset": "cottage_b",
+      "at": [
+        -16.299999,
+        -9.93,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          -12.5943,
+          -6.125,
+          5.41
+        ],
+        "min": [
+          -20.0057,
+          -13.735,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_03",
+      "room": "village",
+      "rz": 7.38
+    },
+    {
+      "asset": "village_house",
+      "at": [
+        -6.69,
+        -11.01,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          -2.7174,
+          -6.7392,
+          5.26
+        ],
+        "min": [
+          -10.6626,
+          -15.2808,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_04",
+      "room": "village",
+      "rz": -24.95
+    },
+    {
+      "asset": "cottage_c",
+      "at": [
+        2.11,
+        -10.1,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          4.9364,
+          -6.5826,
+          5.11
+        ],
+        "min": [
+          -0.7164,
+          -13.6174,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_05",
+      "room": "village",
+      "rz": -8.16
+    },
+    {
+      "asset": "village_house",
+      "at": [
+        11.62,
+        -10.8,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          14.6667,
+          -7.1869,
+          5.26
+        ],
+        "min": [
+          8.5733,
+          -14.4131,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_06",
+      "room": "village",
+      "rz": -4.37
+    },
+    {
+      "asset": "cottage_c",
+      "at": [
+        -16.6,
+        -21.1,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          -14.0365,
+          -17.7663,
+          5.11
+        ],
+        "min": [
+          -19.1635,
+          -24.4337,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_07",
+      "room": "village",
+      "rz": 3.07
+    },
+    {
+      "asset": "village_house",
+      "at": [
+        -7.63,
+        -19.379999,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          -4.0082,
+          -15.3351,
+          5.26
+        ],
+        "min": [
+          -11.2518,
+          -23.4249,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_08",
+      "room": "village",
+      "rz": -15.89
+    },
+    {
+      "asset": "cottage_b",
+      "at": [
+        4.33,
+        -20.459999,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          8.0822,
+          -16.6105,
+          5.41
+        ],
+        "min": [
+          0.5778,
+          -24.3095,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_09",
+      "room": "village",
+      "rz": -8.29
+    },
+    {
+      "asset": "village_house",
+      "at": [
+        12.01,
+        -19.15,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          15.3234,
+          -15.3301,
+          5.26
+        ],
+        "min": [
+          8.6966,
+          -22.9699,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_10",
+      "room": "village",
+      "rz": -9.38
+    },
+    {
+      "asset": "cottage_b",
+      "at": [
+        -14.31,
+        -29.67,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          -10.5689,
+          -25.8312,
+          5.41
+        ],
+        "min": [
+          -18.0511,
+          -33.5088,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_11",
+      "room": "village",
+      "rz": 8.07
+    },
+    {
+      "asset": "village_house",
+      "at": [
+        -2.82,
+        -28.65,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          0.9426,
+          -24.5094,
+          5.26
+        ],
+        "min": [
+          -6.5826,
+          -32.7906,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_12",
+      "room": "village",
+      "rz": -19.24
+    },
+    {
+      "asset": "cottage_c",
+      "at": [
+        6.39,
+        -29.9,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          9.3441,
+          -26.2981,
+          5.11
+        ],
+        "min": [
+          3.4359,
+          -33.5019,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_13",
+      "room": "village",
+      "rz": -10.8
+    },
+    {
+      "asset": "cottage_b",
+      "at": [
+        14.27,
+        -29.52,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          17.8426,
+          -25.8426,
+          5.41
+        ],
+        "min": [
+          10.6974,
+          -33.1974,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_14",
+      "room": "village",
+      "rz": -4.87
+    },
+    {
+      "asset": "cottage_b",
+      "at": [
+        -16.200001,
+        -42.0,
+        2.962
+      ],
+      "bounds": {
+        "max": [
+          -12.5155,
+          -38.2154,
+          7.812
+        ],
+        "min": [
+          -19.8845,
+          -45.7846,
+          2.962
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_15",
+      "room": "village",
+      "rz": 6.97
+    },
+    {
+      "asset": "village_house",
+      "at": [
+        -5.6,
+        -41.900002,
+        3.224
+      ],
+      "bounds": {
+        "max": [
+          -1.5597,
+          -37.5918,
+          7.924
+        ],
+        "min": [
+          -9.6403,
+          -46.2082,
+          3.224
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_16",
+      "room": "village",
+      "rz": -27.06
+    },
+    {
+      "asset": "cottage_c",
+      "at": [
+        4.8,
+        -41.799999,
+        3.488
+      ],
+      "bounds": {
+        "max": [
+          7.705,
+          -38.2301,
+          8.038
+        ],
+        "min": [
+          1.895,
+          -45.3699,
+          3.488
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_17",
+      "room": "village",
+      "rz": -9.77
+    },
+    {
+      "asset": "village_house",
+      "at": [
+        14.6,
+        -42.0,
+        3.481
+      ],
+      "bounds": {
+        "max": [
+          17.5094,
+          -38.4969,
+          8.181
+        ],
+        "min": [
+          11.6906,
+          -45.5031,
+          3.481
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "cottage_18",
+      "room": "village",
+      "rz": -1.95
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -18.5,
+        -15.75,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          -17.4213,
+          -14.8349,
+          5.06
+        ],
+        "min": [
+          -19.4364,
+          -16.7575,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_01",
+      "room": "village",
+      "rz": 12.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -15.35,
+        -15.75,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          -14.0936,
+          -14.5725,
+          5.06
+        ],
+        "min": [
+          -16.4368,
+          -16.9216,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_02",
+      "room": "village",
+      "rz": 47.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -8.7,
+        -30.049999,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          -7.8084,
+          -29.1047,
+          5.06
+        ],
+        "min": [
+          -9.4675,
+          -30.8795,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_03",
+      "room": "village",
+      "rz": 88.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -8.18,
+        -27.040001,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          -6.9827,
+          -25.9805,
+          5.06
+        ],
+        "min": [
+          -9.2178,
+          -28.1575,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_04",
+      "room": "village",
+      "rz": 25.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        1.05,
+        -32.450001,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          2.2339,
+          -31.2943,
+          5.06
+        ],
+        "min": [
+          0.0275,
+          -33.5532,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_05",
+      "room": "village",
+      "rz": 63.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -2.1,
+        -21.049999,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          -1.1085,
+          -20.2326,
+          5.06
+        ],
+        "min": [
+          -2.9615,
+          -21.9765,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_06",
+      "room": "village",
+      "rz": 5.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -1.35,
+        -9.3,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          -0.2373,
+          -8.1892,
+          5.06
+        ],
+        "min": [
+          -2.3101,
+          -10.3364,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_07",
+      "room": "village",
+      "rz": 71.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        7.6,
+        -6.2,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          8.8436,
+          -5.0721,
+          5.06
+        ],
+        "min": [
+          6.523,
+          -7.3603,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_08",
+      "room": "village",
+      "rz": 34.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        14.3,
+        -4.56,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          15.5274,
+          -3.3835,
+          5.06
+        ],
+        "min": [
+          13.2392,
+          -5.7041,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_09",
+      "room": "village",
+      "rz": 56.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        21.4,
+        -9.6,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          22.5407,
+          -8.6119,
+          5.06
+        ],
+        "min": [
+          20.4105,
+          -10.6651,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_10",
+      "room": "village",
+      "rz": 18.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        21.27,
+        -19.559999,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          22.2897,
+          -18.5157,
+          5.06
+        ],
+        "min": [
+          20.3909,
+          -20.5094,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_11",
+      "room": "village",
+      "rz": 79.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        21.25,
+        -30.0,
+        0.56
+      ],
+      "bounds": {
+        "max": [
+          22.5085,
+          -28.8379,
+          5.06
+        ],
+        "min": [
+          20.1607,
+          -31.1739,
+          0.56
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_12",
+      "room": "village",
+      "rz": 41.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -20.4,
+        -37.200001,
+        2.939
+      ],
+      "bounds": {
+        "max": [
+          -19.1733,
+          -36.0991,
+          7.439
+        ],
+        "min": [
+          -21.4628,
+          -38.3448,
+          2.939
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_13",
+      "room": "village",
+      "rz": 30.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -10.2,
+        -38.200001,
+        3.187
+      ],
+      "bounds": {
+        "max": [
+          -9.0088,
+          -37.0403,
+          7.687
+        ],
+        "min": [
+          -11.229,
+          -39.3101,
+          3.187
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_14",
+      "room": "village",
+      "rz": 62.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -0.6,
+        -37.799999,
+        3.261
+      ],
+      "bounds": {
+        "max": [
+          0.5112,
+          -36.8471,
+          7.761
+        ],
+        "min": [
+          -1.5643,
+          -38.8377,
+          3.261
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_15",
+      "room": "village",
+      "rz": 15.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        9.4,
+        -38.400002,
+        3.495
+      ],
+      "bounds": {
+        "max": [
+          10.2916,
+          -37.4547,
+          7.995
+        ],
+        "min": [
+          8.6325,
+          -39.2295,
+          3.495
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_16",
+      "room": "village",
+      "rz": 88.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        18.200001,
+        -37.400002,
+        3.475
+      ],
+      "bounds": {
+        "max": [
+          19.4591,
+          -36.2345,
+          7.975
+        ],
+        "min": [
+          17.1103,
+          -38.5744,
+          3.475
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_17",
+      "room": "village",
+      "rz": 42.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        6.4,
+        -47.200001,
+        3.843
+      ],
+      "bounds": {
+        "max": [
+          7.3915,
+          -46.3826,
+          8.343
+        ],
+        "min": [
+          5.5385,
+          -48.1265,
+          3.843
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_18",
+      "room": "village",
+      "rz": 5.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -12.4,
+        -47.0,
+        3.107
+      ],
+      "bounds": {
+        "max": [
+          -11.2873,
+          -45.8892,
+          7.607
+        ],
+        "min": [
+          -13.3601,
+          -48.0364,
+          3.107
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "tree_19",
+      "room": "village",
+      "rz": 71.0
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -44.998486,
+        -47.946415,
+        14.025
+      ],
+      "bounds": {
+        "max": [
+          -41.3044,
+          -44.2523,
+          17.525
+        ],
+        "min": [
+          -48.6926,
+          -51.6405,
+          14.025
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_001",
+      "room": "west_hill",
+      "rz": 61.9
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -44.74678,
+        -40.525967,
+        13.472
+      ],
+      "bounds": {
+        "max": [
+          -41.8115,
+          -37.5907,
+          18.522
+        ],
+        "min": [
+          -47.682,
+          -43.4612,
+          13.472
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_002",
+      "room": "west_hill",
+      "rz": 74.3
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -43.937618,
+        -38.307728,
+        13.995
+      ],
+      "bounds": {
+        "max": [
+          -40.1452,
+          -34.5153,
+          17.495
+        ],
+        "min": [
+          -47.73,
+          -42.1001,
+          13.995
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_003",
+      "room": "west_hill",
+      "rz": -124.2
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -43.763645,
+        -35.444977,
+        13.111
+      ],
+      "bounds": {
+        "max": [
+          -40.9035,
+          -32.5849,
+          16.611
+        ],
+        "min": [
+          -46.6237,
+          -38.3051,
+          13.111
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_004",
+      "room": "west_hill",
+      "rz": -92.8
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -44.879585,
+        -32.791683,
+        12.628
+      ],
+      "bounds": {
+        "max": [
+          -42.351,
+          -30.2631,
+          17.678
+        ],
+        "min": [
+          -47.4082,
+          -35.3203,
+          12.628
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_005",
+      "room": "west_hill",
+      "rz": 176.3
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -44.815659,
+        -29.623178,
+        13.031
+      ],
+      "bounds": {
+        "max": [
+          -40.9557,
+          -25.7632,
+          16.531
+        ],
+        "min": [
+          -48.6756,
+          -33.4831,
+          13.031
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_006",
+      "room": "west_hill",
+      "rz": -46.2
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -45.078278,
+        -26.885357,
+        12.905
+      ],
+      "bounds": {
+        "max": [
+          -41.9339,
+          -23.741,
+          17.955
+        ],
+        "min": [
+          -48.2226,
+          -30.0297,
+          12.905
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_007",
+      "room": "west_hill",
+      "rz": -24.1
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -44.862091,
+        -23.280012,
+        12.143
+      ],
+      "bounds": {
+        "max": [
+          -42.2207,
+          -20.6386,
+          17.193
+        ],
+        "min": [
+          -47.5035,
+          -25.9214,
+          12.143
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_008",
+      "room": "west_hill",
+      "rz": -96.7
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -43.379353,
+        -20.062862,
+        11.194
+      ],
+      "bounds": {
+        "max": [
+          -40.1636,
+          -16.8471,
+          14.694
+        ],
+        "min": [
+          -46.5951,
+          -23.2786,
+          11.194
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_009",
+      "room": "west_hill",
+      "rz": -78.6
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -44.256351,
+        -17.717396,
+        10.483
+      ],
+      "bounds": {
+        "max": [
+          -40.4976,
+          -13.9586,
+          13.983
+        ],
+        "min": [
+          -48.0151,
+          -21.4762,
+          10.483
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_010",
+      "room": "west_hill",
+      "rz": 121.8
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -44.589539,
+        -14.004161,
+        9.776
+      ],
+      "bounds": {
+        "max": [
+          -42.5094,
+          -11.924,
+          15.176
+        ],
+        "min": [
+          -46.6697,
+          -16.0843,
+          9.776
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_011",
+      "room": "west_hill",
+      "rz": 6.1
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -44.217461,
+        -11.581203,
+        9.751
+      ],
+      "bounds": {
+        "max": [
+          -41.0092,
+          -8.3729,
+          13.251
+        ],
+        "min": [
+          -47.4257,
+          -14.7895,
+          9.751
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_012",
+      "room": "west_hill",
+      "rz": -168.8
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -43.580051,
+        -9.049279,
+        10.096
+      ],
+      "bounds": {
+        "max": [
+          -40.908,
+          -6.3772,
+          15.496
+        ],
+        "min": [
+          -46.2521,
+          -11.7213,
+          10.096
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_013",
+      "room": "west_hill",
+      "rz": -43.6
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -44.141575,
+        -6.100506,
+        10.809
+      ],
+      "bounds": {
+        "max": [
+          -41.5444,
+          -3.5033,
+          15.859
+        ],
+        "min": [
+          -46.7387,
+          -8.6977,
+          10.809
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_014",
+      "room": "west_hill",
+      "rz": 84.5
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -43.991867,
+        -2.184946,
+        11.459
+      ],
+      "bounds": {
+        "max": [
+          -40.5043,
+          1.3027,
+          14.959
+        ],
+        "min": [
+          -47.4795,
+          -5.6725,
+          11.459
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_015",
+      "room": "west_hill",
+      "rz": 19.6
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -44.667084,
+        0.317805,
+        12.081
+      ],
+      "bounds": {
+        "max": [
+          -42.0659,
+          2.919,
+          17.481
+        ],
+        "min": [
+          -47.2683,
+          -2.2834,
+          12.081
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_016",
+      "room": "west_hill",
+      "rz": -31.7
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -44.572769,
+        4.103474,
+        12.487
+      ],
+      "bounds": {
+        "max": [
+          -41.054,
+          7.6222,
+          15.987
+        ],
+        "min": [
+          -48.0915,
+          0.5847,
+          12.487
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_017",
+      "room": "west_hill",
+      "rz": -110.7
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -44.830486,
+        7.482871,
+        12.14
+      ],
+      "bounds": {
+        "max": [
+          -42.1793,
+          10.1341,
+          17.54
+        ],
+        "min": [
+          -47.4817,
+          4.8317,
+          12.14
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_018",
+      "room": "west_hill",
+      "rz": 52.3
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -45.130276,
+        9.63729,
+        11.622
+      ],
+      "bounds": {
+        "max": [
+          -42.3969,
+          12.3706,
+          16.672
+        ],
+        "min": [
+          -47.8636,
+          6.904,
+          11.622
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_019",
+      "room": "west_hill",
+      "rz": 9.3
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -41.119064,
+        -46.572243,
+        12.836
+      ],
+      "bounds": {
+        "max": [
+          -39.1484,
+          -44.6016,
+          18.236
+        ],
+        "min": [
+          -43.0897,
+          -48.5429,
+          12.836
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_020",
+      "room": "west_hill",
+      "rz": 177.5
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -41.48299,
+        -41.87751,
+        12.964
+      ],
+      "bounds": {
+        "max": [
+          -39.3767,
+          -39.7713,
+          18.364
+        ],
+        "min": [
+          -43.5892,
+          -43.9838,
+          12.964
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_021",
+      "room": "west_hill",
+      "rz": -173.0
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -40.661324,
+        -38.222195,
+        13.407
+      ],
+      "bounds": {
+        "max": [
+          -38.0178,
+          -35.5787,
+          18.807
+        ],
+        "min": [
+          -43.3048,
+          -40.8657,
+          13.407
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_022",
+      "room": "west_hill",
+      "rz": -126.5
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -40.787693,
+        -34.970314,
+        12.236
+      ],
+      "bounds": {
+        "max": [
+          -36.9303,
+          -31.1129,
+          15.736
+        ],
+        "min": [
+          -44.6451,
+          -38.8277,
+          12.236
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_023",
+      "room": "west_hill",
+      "rz": -132.6
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -42.015244,
+        -31.678225,
+        12.663
+      ],
+      "bounds": {
+        "max": [
+          -38.683,
+          -28.346,
+          17.713
+        ],
+        "min": [
+          -45.3475,
+          -35.0105,
+          12.663
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_024",
+      "room": "west_hill",
+      "rz": -143.1
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -40.943348,
+        -30.001539,
+        12.455
+      ],
+      "bounds": {
+        "max": [
+          -37.7369,
+          -26.795,
+          17.505
+        ],
+        "min": [
+          -44.1498,
+          -33.208,
+          12.455
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_025",
+      "room": "west_hill",
+      "rz": 62.7
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -41.152874,
+        -25.783684,
+        12.294
+      ],
+      "bounds": {
+        "max": [
+          -37.8206,
+          -22.4514,
+          17.344
+        ],
+        "min": [
+          -44.4851,
+          -29.1159,
+          12.294
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_026",
+      "room": "west_hill",
+      "rz": -36.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -41.511925,
+        -23.422712,
+        11.913
+      ],
+      "bounds": {
+        "max": [
+          -38.9518,
+          -20.8626,
+          17.313
+        ],
+        "min": [
+          -44.0721,
+          -25.9828,
+          11.913
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_027",
+      "room": "west_hill",
+      "rz": 28.3
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -40.754711,
+        -20.310118,
+        10.752
+      ],
+      "bounds": {
+        "max": [
+          -38.0871,
+          -17.6425,
+          16.152
+        ],
+        "min": [
+          -43.4223,
+          -22.9777,
+          10.752
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_028",
+      "room": "west_hill",
+      "rz": 131.4
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -40.473225,
+        -17.127123,
+        9.796
+      ],
+      "bounds": {
+        "max": [
+          -38.0668,
+          -14.7207,
+          15.196
+        ],
+        "min": [
+          -42.8797,
+          -19.5336,
+          9.796
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_029",
+      "room": "west_hill",
+      "rz": -160.8
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -40.56094,
+        -14.597209,
+        9.406
+      ],
+      "bounds": {
+        "max": [
+          -36.76,
+          -10.7962,
+          12.906
+        ],
+        "min": [
+          -44.3619,
+          -18.3982,
+          9.406
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_030",
+      "room": "west_hill",
+      "rz": -145.1
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -41.585815,
+        -10.64237,
+        9.707
+      ],
+      "bounds": {
+        "max": [
+          -38.6506,
+          -7.7071,
+          14.757
+        ],
+        "min": [
+          -44.521,
+          -13.5776,
+          9.707
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_031",
+      "room": "west_hill",
+      "rz": -164.3
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -40.368103,
+        -8.290093,
+        9.651
+      ],
+      "bounds": {
+        "max": [
+          -36.7287,
+          -4.6507,
+          13.151
+        ],
+        "min": [
+          -44.0075,
+          -11.9294,
+          9.651
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_032",
+      "room": "west_hill",
+      "rz": -154.5
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -41.521545,
+        -4.553274,
+        11.055
+      ],
+      "bounds": {
+        "max": [
+          -39.5228,
+          -2.5545,
+          16.455
+        ],
+        "min": [
+          -43.5203,
+          -6.552,
+          11.055
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_033",
+      "room": "west_hill",
+      "rz": -86.6
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -41.817165,
+        -1.398866,
+        11.476
+      ],
+      "bounds": {
+        "max": [
+          -38.5253,
+          1.893,
+          14.976
+        ],
+        "min": [
+          -45.109,
+          -4.6907,
+          11.476
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_034",
+      "room": "west_hill",
+      "rz": -166.5
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -41.01807,
+        4.523929,
+        11.95
+      ],
+      "bounds": {
+        "max": [
+          -38.4284,
+          7.1136,
+          17.0
+        ],
+        "min": [
+          -43.6077,
+          1.9343,
+          11.95
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_035",
+      "room": "west_hill",
+      "rz": 95.3
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -41.864189,
+        7.639343,
+        11.911
+      ],
+      "bounds": {
+        "max": [
+          -38.6192,
+          10.8843,
+          16.961
+        ],
+        "min": [
+          -45.1092,
+          4.3944,
+          11.911
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_036",
+      "room": "west_hill",
+      "rz": -60.4
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -41.821346,
+        9.758202,
+        11.413
+      ],
+      "bounds": {
+        "max": [
+          -38.5687,
+          13.0109,
+          16.463
+        ],
+        "min": [
+          -45.074,
+          6.5055,
+          11.413
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_037",
+      "room": "west_hill",
+      "rz": -149.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -38.334595,
+        -47.888126,
+        12.139
+      ],
+      "bounds": {
+        "max": [
+          -36.364,
+          -45.9175,
+          17.539
+        ],
+        "min": [
+          -40.3052,
+          -49.8588,
+          12.139
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_038",
+      "room": "west_hill",
+      "rz": -87.5
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -37.404137,
+        -44.441917,
+        10.461
+      ],
+      "bounds": {
+        "max": [
+          -34.0979,
+          -41.1357,
+          15.511
+        ],
+        "min": [
+          -40.7103,
+          -47.7481,
+          10.461
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_039",
+      "room": "west_hill",
+      "rz": 34.2
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -37.670105,
+        -42.076263,
+        10.823
+      ],
+      "bounds": {
+        "max": [
+          -35.3234,
+          -39.7295,
+          16.223
+        ],
+        "min": [
+          -40.0168,
+          -44.423,
+          10.823
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_040",
+      "room": "west_hill",
+      "rz": 73.6
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -38.71244,
+        -38.150314,
+        12.222
+      ],
+      "bounds": {
+        "max": [
+          -36.2802,
+          -35.7181,
+          17.622
+        ],
+        "min": [
+          -41.1446,
+          -40.5825,
+          12.222
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_041",
+      "room": "west_hill",
+      "rz": 69.5
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -38.366661,
+        -31.898951,
+        10.573
+      ],
+      "bounds": {
+        "max": [
+          -35.3015,
+          -28.8337,
+          15.623
+        ],
+        "min": [
+          -41.4319,
+          -34.9642,
+          10.573
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_042",
+      "room": "west_hill",
+      "rz": 69.4
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -39.031967,
+        -28.979677,
+        11.285
+      ],
+      "bounds": {
+        "max": [
+          -36.8505,
+          -26.7983,
+          16.685
+        ],
+        "min": [
+          -41.2134,
+          -31.1611,
+          11.285
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_043",
+      "room": "west_hill",
+      "rz": 9.7
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -38.151051,
+        -26.520969,
+        10.454
+      ],
+      "bounds": {
+        "max": [
+          -34.5095,
+          -22.8794,
+          13.954
+        ],
+        "min": [
+          -41.7926,
+          -30.1626,
+          10.454
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_044",
+      "room": "west_hill",
+      "rz": -25.6
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -38.124069,
+        -23.225389,
+        9.855
+      ],
+      "bounds": {
+        "max": [
+          -35.6655,
+          -20.7668,
+          15.255
+        ],
+        "min": [
+          -40.5826,
+          -25.6839,
+          9.855
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_045",
+      "room": "west_hill",
+      "rz": 111.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -38.648792,
+        -20.09148,
+        9.455
+      ],
+      "bounds": {
+        "max": [
+          -36.0413,
+          -17.484,
+          14.855
+        ],
+        "min": [
+          -41.2563,
+          -22.699,
+          9.455
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_046",
+      "room": "west_hill",
+      "rz": -32.3
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -37.721291,
+        -17.873455,
+        8.297
+      ],
+      "bounds": {
+        "max": [
+          -33.8758,
+          -14.0279,
+          11.797
+        ],
+        "min": [
+          -41.5668,
+          -21.719,
+          8.297
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_047",
+      "room": "west_hill",
+      "rz": -129.9
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -39.149113,
+        -14.111855,
+        8.629
+      ],
+      "bounds": {
+        "max": [
+          -36.0196,
+          -10.9824,
+          13.679
+        ],
+        "min": [
+          -42.2786,
+          -17.2413,
+          8.629
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_048",
+      "room": "west_hill",
+      "rz": -66.6
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -37.591751,
+        -11.536695,
+        7.616
+      ],
+      "bounds": {
+        "max": [
+          -33.8768,
+          -7.8218,
+          11.116
+        ],
+        "min": [
+          -41.3067,
+          -15.2516,
+          7.616
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_049",
+      "room": "west_hill",
+      "rz": 60.8
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -37.862858,
+        -8.728767,
+        8.081
+      ],
+      "bounds": {
+        "max": [
+          -34.1668,
+          -5.0327,
+          11.581
+        ],
+        "min": [
+          -41.5589,
+          -12.4248,
+          8.081
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_050",
+      "room": "west_hill",
+      "rz": -118.2
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -37.990284,
+        -5.962783,
+        8.729
+      ],
+      "bounds": {
+        "max": [
+          -34.9688,
+          -2.9413,
+          12.229
+        ],
+        "min": [
+          -41.0118,
+          -8.9843,
+          8.729
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_051",
+      "room": "west_hill",
+      "rz": -173.5
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -37.683475,
+        -3.098084,
+        8.651
+      ],
+      "bounds": {
+        "max": [
+          -35.2993,
+          -0.7139,
+          13.701
+        ],
+        "min": [
+          -40.0676,
+          -5.4822,
+          8.651
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_052",
+      "room": "west_hill",
+      "rz": -89.9
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -37.406796,
+        1.11912,
+        9.261
+      ],
+      "bounds": {
+        "max": [
+          -34.3344,
+          4.1916,
+          14.311
+        ],
+        "min": [
+          -40.4792,
+          -1.9533,
+          9.261
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_053",
+      "room": "west_hill",
+      "rz": -69.1
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -37.362247,
+        4.094212,
+        9.419
+      ],
+      "bounds": {
+        "max": [
+          -34.1895,
+          7.267,
+          14.469
+        ],
+        "min": [
+          -40.535,
+          0.9214,
+          9.419
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_054",
+      "room": "west_hill",
+      "rz": 25.5
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -38.45689,
+        6.847609,
+        10.096
+      ],
+      "bounds": {
+        "max": [
+          -35.9857,
+          9.3188,
+          15.496
+        ],
+        "min": [
+          -40.9281,
+          4.3764,
+          10.096
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_055",
+      "room": "west_hill",
+      "rz": -22.6
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -38.497654,
+        8.921556,
+        9.775
+      ],
+      "bounds": {
+        "max": [
+          -35.9973,
+          11.4219,
+          15.175
+        ],
+        "min": [
+          -40.998,
+          6.4212,
+          9.775
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_056",
+      "room": "west_hill",
+      "rz": 65.7
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -35.020866,
+        -47.612354,
+        9.908
+      ],
+      "bounds": {
+        "max": [
+          -31.6088,
+          -44.2003,
+          13.408
+        ],
+        "min": [
+          -38.4329,
+          -51.0244,
+          9.908
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_057",
+      "room": "west_hill",
+      "rz": -17.1
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -35.004421,
+        -43.439339,
+        9.203
+      ],
+      "bounds": {
+        "max": [
+          -32.0271,
+          -40.462,
+          14.253
+        ],
+        "min": [
+          -37.9818,
+          -46.4167,
+          9.203
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_058",
+      "room": "west_hill",
+      "rz": -107.2
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -36.083817,
+        -41.506706,
+        9.936
+      ],
+      "bounds": {
+        "max": [
+          -33.897,
+          -39.3199,
+          15.336
+        ],
+        "min": [
+          -38.2706,
+          -43.6935,
+          9.936
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_059",
+      "room": "west_hill",
+      "rz": -99.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -35.10545,
+        -37.722668,
+        9.895
+      ],
+      "bounds": {
+        "max": [
+          -32.4373,
+          -35.0545,
+          15.295
+        ],
+        "min": [
+          -37.7736,
+          -40.3908,
+          9.895
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_060",
+      "room": "west_hill",
+      "rz": 138.4
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -35.862759,
+        -35.497055,
+        9.167
+      ],
+      "bounds": {
+        "max": [
+          -33.6706,
+          -33.3049,
+          14.567
+        ],
+        "min": [
+          -38.0549,
+          -37.6892,
+          9.167
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_061",
+      "room": "west_hill",
+      "rz": -100.1
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -35.155037,
+        -31.869339,
+        8.314
+      ],
+      "bounds": {
+        "max": [
+          -32.2546,
+          -28.9689,
+          11.814
+        ],
+        "min": [
+          -38.0555,
+          -34.7698,
+          8.314
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_062",
+      "room": "west_hill",
+      "rz": 93.7
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -35.078976,
+        -26.489819,
+        8.304
+      ],
+      "bounds": {
+        "max": [
+          -32.5816,
+          -23.9925,
+          13.354
+        ],
+        "min": [
+          -37.5763,
+          -28.9872,
+          8.304
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_063",
+      "room": "west_hill",
+      "rz": -92.9
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -35.255322,
+        -23.303831,
+        7.955
+      ],
+      "bounds": {
+        "max": [
+          -31.6582,
+          -19.7068,
+          11.455
+        ],
+        "min": [
+          -38.8524,
+          -26.9009,
+          7.955
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_064",
+      "room": "west_hill",
+      "rz": 23.7
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -35.413128,
+        -19.902967,
+        7.361
+      ],
+      "bounds": {
+        "max": [
+          -32.2086,
+          -16.6985,
+          10.861
+        ],
+        "min": [
+          -38.6176,
+          -23.1075,
+          7.361
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_065",
+      "room": "west_hill",
+      "rz": 78.9
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -34.437283,
+        -17.545158,
+        6.512
+      ],
+      "bounds": {
+        "max": [
+          -31.7422,
+          -14.85,
+          11.562
+        ],
+        "min": [
+          -37.1324,
+          -20.2403,
+          6.512
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_066",
+      "room": "west_hill",
+      "rz": 8.2
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -35.248882,
+        -14.829854,
+        6.487
+      ],
+      "bounds": {
+        "max": [
+          -32.9896,
+          -12.5706,
+          11.887
+        ],
+        "min": [
+          -37.5082,
+          -17.0891,
+          6.487
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_067",
+      "room": "west_hill",
+      "rz": 167.3
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -34.530037,
+        -5.683867,
+        6.842
+      ],
+      "bounds": {
+        "max": [
+          -31.7662,
+          -2.92,
+          11.892
+        ],
+        "min": [
+          -37.2939,
+          -8.4477,
+          6.842
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_068",
+      "room": "west_hill",
+      "rz": -100.2
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -34.575523,
+        -2.818152,
+        6.841
+      ],
+      "bounds": {
+        "max": [
+          -31.2387,
+          0.5186,
+          10.341
+        ],
+        "min": [
+          -37.9123,
+          -6.1549,
+          6.841
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_069",
+      "room": "west_hill",
+      "rz": -14.8
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -34.964897,
+        0.373453,
+        7.552
+      ],
+      "bounds": {
+        "max": [
+          -31.6414,
+          3.6969,
+          12.602
+        ],
+        "min": [
+          -38.2884,
+          -2.95,
+          7.552
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_070",
+      "room": "west_hill",
+      "rz": 125.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -35.027622,
+        3.607881,
+        7.829
+      ],
+      "bounds": {
+        "max": [
+          -33.0538,
+          5.5817,
+          13.229
+        ],
+        "min": [
+          -37.0014,
+          1.6341,
+          7.829
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_071",
+      "room": "west_hill",
+      "rz": -87.4
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -35.308983,
+        9.288131,
+        7.508
+      ],
+      "bounds": {
+        "max": [
+          -32.1839,
+          12.4133,
+          12.558
+        ],
+        "min": [
+          -38.4341,
+          6.163,
+          7.508
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_072",
+      "room": "west_hill",
+      "rz": 156.8
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -32.89032,
+        -46.624584,
+        8.717
+      ],
+      "bounds": {
+        "max": [
+          -30.87,
+          -44.6043,
+          14.117
+        ],
+        "min": [
+          -34.9106,
+          -48.6449,
+          8.717
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_073",
+      "room": "west_hill",
+      "rz": 85.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -31.65934,
+        -40.552738,
+        8.231
+      ],
+      "bounds": {
+        "max": [
+          -29.5163,
+          -38.4097,
+          13.631
+        ],
+        "min": [
+          -33.8024,
+          -42.6958,
+          8.231
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_074",
+      "room": "west_hill",
+      "rz": -98.3
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -31.679155,
+        -37.380272,
+        8.36
+      ],
+      "bounds": {
+        "max": [
+          -28.3774,
+          -34.0785,
+          13.41
+        ],
+        "min": [
+          -34.9809,
+          -40.682,
+          8.36
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_075",
+      "room": "west_hill",
+      "rz": 123.8
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -32.843464,
+        -35.088722,
+        7.44
+      ],
+      "bounds": {
+        "max": [
+          -30.6567,
+          -32.9019,
+          12.84
+        ],
+        "min": [
+          -35.0303,
+          -37.2755,
+          7.44
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_076",
+      "room": "west_hill",
+      "rz": 9.9
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -32.902637,
+        -32.506874,
+        7.128
+      ],
+      "bounds": {
+        "max": [
+          -29.0651,
+          -28.6694,
+          10.628
+        ],
+        "min": [
+          -36.7401,
+          -36.3444,
+          7.128
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_077",
+      "room": "west_hill",
+      "rz": -51.3
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -32.258053,
+        -29.372225,
+        6.98
+      ],
+      "bounds": {
+        "max": [
+          -28.7393,
+          -25.8535,
+          10.48
+        ],
+        "min": [
+          -35.7768,
+          -32.891,
+          6.98
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_078",
+      "room": "west_hill",
+      "rz": 20.7
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -32.375309,
+        -26.637285,
+        6.963
+      ],
+      "bounds": {
+        "max": [
+          -29.0419,
+          -23.3039,
+          10.463
+        ],
+        "min": [
+          -35.7087,
+          -29.9707,
+          6.963
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_079",
+      "room": "west_hill",
+      "rz": -104.7
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -31.678726,
+        -23.744614,
+        6.336
+      ],
+      "bounds": {
+        "max": [
+          -28.485,
+          -20.5509,
+          11.386
+        ],
+        "min": [
+          -34.8725,
+          -26.9384,
+          6.336
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_080",
+      "room": "west_hill",
+      "rz": 153.4
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -32.762104,
+        -20.148472,
+        6.315
+      ],
+      "bounds": {
+        "max": [
+          -30.6331,
+          -18.0195,
+          11.715
+        ],
+        "min": [
+          -34.8911,
+          -22.2775,
+          6.315
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_081",
+      "room": "west_hill",
+      "rz": 82.2
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -31.668427,
+        -16.681147,
+        5.437
+      ],
+      "bounds": {
+        "max": [
+          -28.4463,
+          -13.459,
+          10.487
+        ],
+        "min": [
+          -34.8906,
+          -19.9033,
+          5.437
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_082",
+      "room": "west_hill",
+      "rz": 118.2
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -31.718399,
+        -6.040503,
+        5.717
+      ],
+      "bounds": {
+        "max": [
+          -29.0649,
+          -3.387,
+          11.117
+        ],
+        "min": [
+          -34.3719,
+          -8.694,
+          5.717
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_083",
+      "room": "west_hill",
+      "rz": -128.1
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -31.642673,
+        -1.524132,
+        5.721
+      ],
+      "bounds": {
+        "max": [
+          -28.0011,
+          2.1175,
+          9.221
+        ],
+        "min": [
+          -35.2843,
+          -5.1657,
+          5.721
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_084",
+      "room": "west_hill",
+      "rz": 64.4
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -32.548771,
+        -0.014725,
+        6.341
+      ],
+      "bounds": {
+        "max": [
+          -29.4095,
+          3.1245,
+          9.841
+        ],
+        "min": [
+          -35.688,
+          -3.1539,
+          6.341
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_085",
+      "room": "west_hill",
+      "rz": -9.4
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -32.35675,
+        2.887609,
+        6.453
+      ],
+      "bounds": {
+        "max": [
+          -29.6937,
+          5.5507,
+          11.853
+        ],
+        "min": [
+          -35.0198,
+          0.2245,
+          6.453
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_086",
+      "room": "west_hill",
+      "rz": -130.1
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -32.809235,
+        6.751847,
+        6.594
+      ],
+      "bounds": {
+        "max": [
+          -30.1377,
+          9.4234,
+          11.994
+        ],
+        "min": [
+          -35.4808,
+          4.0803,
+          6.594
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_087",
+      "room": "west_hill",
+      "rz": 43.2
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -32.796665,
+        8.927284,
+        6.363
+      ],
+      "bounds": {
+        "max": [
+          -30.1567,
+          11.5672,
+          11.763
+        ],
+        "min": [
+          -35.4366,
+          6.2873,
+          6.363
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_088",
+      "room": "west_hill",
+      "rz": -36.0
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -29.998875,
+        -46.46957,
+        7.449
+      ],
+      "bounds": {
+        "max": [
+          -26.9919,
+          -43.4626,
+          12.499
+        ],
+        "min": [
+          -33.0058,
+          -49.4765,
+          7.449
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_089",
+      "room": "west_hill",
+      "rz": 71.7
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -28.627707,
+        -43.36562,
+        6.37
+      ],
+      "bounds": {
+        "max": [
+          -25.3604,
+          -40.0984,
+          11.42
+        ],
+        "min": [
+          -31.895,
+          -46.6329,
+          6.37
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_090",
+      "room": "west_hill",
+      "rz": 58.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -29.383821,
+        -40.447941,
+        7.008
+      ],
+      "bounds": {
+        "max": [
+          -26.7837,
+          -37.8478,
+          12.408
+        ],
+        "min": [
+          -31.9839,
+          -43.048,
+          7.008
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_091",
+      "room": "west_hill",
+      "rz": -121.6
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -29.364529,
+        -38.361172,
+        7.048
+      ],
+      "bounds": {
+        "max": [
+          -25.7011,
+          -34.6977,
+          10.548
+        ],
+        "min": [
+          -33.028,
+          -42.0246,
+          7.048
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_092",
+      "room": "west_hill",
+      "rz": -26.6
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -28.759747,
+        -35.889149,
+        5.438
+      ],
+      "bounds": {
+        "max": [
+          -25.9147,
+          -33.0441,
+          10.488
+        ],
+        "min": [
+          -31.6048,
+          -38.7342,
+          5.438
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_093",
+      "room": "west_hill",
+      "rz": -102.7
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -29.210697,
+        -26.257713,
+        4.963
+      ],
+      "bounds": {
+        "max": [
+          -26.9006,
+          -23.9476,
+          10.363
+        ],
+        "min": [
+          -31.5208,
+          -28.5678,
+          4.963
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_094",
+      "room": "west_hill",
+      "rz": 14.8
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -29.963886,
+        -22.520077,
+        5.207
+      ],
+      "bounds": {
+        "max": [
+          -27.8867,
+          -20.4429,
+          10.607
+        ],
+        "min": [
+          -32.0411,
+          -24.5973,
+          5.207
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_095",
+      "room": "west_hill",
+      "rz": 84.0
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -28.592352,
+        -20.572872,
+        4.102
+      ],
+      "bounds": {
+        "max": [
+          -25.2295,
+          -17.21,
+          9.152
+        ],
+        "min": [
+          -31.9552,
+          -23.9357,
+          4.102
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_096",
+      "room": "west_hill",
+      "rz": -47.4
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -29.397243,
+        -14.601859,
+        4.194
+      ],
+      "bounds": {
+        "max": [
+          -26.3129,
+          -11.5175,
+          9.244
+        ],
+        "min": [
+          -32.4816,
+          -17.6862,
+          4.194
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_097",
+      "room": "west_hill",
+      "rz": -21.4
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -29.49511,
+        -4.533271,
+        4.693
+      ],
+      "bounds": {
+        "max": [
+          -25.6555,
+          -0.6936,
+          8.193
+        ],
+        "min": [
+          -33.3348,
+          -8.3729,
+          4.693
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_098",
+      "room": "west_hill",
+      "rz": 129.0
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -28.576254,
+        -1.379207,
+        3.768
+      ],
+      "bounds": {
+        "max": [
+          -25.9047,
+          1.2923,
+          9.168
+        ],
+        "min": [
+          -31.2478,
+          -4.0508,
+          3.768
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_099",
+      "room": "west_hill",
+      "rz": 46.8
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -30.14677,
+        1.31144,
+        5.073
+      ],
+      "bounds": {
+        "max": [
+          -26.4158,
+          5.0424,
+          8.573
+        ],
+        "min": [
+          -33.8778,
+          -2.4195,
+          5.073
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_100",
+      "room": "west_hill",
+      "rz": -59.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -28.687984,
+        3.623518,
+        4.065
+      ],
+      "bounds": {
+        "max": [
+          -26.1445,
+          6.167,
+          9.465
+        ],
+        "min": [
+          -31.2315,
+          1.08,
+          4.065
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_101",
+      "room": "west_hill",
+      "rz": 62.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -28.678389,
+        6.005226,
+        4.029
+      ],
+      "bounds": {
+        "max": [
+          -26.1169,
+          8.5667,
+          9.429
+        ],
+        "min": [
+          -31.2399,
+          3.4438,
+          4.029
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_102",
+      "room": "west_hill",
+      "rz": -151.6
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -29.089237,
+        9.14407,
+        4.169
+      ],
+      "bounds": {
+        "max": [
+          -26.4417,
+          11.7916,
+          9.569
+        ],
+        "min": [
+          -31.7367,
+          6.4966,
+          4.169
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_103",
+      "room": "west_hill",
+      "rz": -37.1
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -27.027916,
+        -44.837246,
+        5.393
+      ],
+      "bounds": {
+        "max": [
+          -23.3398,
+          -41.1491,
+          8.893
+        ],
+        "min": [
+          -30.7161,
+          -48.5254,
+          5.393
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_104",
+      "room": "west_hill",
+      "rz": 152.2
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -25.555471,
+        -33.01059,
+        2.267
+      ],
+      "bounds": {
+        "max": [
+          -23.3474,
+          -30.8025,
+          7.667
+        ],
+        "min": [
+          -27.7635,
+          -35.2186,
+          2.267
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_105",
+      "room": "west_hill",
+      "rz": -169.3
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -26.235323,
+        -29.860899,
+        2.766
+      ],
+      "bounds": {
+        "max": [
+          -22.9709,
+          -26.5965,
+          7.816
+        ],
+        "min": [
+          -29.4997,
+          -33.1253,
+          2.766
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_106",
+      "room": "west_hill",
+      "rz": -149.1
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -26.357361,
+        -23.57552,
+        2.729
+      ],
+      "bounds": {
+        "max": [
+          -24.2005,
+          -21.4186,
+          8.129
+        ],
+        "min": [
+          -28.5143,
+          -25.7324,
+          2.729
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_107",
+      "room": "west_hill",
+      "rz": -98.8
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -25.783794,
+        -20.908588,
+        2.258
+      ],
+      "bounds": {
+        "max": [
+          -23.1261,
+          -18.2509,
+          7.658
+        ],
+        "min": [
+          -28.4415,
+          -23.5663,
+          2.258
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_108",
+      "room": "west_hill",
+      "rz": -141.1
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -25.688377,
+        -17.960073,
+        2.09
+      ],
+      "bounds": {
+        "max": [
+          -22.0022,
+          -14.2739,
+          5.59
+        ],
+        "min": [
+          -29.3745,
+          -21.6462,
+          2.09
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_109",
+      "room": "west_hill",
+      "rz": 152.3
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -26.802982,
+        -13.648985,
+        2.602
+      ],
+      "bounds": {
+        "max": [
+          -24.4452,
+          -11.2912,
+          8.002
+        ],
+        "min": [
+          -29.1608,
+          -16.0068,
+          2.602
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_110",
+      "room": "west_hill",
+      "rz": -163.1
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -26.603342,
+        -11.302847,
+        2.486
+      ],
+      "bounds": {
+        "max": [
+          -23.9805,
+          -8.68,
+          7.886
+        ],
+        "min": [
+          -29.2262,
+          -13.9257,
+          2.486
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_111",
+      "room": "west_hill",
+      "rz": -56.1
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -27.066978,
+        -8.026344,
+        2.854
+      ],
+      "bounds": {
+        "max": [
+          -24.4219,
+          -5.3813,
+          7.904
+        ],
+        "min": [
+          -29.712,
+          -10.6714,
+          2.854
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_112",
+      "room": "west_hill",
+      "rz": 83.2
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -25.950462,
+        -5.800917,
+        2.281
+      ],
+      "bounds": {
+        "max": [
+          -23.8762,
+          -3.7267,
+          7.681
+        ],
+        "min": [
+          -28.0247,
+          -7.8752,
+          2.281
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_113",
+      "room": "west_hill",
+      "rz": -95.9
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -25.506708,
+        3.822178,
+        1.732
+      ],
+      "bounds": {
+        "max": [
+          -22.5432,
+          6.7857,
+          6.782
+        ],
+        "min": [
+          -28.4702,
+          0.8586,
+          1.732
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_114",
+      "room": "west_hill",
+      "rz": 73.3
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -26.541965,
+        7.323747,
+        2.375
+      ],
+      "bounds": {
+        "max": [
+          -22.6896,
+          11.1761,
+          5.875
+        ],
+        "min": [
+          -30.3943,
+          3.4714,
+          2.375
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_115",
+      "room": "west_hill",
+      "rz": 138.8
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -22.604897,
+        -35.735081,
+        1.794
+      ],
+      "bounds": {
+        "max": [
+          -19.3711,
+          -32.5013,
+          6.844
+        ],
+        "min": [
+          -25.8387,
+          -38.9689,
+          1.794
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_116",
+      "room": "west_hill",
+      "rz": -28.9
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -22.719433,
+        -28.973341,
+        0.996
+      ],
+      "bounds": {
+        "max": [
+          -19.6039,
+          -25.8578,
+          4.496
+        ],
+        "min": [
+          -25.8349,
+          -32.0889,
+          0.996
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_117",
+      "room": "west_hill",
+      "rz": -171.2
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        -23.330738,
+        -26.955675,
+        1.2
+      ],
+      "bounds": {
+        "max": [
+          -21.1601,
+          -24.7851,
+          6.6
+        ],
+        "min": [
+          -25.5013,
+          -29.1263,
+          1.2
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_118",
+      "room": "west_hill",
+      "rz": -80.7
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -23.163317,
+        -23.930784,
+        1.114
+      ],
+      "bounds": {
+        "max": [
+          -19.9411,
+          -20.7086,
+          6.164
+        ],
+        "min": [
+          -26.3855,
+          -27.153,
+          1.114
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_119",
+      "room": "west_hill",
+      "rz": 28.2
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -22.603849,
+        -10.532656,
+        0.868
+      ],
+      "bounds": {
+        "max": [
+          -18.9341,
+          -6.8629,
+          4.368
+        ],
+        "min": [
+          -26.2736,
+          -14.2024,
+          0.868
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_120",
+      "room": "west_hill",
+      "rz": -63.1
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -23.287416,
+        7.36077,
+        0.615
+      ],
+      "bounds": {
+        "max": [
+          -19.9643,
+          10.6839,
+          4.115
+        ],
+        "min": [
+          -26.6106,
+          4.0376,
+          0.615
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_121",
+      "room": "west_hill",
+      "rz": 75.6
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        -22.462605,
+        10.174025,
+        0.333
+      ],
+      "bounds": {
+        "max": [
+          -19.1968,
+          13.4399,
+          5.383
+        ],
+        "min": [
+          -25.7285,
+          6.9082,
+          0.333
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_122",
+      "room": "west_hill",
+      "rz": -59.0
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -20.982761,
+        -29.00831,
+        0.62
+      ],
+      "bounds": {
+        "max": [
+          -17.7412,
+          -25.7667,
+          4.12
+        ],
+        "min": [
+          -24.2244,
+          -32.2499,
+          0.62
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_123",
+      "room": "west_hill",
+      "rz": -12.1
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -10.784642,
+        -41.333393,
+        3.199
+      ],
+      "bounds": {
+        "max": [
+          -7.9749,
+          -38.5236,
+          6.699
+        ],
+        "min": [
+          -13.5944,
+          -44.1432,
+          3.199
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_124",
+      "room": "hill",
+      "rz": 1.7
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -7.460887,
+        -35.302788,
+        1.343
+      ],
+      "bounds": {
+        "max": [
+          -4.162,
+          -32.0039,
+          4.843
+        ],
+        "min": [
+          -10.7598,
+          -38.6017,
+          1.343
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_125",
+      "room": "hill",
+      "rz": -166.3
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        -1.613748,
+        -47.90292,
+        4.485
+      ],
+      "bounds": {
+        "max": [
+          1.8563,
+          -44.4329,
+          7.985
+        ],
+        "min": [
+          -5.0838,
+          -51.373,
+          4.485
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_126",
+      "room": "hill_top",
+      "rz": -109.0
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        3.947069,
+        -48.104282,
+        4.912
+      ],
+      "bounds": {
+        "max": [
+          6.4601,
+          -45.5912,
+          9.962
+        ],
+        "min": [
+          1.434,
+          -50.6173,
+          4.912
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_127",
+      "room": "hill_top",
+      "rz": -176.7
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        6.382156,
+        -35.909386,
+        2.199
+      ],
+      "bounds": {
+        "max": [
+          9.1311,
+          -33.1604,
+          5.699
+        ],
+        "min": [
+          3.6332,
+          -38.6584,
+          2.199
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_128",
+      "room": "hill",
+      "rz": -179.6
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        9.808577,
+        -46.506836,
+        3.653
+      ],
+      "bounds": {
+        "max": [
+          12.5316,
+          -43.7838,
+          8.703
+        ],
+        "min": [
+          7.0856,
+          -49.2298,
+          3.653
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_129",
+      "room": "hill_top",
+      "rz": 99.0
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        15.475195,
+        -34.895626,
+        1.208
+      ],
+      "bounds": {
+        "max": [
+          18.735,
+          -31.6358,
+          4.708
+        ],
+        "min": [
+          12.2154,
+          -38.1554,
+          1.208
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_130",
+      "room": "hill",
+      "rz": 77.4
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        22.245825,
+        -47.476551,
+        3.975
+      ],
+      "bounds": {
+        "max": [
+          25.611,
+          -44.1113,
+          9.025
+        ],
+        "min": [
+          18.8806,
+          -50.8418,
+          3.975
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_131",
+      "room": "east_hill",
+      "rz": 43.9
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        22.357975,
+        -44.139019,
+        3.415
+      ],
+      "bounds": {
+        "max": [
+          25.1712,
+          -41.3258,
+          8.465
+        ],
+        "min": [
+          19.5448,
+          -46.9522,
+          3.415
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_132",
+      "room": "east_hill",
+      "rz": 78.3
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        24.128311,
+        -43.631931,
+        3.49
+      ],
+      "bounds": {
+        "max": [
+          26.6616,
+          -41.0987,
+          8.89
+        ],
+        "min": [
+          21.5951,
+          -46.1652,
+          3.49
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_133",
+      "room": "east_hill",
+      "rz": 116.4
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        24.983114,
+        -41.662014,
+        3.596
+      ],
+      "bounds": {
+        "max": [
+          27.0485,
+          -39.5966,
+          8.996
+        ],
+        "min": [
+          22.9177,
+          -43.7274,
+          3.596
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_134",
+      "room": "east_hill",
+      "rz": -5.6
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        25.097469,
+        -38.663822,
+        3.513
+      ],
+      "bounds": {
+        "max": [
+          27.6645,
+          -36.0968,
+          8.563
+        ],
+        "min": [
+          22.5305,
+          -41.2308,
+          3.513
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_135",
+      "room": "east_hill",
+      "rz": -175.3
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        25.12756,
+        -26.881124,
+        0.892
+      ],
+      "bounds": {
+        "max": [
+          28.4843,
+          -23.5243,
+          5.942
+        ],
+        "min": [
+          21.7708,
+          -30.2379,
+          0.892
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_136",
+      "room": "east_hill",
+      "rz": 139.2
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        25.338696,
+        -14.497072,
+        0.936
+      ],
+      "bounds": {
+        "max": [
+          27.7721,
+          -12.0637,
+          5.986
+        ],
+        "min": [
+          22.9053,
+          -16.9305,
+          0.936
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_137",
+      "room": "east_hill",
+      "rz": -1.3
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        24.368544,
+        3.294321,
+        0.094
+      ],
+      "bounds": {
+        "max": [
+          26.4399,
+          5.3656,
+          5.494
+        ],
+        "min": [
+          22.2972,
+          1.223,
+          0.094
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_138",
+      "room": "east_hill",
+      "rz": 84.2
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        25.002836,
+        6.818514,
+        0.091
+      ],
+      "bounds": {
+        "max": [
+          28.1381,
+          9.9538,
+          3.591
+        ],
+        "min": [
+          21.8675,
+          3.6832,
+          0.091
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_139",
+      "room": "east_hill",
+      "rz": -99.3
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        28.312262,
+        -47.098961,
+        4.837
+      ],
+      "bounds": {
+        "max": [
+          31.5317,
+          -43.8795,
+          8.337
+        ],
+        "min": [
+          25.0928,
+          -50.3184,
+          4.837
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_140",
+      "room": "east_hill",
+      "rz": -11.5
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        27.526318,
+        -41.068172,
+        4.175
+      ],
+      "bounds": {
+        "max": [
+          30.7416,
+          -37.8529,
+          9.225
+        ],
+        "min": [
+          24.311,
+          -44.2835,
+          4.175
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_141",
+      "room": "east_hill",
+      "rz": -152.2
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        27.252064,
+        -35.195007,
+        2.106
+      ],
+      "bounds": {
+        "max": [
+          29.3783,
+          -33.0688,
+          7.506
+        ],
+        "min": [
+          25.1259,
+          -37.3212,
+          2.106
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_142",
+      "room": "east_hill",
+      "rz": 97.7
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        27.788809,
+        -29.587505,
+        1.605
+      ],
+      "bounds": {
+        "max": [
+          29.8333,
+          -27.543,
+          7.005
+        ],
+        "min": [
+          25.7443,
+          -31.632,
+          1.605
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_143",
+      "room": "east_hill",
+      "rz": 4.9
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        28.249052,
+        -19.421028,
+        1.759
+      ],
+      "bounds": {
+        "max": [
+          31.487,
+          -16.1831,
+          5.259
+        ],
+        "min": [
+          25.0111,
+          -22.659,
+          1.759
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_144",
+      "room": "east_hill",
+      "rz": 168.0
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        28.345066,
+        -17.585087,
+        1.792
+      ],
+      "bounds": {
+        "max": [
+          30.5943,
+          -15.3358,
+          7.192
+        ],
+        "min": [
+          26.0958,
+          -19.8343,
+          1.792
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_145",
+      "room": "east_hill",
+      "rz": -167.7
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        28.298592,
+        -12.004283,
+        1.776
+      ],
+      "bounds": {
+        "max": [
+          31.9424,
+          -8.3605,
+          5.276
+        ],
+        "min": [
+          24.6548,
+          -15.6481,
+          1.776
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_146",
+      "room": "east_hill",
+      "rz": 64.3
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        27.275513,
+        -7.575333,
+        1.431
+      ],
+      "bounds": {
+        "max": [
+          29.8396,
+          -5.0112,
+          6.831
+        ],
+        "min": [
+          24.7114,
+          -10.1394,
+          1.431
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_147",
+      "room": "east_hill",
+      "rz": -151.4
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        28.435028,
+        -2.61659,
+        1.056
+      ],
+      "bounds": {
+        "max": [
+          31.3355,
+          0.2839,
+          4.556
+        ],
+        "min": [
+          25.5345,
+          -5.5171,
+          1.056
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_148",
+      "room": "east_hill",
+      "rz": 86.3
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        27.918114,
+        0.434699,
+        0.743
+      ],
+      "bounds": {
+        "max": [
+          31.2711,
+          3.7877,
+          5.793
+        ],
+        "min": [
+          24.5651,
+          -2.9183,
+          0.743
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_149",
+      "room": "east_hill",
+      "rz": -140.0
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        28.225945,
+        4.042947,
+        0.572
+      ],
+      "bounds": {
+        "max": [
+          30.3521,
+          6.1691,
+          5.972
+        ],
+        "min": [
+          26.0998,
+          1.9168,
+          0.572
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_150",
+      "room": "east_hill",
+      "rz": 82.3
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        27.986242,
+        9.775498,
+        0.194
+      ],
+      "bounds": {
+        "max": [
+          31.0286,
+          12.8179,
+          3.694
+        ],
+        "min": [
+          24.9439,
+          6.7331,
+          0.194
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_151",
+      "room": "east_hill",
+      "rz": -7.0
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        30.324207,
+        -47.852974,
+        6.09
+      ],
+      "bounds": {
+        "max": [
+          33.1108,
+          -45.0664,
+          9.59
+        ],
+        "min": [
+          27.5376,
+          -50.6395,
+          6.09
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_152",
+      "room": "east_hill",
+      "rz": -88.8
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        31.375706,
+        -44.682022,
+        5.594
+      ],
+      "bounds": {
+        "max": [
+          33.8809,
+          -42.1768,
+          10.994
+        ],
+        "min": [
+          28.8705,
+          -47.1872,
+          5.594
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_153",
+      "room": "east_hill",
+      "rz": 155.4
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        30.494991,
+        -35.384769,
+        3.325
+      ],
+      "bounds": {
+        "max": [
+          32.7764,
+          -33.1033,
+          8.725
+        ],
+        "min": [
+          28.2136,
+          -37.6662,
+          3.325
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_154",
+      "room": "east_hill",
+      "rz": -13.6
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        29.868263,
+        -32.660927,
+        2.356
+      ],
+      "bounds": {
+        "max": [
+          32.7284,
+          -29.8008,
+          5.856
+        ],
+        "min": [
+          27.0082,
+          -35.521,
+          2.356
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_155",
+      "room": "east_hill",
+      "rz": 87.2
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        31.479496,
+        -29.273001,
+        3.015
+      ],
+      "bounds": {
+        "max": [
+          34.1422,
+          -26.6103,
+          8.415
+        ],
+        "min": [
+          28.8168,
+          -31.9357,
+          3.015
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_156",
+      "room": "east_hill",
+      "rz": 140.0
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        30.489763,
+        -25.467203,
+        2.604
+      ],
+      "bounds": {
+        "max": [
+          32.8207,
+          -23.1363,
+          8.004
+        ],
+        "min": [
+          28.1588,
+          -27.7981,
+          2.604
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_157",
+      "room": "east_hill",
+      "rz": 15.7
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        30.069653,
+        -23.952892,
+        2.435
+      ],
+      "bounds": {
+        "max": [
+          33.4354,
+          -20.5871,
+          7.485
+        ],
+        "min": [
+          26.7039,
+          -27.3187,
+          2.435
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_158",
+      "room": "east_hill",
+      "rz": 135.3
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        30.925404,
+        -19.948643,
+        2.783
+      ],
+      "bounds": {
+        "max": [
+          34.1186,
+          -16.7554,
+          6.283
+        ],
+        "min": [
+          27.7322,
+          -23.1418,
+          2.783
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_159",
+      "room": "east_hill",
+      "rz": -10.8
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        31.151974,
+        -17.616375,
+        2.877
+      ],
+      "bounds": {
+        "max": [
+          34.2386,
+          -14.5297,
+          7.927
+        ],
+        "min": [
+          28.0653,
+          -20.703,
+          2.877
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_160",
+      "room": "east_hill",
+      "rz": 111.5
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        30.102591,
+        -14.241239,
+        2.448
+      ],
+      "bounds": {
+        "max": [
+          32.681,
+          -11.6629,
+          7.498
+        ],
+        "min": [
+          27.5242,
+          -16.8196,
+          2.448
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_161",
+      "room": "east_hill",
+      "rz": -85.0
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        31.269335,
+        -8.622553,
+        2.916
+      ],
+      "bounds": {
+        "max": [
+          33.6183,
+          -6.2736,
+          8.316
+        ],
+        "min": [
+          28.9204,
+          -10.9715,
+          2.916
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_162",
+      "room": "east_hill",
+      "rz": 73.5
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        31.559734,
+        -5.837776,
+        2.901
+      ],
+      "bounds": {
+        "max": [
+          34.2154,
+          -3.1821,
+          8.301
+        ],
+        "min": [
+          28.9041,
+          -8.4935,
+          2.901
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_163",
+      "room": "east_hill",
+      "rz": -141.5
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        30.84663,
+        -1.392369,
+        1.679
+      ],
+      "bounds": {
+        "max": [
+          34.0208,
+          1.7818,
+          5.179
+        ],
+        "min": [
+          27.6725,
+          -4.5665,
+          1.679
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_164",
+      "room": "east_hill",
+      "rz": -100.3
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        31.235231,
+        1.132576,
+        1.477
+      ],
+      "bounds": {
+        "max": [
+          34.2153,
+          4.1127,
+          6.527
+        ],
+        "min": [
+          28.2551,
+          -1.8475,
+          1.477
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_165",
+      "room": "east_hill",
+      "rz": -72.7
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        30.87821,
+        3.763788,
+        1.062
+      ],
+      "bounds": {
+        "max": [
+          34.2418,
+          7.1274,
+          6.112
+        ],
+        "min": [
+          27.5146,
+          0.4002,
+          1.062
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_166",
+      "room": "east_hill",
+      "rz": -47.1
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        31.22772,
+        9.580976,
+        0.398
+      ],
+      "bounds": {
+        "max": [
+          34.4378,
+          12.791,
+          5.448
+        ],
+        "min": [
+          28.0177,
+          6.3709,
+          0.398
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_167",
+      "room": "east_hill",
+      "rz": 27.5
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        32.885628,
+        -47.070248,
+        6.572
+      ],
+      "bounds": {
+        "max": [
+          34.9211,
+          -45.0348,
+          11.972
+        ],
+        "min": [
+          30.8501,
+          -49.1057,
+          6.572
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_168",
+      "room": "east_hill",
+      "rz": 94.6
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        34.45715,
+        -43.359463,
+        6.831
+      ],
+      "bounds": {
+        "max": [
+          38.3099,
+          -39.5067,
+          10.331
+        ],
+        "min": [
+          30.6044,
+          -47.2122,
+          6.831
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_169",
+      "room": "east_hill",
+      "rz": 48.7
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        33.635201,
+        -40.899899,
+        6.473
+      ],
+      "bounds": {
+        "max": [
+          36.869,
+          -37.6661,
+          11.523
+        ],
+        "min": [
+          30.4014,
+          -44.1337,
+          6.473
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_170",
+      "room": "east_hill",
+      "rz": -118.9
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        33.618084,
+        -38.450695,
+        6.34
+      ],
+      "bounds": {
+        "max": [
+          36.8113,
+          -35.2575,
+          9.84
+        ],
+        "min": [
+          30.4249,
+          -41.6439,
+          6.34
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_171",
+      "room": "east_hill",
+      "rz": -10.8
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        33.026142,
+        -35.216175,
+        4.28
+      ],
+      "bounds": {
+        "max": [
+          36.8813,
+          -31.361,
+          7.78
+        ],
+        "min": [
+          29.171,
+          -39.0713,
+          4.28
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_172",
+      "room": "east_hill",
+      "rz": -41.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        33.65604,
+        -31.952183,
+        3.963
+      ],
+      "bounds": {
+        "max": [
+          36.306,
+          -29.3022,
+          9.363
+        ],
+        "min": [
+          31.006,
+          -34.6022,
+          3.963
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_173",
+      "room": "east_hill",
+      "rz": -142.5
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        34.201313,
+        -28.915623,
+        4.204
+      ],
+      "bounds": {
+        "max": [
+          36.8741,
+          -26.2428,
+          9.604
+        ],
+        "min": [
+          31.5285,
+          -31.5884,
+          4.204
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_174",
+      "room": "east_hill",
+      "rz": -44.6
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        33.261677,
+        -26.864231,
+        3.789
+      ],
+      "bounds": {
+        "max": [
+          36.2418,
+          -23.8841,
+          8.839
+        ],
+        "min": [
+          30.2816,
+          -29.8443,
+          3.789
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_175",
+      "room": "east_hill",
+      "rz": 107.3
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        34.009323,
+        -23.83415,
+        4.119
+      ],
+      "bounds": {
+        "max": [
+          36.634,
+          -21.2095,
+          9.519
+        ],
+        "min": [
+          31.3847,
+          -26.4588,
+          4.119
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_176",
+      "room": "east_hill",
+      "rz": 55.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        34.593704,
+        -20.461931,
+        4.377
+      ],
+      "bounds": {
+        "max": [
+          36.6562,
+          -18.3995,
+          9.777
+        ],
+        "min": [
+          32.5313,
+          -22.5244,
+          4.377
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_177",
+      "room": "east_hill",
+      "rz": -84.5
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        34.01836,
+        -17.136362,
+        4.123
+      ],
+      "bounds": {
+        "max": [
+          36.0047,
+          -15.15,
+          9.523
+        ],
+        "min": [
+          32.032,
+          -19.1227,
+          4.123
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_178",
+      "room": "east_hill",
+      "rz": 87.0
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        33.920982,
+        -13.803751,
+        4.08
+      ],
+      "bounds": {
+        "max": [
+          36.8901,
+          -10.8347,
+          9.13
+        ],
+        "min": [
+          30.9519,
+          -16.7728,
+          4.08
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_179",
+      "room": "east_hill",
+      "rz": -73.1
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        33.954346,
+        -10.602944,
+        4.095
+      ],
+      "bounds": {
+        "max": [
+          36.6272,
+          -7.9301,
+          9.495
+        ],
+        "min": [
+          31.2815,
+          -13.2758,
+          4.095
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_180",
+      "room": "east_hill",
+      "rz": -44.8
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        34.359547,
+        -7.628789,
+        4.152
+      ],
+      "bounds": {
+        "max": [
+          37.6542,
+          -4.3341,
+          9.202
+        ],
+        "min": [
+          31.0648,
+          -10.9235,
+          4.152
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_181",
+      "room": "east_hill",
+      "rz": 33.2
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        33.753418,
+        -4.76745,
+        3.606
+      ],
+      "bounds": {
+        "max": [
+          36.6539,
+          -1.867,
+          7.106
+        ],
+        "min": [
+          30.8529,
+          -7.6679,
+          3.606
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_182",
+      "room": "east_hill",
+      "rz": 86.3
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        34.468105,
+        -1.410915,
+        2.708
+      ],
+      "bounds": {
+        "max": [
+          37.1409,
+          1.2618,
+          8.108
+        ],
+        "min": [
+          31.7953,
+          -4.0837,
+          2.708
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_183",
+      "room": "east_hill",
+      "rz": 45.5
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        33.881229,
+        0.05515,
+        2.273
+      ],
+      "bounds": {
+        "max": [
+          36.1254,
+          2.2993,
+          7.673
+        ],
+        "min": [
+          31.637,
+          -2.189,
+          2.273
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_184",
+      "room": "east_hill",
+      "rz": -77.9
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        33.364162,
+        4.415955,
+        1.337
+      ],
+      "bounds": {
+        "max": [
+          36.4245,
+          7.4763,
+          6.387
+        ],
+        "min": [
+          30.3038,
+          1.3556,
+          1.337
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_185",
+      "room": "east_hill",
+      "rz": 69.6
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        33.790878,
+        9.507057,
+        0.496
+      ],
+      "bounds": {
+        "max": [
+          36.8914,
+          12.6076,
+          5.546
+        ],
+        "min": [
+          30.6903,
+          6.4065,
+          0.496
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_186",
+      "room": "east_hill",
+      "rz": -22.1
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        35.972191,
+        -47.944664,
+        8.563
+      ],
+      "bounds": {
+        "max": [
+          38.9427,
+          -44.9742,
+          12.063
+        ],
+        "min": [
+          33.0017,
+          -50.9152,
+          8.563
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_187",
+      "room": "east_hill",
+      "rz": 174.7
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        36.781689,
+        -44.089554,
+        7.843
+      ],
+      "bounds": {
+        "max": [
+          40.6254,
+          -40.2459,
+          11.343
+        ],
+        "min": [
+          32.938,
+          -47.9332,
+          7.843
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_188",
+      "room": "east_hill",
+      "rz": -50.4
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        37.578087,
+        -41.200535,
+        8.139
+      ],
+      "bounds": {
+        "max": [
+          40.5416,
+          -38.237,
+          13.189
+        ],
+        "min": [
+          34.6146,
+          -44.1641,
+          8.139
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_189",
+      "room": "east_hill",
+      "rz": -73.3
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        37.14711,
+        -37.488636,
+        7.695
+      ],
+      "bounds": {
+        "max": [
+          40.2522,
+          -34.3835,
+          12.745
+        ],
+        "min": [
+          34.042,
+          -40.5937,
+          7.695
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_190",
+      "room": "east_hill",
+      "rz": 112.3
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        37.298771,
+        -36.125061,
+        6.654
+      ],
+      "bounds": {
+        "max": [
+          40.4958,
+          -32.9281,
+          10.154
+        ],
+        "min": [
+          34.1018,
+          -39.322,
+          6.654
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_191",
+      "room": "east_hill",
+      "rz": 10.9
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        36.831348,
+        -31.887217,
+        5.34
+      ],
+      "bounds": {
+        "max": [
+          39.4981,
+          -29.2205,
+          10.39
+        ],
+        "min": [
+          34.1646,
+          -34.5539,
+          5.34
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_192",
+      "room": "east_hill",
+      "rz": -82.6
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        37.30291,
+        -29.252384,
+        5.533
+      ],
+      "bounds": {
+        "max": [
+          40.7611,
+          -25.7942,
+          9.033
+        ],
+        "min": [
+          33.8447,
+          -32.7106,
+          5.533
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_193",
+      "room": "east_hill",
+      "rz": -161.4
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        36.326,
+        -26.857271,
+        5.128
+      ],
+      "bounds": {
+        "max": [
+          39.1996,
+          -23.9836,
+          8.628
+        ],
+        "min": [
+          33.4524,
+          -29.7309,
+          5.128
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_194",
+      "room": "east_hill",
+      "rz": 3.1
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        37.23764,
+        -23.039301,
+        5.507
+      ],
+      "bounds": {
+        "max": [
+          40.204,
+          -20.073,
+          10.557
+        ],
+        "min": [
+          34.2713,
+          -26.0056,
+          5.507
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_195",
+      "room": "east_hill",
+      "rz": -73.2
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        36.23365,
+        -20.024918,
+        5.089
+      ],
+      "bounds": {
+        "max": [
+          40.0944,
+          -16.1641,
+          8.589
+        ],
+        "min": [
+          32.3729,
+          -23.8857,
+          5.089
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_196",
+      "room": "east_hill",
+      "rz": -45.2
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        37.411648,
+        -17.92474,
+        5.577
+      ],
+      "bounds": {
+        "max": [
+          40.0028,
+          -15.3335,
+          10.977
+        ],
+        "min": [
+          34.8205,
+          -20.5159,
+          5.577
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_197",
+      "room": "east_hill",
+      "rz": -120.8
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        37.452698,
+        -14.119538,
+        5.594
+      ],
+      "bounds": {
+        "max": [
+          40.3532,
+          -11.2191,
+          9.094
+        ],
+        "min": [
+          34.5522,
+          -17.02,
+          5.594
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_198",
+      "room": "east_hill",
+      "rz": -86.3
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        37.153645,
+        -10.621789,
+        5.47
+      ],
+      "bounds": {
+        "max": [
+          39.5543,
+          -8.2211,
+          10.52
+        ],
+        "min": [
+          34.753,
+          -13.0225,
+          5.47
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_199",
+      "room": "east_hill",
+      "rz": 0.5
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        37.645782,
+        -8.175872,
+        5.504
+      ],
+      "bounds": {
+        "max": [
+          40.8469,
+          -4.9748,
+          10.554
+        ],
+        "min": [
+          34.4447,
+          -11.377,
+          5.504
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_200",
+      "room": "east_hill",
+      "rz": 27.0
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        36.756264,
+        -4.376662,
+        4.556
+      ],
+      "bounds": {
+        "max": [
+          40.0647,
+          -1.0683,
+          9.606
+        ],
+        "min": [
+          33.4479,
+          -7.6851,
+          4.556
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_201",
+      "room": "east_hill",
+      "rz": -145.6
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        36.675072,
+        -1.995122,
+        3.43
+      ],
+      "bounds": {
+        "max": [
+          39.1409,
+          0.4707,
+          8.83
+        ],
+        "min": [
+          34.2093,
+          -4.4609,
+          3.43
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_202",
+      "room": "east_hill",
+      "rz": -22.3
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        36.774559,
+        0.791397,
+        2.728
+      ],
+      "bounds": {
+        "max": [
+          39.3071,
+          3.3239,
+          7.778
+        ],
+        "min": [
+          34.2421,
+          -1.7411,
+          2.728
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_203",
+      "room": "east_hill",
+      "rz": -3.8
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        37.522648,
+        3.923311,
+        1.976
+      ],
+      "bounds": {
+        "max": [
+          39.7943,
+          6.195,
+          7.376
+        ],
+        "min": [
+          35.251,
+          1.6517,
+          1.976
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_204",
+      "room": "east_hill",
+      "rz": -76.8
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        37.244926,
+        6.230091,
+        1.316
+      ],
+      "bounds": {
+        "max": [
+          41.07,
+          10.0552,
+          4.816
+        ],
+        "min": [
+          33.4198,
+          2.405,
+          1.316
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_205",
+      "room": "east_hill",
+      "rz": -52.8
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        39.972809,
+        -46.870464,
+        9.399
+      ],
+      "bounds": {
+        "max": [
+          43.1431,
+          -43.7002,
+          12.899
+        ],
+        "min": [
+          36.8025,
+          -50.0408,
+          9.399
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_206",
+      "room": "east_hill",
+      "rz": 100.2
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        39.718967,
+        -44.089989,
+        8.968
+      ],
+      "bounds": {
+        "max": [
+          42.9127,
+          -40.8962,
+          14.018
+        ],
+        "min": [
+          36.5252,
+          -47.2837,
+          8.968
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_207",
+      "room": "east_hill",
+      "rz": -153.4
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        39.507244,
+        -40.536694,
+        8.862
+      ],
+      "bounds": {
+        "max": [
+          41.769,
+          -38.2749,
+          14.262
+        ],
+        "min": [
+          37.2455,
+          -42.7985,
+          8.862
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_208",
+      "room": "east_hill",
+      "rz": -102.8
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        40.436924,
+        -38.920303,
+        9.098
+      ],
+      "bounds": {
+        "max": [
+          43.4647,
+          -35.8925,
+          14.148
+        ],
+        "min": [
+          37.4092,
+          -41.9481,
+          9.098
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_209",
+      "room": "east_hill",
+      "rz": -70.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        39.61327,
+        -34.722271,
+        6.756
+      ],
+      "bounds": {
+        "max": [
+          41.5839,
+          -32.7516,
+          12.156
+        ],
+        "min": [
+          37.6426,
+          -36.6929,
+          6.756
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_210",
+      "room": "east_hill",
+      "rz": 92.5
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        40.385605,
+        -31.632746,
+        6.65
+      ],
+      "bounds": {
+        "max": [
+          43.0584,
+          -28.96,
+          12.05
+        ],
+        "min": [
+          37.7128,
+          -34.3055,
+          6.65
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_211",
+      "room": "east_hill",
+      "rz": -135.5
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        39.826679,
+        -29.433607,
+        6.471
+      ],
+      "bounds": {
+        "max": [
+          42.3397,
+          -26.9206,
+          11.521
+        ],
+        "min": [
+          37.3136,
+          -31.9467,
+          6.471
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_212",
+      "room": "east_hill",
+      "rz": 176.7
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        40.281216,
+        -26.199982,
+        6.617
+      ],
+      "bounds": {
+        "max": [
+          43.4841,
+          -22.9971,
+          11.667
+        ],
+        "min": [
+          37.0783,
+          -29.4029,
+          6.617
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_213",
+      "room": "east_hill",
+      "rz": -62.9
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        40.45475,
+        -22.904774,
+        6.671
+      ],
+      "bounds": {
+        "max": [
+          44.1769,
+          -19.1826,
+          10.171
+        ],
+        "min": [
+          36.7326,
+          -26.627,
+          6.671
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_214",
+      "room": "east_hill",
+      "rz": -60.4
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        39.19479,
+        -20.354692,
+        6.255
+      ],
+      "bounds": {
+        "max": [
+          41.8398,
+          -17.7096,
+          11.305
+        ],
+        "min": [
+          36.5497,
+          -22.9998,
+          6.255
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_215",
+      "room": "east_hill",
+      "rz": -96.8
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        39.451721,
+        -16.792839,
+        6.344
+      ],
+      "bounds": {
+        "max": [
+          42.0463,
+          -14.1982,
+          11.744
+        ],
+        "min": [
+          36.8571,
+          -19.3874,
+          6.344
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_216",
+      "room": "east_hill",
+      "rz": 121.1
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        39.532986,
+        -15.104282,
+        6.372
+      ],
+      "bounds": {
+        "max": [
+          42.1036,
+          -12.5337,
+          11.772
+        ],
+        "min": [
+          36.9624,
+          -17.6749,
+          6.372
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_217",
+      "room": "east_hill",
+      "rz": -29.1
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        39.311348,
+        -11.753757,
+        6.296
+      ],
+      "bounds": {
+        "max": [
+          42.5402,
+          -8.5249,
+          11.346
+        ],
+        "min": [
+          36.0825,
+          -14.9826,
+          6.296
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_218",
+      "room": "east_hill",
+      "rz": 118.6
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        39.901287,
+        -8.628815,
+        6.374
+      ],
+      "bounds": {
+        "max": [
+          43.2655,
+          -5.2646,
+          11.424
+        ],
+        "min": [
+          36.5371,
+          -11.993,
+          6.374
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_219",
+      "room": "east_hill",
+      "rz": -133.2
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        39.137466,
+        -5.280187,
+        5.545
+      ],
+      "bounds": {
+        "max": [
+          42.5805,
+          -1.8371,
+          9.045
+        ],
+        "min": [
+          35.6944,
+          -8.7232,
+          5.545
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_220",
+      "room": "east_hill",
+      "rz": -71.9
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        39.018272,
+        -2.359041,
+        4.193
+      ],
+      "bounds": {
+        "max": [
+          41.4427,
+          0.0654,
+          9.593
+        ],
+        "min": [
+          36.5939,
+          -4.7834,
+          4.193
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_221",
+      "room": "east_hill",
+      "rz": 159.9
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        39.764282,
+        0.85017,
+        3.382
+      ],
+      "bounds": {
+        "max": [
+          43.3853,
+          4.4712,
+          6.882
+        ],
+        "min": [
+          36.1433,
+          -2.7708,
+          3.382
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_222",
+      "room": "east_hill",
+      "rz": 114.7
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        39.970333,
+        3.669142,
+        2.467
+      ],
+      "bounds": {
+        "max": [
+          43.5525,
+          7.2513,
+          5.967
+        ],
+        "min": [
+          36.3881,
+          0.0869,
+          2.467
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_223",
+      "room": "east_hill",
+      "rz": -23.1
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        39.001793,
+        6.493027,
+        1.426
+      ],
+      "bounds": {
+        "max": [
+          41.3552,
+          8.8464,
+          6.826
+        ],
+        "min": [
+          36.6484,
+          4.1396,
+          1.426
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_224",
+      "room": "east_hill",
+      "rz": -106.7
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        40.227528,
+        9.442142,
+        0.762
+      ],
+      "bounds": {
+        "max": [
+          42.7195,
+          11.9341,
+          6.162
+        ],
+        "min": [
+          37.7356,
+          6.9502,
+          0.762
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_225",
+      "room": "east_hill",
+      "rz": -66.2
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        42.620152,
+        -48.022724,
+        11.579
+      ],
+      "bounds": {
+        "max": [
+          45.2886,
+          -45.3543,
+          16.979
+        ],
+        "min": [
+          39.9517,
+          -50.6912,
+          11.579
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_226",
+      "room": "east_hill",
+      "rz": 41.7
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        42.446918,
+        -44.259533,
+        10.225
+      ],
+      "bounds": {
+        "max": [
+          44.9036,
+          -41.8028,
+          15.625
+        ],
+        "min": [
+          39.9902,
+          -46.7163,
+          10.225
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_227",
+      "room": "east_hill",
+      "rz": 158.2
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        42.058937,
+        -41.593395,
+        9.808
+      ],
+      "bounds": {
+        "max": [
+          44.8502,
+          -38.8022,
+          13.308
+        ],
+        "min": [
+          39.2677,
+          -44.3846,
+          9.808
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_228",
+      "room": "east_hill",
+      "rz": 88.7
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        42.211571,
+        -38.739338,
+        9.85
+      ],
+      "bounds": {
+        "max": [
+          44.6552,
+          -36.2957,
+          15.25
+        ],
+        "min": [
+          39.7679,
+          -41.183,
+          9.85
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_229",
+      "room": "east_hill",
+      "rz": -21.1
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        42.777733,
+        -34.588737,
+        8.346
+      ],
+      "bounds": {
+        "max": [
+          46.0447,
+          -31.3218,
+          11.846
+        ],
+        "min": [
+          39.5107,
+          -37.8557,
+          8.346
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_230",
+      "room": "east_hill",
+      "rz": 77.2
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        43.535591,
+        -32.751808,
+        9.075
+      ],
+      "bounds": {
+        "max": [
+          46.8974,
+          -29.39,
+          14.125
+        ],
+        "min": [
+          40.1738,
+          -36.1136,
+          9.075
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_231",
+      "room": "east_hill",
+      "rz": 132.2
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        43.445789,
+        -28.781401,
+        8.948
+      ],
+      "bounds": {
+        "max": [
+          46.0578,
+          -26.1694,
+          13.998
+        ],
+        "min": [
+          40.8338,
+          -31.3934,
+          8.948
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_232",
+      "room": "east_hill",
+      "rz": 174.1
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        42.764694,
+        -26.246616,
+        8.023
+      ],
+      "bounds": {
+        "max": [
+          44.9407,
+          -24.0706,
+          13.423
+        ],
+        "min": [
+          40.5887,
+          -28.4226,
+          8.023
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_233",
+      "room": "east_hill",
+      "rz": 99.5
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        43.189114,
+        -23.774328,
+        8.587
+      ],
+      "bounds": {
+        "max": [
+          46.7862,
+          -20.1773,
+          12.087
+        ],
+        "min": [
+          39.592,
+          -27.3714,
+          8.587
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_234",
+      "room": "east_hill",
+      "rz": 113.7
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        43.360905,
+        -20.583931,
+        8.828
+      ],
+      "bounds": {
+        "max": [
+          46.7159,
+          -17.2289,
+          13.878
+        ],
+        "min": [
+          40.0059,
+          -23.9389,
+          8.828
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_235",
+      "room": "east_hill",
+      "rz": -130.4
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        43.359268,
+        -16.908234,
+        8.826
+      ],
+      "bounds": {
+        "max": [
+          46.4048,
+          -13.8627,
+          13.876
+        ],
+        "min": [
+          40.3138,
+          -19.9537,
+          8.826
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_236",
+      "room": "east_hill",
+      "rz": 109.8
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        42.025555,
+        -14.825081,
+        7.249
+      ],
+      "bounds": {
+        "max": [
+          45.4056,
+          -11.4451,
+          10.749
+        ],
+        "min": [
+          38.6456,
+          -18.2051,
+          7.249
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_237",
+      "room": "east_hill",
+      "rz": 16.1
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        42.617729,
+        -10.825051,
+        7.843
+      ],
+      "bounds": {
+        "max": [
+          45.0595,
+          -8.3833,
+          13.243
+        ],
+        "min": [
+          40.1759,
+          -13.2668,
+          7.843
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_238",
+      "room": "east_hill",
+      "rz": -69.0
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        42.557476,
+        -8.540891,
+        7.694
+      ],
+      "bounds": {
+        "max": [
+          45.5511,
+          -5.5473,
+          12.744
+        ],
+        "min": [
+          39.5639,
+          -11.5345,
+          7.694
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_239",
+      "room": "east_hill",
+      "rz": -72.2
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        42.666691,
+        -2.331417,
+        5.886
+      ],
+      "bounds": {
+        "max": [
+          46.3779,
+          1.3798,
+          9.386
+        ],
+        "min": [
+          38.9554,
+          -6.0427,
+          5.886
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_240",
+      "room": "east_hill",
+      "rz": -61.0
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        42.041641,
+        1.127296,
+        4.004
+      ],
+      "bounds": {
+        "max": [
+          44.879,
+          3.9647,
+          7.504
+        ],
+        "min": [
+          39.2043,
+          -1.7101,
+          4.004
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_241",
+      "room": "east_hill",
+      "rz": -177.7
+    },
+    {
+      "asset": "hill_tree",
+      "at": [
+        42.923084,
+        3.049196,
+        4.245
+      ],
+      "bounds": {
+        "max": [
+          46.2879,
+          6.414,
+          9.295
+        ],
+        "min": [
+          39.5583,
+          -0.3156,
+          4.245
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_242",
+      "room": "east_hill",
+      "rz": -133.6
+    },
+    {
+      "asset": "hill_tree_b",
+      "at": [
+        43.225048,
+        6.102453,
+        3.491
+      ],
+      "bounds": {
+        "max": [
+          45.8744,
+          8.7518,
+          8.891
+        ],
+        "min": [
+          40.5757,
+          3.4531,
+          3.491
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_243",
+      "room": "east_hill",
+      "rz": -52.6
+    },
+    {
+      "asset": "hill_tree_c",
+      "at": [
+        43.168179,
+        9.771408,
+        2.199
+      ],
+      "bounds": {
+        "max": [
+          46.3538,
+          12.957,
+          5.699
+        ],
+        "min": [
+          39.9826,
+          6.5858,
+          2.199
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_244",
+      "room": "east_hill",
+      "rz": 169.4
+    },
+    {
+      "asset": "altar",
+      "at": [
+        0.0,
+        -2.325,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          0.6,
+          -2.05,
+          0.95
+        ],
+        "min": [
+          -0.6,
+          -2.6,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "altar",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "ancestor_tablets",
+      "at": [
+        0.0,
+        -2.52,
+        0.95
+      ],
+      "bounds": {
+        "max": [
+          0.2,
+          -2.44,
+          1.33
+        ],
+        "min": [
+          -0.2,
+          -2.6,
+          0.95
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "ancestor_tablets",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "incense_burner",
+      "at": [
+        0.0,
+        -2.3,
+        0.95
+      ],
+      "bounds": {
+        "max": [
+          0.13,
+          -2.185,
+          1.3599
+        ],
+        "min": [
+          -0.13,
+          -2.415,
+          0.95
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "incense_burner",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "candles",
+      "at": [
+        0.0,
+        -2.11,
+        0.95
+      ],
+      "bounds": {
+        "max": [
+          0.15,
+          -2.06,
+          1.28
+        ],
+        "min": [
+          -0.15,
+          -2.16,
+          0.95
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "candles",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "cushion",
+      "at": [
+        0.35,
+        -1.8,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          0.585,
+          -1.565,
+          0.245
+        ],
+        "min": [
+          0.115,
+          -2.035,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "cushion_01",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "cushion",
+      "at": [
+        -0.35,
+        -1.8,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          -0.115,
+          -1.565,
+          0.245
+        ],
+        "min": [
+          -0.585,
+          -2.035,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "cushion_02",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "cupboard",
+      "at": [
+        -2.05,
+        -2.33,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          -1.62,
+          -2.08,
+          1.34
+        ],
+        "min": [
+          -2.48,
+          -2.56,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "cupboard",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "rice_jar",
+      "at": [
+        2.22,
+        -2.33,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          2.48,
+          -2.07,
+          0.63
+        ],
+        "min": [
+          1.96,
+          -2.59,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rice_jar",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "pickle_crock",
+      "at": [
+        2.22,
+        -1.72,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          2.39,
+          -1.55,
+          0.47
+        ],
+        "min": [
+          2.05,
+          -1.89,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "pickle_crock",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "straw_cape",
+      "at": [
+        -2.41,
+        1.3,
+        1.0
+      ],
+      "bounds": {
+        "max": [
+          -2.32,
+          1.7,
+          2.57
+        ],
+        "min": [
+          -2.5,
+          0.9,
+          1.0
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "straw_cape",
+      "room": "house",
+      "rz": 90.0
+    },
+    {
+      "asset": "bed",
+      "at": [
+        -1.95,
+        -0.55,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          -1.43,
+          0.4,
+          1.95
+        ],
+        "min": [
+          -2.47,
+          -1.5,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bed",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "cot",
+      "at": [
+        1.55,
+        -0.16,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          1.975,
+          0.79,
+          1.08
+        ],
+        "min": [
+          1.125,
+          -1.11,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "cot",
+      "room": "house",
+      "rz": 90.0
+    },
+    {
+      "asset": "stool",
+      "at": [
+        -2.25,
+        -1.78,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          -2.09,
+          -1.62,
+          0.55
+        ],
+        "min": [
+          -2.41,
+          -1.94,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "stool",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "oil_lamp",
+      "at": [
+        -2.25,
+        -1.78,
+        0.55
+      ],
+      "bounds": {
+        "max": [
+          -2.175,
+          -1.705,
+          0.895
+        ],
+        "min": [
+          -2.325,
+          -1.855,
+          0.55
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "oil_lamp",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "dining_table",
+      "at": [
+        -1.95,
+        1.3,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          -1.5,
+          1.75,
+          0.95
+        ],
+        "min": [
+          -2.4,
+          0.85,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "dining_table",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        -1.95,
+        1.93,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          -1.4,
+          2.07,
+          0.55
+        ],
+        "min": [
+          -2.5,
+          1.79,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_01",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        -1.95,
+        0.67,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          -1.4,
+          0.81,
+          0.55
+        ],
+        "min": [
+          -2.5,
+          0.53,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_02",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "tea_set",
+      "at": [
+        -1.95,
+        1.45,
+        0.95
+      ],
+      "bounds": {
+        "max": [
+          -1.795,
+          1.605,
+          1.1
+        ],
+        "min": [
+          -2.105,
+          1.295,
+          0.95
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "tea_set",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "bamboo_chair",
+      "at": [
+        -1.25,
+        1.3,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          -1.05,
+          1.51,
+          1.02
+        ],
+        "min": [
+          -1.45,
+          1.09,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bamboo_chair",
+      "room": "house",
+      "rz": 90.0
+    },
+    {
+      "asset": "stove",
+      "at": [
+        1.9,
+        1.98,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          2.5,
+          2.38,
+          2.3
+        ],
+        "min": [
+          1.3,
+          1.58,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "stove",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "firewood",
+      "at": [
+        1.3,
+        1.05,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          1.55,
+          1.275,
+          0.37
+        ],
+        "min": [
+          1.05,
+          0.825,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "firewood",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "wooden_bucket",
+      "at": [
+        1.72,
+        1.0,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          1.883,
+          1.15,
+          0.44
+        ],
+        "min": [
+          1.557,
+          0.85,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "wooden_bucket",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "water_jar",
+      "at": [
+        0.9,
+        2.3,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          1.16,
+          2.56,
+          0.7
+        ],
+        "min": [
+          0.64,
+          2.04,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "water_jar",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "wash_stand",
+      "at": [
+        2.2,
+        1.1,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          2.43,
+          1.38,
+          1.3
+        ],
+        "min": [
+          1.95,
+          0.82,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "wash_stand",
+      "room": "house",
+      "rz": 90.0
+    },
+    {
+      "asset": "fishing_net",
+      "at": [
+        -1.4,
+        2.53,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          -0.65,
+          2.585,
+          1.85
+        ],
+        "min": [
+          -2.15,
+          2.475,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "fishing_net",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "dried_fish",
+      "at": [
+        -1.45,
+        2.44,
+        1.51
+      ],
+      "bounds": {
+        "max": [
+          -1.15,
+          2.47,
+          1.72
+        ],
+        "min": [
+          -1.75,
+          2.41,
+          1.51
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "dried_fish",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "bamboo_basket",
+      "at": [
+        1.55,
+        -1.78,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          1.805,
+          -1.525,
+          0.75
+        ],
+        "min": [
+          1.295,
+          -2.035,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bamboo_basket",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "travel_bundle",
+      "at": [
+        2.19,
+        -1.33,
+        0.1
+      ],
+      "bounds": {
+        "max": [
+          2.5,
+          -1.17,
+          0.46
+        ],
+        "min": [
+          1.88,
+          -1.49,
+          0.1
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "travel_bundle",
+      "room": "house",
+      "rz": 0.0
+    },
+    {
+      "asset": "laundry_frame",
+      "at": [
+        -2.05,
+        4.35,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -2.0,
+          4.92,
+          1.7
+        ],
+        "min": [
+          -2.1,
+          3.78,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "laundry",
+      "room": "lane",
+      "rz": 90.0
+    },
+    {
+      "asset": "wooden_bucket",
+      "at": [
+        1.05,
+        3.05,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          1.213,
+          3.2,
+          0.34
+        ],
+        "min": [
+          0.887,
+          2.9,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bucket_door",
+      "room": "lane",
+      "rz": 0.0
+    },
+    {
+      "asset": "bamboo_basket",
+      "at": [
+        -1.3,
+        3.25,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -1.045,
+          3.505,
+          0.65
+        ],
+        "min": [
+          -1.555,
+          2.995,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "basket_door",
+      "room": "lane",
+      "rz": 0.0
+    },
+    {
+      "asset": "firewood",
+      "at": [
+        -2.1,
+        3.35,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -1.85,
+          3.575,
+          0.27
+        ],
+        "min": [
+          -2.35,
+          3.125,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "firewood_lane",
+      "room": "lane",
+      "rz": 0.0
+    },
+    {
+      "asset": "water_jar",
+      "at": [
+        1.75,
+        3.1,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          2.01,
+          3.36,
+          0.6
+        ],
+        "min": [
+          1.49,
+          2.84,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "water_jar_door",
+      "room": "lane",
+      "rz": 0.0
+    },
+    {
+      "asset": "oar",
+      "at": [
+        2.55,
+        5.1,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          2.6639,
+          7.3342,
+          0.1
+        ],
+        "min": [
+          2.1244,
+          5.084,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "oar_lane",
+      "room": "lane",
+      "rz": 8.0
+    },
+    {
+      "asset": "fishing_net",
+      "at": [
+        -17.299999,
+        5.2,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -17.245,
+          5.95,
+          1.75
+        ],
+        "min": [
+          -17.355,
+          4.45,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "net_dry_01",
+      "room": "lane",
+      "rz": 90.0
+    },
+    {
+      "asset": "fish_rack",
+      "at": [
+        -15.6,
+        5.2,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -15.37,
+          5.94,
+          1.16
+        ],
+        "min": [
+          -15.83,
+          4.46,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rack_dry_01",
+      "room": "lane",
+      "rz": 90.0
+    },
+    {
+      "asset": "fishing_net",
+      "at": [
+        -13.9,
+        5.2,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -13.845,
+          5.95,
+          1.75
+        ],
+        "min": [
+          -13.955,
+          4.45,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "net_dry_02",
+      "room": "lane",
+      "rz": 90.0
+    },
+    {
+      "asset": "fishing_net",
+      "at": [
+        -15.52,
+        3.62,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -15.3229,
+          4.3667,
+          1.75
+        ],
+        "min": [
+          -15.7171,
+          2.8733,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "net_dry_03",
+      "room": "lane",
+      "rz": 101.0
+    },
+    {
+      "asset": "fishing_net",
+      "at": [
+        -16.85,
+        6.42,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -16.7169,
+          7.1716,
+          1.75
+        ],
+        "min": [
+          -16.9831,
+          5.6684,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "net_dry_04",
+      "room": "lane",
+      "rz": 84.0
+    },
+    {
+      "asset": "bamboo_basket",
+      "at": [
+        -18.4,
+        4.3,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -18.0976,
+          4.6024,
+          0.65
+        ],
+        "min": [
+          -18.7024,
+          3.9976,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "creel_dry",
+      "room": "lane",
+      "rz": 12.0
+    },
+    {
+      "asset": "pickle_crock",
+      "at": [
+        -17.6,
+        4.15,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -17.43,
+          4.32,
+          0.37
+        ],
+        "min": [
+          -17.77,
+          3.98,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "crock_dry",
+      "room": "lane",
+      "rz": 0.0
+    },
+    {
+      "asset": "wooden_bucket",
+      "at": [
+        -16.700001,
+        4.25,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -16.4838,
+          4.4614,
+          0.34
+        ],
+        "min": [
+          -16.9162,
+          4.0386,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bucket_dry",
+      "room": "lane",
+      "rz": 30.0
+    },
+    {
+      "asset": "sampan_repair",
+      "at": [
+        -17.200001,
+        1.2,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -14.6847,
+          2.7661,
+          1.83
+        ],
+        "min": [
+          -19.7252,
+          -0.3672,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "sampan_repair",
+      "room": "row_ground",
+      "rz": 96.0
+    },
+    {
+      "asset": "oar",
+      "at": [
+        -13.6,
+        0.6,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -13.4919,
+          2.7442,
+          0.1
+        ],
+        "min": [
+          -14.4742,
+          0.5607,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "oar_repair",
+      "room": "row_ground",
+      "rz": 20.0
+    },
+    {
+      "asset": "wooden_bucket",
+      "at": [
+        -12.4,
+        0.1,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -12.1986,
+          0.293,
+          0.34
+        ],
+        "min": [
+          -12.6014,
+          -0.093,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "pitch_bucket",
+      "room": "row_ground",
+      "rz": 18.0
+    },
+    {
+      "asset": "rope_coil",
+      "at": [
+        -13.1,
+        -0.9,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -12.7901,
+          -0.5901,
+          0.105
+        ],
+        "min": [
+          -13.4099,
+          -1.2099,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rope_repair",
+      "room": "row_ground",
+      "rz": 40.0
+    },
+    {
+      "asset": "village_well",
+      "at": [
+        14.6,
+        0.9,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          15.27,
+          1.45,
+          1.24
+        ],
+        "min": [
+          14.05,
+          0.35,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "village_well",
+      "room": "yard",
+      "rz": 0.0
+    },
+    {
+      "asset": "wooden_bucket",
+      "at": [
+        14.6,
+        1.85,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          14.8111,
+          2.0548,
+          0.34
+        ],
+        "min": [
+          14.3889,
+          1.6452,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bucket_well",
+      "room": "yard",
+      "rz": 25.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        13.3,
+        0.9,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          13.85,
+          1.04,
+          0.45
+        ],
+        "min": [
+          12.75,
+          0.76,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_well",
+      "room": "yard",
+      "rz": 0.0
+    },
+    {
+      "asset": "woodstack",
+      "at": [
+        17.6,
+        0.7,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          18.2869,
+          1.3012,
+          0.6477
+        ],
+        "min": [
+          16.9279,
+          -0.0907,
+          -0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "woodstack_yard",
+      "room": "yard",
+      "rz": 6.0
+    },
+    {
+      "asset": "woodpile",
+      "at": [
+        16.200001,
+        -1.1,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          16.76,
+          -0.85,
+          0.404
+        ],
+        "min": [
+          15.66,
+          -1.7,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "woodpile_01",
+      "room": "yard",
+      "rz": 0.0
+    },
+    {
+      "asset": "woodpile",
+      "at": [
+        18.700001,
+        -1.2,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          19.3557,
+          -0.8566,
+          0.404
+        ],
+        "min": [
+          18.1248,
+          -1.8847,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "woodpile_02",
+      "room": "yard",
+      "rz": 10.0
+    },
+    {
+      "asset": "pickle_crock",
+      "at": [
+        3.0,
+        1.7,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          3.17,
+          1.87,
+          0.37
+        ],
+        "min": [
+          2.83,
+          1.53,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "crock_yard",
+      "room": "yard",
+      "rz": 0.0
+    },
+    {
+      "asset": "rice_jar",
+      "at": [
+        3.2,
+        2.25,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          3.46,
+          2.51,
+          0.53
+        ],
+        "min": [
+          2.94,
+          1.99,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rice_jar_yard",
+      "room": "yard",
+      "rz": 0.0
+    },
+    {
+      "asset": "bay_water",
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          45.6,
+          48.6,
+          -0.635
+        ],
+        "min": [
+          -45.6,
+          12.55,
+          -1.2
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "bay_water",
+      "room": "water",
+      "rz": 0.0
+    },
+    {
+      "asset": "wooden_pier",
+      "at": [
+        6.4,
+        11.6,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          9.1272,
+          20.5732,
+          0.35
+        ],
+        "min": [
+          5.2286,
+          11.4507,
+          -1.7
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "pier",
+      "room": null,
+      "rz": -10.0
+    },
+    {
+      "asset": "fishing_boat",
+      "at": [
+        3.0,
+        22.306316,
+        -0.67
+      ],
+      "bounds": {
+        "max": [
+          5.1792,
+          26.9811,
+          2.97
+        ],
+        "min": [
+          0.7902,
+          17.4583,
+          -0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "boat_family",
+      "room": "water",
+      "rz": -10.0
+    },
+    {
+      "asset": "sampan",
+      "at": [
+        7.6,
+        23.146135,
+        -0.8
+      ],
+      "bounds": {
+        "max": [
+          8.7504,
+          25.639,
+          0.16
+        ],
+        "min": [
+          6.4513,
+          20.6631,
+          -0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "sampan_pier",
+      "room": "water",
+      "rz": -10.0
+    },
+    {
+      "asset": "sampan",
+      "at": [
+        -5.6,
+        23.526974,
+        -0.8
+      ],
+      "bounds": {
+        "max": [
+          -4.0139,
+          26.0313,
+          0.16
+        ],
+        "min": [
+          -7.1898,
+          21.0319,
+          -0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "sampan_01",
+      "room": "water",
+      "rz": 22.0
+    },
+    {
+      "asset": "sampan",
+      "at": [
+        12.6,
+        19.705177,
+        -0.8
+      ],
+      "bounds": {
+        "max": [
+          14.5597,
+          22.1115,
+          0.16
+        ],
+        "min": [
+          10.6459,
+          17.3072,
+          -0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "sampan_02",
+      "room": "water",
+      "rz": -34.0
+    },
+    {
+      "asset": "sampan",
+      "at": [
+        -9.2,
+        24.743404,
+        -0.8
+      ],
+      "bounds": {
+        "max": [
+          -8.455,
+          27.1434,
+          0.16
+        ],
+        "min": [
+          -9.945,
+          22.3534,
+          -0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "sampan_03",
+      "room": "water",
+      "rz": 0.0
+    },
+    {
+      "asset": "sampan",
+      "at": [
+        -13.6,
+        24.100821,
+        -0.8
+      ],
+      "bounds": {
+        "max": [
+          -12.3723,
+          26.6033,
+          0.16
+        ],
+        "min": [
+          -14.8256,
+          21.6082,
+          -0.67
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "sampan_04",
+      "room": "water",
+      "rz": -12.0
+    },
+    {
+      "asset": "boat_trestle",
+      "at": [
+        2.2,
+        13.6,
+        -0.3
+      ],
+      "bounds": {
+        "max": [
+          2.6223,
+          14.5296,
+          0.42
+        ],
+        "min": [
+          1.7777,
+          12.6704,
+          -0.3
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "trestle_01",
+      "room": "shore",
+      "rz": 84.0
+    },
+    {
+      "asset": "sampan",
+      "at": [
+        2.2,
+        13.6,
+        0.31
+      ],
+      "bounds": {
+        "max": [
+          4.6548,
+          14.5918,
+          1.27
+        ],
+        "min": [
+          -0.2647,
+          12.6093,
+          0.44
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "sampan_ashore",
+      "room": "shore",
+      "rz": 84.0
+    },
+    {
+      "asset": "rope_coil",
+      "at": [
+        -0.6,
+        10.9,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -0.38,
+          11.12,
+          0.105
+        ],
+        "min": [
+          -0.82,
+          10.68,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rope_01",
+      "room": "quay",
+      "rz": 0.0
+    },
+    {
+      "asset": "rope_coil",
+      "at": [
+        6.3,
+        9.4,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          6.5924,
+          9.6924,
+          0.105
+        ],
+        "min": [
+          6.0076,
+          9.1076,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rope_02",
+      "room": "quay",
+      "rz": 25.0
+    },
+    {
+      "asset": "rope_coil",
+      "at": [
+        10.1,
+        11.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          10.3485,
+          11.2485,
+          0.105
+        ],
+        "min": [
+          9.8515,
+          10.7515,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rope_03",
+      "room": "quay",
+      "rz": 8.0
+    },
+    {
+      "asset": "oar",
+      "at": [
+        -5.2,
+        9.2,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -5.0861,
+          11.4342,
+          0.1
+        ],
+        "min": [
+          -5.6256,
+          9.184,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "oar_quay",
+      "room": "quay",
+      "rz": 8.0
+    },
+    {
+      "asset": "bamboo_basket",
+      "at": [
+        -4.4,
+        10.7,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -4.0877,
+          11.0123,
+          0.65
+        ],
+        "min": [
+          -4.7123,
+          10.3877,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "basket_quay",
+      "room": "quay",
+      "rz": 15.0
+    },
+    {
+      "asset": "bamboo_basket",
+      "at": [
+        -6.7,
+        10.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -6.3976,
+          10.3024,
+          0.65
+        ],
+        "min": [
+          -7.0024,
+          9.6976,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "basket_quay2",
+      "room": "quay",
+      "rz": -12.0
+    },
+    {
+      "asset": "wooden_bucket",
+      "at": [
+        3.1,
+        10.6,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          3.2866,
+          10.776,
+          0.34
+        ],
+        "min": [
+          2.9134,
+          10.424,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bucket_quay",
+      "room": "quay",
+      "rz": 10.0
+    },
+    {
+      "asset": "water_jar",
+      "at": [
+        -1.9,
+        9.3,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -1.64,
+          9.56,
+          0.6
+        ],
+        "min": [
+          -2.16,
+          9.04,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "water_jar_quay",
+      "room": "quay",
+      "rz": 0.0
+    },
+    {
+      "asset": "pickle_crock",
+      "at": [
+        16.4,
+        8.6,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          16.57,
+          8.77,
+          0.37
+        ],
+        "min": [
+          16.23,
+          8.43,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "crock_quay",
+      "room": "quay",
+      "rz": 0.0
+    },
+    {
+      "asset": "rice_jar",
+      "at": [
+        16.4,
+        9.4,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          16.66,
+          9.66,
+          0.53
+        ],
+        "min": [
+          16.14,
+          9.14,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rice_jar_quay",
+      "room": "quay",
+      "rz": 0.0
+    },
+    {
+      "asset": "mooring_post",
+      "at": [
+        -7.6,
+        11.6,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -7.45,
+          11.75,
+          0.9
+        ],
+        "min": [
+          -7.75,
+          11.45,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "post_01",
+      "room": "quay",
+      "rz": 0.0
+    },
+    {
+      "asset": "mooring_post",
+      "at": [
+        -13.0,
+        11.6,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -12.85,
+          11.75,
+          0.9
+        ],
+        "min": [
+          -13.15,
+          11.45,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "post_02",
+      "room": "quay",
+      "rz": 0.0
+    },
+    {
+      "asset": "mooring_post",
+      "at": [
+        14.6,
+        11.6,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          14.75,
+          11.75,
+          0.9
+        ],
+        "min": [
+          14.45,
+          11.45,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "post_03",
+      "room": "quay",
+      "rz": 0.0
+    },
+    {
+      "asset": "mooring_post",
+      "at": [
+        -16.6,
+        11.6,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -16.45,
+          11.75,
+          0.9
+        ],
+        "min": [
+          -16.75,
+          11.45,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "post_04",
+      "room": "quay",
+      "rz": 0.0
+    },
+    {
+      "asset": "bamboo_basket",
+      "at": [
+        -18.6,
+        9.6,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -18.3046,
+          9.8954,
+          0.65
+        ],
+        "min": [
+          -18.8954,
+          9.3046,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "creel_quay_01",
+      "room": "quay",
+      "rz": 10.0
+    },
+    {
+      "asset": "bamboo_basket",
+      "at": [
+        -19.299999,
+        10.45,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -18.9732,
+          10.7768,
+          0.65
+        ],
+        "min": [
+          -19.6268,
+          10.1232,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "creel_quay_02",
+      "room": "quay",
+      "rz": -20.0
+    },
+    {
+      "asset": "water_jar",
+      "at": [
+        -18.299999,
+        8.3,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -18.04,
+          8.56,
+          0.6
+        ],
+        "min": [
+          -18.56,
+          8.04,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "water_jar_quay2",
+      "room": "quay",
+      "rz": 0.0
+    },
+    {
+      "asset": "rope_coil",
+      "at": [
+        -17.5,
+        11.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -17.2306,
+          11.2694,
+          0.105
+        ],
+        "min": [
+          -17.7694,
+          10.7306,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "rope_04",
+      "room": "quay",
+      "rz": 15.0
+    },
+    {
+      "asset": "quay_shrine",
+      "at": [
+        4.4,
+        11.85,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          4.98,
+          12.26,
+          1.14
+        ],
+        "min": [
+          3.82,
+          11.44,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "quay_shrine",
+      "room": "quay",
+      "rz": -180.0
+    },
+    {
+      "asset": "incense_burner",
+      "at": [
+        4.4,
+        12.1,
+        0.26
+      ],
+      "bounds": {
+        "max": [
+          4.53,
+          12.215,
+          0.6699
+        ],
+        "min": [
+          4.27,
+          11.985,
+          0.26
+        ]
+      },
+      "container": true,
+      "mount": "surface",
+      "name": "shrine_censer",
+      "room": "quay",
+      "rz": 0.0
+    },
+    {
+      "asset": "candles",
+      "at": [
+        4.4,
+        12.2,
+        0.26
+      ],
+      "bounds": {
+        "max": [
+          4.55,
+          12.25,
+          0.59
+        ],
+        "min": [
+          4.25,
+          12.15,
+          0.26
+        ]
+      },
+      "container": true,
+      "mount": "surface",
+      "name": "shrine_candles",
+      "room": "quay",
+      "rz": 0.0
+    }
+  ],
+  "scene": "scene_02",
+  "title": "First prayer -- a fisherman's house in a 1950s Fujian fishing village",
+  "units": "meters",
+  "up": "Z"
+}

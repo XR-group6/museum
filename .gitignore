@@ -7,7 +7,7 @@
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
 
-# Visual Studio / Rider / IDE
+# IDE
 .vs/
 .idea/
 *.csproj
@@ -24,8 +24,11 @@
 *.opendb
 *.VC.db
 
-# Unity meta files that should not be tracked (optional, usually keep .meta)
-# *.meta
+# Python (from original)
+venv/
+.venv/
+__pycache__/
+*.pyc
 
 # OS generated files
 .DS_Store
@@ -35,3 +38,6 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Crash dumps
+*.blob
