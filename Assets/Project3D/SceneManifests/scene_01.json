@@ -1,470 +1,537 @@
 {
+  "assembly": "prefab",
   "bounds": {
     "dims": [
-      28.0,
-      32.0,
-      4.56
+      92.0,
+      98.0,
+      17.3
     ],
     "max": [
-      14.0,
-      8.0,
-      3.36
+      46.0,
+      49.0,
+      14.9
     ],
     "min": [
-      -14.0,
-      -24.0,
-      -1.2
+      -46.0,
+      -49.0,
+      -2.4
     ]
   },
   "lighting": {
     "accents": [],
     "fill": {
       "at": [
-        0.0,
-        0.9,
+        2.45,
+        10.3,
         2.6
       ],
       "energy": 22.0,
       "size": 5.0
     },
-    "lights": [
+    "fills": [
       {
         "at": [
+          2.45,
+          10.3,
+          2.6
+        ],
+        "energy": 22.0,
+        "name": "scene_fill",
+        "size": 5.0
+      }
+    ],
+    "lights": [
+      {
+        "angle": 3.0,
+        "at": [
+          78.0,
+          -124.0,
+          104.0
+        ],
+        "blend": 0.0,
+        "cone": 0.0,
+        "energy": 4.5,
+        "kind": "sun",
+        "look": [
           0.0,
-          0.4,
+          0.0,
+          0.0
+        ],
+        "name": "sun_daylight"
+      },
+      {
+        "angle": 0.0,
+        "at": [
+          1.95,
+          10.3,
           2.75
         ],
         "blend": 0.55,
         "cone": 26.0,
         "energy": 300.0,
+        "kind": "spot",
         "look": [
-          0.0,
-          0.4,
+          1.95,
+          10.3,
           1.28
         ],
         "name": "track_c_censer"
       },
       {
+        "angle": 0.0,
         "at": [
-          0.0,
-          1.4,
+          2.95,
+          10.3,
           2.75
         ],
         "blend": 0.55,
         "cone": 24.0,
         "energy": 150.0,
+        "kind": "spot",
         "look": [
-          0.0,
-          0.42,
+          1.97,
+          10.3,
           1.4
         ],
         "name": "track_c_rim"
       },
       {
+        "angle": 0.0,
         "at": [
-          1.9,
-          0.4,
+          1.95,
+          8.4,
           2.75
         ],
         "blend": 0.55,
         "cone": 28.0,
         "energy": 170.0,
+        "kind": "spot",
         "look": [
-          0.0,
-          0.4,
+          1.95,
+          10.3,
           1.18
         ],
         "name": "track_e_censer"
       },
       {
+        "angle": 0.0,
         "at": [
-          -1.9,
-          -0.6,
+          0.95,
+          12.2,
           2.75
         ],
         "blend": 0.55,
         "cone": 36.0,
         "energy": 150.0,
+        "kind": "spot",
         "look": [
-          -3.1,
-          -1.7,
+          -0.15,
+          13.4,
           1.2
         ],
         "name": "track_w_net"
       },
       {
+        "angle": 0.0,
         "at": [
-          -1.9,
-          0.4,
+          1.95,
+          12.2,
           2.75
         ],
         "blend": 0.55,
         "cone": 36.0,
         "energy": 150.0,
+        "kind": "spot",
         "look": [
-          -3.1,
-          0.2,
+          1.75,
+          13.4,
           1.65
         ],
         "name": "track_w_wheel"
       },
       {
+        "angle": 0.0,
         "at": [
-          -1.9,
-          1.4,
+          2.95,
+          12.2,
           2.75
         ],
         "blend": 0.55,
         "cone": 36.0,
         "energy": 140.0,
+        "kind": "spot",
         "look": [
-          -2.9,
-          1.3,
+          2.85,
+          13.2,
           1.25
         ],
         "name": "track_w_anchor"
       },
       {
+        "angle": 0.0,
         "at": [
-          -1.9,
-          2.4,
+          3.95,
+          12.2,
           2.75
         ],
         "blend": 0.55,
         "cone": 36.0,
         "energy": 130.0,
+        "kind": "spot",
         "look": [
-          -2.85,
-          2.6,
+          4.15,
+          13.15,
           0.95
         ],
         "name": "track_w_rope"
       },
       {
+        "angle": 0.0,
         "at": [
-          0.0,
-          -0.6,
+          0.95,
+          10.3,
           2.75
         ],
         "blend": 0.55,
         "cone": 44.0,
         "energy": 120.0,
+        "kind": "spot",
         "look": [
-          0.0,
-          -1.45,
+          0.1,
+          10.3,
           0.42
         ],
         "name": "track_c_bench"
       },
       {
+        "angle": 0.0,
         "at": [
-          0.0,
-          2.4,
+          3.95,
+          10.3,
           2.75
         ],
         "blend": 0.55,
         "cone": 36.0,
         "energy": 160.0,
+        "kind": "spot",
         "look": [
-          0.35,
-          3.7,
+          5.25,
+          9.95,
           1.2
         ],
         "name": "track_c_junk"
       },
       {
+        "angle": 0.0,
         "at": [
-          1.9,
-          -0.6,
+          0.95,
+          8.4,
           2.75
         ],
         "blend": 0.55,
         "cone": 36.0,
         "energy": 140.0,
+        "kind": "spot",
         "look": [
-          2.4,
-          -2.0,
+          -0.45,
+          7.9,
           0.95
         ],
         "name": "track_e_console"
       },
       {
+        "angle": 0.0,
         "at": [
-          1.9,
-          2.4,
+          3.95,
+          8.4,
           2.75
         ],
         "blend": 0.55,
         "cone": 44.0,
         "energy": 150.0,
+        "kind": "spot",
         "look": [
-          2.92,
-          1.9,
+          3.45,
+          7.38,
           1.15
         ],
         "name": "track_e_jars"
       },
       {
+        "angle": 0.0,
         "at": [
-          1.9,
-          1.4,
+          2.95,
+          8.4,
           2.75
         ],
         "blend": 0.55,
         "cone": 46.0,
         "energy": 140.0,
+        "kind": "spot",
         "look": [
-          3.05,
-          0.62,
+          2.17,
+          7.25,
           1.2
         ],
         "name": "track_e_crock"
       },
       {
+        "angle": 0.0,
         "at": [
-          1.5,
-          -2.1,
+          -0.55,
+          8.8,
           2.75
         ],
         "blend": 0.55,
         "cone": 36.0,
         "energy": 130.0,
+        "kind": "spot",
         "look": [
-          1.95,
-          -2.5,
+          -0.95,
+          8.35,
           1.1
         ],
         "name": "track_front_intro"
       },
       {
+        "angle": 0.0,
         "at": [
-          0.5,
-          -2.1,
+          -0.55,
+          9.8,
           2.75
         ],
         "blend": 0.55,
         "cone": 44.0,
         "energy": 120.0,
+        "kind": "spot",
         "look": [
-          1.95,
-          -1.3,
+          0.25,
+          8.35,
           0.42
         ],
         "name": "track_front_east"
       },
       {
+        "angle": 0.0,
         "at": [
-          -0.5,
-          -2.1,
+          -0.55,
+          10.8,
           2.75
         ],
         "blend": 0.55,
         "cone": 44.0,
         "energy": 120.0,
+        "kind": "spot",
         "look": [
-          -1.95,
-          -1.3,
+          0.25,
+          12.25,
           0.42
         ],
         "name": "track_front_west"
       },
       {
+        "angle": 0.0,
         "at": [
-          -1.5,
-          -2.1,
+          -0.55,
+          11.8,
           2.75
         ],
         "blend": 0.55,
         "cone": 36.0,
         "energy": 120.0,
+        "kind": "spot",
         "look": [
-          -3.1,
-          -1.9,
+          -0.35,
+          13.4,
           1.2
         ],
         "name": "track_front_net"
       },
       {
+        "angle": 0.0,
         "at": [
-          -1.5,
-          3.6,
+          5.15,
+          11.8,
           2.75
         ],
         "blend": 0.55,
         "cone": 46.0,
         "energy": 150.0,
+        "kind": "spot",
         "look": [
-          -2.55,
-          3.7,
+          5.25,
+          12.85,
           1.15
         ],
         "name": "track_back_sextant"
       },
       {
+        "angle": 0.0,
         "at": [
-          -0.5,
-          3.6,
+          5.15,
+          10.8,
           2.75
         ],
         "blend": 0.55,
         "cone": 30.0,
         "energy": 150.0,
+        "kind": "spot",
         "look": [
-          -1.65,
-          3.7,
+          5.25,
+          11.95,
           1.2
         ],
         "name": "track_back_bell"
       },
       {
+        "angle": 0.0,
         "at": [
-          0.5,
-          3.6,
+          5.15,
+          9.8,
           2.75
         ],
         "blend": 0.55,
         "cone": 36.0,
         "energy": 140.0,
+        "kind": "spot",
         "look": [
-          2.6,
-          3.45,
+          5.0,
+          7.7,
           0.35
         ],
         "name": "track_back_bag"
       },
       {
+        "angle": 0.0,
         "at": [
-          1.5,
-          3.6,
+          5.15,
+          8.8,
           2.75
         ],
         "blend": 0.55,
         "cone": 30.0,
         "energy": 150.0,
+        "kind": "spot",
         "look": [
-          2.15,
-          3.7,
+          5.25,
+          8.15,
           1.15
         ],
         "name": "track_back_binnacle"
       },
       {
+        "angle": 0.0,
         "at": [
           0.0,
-          -4.55,
-          3.55
+          -36.0,
+          13.0
         ],
         "blend": 0.62,
         "cone": 34.0,
-        "energy": 180.0,
+        "energy": 3000.0,
+        "kind": "spot",
         "look": [
           0.0,
-          -3.05,
-          2.95
+          -16.6,
+          11.6
         ],
         "name": "ext_pediment"
       },
       {
+        "angle": 0.0,
         "at": [
-          -1.8,
-          -4.5,
-          2.4
+          -14.0,
+          -33.0,
+          5.0
         ],
         "blend": 0.65,
-        "cone": 38.0,
-        "energy": 120.0,
+        "cone": 40.0,
+        "energy": 1700.0,
+        "kind": "spot",
         "look": [
-          -1.55,
-          -3.05,
-          1.2
+          -7.0,
+          -16.6,
+          4.6
         ],
         "name": "ext_cols_l"
       },
       {
+        "angle": 0.0,
         "at": [
-          1.8,
-          -4.5,
-          2.4
+          14.0,
+          -33.0,
+          5.0
         ],
         "blend": 0.65,
-        "cone": 38.0,
-        "energy": 120.0,
+        "cone": 40.0,
+        "energy": 1700.0,
+        "kind": "spot",
         "look": [
-          1.55,
-          -3.05,
-          1.2
+          7.0,
+          -16.6,
+          4.6
         ],
         "name": "ext_cols_r"
       },
       {
+        "angle": 0.0,
         "at": [
-          -1.95,
-          -4.1,
-          1.1
+          0.0,
+          -31.0,
+          2.4
         ],
-        "blend": 0.72,
-        "cone": 48.0,
-        "energy": 84.0,
+        "blend": 0.7,
+        "cone": 46.0,
+        "energy": 1600.0,
+        "kind": "spot",
         "look": [
-          -1.95,
-          -3.45,
-          0.0
+          0.0,
+          -18.0,
+          0.2
         ],
-        "name": "ext_sculpt_l"
+        "name": "ext_steps"
       },
       {
+        "angle": 0.0,
         "at": [
-          1.95,
-          -4.1,
-          1.1
+          -25.0,
+          -31.0,
+          9.0
         ],
-        "blend": 0.72,
-        "cone": 48.0,
-        "energy": 84.0,
+        "blend": 0.68,
+        "cone": 44.0,
+        "energy": 1200.0,
+        "kind": "spot",
         "look": [
-          1.95,
-          -3.45,
-          0.0
+          -17.0,
+          -15.4,
+          6.0
         ],
-        "name": "ext_sculpt_r"
+        "name": "ext_face_w"
       },
       {
+        "angle": 0.0,
         "at": [
-          -1.3,
-          -3.55,
-          0.18
+          25.0,
+          -31.0,
+          9.0
         ],
-        "blend": 0.8,
-        "cone": 58.0,
-        "energy": 46.0,
+        "blend": 0.68,
+        "cone": 44.0,
+        "energy": 1200.0,
+        "kind": "spot",
         "look": [
-          -1.3,
-          -3.1,
-          0.02
+          17.0,
+          -15.4,
+          6.0
         ],
-        "name": "ext_blue_base_l"
-      },
-      {
-        "at": [
-          1.3,
-          -3.55,
-          0.18
-        ],
-        "blend": 0.8,
-        "cone": 58.0,
-        "energy": 46.0,
-        "look": [
-          1.3,
-          -3.1,
-          0.02
-        ],
-        "name": "ext_blue_base_r"
+        "name": "ext_face_e"
       }
     ],
     "world": [
-      0.13,
-      0.12,
-      0.11
+      0.2,
+      0.19,
+      0.18
     ]
   },
   "placements": [
@@ -477,14 +544,14 @@
       ],
       "bounds": {
         "max": [
-          14.0,
-          8.0,
-          -0.24
+          46.0,
+          49.0,
+          -1.2
         ],
         "min": [
-          -14.0,
-          -24.0,
-          -1.2
+          -46.0,
+          -49.0,
+          -2.4
         ]
       },
       "container": true,
@@ -502,14 +569,14 @@
       ],
       "bounds": {
         "max": [
-          4.5,
-          5.8,
-          3.36
+          26.0,
+          18.0,
+          14.9
         ],
         "min": [
-          -4.5,
-          -4.0,
-          -0.36
+          -26.0,
+          -26.0,
+          -1.2
         ]
       },
       "container": true,
@@ -521,1027 +588,2527 @@
     {
       "asset": "vitrine",
       "at": [
-        0.0,
-        0.4,
+        1.95,
+        10.3,
         0.0
       ],
       "bounds": {
         "max": [
-          0.25,
-          0.65,
+          2.2,
+          10.55,
           1.0
         ],
         "min": [
-          -0.25,
-          0.15,
+          1.7,
+          10.05,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "vitrine",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "vitrine_hood",
       "at": [
-        0.0,
-        0.4,
+        1.95,
+        10.3,
         1.0
       ],
       "bounds": {
         "max": [
-          0.28,
-          0.68,
+          2.23,
+          10.58,
           1.62
         ],
         "min": [
-          -0.28,
-          0.12,
+          1.67,
+          10.02,
           1.0
         ]
       },
       "container": true,
       "mount": "floor",
       "name": "vitrine_hood",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "incense_burner_grand",
       "at": [
-        0.0,
-        0.4,
+        1.95,
+        10.3,
         1.0
       ],
       "bounds": {
         "max": [
-          0.1755,
-          0.5553,
+          2.1053,
+          10.4755,
           1.5534
         ],
         "min": [
-          -0.1755,
-          0.2447,
+          1.7947,
+          10.1245,
           1.0
         ]
       },
       "container": false,
       "mount": "surface",
       "name": "censer",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "bench",
       "at": [
-        0.0,
-        -1.45,
+        0.1,
+        10.3,
         0.0
       ],
       "bounds": {
         "max": [
-          0.55,
-          -1.31,
+          0.24,
+          10.85,
           0.45
         ],
         "min": [
-          -0.55,
-          -1.59,
+          -0.04,
+          9.75,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "bench_main",
-      "room": null,
-      "rz": -180.0
+      "room": "hall",
+      "rz": 90.0
     },
     {
       "asset": "bench",
       "at": [
-        -1.95,
-        -1.3,
+        0.25,
+        12.25,
         0.0
       ],
       "bounds": {
         "max": [
-          -1.81,
-          -0.75,
+          0.8,
+          12.39,
           0.45
         ],
         "min": [
-          -2.09,
-          -1.85,
+          -0.3,
+          12.11,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "bench_side_w",
-      "room": null,
-      "rz": 90.0
+      "room": "hall",
+      "rz": 0.0
     },
     {
       "asset": "bench",
       "at": [
-        1.95,
-        -1.3,
+        0.25,
+        8.35,
         0.0
       ],
       "bounds": {
         "max": [
-          2.09,
-          -0.75,
+          0.8,
+          8.49,
           0.45
         ],
         "min": [
-          1.81,
-          -1.85,
+          -0.3,
+          8.21,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "bench_side_e",
-      "room": null,
-      "rz": -90.0
+      "room": "hall",
+      "rz": -180.0
     },
     {
       "asset": "vr_console",
       "at": [
-        2.4,
-        -2.0,
+        -0.45,
+        7.9,
         0.0
       ],
       "bounds": {
         "max": [
-          2.6753,
-          -1.7321,
+          -0.1821,
+          8.1753,
           1.08
         ],
         "min": [
-          2.1247,
-          -2.2679,
+          -0.7179,
+          7.6247,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "info_center",
-      "room": null,
-      "rz": 145.0
+      "room": "hall",
+      "rz": 55.0
     },
     {
       "asset": "didactic_panel",
       "at": [
-        1.95,
-        -2.47,
+        -0.92,
+        8.35,
         1.1
       ],
       "bounds": {
         "max": [
-          2.65,
-          -2.44,
+          -0.89,
+          9.05,
           2.05
         ],
         "min": [
-          1.25,
-          -2.5,
+          -0.95,
+          7.65,
           1.1
         ]
       },
       "container": false,
       "mount": "wall",
       "name": "panel_intro",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "fishing_net",
       "at": [
-        -3.045,
-        -1.7,
+        -0.15,
+        13.345,
         1.2
       ],
       "bounds": {
         "max": [
-          -2.99,
-          -0.95,
+          0.6001,
+          13.4,
           2.95
         ],
         "min": [
-          -3.1,
-          -2.45,
+          -0.9001,
+          13.29,
           1.2
         ]
       },
       "container": false,
       "mount": "wall",
       "name": "net_w",
-      "room": null,
-      "rz": 90.0
+      "room": "hall",
+      "rz": 0.0
     },
     {
       "asset": "ship_wheel",
       "at": [
-        -3.05,
-        0.2,
+        1.75,
+        13.35,
         1.6
       ],
       "bounds": {
         "max": [
-          -3.0,
-          0.51,
-          2.22
+          2.15,
+          13.4,
+          2.4
         ],
         "min": [
-          -3.1,
-          -0.11,
+          1.35,
+          13.3,
           1.6
         ]
       },
       "container": false,
       "mount": "wall",
       "name": "wheel_w",
-      "room": null,
-      "rz": -90.0
+      "room": "hall",
+      "rz": -180.0
     },
     {
       "asset": "oar",
       "at": [
-        -3.1,
-        0.9,
+        2.45,
+        13.285,
         1.8
       ],
       "bounds": {
         "max": [
-          -2.985,
-          3.14,
+          4.69,
+          13.4,
           1.9
         ],
         "min": [
-          -3.215,
-          0.9,
+          2.45,
+          13.17,
           1.8
         ]
       },
       "container": false,
       "mount": "wall",
       "name": "oar_w",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "plinth",
       "at": [
-        -2.77,
-        1.3,
+        2.85,
+        13.07,
         0.0
       ],
       "bounds": {
         "max": [
-          -2.445,
-          1.9,
+          3.45,
+          13.395,
           0.9
         ],
         "min": [
-          -3.095,
-          0.7,
+          2.25,
+          12.745,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "plinth_w1",
-      "room": null,
-      "rz": 90.0
+      "room": "hall",
+      "rz": 0.0
     },
     {
       "asset": "anchor",
       "at": [
-        -2.77,
-        1.3,
+        2.85,
+        13.07,
         0.9
       ],
       "bounds": {
         "max": [
-          -2.62,
-          1.725,
+          3.275,
+          13.22,
           1.6
         ],
         "min": [
-          -2.92,
-          0.875,
+          2.425,
+          12.92,
           0.9
         ]
       },
       "container": false,
       "mount": "surface",
       "name": "anchor_w",
-      "room": null,
-      "rz": 90.0
+      "room": "hall",
+      "rz": 0.0
     },
     {
       "asset": "plinth",
       "at": [
-        -2.77,
-        2.6,
+        4.15,
+        13.07,
         0.0
       ],
       "bounds": {
         "max": [
-          -2.445,
-          3.2,
+          4.75,
+          13.395,
           0.9
         ],
         "min": [
-          -3.095,
-          2.0,
+          3.55,
+          12.745,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "plinth_w2",
-      "room": null,
-      "rz": 90.0
+      "room": "hall",
+      "rz": 0.0
     },
     {
       "asset": "rope_coil",
       "at": [
-        -2.77,
-        2.45,
+        4.0,
+        13.07,
         0.9
       ],
       "bounds": {
         "max": [
-          -2.55,
-          2.67,
+          4.22,
+          13.29,
           1.005
         ],
         "min": [
-          -2.99,
-          2.23,
+          3.78,
+          12.85,
           0.9
         ]
       },
       "container": false,
       "mount": "surface",
       "name": "rope_w",
-      "room": null,
-      "rz": 90.0
+      "room": "hall",
+      "rz": 0.0
     },
     {
       "asset": "shadow_box",
       "at": [
-        -3.1,
-        3.2,
+        4.75,
+        13.4,
         1.35
       ],
       "bounds": {
         "max": [
-          -2.88,
-          3.53,
+          5.08,
+          13.4,
           1.71
         ],
         "min": [
-          -3.1,
-          2.87,
+          4.42,
+          13.18,
           1.35
         ]
       },
       "container": false,
       "mount": "wall",
       "name": "shadow_w",
-      "room": null,
-      "rz": -90.0
+      "room": "hall",
+      "rz": -180.0
     },
     {
       "asset": "plinth",
       "at": [
-        2.77,
-        0.3,
+        1.85,
+        7.53,
         0.0
       ],
       "bounds": {
         "max": [
-          3.095,
-          0.9,
+          2.45,
+          7.855,
           0.9
         ],
         "min": [
-          2.445,
-          -0.3,
+          1.25,
+          7.205,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "plinth_e1",
-      "room": null,
-      "rz": 90.0
+      "room": "hall",
+      "rz": 0.0
     },
     {
       "asset": "rice_jar",
       "at": [
-        2.77,
-        0.0,
+        1.55,
+        7.53,
         0.9
       ],
       "bounds": {
         "max": [
-          3.03,
-          0.26,
+          1.81,
+          7.79,
           1.43
         ],
         "min": [
-          2.51,
-          -0.26,
+          1.29,
+          7.27,
           0.9
         ]
       },
       "container": false,
       "mount": "surface",
       "name": "rice_jar_e",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "pickle_crock",
       "at": [
-        2.77,
-        0.62,
+        2.17,
+        7.53,
         0.9
       ],
       "bounds": {
         "max": [
-          2.94,
-          0.79,
+          2.34,
+          7.7,
           1.27
         ],
         "min": [
-          2.6,
-          0.45,
+          2.0,
+          7.36,
           0.9
         ]
       },
       "container": false,
       "mount": "surface",
       "name": "crock_e",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "plinth",
       "at": [
-        2.77,
-        1.9,
+        3.45,
+        7.53,
         0.0
       ],
       "bounds": {
         "max": [
-          3.095,
-          2.5,
+          4.05,
+          7.855,
           0.9
         ],
         "min": [
-          2.445,
-          1.3,
+          2.85,
+          7.205,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "plinth_e2",
-      "room": null,
-      "rz": 90.0
+      "room": "hall",
+      "rz": 0.0
     },
     {
       "asset": "water_jar",
       "at": [
-        2.77,
-        1.65,
+        3.2,
+        7.53,
         0.9
       ],
       "bounds": {
         "max": [
-          3.03,
-          1.91,
+          3.46,
+          7.79,
           1.5
         ],
         "min": [
-          2.51,
-          1.39,
+          2.94,
+          7.27,
           0.9
         ]
       },
       "container": false,
       "mount": "surface",
       "name": "water_jar_e",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "ancestor_tablets",
       "at": [
-        2.77,
-        2.25,
+        3.8,
+        7.53,
         0.9
       ],
       "bounds": {
         "max": [
-          2.97,
-          2.33,
+          3.88,
+          7.73,
           1.28
         ],
         "min": [
-          2.57,
-          2.17,
+          3.72,
+          7.33,
           0.9
         ]
       },
       "container": false,
       "mount": "surface",
       "name": "tablets_e",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "travel_bag",
       "at": [
-        2.6,
-        3.05,
+        4.6,
+        7.7,
         0.0
       ],
       "bounds": {
         "max": [
-          3.007,
-          3.34,
+          4.89,
+          8.107,
           0.49
         ],
         "min": [
-          2.193,
-          2.73,
+          4.28,
+          7.293,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "bag_e",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "harbor_scroll",
       "at": [
-        3.045,
-        1.2,
+        2.75,
+        7.255,
         1.45
       ],
       "bounds": {
         "max": [
-          3.0625,
-          1.5,
+          3.05,
+          7.303,
           2.35
         ],
         "min": [
-          2.997,
-          0.9,
+          2.45,
+          7.2375,
           1.615
         ]
       },
       "container": false,
       "mount": "wall",
       "name": "scroll_e",
-      "room": null,
-      "rz": 90.0
+      "room": "hall",
+      "rz": 0.0
     },
     {
       "asset": "marine_barometer",
       "at": [
-        3.045,
-        2.6,
+        4.15,
+        7.255,
         1.55
       ],
       "bounds": {
         "max": [
-          3.045,
-          2.745,
+          4.295,
+          7.357,
           1.84
         ],
         "min": [
-          2.943,
-          2.455,
+          4.005,
+          7.255,
           1.55
         ]
       },
       "container": false,
       "mount": "wall",
       "name": "barometer_e",
-      "room": null,
-      "rz": 90.0
+      "room": "hall",
+      "rz": 0.0
     },
     {
       "asset": "vitrine",
       "at": [
-        -2.55,
-        3.7,
+        5.25,
+        12.85,
         0.0
       ],
       "bounds": {
         "max": [
-          -2.3,
-          3.95,
+          5.5,
+          13.1,
           1.0
         ],
         "min": [
-          -2.8,
-          3.45,
+          5.0,
+          12.6,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "vitrine_n1",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "vitrine_hood",
       "at": [
-        -2.55,
-        3.7,
+        5.25,
+        12.85,
         1.0
       ],
       "bounds": {
         "max": [
-          -2.27,
-          3.98,
+          5.53,
+          13.13,
           1.62
         ],
         "min": [
-          -2.83,
-          3.42,
+          4.97,
+          12.57,
           1.0
         ]
       },
       "container": true,
       "mount": "floor",
       "name": "hood_n1",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "sextant",
       "at": [
-        -2.55,
-        3.7,
+        5.25,
+        12.85,
         1.0
       ],
       "bounds": {
         "max": [
-          -2.41,
-          3.82,
+          5.37,
+          12.99,
           1.28
         ],
         "min": [
-          -2.69,
-          3.58,
+          5.13,
+          12.71,
           1.0
         ]
       },
       "container": false,
       "mount": "surface",
       "name": "sextant_n",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "vitrine",
       "at": [
-        -1.65,
-        3.7,
+        5.25,
+        11.95,
         0.0
       ],
       "bounds": {
         "max": [
-          -1.4,
-          3.95,
+          5.5,
+          12.2,
           1.0
         ],
         "min": [
-          -1.9,
-          3.45,
+          5.0,
+          11.7,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "vitrine_n2",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "vitrine_hood",
       "at": [
-        -1.65,
-        3.7,
+        5.25,
+        11.95,
         1.0
       ],
       "bounds": {
         "max": [
-          -1.37,
-          3.98,
+          5.53,
+          12.23,
           1.62
         ],
         "min": [
-          -1.93,
-          3.42,
+          4.97,
+          11.67,
           1.0
         ]
       },
       "container": true,
       "mount": "floor",
       "name": "hood_n2",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "ship_bell",
       "at": [
-        -1.65,
-        3.7,
+        5.25,
+        11.95,
         1.0
       ],
       "bounds": {
         "max": [
-          -1.53,
-          3.78,
+          5.33,
+          12.07,
           1.34
         ],
         "min": [
-          -1.77,
-          3.62,
+          5.17,
+          11.83,
           1.0
         ]
       },
       "container": false,
       "mount": "surface",
       "name": "bell_n",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "plinth",
       "at": [
-        0.35,
-        3.7,
+        5.25,
+        9.95,
         0.0
       ],
       "bounds": {
         "max": [
-          0.95,
-          4.025,
+          5.575,
+          10.55,
           0.9
         ],
         "min": [
-          -0.25,
-          3.375,
+          4.925,
+          9.35,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "plinth_n1",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "junk_model",
       "at": [
-        0.35,
-        3.7,
+        5.25,
+        9.95,
         0.9
       ],
       "bounds": {
         "max": [
-          0.8,
-          3.83,
+          5.38,
+          10.4,
           1.52
         ],
         "min": [
-          -0.1,
-          3.57,
+          5.12,
+          9.5,
           0.9
         ]
       },
       "container": false,
       "mount": "surface",
       "name": "junk_n",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "plinth",
       "at": [
-        2.15,
-        3.7,
+        5.25,
+        8.15,
         0.0
       ],
       "bounds": {
         "max": [
-          2.75,
-          4.025,
+          5.575,
+          8.75,
           0.9
         ],
         "min": [
-          1.55,
-          3.375,
+          4.925,
+          7.55,
           0.0
         ]
       },
       "container": false,
       "mount": "floor",
       "name": "plinth_n2",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "binnacle_compass",
       "at": [
-        2.15,
-        3.7,
+        5.25,
+        8.15,
         0.9
       ],
       "bounds": {
         "max": [
-          2.32,
-          3.87,
+          5.42,
+          8.32,
           1.62
         ],
         "min": [
-          1.98,
-          3.53,
+          5.08,
+          7.98,
           0.9
         ]
       },
       "container": false,
       "mount": "surface",
       "name": "binnacle_n",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "didactic_panel",
       "at": [
-        -2.3,
-        4.27,
+        5.82,
+        12.6,
         1.25
       ],
       "bounds": {
         "max": [
-          -1.6,
-          4.3,
+          5.85,
+          13.3,
           2.2
         ],
         "min": [
-          -3.0,
-          4.24,
+          5.79,
+          11.9,
           1.25
         ]
       },
       "container": false,
       "mount": "wall",
       "name": "panel_story",
-      "room": null,
-      "rz": -180.0
+      "room": "hall",
+      "rz": 90.0
     },
     {
       "asset": "spot_track",
       "at": [
-        -1.9,
-        0.9,
+        2.45,
+        12.2,
         2.75
       ],
       "bounds": {
         "max": [
-          -1.82,
-          2.9,
+          4.45,
+          12.28,
           3.0
         ],
         "min": [
-          -1.98,
-          -1.1,
+          0.45,
+          12.12,
           2.75
         ]
       },
       "container": false,
       "mount": "hang",
       "name": "rail_west",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "spot_track",
       "at": [
-        0.0,
-        0.9,
+        2.45,
+        10.3,
         2.75
       ],
       "bounds": {
         "max": [
-          0.08,
-          2.9,
+          4.45,
+          10.38,
           3.0
         ],
         "min": [
-          -0.08,
-          -1.1,
+          0.45,
+          10.22,
           2.75
         ]
       },
       "container": false,
       "mount": "hang",
       "name": "rail_centre",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "spot_track",
       "at": [
-        1.9,
-        0.9,
+        2.45,
+        8.4,
         2.75
       ],
       "bounds": {
         "max": [
-          1.98,
-          2.9,
+          4.45,
+          8.48,
           3.0
         ],
         "min": [
-          1.82,
-          -1.1,
+          0.45,
+          8.32,
           2.75
         ]
       },
       "container": false,
       "mount": "hang",
       "name": "rail_east",
-      "room": null,
-      "rz": 0.0
+      "room": "hall",
+      "rz": -90.0
     },
     {
       "asset": "spot_track",
       "at": [
-        0.0,
-        -2.1,
+        -0.55,
+        10.3,
         2.75
       ],
       "bounds": {
         "max": [
-          2.0,
-          -2.02,
+          -0.47,
+          12.3,
           3.0
         ],
         "min": [
-          -2.0,
-          -2.18,
+          -0.63,
+          8.3,
           2.75
         ]
       },
       "container": false,
       "mount": "hang",
       "name": "rail_front",
-      "room": null,
-      "rz": 90.0
+      "room": "hall",
+      "rz": 0.0
     },
     {
       "asset": "spot_track",
       "at": [
-        0.0,
-        3.6,
+        5.15,
+        10.3,
         2.75
       ],
       "bounds": {
         "max": [
-          2.0,
-          3.68,
+          5.23,
+          12.3,
           3.0
         ],
         "min": [
-          -2.0,
-          3.52,
+          5.07,
+          8.3,
           2.75
         ]
       },
       "container": false,
       "mount": "hang",
       "name": "rail_back",
-      "room": null,
+      "room": "hall",
+      "rz": 0.0
+    },
+    {
+      "asset": "museum_pool",
+      "at": [
+        -9.0,
+        -32.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -2.0,
+          -29.0,
+          -0.65
+        ],
+        "min": [
+          -16.0,
+          -35.0,
+          -1.2
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "pool_w",
+      "room": "forecourt",
+      "rz": 0.0
+    },
+    {
+      "asset": "museum_pool",
+      "at": [
+        9.0,
+        -32.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          16.0,
+          -29.0,
+          -0.65
+        ],
+        "min": [
+          2.0,
+          -35.0,
+          -1.2
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "pool_e",
+      "room": "forecourt",
+      "rz": 0.0
+    },
+    {
+      "asset": "mariner_monument",
+      "at": [
+        -8.6,
+        -24.6,
+        -0.12
+      ],
+      "bounds": {
+        "max": [
+          -7.4,
+          -23.4,
+          3.68
+        ],
+        "min": [
+          -9.8,
+          -25.8,
+          -0.12
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "monument_helm_w",
+      "room": "apron_front",
+      "rz": 0.0
+    },
+    {
+      "asset": "anchor_monument",
+      "at": [
+        8.6,
+        -24.6,
+        -0.12
+      ],
+      "bounds": {
+        "max": [
+          9.8,
+          -23.4,
+          3.6797
+        ],
+        "min": [
+          7.4,
+          -25.8,
+          -0.12
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "monument_anchor_e",
+      "room": "apron_front",
+      "rz": 0.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        -7.0,
+        -27.200001,
+        -1.2
+      ],
+      "bounds": {
+        "max": [
+          -6.86,
+          -26.65,
+          -0.75
+        ],
+        "min": [
+          -7.14,
+          -27.75,
+          -1.2
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_fore0",
+      "room": "forecourt",
       "rz": 90.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        -3.5,
+        -27.200001,
+        -1.2
+      ],
+      "bounds": {
+        "max": [
+          -3.36,
+          -26.65,
+          -0.75
+        ],
+        "min": [
+          -3.64,
+          -27.75,
+          -1.2
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_fore1",
+      "room": "forecourt",
+      "rz": 90.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        3.5,
+        -27.200001,
+        -1.2
+      ],
+      "bounds": {
+        "max": [
+          3.64,
+          -26.65,
+          -0.75
+        ],
+        "min": [
+          3.36,
+          -27.75,
+          -1.2
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_fore2",
+      "room": "forecourt",
+      "rz": -90.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        7.0,
+        -27.200001,
+        -1.2
+      ],
+      "bounds": {
+        "max": [
+          7.14,
+          -26.65,
+          -0.75
+        ],
+        "min": [
+          6.86,
+          -27.75,
+          -1.2
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_fore3",
+      "room": "forecourt",
+      "rz": -90.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        -22.0,
+        -30.0,
+        -1.2
+      ],
+      "bounds": {
+        "max": [
+          -21.45,
+          -29.86,
+          -0.75
+        ],
+        "min": [
+          -22.55,
+          -30.14,
+          -1.2
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_fore4",
+      "room": "forecourt",
+      "rz": 0.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        22.0,
+        -30.0,
+        -1.2
+      ],
+      "bounds": {
+        "max": [
+          22.55,
+          -29.86,
+          -0.75
+        ],
+        "min": [
+          21.45,
+          -30.14,
+          -1.2
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_fore5",
+      "room": "forecourt",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -32.0,
+        -12.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -31.08,
+          -11.26,
+          3.24
+        ],
+        "min": [
+          -32.8,
+          -12.86,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_w00",
+      "room": "ground_w",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -32.0,
+        -6.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -31.08,
+          -5.26,
+          3.24
+        ],
+        "min": [
+          -32.8,
+          -6.86,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_w01",
+      "room": "ground_w",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -32.0,
+        0.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -31.08,
+          0.74,
+          3.24
+        ],
+        "min": [
+          -32.8,
+          -0.86,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_w02",
+      "room": "ground_w",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -32.0,
+        6.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -31.08,
+          6.74,
+          3.24
+        ],
+        "min": [
+          -32.8,
+          5.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_w03",
+      "room": "ground_w",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -32.0,
+        12.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -31.08,
+          12.74,
+          3.24
+        ],
+        "min": [
+          -32.8,
+          11.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_w04",
+      "room": "ground_w",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -40.0,
+        -12.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -39.08,
+          -11.26,
+          3.24
+        ],
+        "min": [
+          -40.8,
+          -12.86,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_w10",
+      "room": "ground_w",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -40.0,
+        -6.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -39.08,
+          -5.26,
+          3.24
+        ],
+        "min": [
+          -40.8,
+          -6.86,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_w11",
+      "room": "ground_w",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -40.0,
+        0.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -39.08,
+          0.74,
+          3.24
+        ],
+        "min": [
+          -40.8,
+          -0.86,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_w12",
+      "room": "ground_w",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -40.0,
+        6.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -39.08,
+          6.74,
+          3.24
+        ],
+        "min": [
+          -40.8,
+          5.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_w13",
+      "room": "ground_w",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -40.0,
+        12.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -39.08,
+          12.74,
+          3.24
+        ],
+        "min": [
+          -40.8,
+          11.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_w14",
+      "room": "ground_w",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        32.0,
+        -12.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          32.92,
+          -11.26,
+          3.24
+        ],
+        "min": [
+          31.2,
+          -12.86,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_e00",
+      "room": "ground_e",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        32.0,
+        -6.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          32.92,
+          -5.26,
+          3.24
+        ],
+        "min": [
+          31.2,
+          -6.86,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_e01",
+      "room": "ground_e",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        32.0,
+        0.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          32.92,
+          0.74,
+          3.24
+        ],
+        "min": [
+          31.2,
+          -0.86,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_e02",
+      "room": "ground_e",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        32.0,
+        6.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          32.92,
+          6.74,
+          3.24
+        ],
+        "min": [
+          31.2,
+          5.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_e03",
+      "room": "ground_e",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        32.0,
+        12.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          32.92,
+          12.74,
+          3.24
+        ],
+        "min": [
+          31.2,
+          11.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_e04",
+      "room": "ground_e",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        40.0,
+        -12.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          40.92,
+          -11.26,
+          3.24
+        ],
+        "min": [
+          39.2,
+          -12.86,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_e10",
+      "room": "ground_e",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        40.0,
+        -6.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          40.92,
+          -5.26,
+          3.24
+        ],
+        "min": [
+          39.2,
+          -6.86,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_e11",
+      "room": "ground_e",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        40.0,
+        0.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          40.92,
+          0.74,
+          3.24
+        ],
+        "min": [
+          39.2,
+          -0.86,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_e12",
+      "room": "ground_e",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        40.0,
+        6.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          40.92,
+          6.74,
+          3.24
+        ],
+        "min": [
+          39.2,
+          5.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_e13",
+      "room": "ground_e",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        40.0,
+        12.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          40.92,
+          12.74,
+          3.24
+        ],
+        "min": [
+          39.2,
+          11.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_e14",
+      "room": "ground_e",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -40.0,
+        24.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -39.08,
+          24.74,
+          3.24
+        ],
+        "min": [
+          -40.8,
+          23.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n00",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -30.0,
+        24.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -29.08,
+          24.74,
+          3.24
+        ],
+        "min": [
+          -30.8,
+          23.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n01",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -20.0,
+        24.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -19.08,
+          24.74,
+          3.24
+        ],
+        "min": [
+          -20.8,
+          23.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n02",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -10.0,
+        24.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -9.08,
+          24.74,
+          3.24
+        ],
+        "min": [
+          -10.8,
+          23.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n03",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        0.0,
+        24.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          0.92,
+          24.74,
+          3.24
+        ],
+        "min": [
+          -0.8,
+          23.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n04",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        10.0,
+        24.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          10.92,
+          24.74,
+          3.24
+        ],
+        "min": [
+          9.2,
+          23.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n05",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        20.0,
+        24.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          20.92,
+          24.74,
+          3.24
+        ],
+        "min": [
+          19.2,
+          23.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n06",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        30.0,
+        24.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          30.92,
+          24.74,
+          3.24
+        ],
+        "min": [
+          29.2,
+          23.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n07",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        40.0,
+        24.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          40.92,
+          24.74,
+          3.24
+        ],
+        "min": [
+          39.2,
+          23.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n08",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -40.0,
+        36.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -39.08,
+          36.74,
+          3.24
+        ],
+        "min": [
+          -40.8,
+          35.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n10",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -30.0,
+        36.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -29.08,
+          36.74,
+          3.24
+        ],
+        "min": [
+          -30.8,
+          35.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n11",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -20.0,
+        36.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -19.08,
+          36.74,
+          3.24
+        ],
+        "min": [
+          -20.8,
+          35.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n12",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -10.0,
+        36.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          -9.08,
+          36.74,
+          3.24
+        ],
+        "min": [
+          -10.8,
+          35.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n13",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        0.0,
+        36.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          0.92,
+          36.74,
+          3.24
+        ],
+        "min": [
+          -0.8,
+          35.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n14",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        10.0,
+        36.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          10.92,
+          36.74,
+          3.24
+        ],
+        "min": [
+          9.2,
+          35.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n15",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        20.0,
+        36.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          20.92,
+          36.74,
+          3.24
+        ],
+        "min": [
+          19.2,
+          35.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n16",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        30.0,
+        36.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          30.92,
+          36.74,
+          3.24
+        ],
+        "min": [
+          29.2,
+          35.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n17",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        40.0,
+        36.0,
+        -1.26
+      ],
+      "bounds": {
+        "max": [
+          40.92,
+          36.74,
+          3.24
+        ],
+        "min": [
+          39.2,
+          35.14,
+          -1.26
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "tree_n18",
+      "room": "ground_n",
+      "rz": 0.0
+    },
+    {
+      "asset": "vr_console",
+      "at": [
+        -4.6,
+        -12.8,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -4.39,
+          -12.62,
+          1.08
+        ],
+        "min": [
+          -4.81,
+          -12.98,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "kiosk_w",
+      "room": "lobby",
+      "rz": -180.0
+    },
+    {
+      "asset": "vr_console",
+      "at": [
+        4.6,
+        -12.8,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          4.81,
+          -12.62,
+          1.08
+        ],
+        "min": [
+          4.39,
+          -12.98,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "kiosk_e",
+      "room": "lobby",
+      "rz": -180.0
+    },
+    {
+      "asset": "coat_rack",
+      "at": [
+        -7.2,
+        -13.6,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -7.0,
+          -13.4,
+          1.79
+        ],
+        "min": [
+          -7.4,
+          -13.8,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coat_w",
+      "room": "lobby",
+      "rz": 0.0
+    },
+    {
+      "asset": "coat_rack",
+      "at": [
+        7.2,
+        -13.6,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          7.4,
+          -13.4,
+          1.79
+        ],
+        "min": [
+          7.0,
+          -13.8,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coat_e",
+      "room": "lobby",
+      "rz": 0.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        -3.0,
+        -14.12,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -2.45,
+          -13.98,
+          0.45
+        ],
+        "min": [
+          -3.55,
+          -14.26,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_entry_w",
+      "room": "lobby",
+      "rz": -180.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        3.0,
+        -14.12,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          3.55,
+          -13.98,
+          0.45
+        ],
+        "min": [
+          2.45,
+          -14.26,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_entry_e",
+      "room": "lobby",
+      "rz": -180.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        -5.0,
+        6.2,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -4.45,
+          6.34,
+          0.45
+        ],
+        "min": [
+          -5.55,
+          6.06,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_back_w",
+      "room": "lobby",
+      "rz": 0.0
+    },
+    {
+      "asset": "bench",
+      "at": [
+        5.0,
+        6.2,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          5.55,
+          6.34,
+          0.45
+        ],
+        "min": [
+          4.45,
+          6.06,
+          0.0
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_back_e",
+      "room": "lobby",
+      "rz": 0.0
+    },
+    {
+      "asset": "didactic_panel",
+      "at": [
+        -9.37,
+        -7.5,
+        1.15
+      ],
+      "bounds": {
+        "max": [
+          -9.34,
+          -6.8,
+          2.1
+        ],
+        "min": [
+          -9.4,
+          -8.2,
+          1.15
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "panel_w",
+      "room": "lobby",
+      "rz": 90.0
+    },
+    {
+      "asset": "didactic_panel",
+      "at": [
+        9.37,
+        -7.5,
+        1.15
+      ],
+      "bounds": {
+        "max": [
+          9.4,
+          -6.8,
+          2.1
+        ],
+        "min": [
+          9.34,
+          -8.2,
+          1.15
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "panel_e",
+      "room": "lobby",
+      "rz": -90.0
+    },
+    {
+      "asset": "didactic_panel",
+      "at": [
+        -3.5,
+        6.57,
+        1.15
+      ],
+      "bounds": {
+        "max": [
+          -2.8,
+          6.6,
+          2.1
+        ],
+        "min": [
+          -4.2,
+          6.54,
+          1.15
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "panel_back_w",
+      "room": "lobby",
+      "rz": 0.0
+    },
+    {
+      "asset": "didactic_panel",
+      "at": [
+        3.5,
+        6.57,
+        1.15
+      ],
+      "bounds": {
+        "max": [
+          4.2,
+          6.6,
+          2.1
+        ],
+        "min": [
+          2.8,
+          6.54,
+          1.15
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "panel_back_e",
+      "room": "lobby",
+      "rz": 0.0
     }
   ],
   "scene": "scene_01",

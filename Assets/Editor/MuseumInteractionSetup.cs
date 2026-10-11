@@ -39,7 +39,7 @@ public static class MuseumInteractionSetup
     public static void Install()
     {
         var setup = EditorSceneManager.GetSceneManagerSetup();
-        var paths = new[] { "Assets/Project3D/Scenes/scene_01.unity", "Assets/Project3D/Scenes/scene_02.unity", "Assets/Project3D/Scenes/scene_03.unity" };
+        var paths = new[] { "Assets/Project3D/Scenes/scene_01.unity", "Assets/Project3D/Scenes/scene_02.unity" };
         var ambience = RequiredAudio("博物馆氛围音");
         var cicadas = RequiredAudio("蝉鸣");
         var voices = RequiredAudio("博物馆回音+人声");
@@ -69,7 +69,7 @@ public static class MuseumInteractionSetup
                     var obj = GameObject.Find("SceneAudioTimeline") ?? new GameObject("SceneAudioTimeline");
                     var flow = obj.GetComponent<SceneAudioTimeline>() ?? obj.AddComponent<SceneAudioTimeline>();
                     flow.timeline = i == 0 ? first : second; flow.ambience = i == 0 ? ambience : null;
-                    flow.playOnStart = i == 1; flow.nextScene = i == 0 ? "scene_02" : "scene_03";
+                    flow.playOnStart = i == 1; flow.nextScene = i == 0 ? "scene_02" : "";
                     var director = obj.GetComponent<PlayableDirector>();
                     director.playableAsset = flow.timeline; director.playOnAwake = false;
                     director.timeUpdateMode = DirectorUpdateMode.DSPClock; director.extrapolationMode = DirectorWrapMode.Hold;
@@ -100,7 +100,7 @@ public static class MuseumInteractionSetup
                 if (existing != null) existing.enabled = true; else builds.Add(new EditorBuildSettingsScene(path, true));
             }
             EditorBuildSettings.scenes = builds.ToArray(); AssetDatabase.SaveAssets();
-            File.WriteAllText(Marker, "scene_01 ambience > censer right trigger > cicadas 15s > scene_02 voices 15s > scene_03\nUnity editor scripts compiled and scene setup completed.\nAudio lengths: " + ambience.length + ", " + cicadas.length + ", " + voices.length + "\nActual VR controller and headset output require hardware verification.");
+            File.WriteAllText(Marker, "scene_01 ambience > censer right trigger > cicadas 15s > scene_02 voices 15s > remain in scene_02\nUnity editor scripts compiled and scene setup completed.\nAudio lengths: " + ambience.length + ", " + cicadas.length + ", " + voices.length + "\nActual VR controller and headset output require hardware verification.");
             AssetDatabase.Refresh(); Debug.Log("[Museum] Interaction scenes and timelines saved successfully.");
         }
         finally { EditorSceneManager.RestoreSceneManagerSetup(setup); }

@@ -1,0 +1,709 @@
+{
+    "scene": "scene_01",
+    "kind": "migrated",
+    "stamp": "20261011-133813",
+    "dry_run": false,
+    "applied": true,
+    "reason": "",
+    "kept": [
+        {
+            "name": "[CameraRig]",
+            "kind": "kept",
+            "detail": ""
+        },
+        {
+            "name": "SceneAudioTimeline",
+            "kind": "kept",
+            "detail": ""
+        },
+        {
+            "name": "RightControllerDummy",
+            "kind": "kept",
+            "detail": ""
+        }
+    ],
+    "migrated": [
+        {
+            "name": "museum_hall",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "vitrine",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "vitrine_hood",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "censer",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "bench_main",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "bench_side_w",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "bench_side_e",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "info_center",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "panel_intro",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "net_w",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "wheel_w",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "oar_w",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "plinth_w1",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "anchor_w",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "plinth_w2",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "rope_w",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "shadow_w",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "plinth_e1",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "rice_jar_e",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "crock_e",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "plinth_e2",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "water_jar_e",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "tablets_e",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "bag_e",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "scroll_e",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "barometer_e",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "vitrine_n1",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "hood_n1",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "sextant_n",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "vitrine_n2",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "hood_n2",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "bell_n",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "plinth_n1",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "junk_n",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "plinth_n2",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "binnacle_n",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "panel_story",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "rail_west",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "rail_centre",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "rail_east",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "rail_front",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "rail_back",
+            "kind": "placement",
+            "detail": ""
+        },
+        {
+            "name": "Project3D Lighting",
+            "kind": "root",
+            "detail": ""
+        },
+        {
+            "name": "plaza",
+            "kind": "placement",
+            "detail": ""
+        }
+    ],
+    "carried": [
+        {
+            "name": "museum_hall",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "vitrine",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "vitrine_hood",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "censer",
+            "kind": "component",
+            "detail": "12 override(s) replayed"
+        },
+        {
+            "name": "censer",
+            "kind": "component",
+            "detail": "BoxCollider"
+        },
+        {
+            "name": "censer",
+            "kind": "component",
+            "detail": "Rigidbody"
+        },
+        {
+            "name": "bench_main",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "bench_side_w",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "bench_side_e",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "info_center",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "panel_intro",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "net_w",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "wheel_w",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "oar_w",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "plinth_w1",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "anchor_w",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "plinth_w2",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "rope_w",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "shadow_w",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "plinth_e1",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "rice_jar_e",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "crock_e",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "plinth_e2",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "water_jar_e",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "tablets_e",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "bag_e",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "scroll_e",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "barometer_e",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "vitrine_n1",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "hood_n1",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "sextant_n",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "vitrine_n2",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "hood_n2",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "bell_n",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "plinth_n1",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "junk_n",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "plinth_n2",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "binnacle_n",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "panel_story",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "rail_west",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "rail_centre",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "rail_east",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "rail_front",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "rail_back",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        },
+        {
+            "name": "plaza",
+            "kind": "component",
+            "detail": "11 override(s) replayed"
+        }
+    ],
+    "not_carried": [
+        {
+            "name": "vitrine",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "vitrine_hood",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "censer",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "bench_main",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "bench_side_w",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "bench_side_e",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "info_center",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "panel_intro",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "net_w",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "wheel_w",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "oar_w",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "plinth_w1",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "anchor_w",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "plinth_w2",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "rope_w",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "shadow_w",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "plinth_e1",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "rice_jar_e",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "crock_e",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "plinth_e2",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "water_jar_e",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "tablets_e",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "bag_e",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "scroll_e",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "barometer_e",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "vitrine_n1",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "hood_n1",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "sextant_n",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "vitrine_n2",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "hood_n2",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "bell_n",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "plinth_n1",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "junk_n",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "plinth_n2",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "binnacle_n",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "panel_story",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "rail_west",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "rail_centre",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "rail_east",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "rail_front",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        },
+        {
+            "name": "rail_back",
+            "kind": "nudge-dropped",
+            "detail": "you moved this object; the published layout is the standard, so it sits where the update puts it"
+        }
+    ],
+    "broken": [
+        {
+            "name": "Project3D Lighting/ext_sculpt_l",
+            "kind": "destroyed",
+            "detail": "under 'Project3D Lighting'; not in the published room"
+        },
+        {
+            "name": "Project3D Lighting/ext_sculpt_r",
+            "kind": "destroyed",
+            "detail": "under 'Project3D Lighting'; not in the published room"
+        },
+        {
+            "name": "Project3D Lighting/ext_blue_base_l",
+            "kind": "destroyed",
+            "detail": "under 'Project3D Lighting'; not in the published room"
+        },
+        {
+            "name": "Project3D Lighting/ext_blue_base_r",
+            "kind": "destroyed",
+            "detail": "under 'Project3D Lighting'; not in the published room"
+        },
+        {
+            "name": "RightControllerDummy",
+            "kind": "reference",
+            "detail": "RightController.censerColliders.Array.data[0] -> 'censer'"
+        }
+    ],
+    "partial": true
+}

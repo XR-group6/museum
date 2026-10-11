@@ -78,7 +78,7 @@ public class SceneAudioTimeline : MonoBehaviour
     {
         if (voiceOver)
         {
-            if (!Application.CanStreamedLevelBeLoaded(nextScene)) { Fail("Next scene is absent from Build Settings: " + nextScene); yield break; }
+            if (!string.IsNullOrEmpty(nextScene) && !Application.CanStreamedLevelBeLoaded(nextScene)) { Fail("Next scene is absent from Build Settings: " + nextScene); yield break; }
             if (completionDirector)
             {
                 if (completionDirector == director || !completionDirector.playableAsset || !completionDirector.isActiveAndEnabled)
@@ -108,7 +108,7 @@ public class SceneAudioTimeline : MonoBehaviour
         var asset = (AudioPlayableAsset)segment.asset;
         if (!asset.clip || asset.loop || segment.timeScale <= 0 || segment.clipIn + segment.duration * segment.timeScale > asset.clip.length + 0.05)
         { Fail("Missing, looping or too-short audio for sequence."); yield break; }
-        if (!Application.CanStreamedLevelBeLoaded(nextScene)) { Fail("Next scene is absent from Build Settings: " + nextScene); yield break; }
+        if (!string.IsNullOrEmpty(nextScene) && !Application.CanStreamedLevelBeLoaded(nextScene)) { Fail("Next scene is absent from Build Settings: " + nextScene); yield break; }
         if (completionDirector)
         {
             if (completionDirector == director || !completionDirector.playableAsset || !completionDirector.isActiveAndEnabled)
@@ -165,6 +165,11 @@ public class SceneAudioTimeline : MonoBehaviour
         }
         else if (!audioFinished) return;
         playing = false; source.Stop(); director.Stop();
+        if (string.IsNullOrEmpty(nextScene))
+        {
+            Debug.Log("[Museum] Sequence completed; remaining in the final scene.", this);
+            return;
+        }
         Debug.Log("[Museum] Loading " + nextScene, this);
         SceneManager.LoadSceneAsync(nextScene);
     }

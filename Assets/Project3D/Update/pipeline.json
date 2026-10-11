@@ -1,0 +1,29 @@
+{
+  "changed": [],
+  "retired": [
+    "scene_03",
+    "scene_04"
+  ],
+  "scenes": {
+    "scene_01": {
+      "added": 0,
+      "asset_swapped": 0,
+      "bounds_changed": 0,
+      "moved": 0,
+      "removed": 0,
+      "renamed": 0,
+      "summary": "no change",
+      "unchanged": 103
+    },
+    "scene_02": {
+      "added": 0,
+      "asset_swapped": 0,
+      "bounds_changed": 0,
+      "moved": 0,
+      "removed": 0,
+      "renamed": 0,
+      "summary": "no change",
+      "unchanged": 370
+    }
+  }
+}
