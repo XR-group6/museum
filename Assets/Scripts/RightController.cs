@@ -6,6 +6,7 @@ public class RightController : MonoBehaviour
     public SteamVR_Behaviour_Pose rightHand;
     public Collider[] censerColliders;
     public SceneAudioTimeline sequence;
+    public SceneOneNarration narration;
     public float interactionDistance = 0.15f;
     private SteamVR_Action_Boolean trigger;
     private bool triggered;
@@ -16,7 +17,7 @@ public class RightController : MonoBehaviour
             foreach (var pose in FindObjectsOfType<SteamVR_Behaviour_Pose>())
                 if (pose.inputSource == SteamVR_Input_Sources.RightHand) { rightHand = pose; break; }
         trigger = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
-        if (!rightHand || !sequence || censerColliders == null || censerColliders.Length == 0 || trigger == null)
+        if (!rightHand || (!sequence && !narration) || censerColliders == null || censerColliders.Length == 0 || trigger == null)
         {
             Debug.LogError("[Museum] RightController requires a right-hand pose, GrabPinch, censer colliders and sequence.", this);
             enabled = false;
@@ -27,6 +28,7 @@ public class RightController : MonoBehaviour
     void Update()
     {
         transform.SetPositionAndRotation(rightHand.transform.position, rightHand.transform.rotation);
+        if (narration && !narration.WaitingForInteraction) return;
         if (triggered || !rightHand.isValid || !trigger.GetState(SteamVR_Input_Sources.RightHand)) return;
         foreach (var collider in censerColliders)
         {
@@ -37,7 +39,8 @@ public class RightController : MonoBehaviour
             {
                 triggered = true;
                 Debug.Log("[Museum] Right trigger activated censer.", this);
-                sequence.Begin();
+                if (narration) narration.Interact();
+                else sequence.Begin();
                 break;
             }
         }

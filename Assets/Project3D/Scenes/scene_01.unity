@@ -319,7 +319,8 @@ MonoBehaviour:
   rightHand: {fileID: 1222106202}
   censerColliders:
   - {fileID: 711290353}
-  sequence: {fileID: 1256666177}
+  sequence: {fileID: 0}
+  narration: {fileID: 1256666177}
   interactionDistance: 0.15
 --- !u!4 &556087847
 Transform:
@@ -583,16 +584,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1256666176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f444ddf54ba3b484990d2f711892650c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeline: {fileID: 11400000, guid: 8c7a05285ad838c44aa9bd7a30defeb3, type: 2}
-  ambience: {fileID: 8300000, guid: 8928a1526946fa84aa38ac1030656697, type: 3}
-  voiceOver: {fileID: 0}
-  playOnStart: 0
+  m_Script: {fileID: 11500000, guid: 25bb7492083d4a3b95bcf8a30b82c7ec, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  museumEcho: {fileID: 8300000, guid: 751cf465281dea84c8629a3ad54c8fbd, type: 3}
+  censerIntro: {fileID: 8300000, guid: 9ef1ec83789f5a24096c3d5c639b6fa5, type: 3}
+  censerAfterGrab: {fileID: 8300000, guid: 3503b9aa496b25e498e6af188c1b44a1, type: 3}
+  censerFinal: {fileID: 8300000, guid: 41c982d5d251d4a41946a25abfe81fd6, type: 3}
+  narrationSubtitle: {fileID: 2146000012}
+  interactionSubtitle: {fileID: 2146000022}
+  introSubtitles: {fileID: 4900000, guid: d2c8b5f0ce254b99bcbe02d6284b8616, type: 3}
+  paragraphStartTimes:
+  - 0
+  - 5.65
+  - 14.2
   nextScene: scene_02
-  completionDirector: {fileID: 0}
-  delayAfterAnimation: 3
 --- !u!320 &1256666178
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -665,6 +671,110 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &2146000010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146000011}
+  - component: {fileID: 2146000012}
+  m_Layer: 0
+  m_Name: VRNarrationSubtitles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2146000011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146000010}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.886, y: 1.7, z: -10.309}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146000012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146000010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991c9a3bfd694e949f520d447e34abc2, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  subtitleFile: {fileID: 0}
+  vrCamera: {fileID: 0}
+  followCamera: 1
+  cameraOffset: {x: 0, y: 0.35, z: 2}
+  subtitleWidth: 900
+  fontSize: 48
+  canvasScale: 0.0015
+  subtitleFont: {fileID: 0}
+--- !u!1 &2146000020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146000021}
+  - component: {fileID: 2146000022}
+  m_Layer: 0
+  m_Name: CenserInteractionPrompt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2146000021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146000020}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.886, y: 1.7, z: -10.309}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146000022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146000020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991c9a3bfd694e949f520d447e34abc2, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  subtitleFile: {fileID: 0}
+  vrCamera: {fileID: 0}
+  followCamera: 0
+  cameraOffset: {x: 0, y: 0.55, z: 2}
+  subtitleWidth: 900
+  fontSize: 48
+  canvasScale: 0.0015
+  subtitleFont: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -673,3 +783,5 @@ SceneRoots:
   - {fileID: 1256666179}
   - {fileID: 556087847}
   - {fileID: 711290350}
+  - {fileID: 2146000011}
+  - {fileID: 2146000021}

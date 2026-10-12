@@ -21,11 +21,18 @@ public class VRSubtitle : MonoBehaviour
     private Canvas canvas;
     private Font runtimeFont;
     private string displayed;
+    private string runtimeText;
+
+    public void ShowText(string text)
+    {
+        runtimeText = text ?? "";
+        if (label) Refresh();
+    }
 #if UNITY_EDITOR
     private double nextRefresh;
 #endif
 
-    void Start()
+    void Awake()
     {
         var root = new GameObject("SubtitleCanvas", typeof(RectTransform), typeof(Canvas), typeof(CanvasGroup));
         root.transform.SetParent(transform, false);
@@ -53,9 +60,9 @@ public class VRSubtitle : MonoBehaviour
 
     void Refresh()
     {
-        string content = subtitleFile ? subtitleFile.text : "";
+        string content = runtimeText ?? (subtitleFile ? subtitleFile.text : "");
 #if UNITY_EDITOR
-        if (subtitleFile)
+        if (runtimeText == null && subtitleFile)
         {
             string path = AssetDatabase.GetAssetPath(subtitleFile);
             try { if (File.Exists(path)) content = File.ReadAllText(path); }
