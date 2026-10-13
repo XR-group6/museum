@@ -4,9 +4,8 @@ using UnityEngine.Playables;
 namespace IncenseCharacters
 {
     /// <summary>
-    /// 香炉第一视角相机的动画：
-    /// 敬香时贴近看父亲的手肘/鞠躬（看不见香），敬完香（手臂垂下）后镜头拉开、看向父亲的脸。
-    /// 用 director.time 驱动，拖时间轴也能正确表现。
+    /// Compatibility component for scenes saved with the retired story camera.
+    /// Camera pose and projection are now owned by the player/XR camera rig.
     /// </summary>
     public class IncenseStoryCamera : MonoBehaviour
     {
@@ -25,17 +24,12 @@ namespace IncenseCharacters
         public float pullBackAt = 5f;       // 敬香结束
         public float pullBackDuration = 1.5f;
 
-        Camera cam;
-
-        void Awake() { cam = GetComponent<Camera>(); }
-
-        void LateUpdate()
+        void OnEnable()
         {
-            if (cam == null) return;
-            float t = director != null ? (float)director.time : Time.timeSinceLevelLoad;
-            float k = Mathf.Clamp01((t - pullBackAt) / pullBackDuration);
-            cam.fieldOfView = Mathf.Lerp(closeFOV, wideFOV, k);
-            cam.transform.LookAt(lookAnchor + Vector3.up * Mathf.Lerp(lookHeightClose, lookHeightWide, k));
+            // Also handles old components still loaded in the editor when scripts reload.
+            var cam = GetComponent<Camera>();
+            if (cam != null) cam.fieldOfView = 60f;
+            enabled = false;
         }
     }
 }

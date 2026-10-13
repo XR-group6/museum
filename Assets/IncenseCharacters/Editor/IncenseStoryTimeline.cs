@@ -25,11 +25,13 @@ namespace IncenseCharacters.Editor
         const string DaughterAnimDir = "Assets/IncenseCharacters/Generated/Daughter_Child/Animations/";
         const string MotionDir       = "Assets/IncenseCharacters/Generated/Motion/";
         const string TimelinePath    = "Assets/IncenseCharacters/Generated/IncenseStory.playable";
+        const string IncensePrefab   = "Assets/IncenseCharacters/Props/HandIncense.prefab";
 
         const string RootPath = "Root"; // 骨架里最顶层的骨骼名（相对 Animator 的路径）
 
         // —— 分镜时间（秒）——
         const float T_PRAY          = 0f;    // 父亲敬香
+        const float T_INCENSE_END   = IncensePrayAnimation.ReleaseTime; // 香脚插入香灰、松手后隐藏
         const float T_FATHER_IDLE   = 5f;    // 敬香结束，站直（女儿开始叫）
         const float T_HEAD_TURN     = 9f;    // 父亲回头
         const float T_STEP_ASIDE    = 11.2f; // 父亲转身让位
@@ -43,7 +45,7 @@ namespace IncenseCharacters.Editor
         const float FatherDist   = 1.2f;  // 父亲在香炉前方距离
         const float SideStepX    = 1.2f;  // 让位横向移动量
         const float DaughterDist = 4.5f;  // 门口(女儿)距离
-        const float DaughterNear = 0.45f; // 女儿走近后距离（凑到香炉前）
+        const float DaughterNear = 0.95f; // 与香炉前沿镜头留出空间，探头时不进入近裁剪面
 
         // —— 回头参数（角度方向反了就改符号）——
         const float HeadTurnDeg = 35f; // 微微偏头
@@ -56,10 +58,6 @@ namespace IncenseCharacters.Editor
         // —— 女儿最后一幕侧头看向父亲的偏转（方向反了就改符号）——
         const float LookFatherHeadDeg = 45f;
         const float LookFatherNeckDeg = 20f;
-
-        // —— 相机取景：平视到父亲胸部高度（≈女儿头部），敬香时只看手/动作、不看头 ——
-        const float FaceLookHeight = 1.2f;
-        const float StoryFOV = 20f; // 敬香时收窄视野，只拍手与上香动作
 
         [MenuItem("Tools/Incense Story/Build Timeline in scene_02")]
         public static void Build()
@@ -107,12 +105,9 @@ namespace IncenseCharacters.Editor
                 // 隐藏香炉前面的蜡烛（按名字包含 "candle" 递归隐藏所有相关对象），避免挡住第一视角
                 HideBySubstring("candle");
 
-                // 相机（第一视角：在香炉前 0.2m，避免嵌入香炉模型触发 IsFinite 报错；敬香时看手肘，敬完香后镜头拉开看脸）
-                Vector3 camPos = burnerPos + Vector3.back * 0.2f;
-                Camera storyCam = EnsureStoryCamera(camPos, fatherPrayPos + Vector3.up * FaceLookHeight);
-
                 // 生成辅助 clip（转头 / 让位 / 走进）—— 都作用于骨骼，放在 Animator 轨上
                 EnsureFolder(MotionDir);
+                var fatherPrayClip = IncensePrayAnimation.Bake(father, burnerPos);
                 var headRoot = FindChildRecursive(father.transform, "Root");
                 var headBone = FindChildRecursive(father.transform, "Head");
                 var neckBone = FindChildRecursive(father.transform, "Neck");
@@ -175,7 +170,7 @@ namespace IncenseCharacters.Editor
 
                 // 父亲动画轨（含让位 + 让位后站定）
                 var fatherAnim = timeline.CreateTrack<AnimationTrack>(null, "Father_Animation");
-                AddAnimClip(fatherAnim, FatherAnimDir, "Pray", T_PRAY);
+                AddClip(fatherAnim, fatherPrayClip, T_PRAY);
                 AddAnimClip(fatherAnim, FatherAnimDir, "Idle", T_FATHER_IDLE);
                 AddClip(fatherAnim, headTurnClip, T_HEAD_TURN);
                 AddClip(fatherAnim, stepAsideClip, T_STEP_ASIDE);
@@ -199,24 +194,40 @@ namespace IncenseCharacters.Editor
                 director.SetGenericBinding(fatherAnim, father.GetComponent<Animator>());
                 director.SetGenericBinding(daughterAnim, daughter.GetComponent<Animator>());
 
+                // The previous director was destroyed above; reconnect narration to this one.
+                foreach (var root in scene.GetRootGameObjects())
+                {
+                    foreach (var narration in root.GetComponentsInChildren<SceneTwoNarration>(true))
+                    {
+                        narration.storyDirector = director;
+                        EditorUtility.SetDirty(narration);
+                        if (narration.isActiveAndEnabled) director.playOnAwake = false;
+                    }
+                }
+
+                // 使用原生显隐轨，播放、回拖和重播时都由 Timeline 确定状态。
+                var grip = FindChildRecursive(father.transform, "Grip_R");
+                var incenseAsset = AssetDatabase.LoadAssetAtPath<GameObject>(IncensePrefab);
+                if (grip == null || incenseAsset == null)
+                    throw new System.InvalidOperationException("Missing Grip_R or " + IncensePrefab);
+                var incense = (GameObject)PrefabUtility.InstantiatePrefab(incenseAsset, grip);
+                incense.name = "Father_HandIncense";
+                incense.transform.localPosition = IncensePrayAnimation.GripOffset;
+                incense.transform.localRotation = IncensePrayAnimation.GripRotation;
+                incense.SetActive(false);
+                var incenseTrack = timeline.CreateTrack<ActivationTrack>(null, "Father_Incense");
+                incenseTrack.postPlaybackState = ActivationTrack.PostPlaybackState.Inactive;
+                var incenseClip = incenseTrack.CreateDefaultClip();
+                incenseClip.displayName = "Hold incense";
+                incenseClip.start = T_PRAY;
+                incenseClip.duration = T_INCENSE_END - T_PRAY;
+                director.SetGenericBinding(incenseTrack, incense);
+
                 // 精确视线跟随：让位后父亲的头持续看向女儿（目标用女儿的 Head 骨骼，随她移动，而不是固定在门口的根物体）
                 var lookAt = father.AddComponent<IncenseLookAt>();
                 lookAt.target = daughterHeadBone;
                 lookAt.director = director;
                 lookAt.lookFrom = T_FATHER_IDLE2;
-
-                // 相机动画：敬香时近景看手肘，敬完香后镜头拉开看脸
-                if (storyCam != null)
-                {
-                    var existing = storyCam.gameObject.GetComponent<IncenseStoryCamera>();
-                    if (existing != null) UnityEngine.Object.DestroyImmediate(existing); // 避免重复运行叠加组件
-                    var camCtrl = storyCam.gameObject.AddComponent<IncenseStoryCamera>();
-                    camCtrl.director = director;
-                    camCtrl.lookAnchor = fatherPrayPos;
-                    camCtrl.closeFOV = StoryFOV;
-                    camCtrl.lookHeightClose = FaceLookHeight;
-                    camCtrl.pullBackAt = T_PRAY + 5f; // 敬香时长约 5 秒
-                }
 
                 AssetDatabase.SaveAssets();
                 EditorSceneManager.MarkSceneDirty(scene);
@@ -295,27 +306,6 @@ namespace IncenseCharacters.Editor
             if (t != root) return bone.name;
             names.Reverse();
             return root.name + "/" + string.Join("/", names);
-        }
-
-        static Camera EnsureStoryCamera(Vector3 at, Vector3 lookTarget)
-        {
-            var camGo = GameObject.FindGameObjectWithTag("MainCamera");
-            if (camGo == null)
-            {
-                camGo = new GameObject("Main Camera");
-                camGo.tag = "MainCamera";
-                camGo.AddComponent<Camera>();
-                camGo.AddComponent<AudioListener>();
-            }
-            camGo.transform.position = at;
-            camGo.transform.rotation = FaceTowards(lookTarget, at);
-            var cam = camGo.GetComponent<Camera>();
-            if (cam)
-            {
-                cam.nearClipPlane = 0.05f; // 女儿凑得很近时不至于被近裁剪面切掉
-                cam.fieldOfView = StoryFOV; // 收窄视野，放大父亲上半身
-            }
-            return cam;
         }
 
         static void EnsureFolder(string fullPath)
@@ -480,6 +470,8 @@ namespace IncenseCharacters.Editor
                 {
                     float nt = k.time - start + offset;
                     if (nt > total + 0.0001f) break;
+                    // Adjacent cycles share an endpoint; duplicate times produce invalid samples.
+                    if (list.Count > 0 && nt <= list[list.Count - 1].time + 0.00001f) continue;
                     list.Add(new Keyframe(nt, k.value, k.inTangent, k.outTangent, k.inWeight, k.outWeight));
                 }
                 offset += span;

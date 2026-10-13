@@ -23,7 +23,24 @@ public class SceneTwoNarration : MonoBehaviour
 
     void Awake()
     {
+        ResolveSceneReferences();
         if (storyDirector) storyDirector.playOnAwake = false;
+    }
+
+    void ResolveSceneReferences()
+    {
+        // Rebuilding the story replaces its director. Only recover references from this scene.
+        foreach (var root in gameObject.scene.GetRootGameObjects())
+        {
+            if (!subtitles) subtitles = root.GetComponentInChildren<VRSubtitle>(true);
+            if (storyDirector && storyDirector.playableAsset) continue;
+            foreach (var candidate in root.GetComponentsInChildren<PlayableDirector>(true))
+            {
+                if (candidate.name != "IncenseStoryDirector" || !candidate.playableAsset) continue;
+                storyDirector = candidate;
+                break;
+            }
+        }
     }
 
     AudioSource MakeSource(string name, AudioClip clip, Vector3 position, float volume, bool spatial, bool loop)
@@ -47,8 +64,17 @@ public class SceneTwoNarration : MonoBehaviour
 
     IEnumerator Start()
     {
+        ResolveSceneReferences();
         if (!subtitles || !dialogueSubtitles || !storyDirector || !storyDirector.playableAsset)
-        { Debug.LogError("[Museum] Scene two needs subtitles and an animation director.", this); yield break; }
+        {
+            var missing = new List<string>();
+            if (!subtitles) missing.Add(nameof(subtitles));
+            if (!dialogueSubtitles) missing.Add(nameof(dialogueSubtitles));
+            if (!storyDirector) missing.Add(nameof(storyDirector));
+            else if (!storyDirector.playableAsset) missing.Add("storyDirector.playableAsset");
+            Debug.LogError("[Museum] Scene two is missing: " + string.Join(", ", missing), this);
+            yield break;
+        }
         subtitles.ShowText("");
         string[] paragraphs = Regex.Split(dialogueSubtitles.text.Trim(), @"(?:<br\s*/?>\s*){2}|\r?\n\s*\r?\n", RegexOptions.IgnoreCase);
         if (paragraphs.Length != 5 || historyStartTimes.Length != 3 || historyStartTimes[0] < 0 ||
