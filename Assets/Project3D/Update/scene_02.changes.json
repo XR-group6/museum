@@ -1,11 +1,40 @@
 {
   "added": [],
   "asset_swapped": [],
-  "bounds_changed": [],
+  "bounds_changed": [
+    {
+      "asset": "fishing_boat",
+      "from": [
+        [
+          0.7902,
+          17.4583,
+          -0.67
+        ],
+        [
+          5.1792,
+          26.9811,
+          2.97
+        ]
+      ],
+      "name": "boat_family",
+      "to": [
+        [
+          0.79,
+          17.4568,
+          -0.67
+        ],
+        [
+          5.1792,
+          26.9811,
+          2.97
+        ]
+      ]
+    }
+  ],
   "first_publish": false,
   "moved": [],
   "removed": [],
   "renamed": [],
   "scene": "scene_02",
-  "unchanged": 370
+  "unchanged": 369
 }

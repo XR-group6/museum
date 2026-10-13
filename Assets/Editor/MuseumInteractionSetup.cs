@@ -66,10 +66,20 @@ public static class MuseumInteractionSetup
                 foreach (var listener in listeners) if (listener != keep) listener.enabled = false;
                 if (i < 2)
                 {
+                    // New narration components own the sequence; keep their authored setup.
+                    var firstNarration = UnityEngine.Object.FindObjectOfType<SceneOneNarration>();
+                    var secondNarration = UnityEngine.Object.FindObjectOfType<SceneTwoNarration>();
+                    if (firstNarration || secondNarration)
+                    {
+                        if (firstNarration) { firstNarration.nextScene = "scene_02"; EditorUtility.SetDirty(firstNarration); }
+                        if (secondNarration) { secondNarration.nextScene = "scene_03"; EditorUtility.SetDirty(secondNarration); }
+                        EditorSceneManager.SaveScene(scene);
+                        continue;
+                    }
                     var obj = GameObject.Find("SceneAudioTimeline") ?? new GameObject("SceneAudioTimeline");
                     var flow = obj.GetComponent<SceneAudioTimeline>() ?? obj.AddComponent<SceneAudioTimeline>();
                     flow.timeline = i == 0 ? first : second; flow.ambience = i == 0 ? ambience : null;
-                    flow.playOnStart = i == 1; flow.nextScene = i == 0 ? "scene_02" : "";
+                    flow.playOnStart = i == 1; flow.nextScene = i == 0 ? "scene_02" : "scene_03";
                     var director = obj.GetComponent<PlayableDirector>();
                     director.playableAsset = flow.timeline; director.playOnAwake = false;
                     director.timeUpdateMode = DirectorUpdateMode.DSPClock; director.extrapolationMode = DirectorWrapMode.Hold;

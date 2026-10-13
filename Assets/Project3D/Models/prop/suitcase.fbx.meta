@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 44b7372d48e4d5a30b7efd703d72c188
+guid: 696035d157d8c4e24ae0059015b1d7be
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -15,12 +15,12 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
-    motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
-    animationImportErrors: 
-    animationImportWarnings: 
-    animationRetargetingWarnings: 
+    motionNodeName:
+    rigImportErrors:
+    rigImportWarnings:
+    animationImportErrors:
+    animationImportWarnings:
+    animationRetargetingWarnings:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
@@ -91,7 +91,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -104,6 +104,6 @@ ModelImporter:
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:

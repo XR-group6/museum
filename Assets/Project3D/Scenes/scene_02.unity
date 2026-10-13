@@ -141,7 +141,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -554,8 +554,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64fb52b89a133d0408cd1eb6345907b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   target: {fileID: 1001893745}
   director: {fileID: 703377719}
   lookFrom: 12.8
@@ -616,11 +616,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value: 
+      value:
       objectReference: {fileID: 156825543}
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Mesh
-      value: 
+      value:
       objectReference: {fileID: 1506454460}
     - target: {fileID: 1000014254142504, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_TagString
@@ -663,8 +663,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aee45663c1fb471aa07fe1e61e0b2cd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   footsteps: {fileID: 8300000, guid: a38fac694c8542a4098c5e48cb14b1de, type: 3}
   luggage: {fileID: 8300000, guid: 9f3acf21108a9ed41acfec3a326368f5, type: 3}
   harbour: {fileID: 8300000, guid: dce689cf8b550564d90391708ce5455c, type: 3}
@@ -682,7 +682,7 @@ MonoBehaviour:
   - 0
   - 7.7
   - 14.85
-  nextScene: 
+  nextScene: scene_03
   delayAfterCompletion: 3
   speechBackgroundMultiplier: 0.25
 --- !u!320 &556087847
@@ -861,7 +861,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 
+  m_Name:
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -880,11 +880,11 @@ Mesh:
     channels: []
     fullWeights: []
   m_BindPose: []
-  m_BoneNameHashes: 
+  m_BoneNameHashes:
   m_RootBoneNameHash: 0
   m_BonesAABB: []
   m_VariableBoneCountWeights:
-    m_Data: 
+    m_Data:
   m_MeshCompression: 0
   m_IsReadable: 1
   m_KeepVertices: 1
@@ -958,51 +958,51 @@ Mesh:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_UV:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_Normals:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_Tangents:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_Weights:
       m_NumItems: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_NormalSigns:
       m_NumItems: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_TangentSigns:
       m_NumItems: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_FloatColors:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_BoneIndices:
       m_NumItems: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_Triangles:
       m_NumItems: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_UVInfo: 0
   m_LocalAABB:
@@ -1010,8 +1010,8 @@ Mesh:
     m_Extent: {x: 1.65, y: 0, z: 1.275}
   m_MeshUsageFlags: 0
   m_CookingOptions: 30
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
+  m_BakedConvexCollisionMesh:
+  m_BakedTriangleCollisionMesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
@@ -1019,7 +1019,7 @@ Mesh:
     serializedVersion: 2
     offset: 0
     size: 0
-    path: 
+    path:
 --- !u!1001 &1559964277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1314,8 +1314,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 991c9a3bfd694e949f520d447e34abc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   subtitleFile: {fileID: 4900000, guid: b7e9a50c7a2f4266b1537a36c38db116, type: 3}
   vrCamera: {fileID: 0}
   followCamera: 0

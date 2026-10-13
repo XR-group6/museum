@@ -35,9 +35,13 @@ public static class MuseumSceneMigration
                     preserved.Sum(x => x.GetComponentsInChildren<Transform>(true).Length) != objectCount)
                     throw new Exception(name + ": a consumer object was lost during migration.");
 
-                var flow = preserved.SelectMany(x => x.GetComponentsInChildren<SceneAudioTimeline>(true)).Single();
-                flow.nextScene = name == "scene_01" ? "scene_02" : "";
-                EditorUtility.SetDirty(flow);
+                var flow = preserved.SelectMany(x => x.GetComponentsInChildren<SceneAudioTimeline>(true)).FirstOrDefault();
+                var firstNarration = preserved.SelectMany(x => x.GetComponentsInChildren<SceneOneNarration>(true)).FirstOrDefault();
+                var secondNarration = preserved.SelectMany(x => x.GetComponentsInChildren<SceneTwoNarration>(true)).FirstOrDefault();
+                if (flow) { flow.nextScene = name == "scene_01" ? "scene_02" : "scene_03"; EditorUtility.SetDirty(flow); }
+                if (firstNarration) { firstNarration.nextScene = "scene_02"; EditorUtility.SetDirty(firstNarration); }
+                if (secondNarration) { secondNarration.nextScene = "scene_03"; EditorUtility.SetDirty(secondNarration); }
+                if (!flow && !firstNarration && !secondNarration) throw new Exception(name + ": no sequence component survived.");
                 if (name == "scene_01")
                 {
                     var censer = room.GetComponentsInChildren<Transform>(true).Single(x => x.name == "censer");
@@ -47,7 +51,8 @@ public static class MuseumSceneMigration
                     if (colliders.Length == 0) throw new Exception("New censer has no interaction collider.");
                     var controller = preserved.SelectMany(x => x.GetComponentsInChildren<RightController>(true)).Single();
                     controller.censerColliders = colliders;
-                    controller.sequence = flow;
+                    if (firstNarration) { controller.narration = firstNarration; controller.sequence = null; }
+                    else controller.sequence = flow;
                     EditorUtility.SetDirty(controller);
                     Debug.Log("[Museum migration] censer=" + censer.position + "; controller colliders=" + colliders.Length);
                 }

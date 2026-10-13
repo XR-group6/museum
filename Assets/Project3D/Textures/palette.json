@@ -3,8 +3,10 @@
   "keys": [
     "ashlar",
     "bark",
+    "canvas",
     "charcoal",
     "cloth_blue",
+    "cloth_brown",
     "cloth_red",
     "cloth_sheet",
     "door_plank",
@@ -14,7 +16,9 @@
     "flagstone",
     "glass",
     "glass_clear",
+    "granite",
     "grass",
+    "hull_plank",
     "lamp_glow",
     "leaf_deep",
     "leaf_mid",
@@ -26,6 +30,7 @@
     "mirror",
     "off_white",
     "sand",
+    "sea_water",
     "stone_dark",
     "stone_grey",
     "straw",
@@ -47,5 +52,8 @@
   ],
   "polished": [
     "mirror"
+  ],
+  "wet": [
+    "sea_water"
   ]
 }

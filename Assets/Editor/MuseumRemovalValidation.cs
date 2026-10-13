@@ -11,7 +11,7 @@ public static class MuseumRemovalValidation
     {
         try
         {
-            foreach (var name in new[] { "scene_01", "scene_02" })
+            foreach (var name in new[] { "scene_01", "scene_02", "scene_03" })
             {
                 var scene = EditorSceneManager.OpenScene("Assets/Project3D/Scenes/" + name + ".unity", OpenSceneMode.Single);
                 int missing = 0;
@@ -33,34 +33,53 @@ public static class MuseumRemovalValidation
                     }
                 if (missing != 0) throw new Exception(name + " contains missing scripts: " + missing);
                 {
-                    var flow = UnityEngine.Object.FindObjectOfType<SceneAudioTimeline>();
-                    if (!flow || (!flow.timeline && !flow.voiceOver)) throw new Exception(name + " audio sequence references missing");
-                    if (flow.nextScene != (name == "scene_01" ? "scene_02" : "")) throw new Exception(name + " has an invalid next scene");
                     if (name == "scene_01")
                     {
+                        var narration = UnityEngine.Object.FindObjectOfType<SceneOneNarration>();
+                        if (!narration || narration.nextScene != "scene_02" || !narration.introSubtitles ||
+                            !narration.narrationSubtitle || !narration.interactionSubtitle)
+                            throw new Exception("scene_01 narration or subtitle missing");
+                        foreach (var clip in new[] { narration.museumEcho, narration.censerIntro,
+                            narration.censerAfterGrab, narration.censerFinal })
+                            if (!clip) throw new Exception("scene_01 narration audio clip missing");
                         var controller = UnityEngine.Object.FindObjectOfType<RightController>();
-                        if (!flow.ambience || !controller || !controller.rightHand || !controller.sequence || controller.censerColliders.Length == 0)
+                        if (!controller || !controller.rightHand || controller.narration != narration || controller.censerColliders.Length == 0)
                             throw new Exception("scene_01 interaction references missing");
                         foreach (var collider in controller.censerColliders) if (!collider) throw new Exception("Missing censer collider");
                     }
-                    else
+                    else if (name == "scene_02")
                     {
-                        if (!flow.completionDirector || !flow.completionDirector.playableAsset) throw new Exception("scene_02 animation director missing");
-                        var timeline = flow.completionDirector.playableAsset as TimelineAsset;
+                        var narration = UnityEngine.Object.FindObjectOfType<SceneTwoNarration>();
+                        if (!narration || narration.nextScene != "scene_03" || !narration.storyDirector ||
+                            !narration.storyDirector.playableAsset || !narration.dialogueSubtitles)
+                            throw new Exception("scene_02 narration, animation or next scene missing");
+                        foreach (var clip in new[] { narration.footsteps, narration.luggage, narration.harbour,
+                            narration.seagulls, narration.fabric, narration.shipHorn, narration.fatherVoice,
+                            narration.daughterVoice, narration.censerVoice })
+                            if (!clip) throw new Exception("scene_02 narration audio clip missing");
+                        var timeline = narration.storyDirector.playableAsset as TimelineAsset;
                         if (!timeline) throw new Exception("scene_02 animation Timeline missing");
                         foreach (var track in timeline.GetOutputTracks())
-                            if (track is AnimationTrack && !flow.completionDirector.GetGenericBinding(track))
+                            if (track is AnimationTrack && !narration.storyDirector.GetGenericBinding(track))
                                 throw new Exception("Missing animation binding: " + track.name);
                         var subtitle = UnityEngine.Object.FindObjectOfType<VRSubtitle>();
-                        if (!subtitle || !subtitle.subtitleFile || string.IsNullOrEmpty(subtitle.subtitleFile.text))
+                        if (!subtitle || narration.subtitles != subtitle || string.IsNullOrEmpty(narration.dialogueSubtitles.text))
                             throw new Exception("scene_02 subtitle missing");
                     }
+                    else
+                    {
+                        var ambience = UnityEngine.Object.FindObjectsOfType<AudioSource>();
+                        if (ambience.Length < 2) throw new Exception("scene_03 ocean ambience missing");
+                        foreach (var audio in ambience)
+                            if (!audio.clip || !audio.loop) throw new Exception("scene_03 ambience clip missing");
+                    }
                 }
+                if (UnityEngine.Object.FindObjectsOfType<Camera>().Length == 0) throw new Exception(name + " has no active camera");
                 Debug.Log("[Removal validation] " + name + " loaded; scripts and sequence references valid.");
             }
             foreach (var entry in EditorBuildSettings.scenes)
                 if (!System.IO.File.Exists(entry.path)) throw new Exception("Build scene is missing: " + entry.path);
-            Debug.Log("[Removal validation] PASS: both scenes load with interaction, audio, animation and subtitle bindings.");
+            Debug.Log("[Removal validation] PASS: three scenes load with interaction, audio, animation, subtitle bindings and cameras.");
             EditorApplication.Exit(0);
         }
         catch (Exception error) { Debug.LogException(error); EditorApplication.Exit(1); }
