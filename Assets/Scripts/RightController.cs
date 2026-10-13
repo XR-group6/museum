@@ -41,6 +41,7 @@ public class RightController : MonoBehaviour
                 Debug.Log("[Museum] Right trigger activated censer.", this);
                 if (narration) narration.Interact();
                 else sequence.Begin();
+                CenserVisualEffect.Play(ancestor);
                 break;
             }
         }
