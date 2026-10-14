@@ -1,42 +1,86 @@
 {
-  "changed": [
-    "scene_01",
-    "scene_02",
-    "scene_03"
-  ],
-  "retired": [
-    "scene_04"
-  ],
+  "changed": [],
+  "retired": [],
   "scenes": {
     "scene_01": {
       "added": 0,
-      "asset_swapped": 0,
-      "bounds_changed": 1,
-      "moved": 0,
-      "removed": 0,
-      "renamed": 0,
-      "summary": "1 bounds-changed",
-      "unchanged": 102
-    },
-    "scene_02": {
-      "added": 0,
-      "asset_swapped": 0,
-      "bounds_changed": 1,
-      "moved": 0,
-      "removed": 0,
-      "renamed": 0,
-      "summary": "1 bounds-changed",
-      "unchanged": 369
-    },
-    "scene_03": {
-      "added": 45,
       "asset_swapped": 0,
       "bounds_changed": 0,
       "moved": 0,
       "removed": 0,
       "renamed": 0,
-      "summary": "45 added",
-      "unchanged": 0
+      "summary": "no change",
+      "unchanged": 103
+    },
+    "scene_02": {
+      "added": 0,
+      "asset_swapped": 0,
+      "bounds_changed": 0,
+      "moved": 0,
+      "removed": 0,
+      "renamed": 0,
+      "summary": "no change",
+      "unchanged": 370
+    },
+    "scene_03": {
+      "added": 0,
+      "asset_swapped": 0,
+      "bounds_changed": 0,
+      "moved": 0,
+      "removed": 0,
+      "renamed": 0,
+      "summary": "no change",
+      "unchanged": 45
+    },
+    "scene_04": {
+      "added": 0,
+      "asset_swapped": 0,
+      "bounds_changed": 0,
+      "moved": 0,
+      "removed": 0,
+      "renamed": 0,
+      "summary": "no change",
+      "unchanged": 112
+    },
+    "scene_05": {
+      "added": 0,
+      "asset_swapped": 0,
+      "bounds_changed": 0,
+      "moved": 0,
+      "removed": 0,
+      "renamed": 0,
+      "summary": "no change",
+      "unchanged": 112
+    },
+    "scene_06": {
+      "added": 0,
+      "asset_swapped": 0,
+      "bounds_changed": 0,
+      "moved": 0,
+      "removed": 0,
+      "renamed": 0,
+      "summary": "no change",
+      "unchanged": 157
+    },
+    "scene_07": {
+      "added": 0,
+      "asset_swapped": 0,
+      "bounds_changed": 0,
+      "moved": 0,
+      "removed": 0,
+      "renamed": 0,
+      "summary": "no change",
+      "unchanged": 116
+    },
+    "scene_08": {
+      "added": 0,
+      "asset_swapped": 0,
+      "bounds_changed": 0,
+      "moved": 0,
+      "removed": 0,
+      "renamed": 0,
+      "summary": "no change",
+      "unchanged": 11
     }
   }
 }

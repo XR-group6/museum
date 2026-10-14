@@ -14,6 +14,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project3D/Scenes/scene_03.unity
     guid: dd91383849d0831a4b47376d935444c7
+  - enabled: 1
+    path: Assets/Project3D/Scenes/scene_04.unity
+    guid: febe4cedbb55a315a83baa93256eb0b4
+  - enabled: 1
+    path: Assets/Project3D/Scenes/scene_05.unity
+    guid: 627ae72cbe6e1d845aa78bd8e03bfd45
+  - enabled: 1
+    path: Assets/Project3D/Scenes/scene_06.unity
+    guid: b384b97a9a8872a71b8c48398d20a5be
+  - enabled: 1
+    path: Assets/Project3D/Scenes/scene_07.unity
+    guid: be062eb39809d22f4a84091bfe214508
+  - enabled: 1
+    path: Assets/Project3D/Scenes/scene_08.unity
+    guid: fb873004a56e68b1eb0e7bedd17c28d2
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: ff208aae2490700488215ec69f806c00, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b320ed7fca0d96d4589b3f53f0702ed6, type: 2}

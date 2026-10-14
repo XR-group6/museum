@@ -1,0 +1,4415 @@
+{
+  "assembly": "prefab",
+  "bounds": {
+    "dims": [
+      92.0,
+      98.0,
+      17.098
+    ],
+    "max": [
+      47.75,
+      58.092,
+      14.348
+    ],
+    "min": [
+      -44.25,
+      -39.908,
+      -2.75
+    ]
+  },
+  "lighting": {
+    "accents": [
+      {
+        "at": [
+          0.0,
+          -1.65,
+          2.05
+        ],
+        "colour": [
+          1.0,
+          0.42,
+          0.22
+        ],
+        "energy": 35.0,
+        "name": "glow_lantern_shrine",
+        "range": 6.0
+      },
+      {
+        "at": [
+          -2.1,
+          4.7,
+          2.05
+        ],
+        "colour": [
+          1.0,
+          0.42,
+          0.22
+        ],
+        "energy": 35.0,
+        "name": "glow_lantern_arcade_w",
+        "range": 6.0
+      },
+      {
+        "at": [
+          -0.6,
+          4.7,
+          2.05
+        ],
+        "colour": [
+          1.0,
+          0.42,
+          0.22
+        ],
+        "energy": 35.0,
+        "name": "glow_lantern_arcade_e",
+        "range": 6.0
+      },
+      {
+        "at": [
+          -2.05,
+          4.05,
+          2.05
+        ],
+        "colour": [
+          1.0,
+          0.42,
+          0.22
+        ],
+        "energy": 35.0,
+        "name": "glow_lantern_dining_w",
+        "range": 6.0
+      },
+      {
+        "at": [
+          2.05,
+          4.05,
+          2.05
+        ],
+        "colour": [
+          1.0,
+          0.42,
+          0.22
+        ],
+        "energy": 35.0,
+        "name": "glow_lantern_dining_e",
+        "range": 6.0
+      },
+      {
+        "at": [
+          0.42,
+          -1.4,
+          1.35
+        ],
+        "colour": [
+          1.0,
+          0.72,
+          0.42
+        ],
+        "energy": 6.0,
+        "name": "glow_candle_e",
+        "range": 2.5
+      },
+      {
+        "at": [
+          -0.42,
+          -1.4,
+          1.35
+        ],
+        "colour": [
+          1.0,
+          0.72,
+          0.42
+        ],
+        "energy": 6.0,
+        "name": "glow_candle_w",
+        "range": 2.5
+      },
+      {
+        "at": [
+          -40.194,
+          17.01,
+          5.25
+        ],
+        "colour": [
+          1.0,
+          0.68,
+          0.28
+        ],
+        "energy": 150.0,
+        "name": "glow_lamp_01",
+        "range": 16.0
+      },
+      {
+        "at": [
+          -28.206,
+          18.074,
+          5.25
+        ],
+        "colour": [
+          1.0,
+          0.68,
+          0.28
+        ],
+        "energy": 150.0,
+        "name": "glow_lamp_02",
+        "range": 16.0
+      },
+      {
+        "at": [
+          -16.226,
+          18.626,
+          5.25
+        ],
+        "colour": [
+          1.0,
+          0.68,
+          0.28
+        ],
+        "energy": 150.0,
+        "name": "glow_lamp_03",
+        "range": 16.0
+      },
+      {
+        "at": [
+          -4.248,
+          18.511,
+          5.25
+        ],
+        "colour": [
+          1.0,
+          0.68,
+          0.28
+        ],
+        "energy": 150.0,
+        "name": "glow_lamp_04",
+        "range": 16.0
+      },
+      {
+        "at": [
+          7.734,
+          17.76,
+          5.25
+        ],
+        "colour": [
+          1.0,
+          0.68,
+          0.28
+        ],
+        "energy": 150.0,
+        "name": "glow_lamp_05",
+        "range": 16.0
+      },
+      {
+        "at": [
+          19.726,
+          16.587,
+          5.25
+        ],
+        "colour": [
+          1.0,
+          0.68,
+          0.28
+        ],
+        "energy": 150.0,
+        "name": "glow_lamp_06",
+        "range": 16.0
+      },
+      {
+        "at": [
+          8.5,
+          24.7,
+          2.4
+        ],
+        "colour": [
+          1.0,
+          0.86,
+          0.62
+        ],
+        "energy": 20.0,
+        "name": "glow_vessel_0",
+        "range": 9.0
+      },
+      {
+        "at": [
+          5.8,
+          24.7,
+          2.4
+        ],
+        "colour": [
+          1.0,
+          0.86,
+          0.62
+        ],
+        "energy": 20.0,
+        "name": "glow_vessel_1",
+        "range": 9.0
+      },
+      {
+        "at": [
+          -30.25,
+          37.913,
+          6.07
+        ],
+        "colour": [
+          1.0,
+          0.92,
+          0.74
+        ],
+        "energy": 260.0,
+        "name": "glow_harbour",
+        "range": 45.0
+      }
+    ],
+    "fill": {
+      "at": [
+        0.0,
+        1.9,
+        3.2
+      ],
+      "colour": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "energy": 9.0,
+      "size": 4.8
+    },
+    "fills": [
+      {
+        "at": [
+          0.0,
+          1.9,
+          3.2
+        ],
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "energy": 9.0,
+        "name": "scene_fill",
+        "size": 4.8
+      },
+      {
+        "at": [
+          0.0,
+          -3.8,
+          1.9
+        ],
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "energy": 6.0,
+        "name": "scene_fill_1",
+        "size": 3.6
+      }
+    ],
+    "lights": [
+      {
+        "angle": 2.0,
+        "at": [
+          0.0,
+          26.0,
+          14.0
+        ],
+        "blend": 0.0,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "cone": 0.0,
+        "energy": 0.35,
+        "kind": "sun",
+        "look": [
+          0.0,
+          4.0,
+          0.0
+        ],
+        "name": "moon_sea"
+      },
+      {
+        "angle": 0.0,
+        "at": [
+          0.72,
+          2.98,
+          3.26
+        ],
+        "blend": 0.7,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "cone": 150.0,
+        "energy": 240.0,
+        "kind": "spot",
+        "look": [
+          0.72,
+          2.98,
+          0.0
+        ],
+        "name": "dining_pendant"
+      },
+      {
+        "angle": 0.0,
+        "at": [
+          0.0,
+          -4.16,
+          5.66
+        ],
+        "blend": 0.6,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "cone": 125.0,
+        "energy": 85.0,
+        "kind": "spot",
+        "look": [
+          0.0,
+          -4.16,
+          0.0
+        ],
+        "name": "lamp_bedroom"
+      },
+      {
+        "angle": 0.0,
+        "at": [
+          1.8,
+          -1.3,
+          2.76
+        ],
+        "blend": 0.6,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "cone": 125.0,
+        "energy": 85.0,
+        "kind": "spot",
+        "look": [
+          1.8,
+          -1.3,
+          0.0
+        ],
+        "name": "lamp_corridor"
+      },
+      {
+        "angle": 0.0,
+        "at": [
+          1.1,
+          -3.55,
+          2.76
+        ],
+        "blend": 0.6,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "cone": 125.0,
+        "energy": 85.0,
+        "kind": "spot",
+        "look": [
+          1.1,
+          -3.55,
+          0.0
+        ],
+        "name": "lamp_kitchen"
+      },
+      {
+        "angle": 0.0,
+        "at": [
+          -1.9,
+          -3.55,
+          2.76
+        ],
+        "blend": 0.6,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "cone": 125.0,
+        "energy": 85.0,
+        "kind": "spot",
+        "look": [
+          -1.9,
+          -3.55,
+          0.0
+        ],
+        "name": "lamp_washroom"
+      }
+    ],
+    "unity_brightness": 1.0,
+    "unity_sky": true,
+    "world": [
+      0.055,
+      0.065,
+      0.095
+    ]
+  },
+  "placements": [
+    {
+      "asset": "rowhouse",
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          2.55,
+          5.7,
+          8.3
+        ],
+        "min": [
+          -2.55,
+          -5.7,
+          0.0
+        ]
+      },
+      "container": true,
+      "guard": true,
+      "guard_meshes": [
+        {
+          "materials": [
+            "glass",
+            "metal_iron",
+            "off_white",
+            "stone_grey",
+            "terrazzo",
+            "tile_glaze",
+            "wall_paint",
+            "wood_dark"
+          ],
+          "max": [
+            2.55,
+            5.7,
+            8.3
+          ],
+          "min": [
+            -2.55,
+            -5.7,
+            0.0
+          ],
+          "name": "rowhouse",
+          "tris": 1776
+        }
+      ],
+      "mount": "floor",
+      "name": "rowhouse",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "stair",
+      "at": [
+        -1.45,
+        1.175,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -0.55,
+          3.6,
+          6.6023
+        ],
+        "min": [
+          -2.35,
+          -1.25,
+          0.15
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "stair",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "harbour_ground",
+      "at": [
+        1.75,
+        8.954,
+        -0.15
+      ],
+      "bounds": {
+        "max": [
+          47.75,
+          58.092,
+          10.3496
+        ],
+        "min": [
+          -44.25,
+          -39.908,
+          -2.75
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "ground",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "harbour_water",
+      "at": [
+        1.75,
+        8.954,
+        -0.15
+      ],
+      "bounds": {
+        "max": [
+          47.75,
+          56.654,
+          -0.0825
+        ],
+        "min": [
+          -44.25,
+          17.6917,
+          -2.75
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "sea",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "breakwater",
+      "at": [
+        1.75,
+        8.954,
+        -0.15
+      ],
+      "bounds": {
+        "max": [
+          14.75,
+          43.5179,
+          7.2
+        ],
+        "min": [
+          -33.25,
+          34.1746,
+          -2.75
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "breakwater",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "steel_vessel",
+      "at": [
+        6.0,
+        27.0,
+        -0.15
+      ],
+      "bounds": {
+        "max": [
+          13.2,
+          29.14,
+          5.45
+        ],
+        "min": [
+          -1.8,
+          24.86,
+          -0.15
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "vessel",
+      "room": null,
+      "rz": 90.0
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        21.341,
+        -26.143,
+        8.901
+      ],
+      "bounds": {
+        "max": [
+          22.347,
+          -25.0575,
+          13.401
+        ],
+        "min": [
+          20.1759,
+          -27.2876,
+          8.901
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_01",
+      "room": null,
+      "rz": -114.62
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        39.765999,
+        -31.349001,
+        8.679
+      ],
+      "bounds": {
+        "max": [
+          40.8033,
+          -30.3257,
+          13.179
+        ],
+        "min": [
+          38.6642,
+          -32.5293,
+          8.679
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_02",
+      "room": null,
+      "rz": -67.34
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -32.187,
+        -19.909,
+        5.418
+      ],
+      "bounds": {
+        "max": [
+          -31.0722,
+          -18.7967,
+          9.918
+        ],
+        "min": [
+          -33.149,
+          -20.9474,
+          5.418
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_03",
+      "room": null,
+      "rz": 70.79
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        45.332001,
+        -26.714001,
+        7.369
+      ],
+      "bounds": {
+        "max": [
+          46.3569,
+          -25.6105,
+          11.869
+        ],
+        "min": [
+          44.1499,
+          -27.7537,
+          7.369
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_04",
+      "room": null,
+      "rz": -157.1
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -31.128,
+        -21.757,
+        6.627
+      ],
+      "bounds": {
+        "max": [
+          -29.9482,
+          -20.6737,
+          11.127
+        ],
+        "min": [
+          -32.2959,
+          -23.0095,
+          6.627
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_05",
+      "room": null,
+      "rz": -40.96
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -16.025,
+        -29.229,
+        9.045
+      ],
+      "bounds": {
+        "max": [
+          -15.2163,
+          -28.3597,
+          13.545
+        ],
+        "min": [
+          -16.9524,
+          -29.9771,
+          9.045
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_06",
+      "room": null,
+      "rz": 179.42
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        23.844,
+        -32.696999,
+        9.783
+      ],
+      "bounds": {
+        "max": [
+          24.6646,
+          -31.833,
+          14.283
+        ],
+        "min": [
+          22.9148,
+          -33.6914,
+          9.783
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_07",
+      "room": null,
+      "rz": -84.78
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        31.593,
+        -33.692001,
+        9.34
+      ],
+      "bounds": {
+        "max": [
+          32.7627,
+          -32.6458,
+          13.84
+        ],
+        "min": [
+          30.4644,
+          -34.9029,
+          9.34
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_08",
+      "room": null,
+      "rz": -30.98
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        1.564,
+        -21.473,
+        7.627
+      ],
+      "bounds": {
+        "max": [
+          2.6056,
+          -20.3577,
+          12.127
+        ],
+        "min": [
+          0.6063,
+          -22.4408,
+          7.627
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_09",
+      "room": null,
+      "rz": 105.4
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -17.993999,
+        -24.195999,
+        8.419
+      ],
+      "bounds": {
+        "max": [
+          -16.9429,
+          -23.0704,
+          12.919
+        ],
+        "min": [
+          -18.9639,
+          -25.1726,
+          8.419
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_10",
+      "room": null,
+      "rz": 106.42
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        33.334999,
+        -31.624001,
+        8.928
+      ],
+      "bounds": {
+        "max": [
+          34.3713,
+          -30.5081,
+          13.428
+        ],
+        "min": [
+          32.1395,
+          -32.6812,
+          8.928
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_11",
+      "room": null,
+      "rz": -155.25
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        20.799999,
+        -24.771,
+        8.326
+      ],
+      "bounds": {
+        "max": [
+          21.8231,
+          -23.6695,
+          12.826
+        ],
+        "min": [
+          19.62,
+          -25.8079,
+          8.326
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_12",
+      "room": null,
+      "rz": -157.38
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -21.989,
+        -19.797001,
+        5.868
+      ],
+      "bounds": {
+        "max": [
+          -20.8202,
+          -18.7072,
+          10.368
+        ],
+        "min": [
+          -23.1636,
+          -21.0564,
+          5.868
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_13",
+      "room": null,
+      "rz": -46.93
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        18.521,
+        -16.122999,
+        3.075
+      ],
+      "bounds": {
+        "max": [
+          19.6206,
+          -14.9451,
+          7.575
+        ],
+        "min": [
+          17.4867,
+          -17.1443,
+          3.075
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_14",
+      "room": null,
+      "rz": 112.35
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -24.257,
+        -27.538,
+        8.695
+      ],
+      "bounds": {
+        "max": [
+          -23.3615,
+          -26.6163,
+          13.195
+        ],
+        "min": [
+          -25.2486,
+          -28.5996,
+          8.695
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_15",
+      "room": null,
+      "rz": -79.48
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        19.858999,
+        -23.35,
+        7.585
+      ],
+      "bounds": {
+        "max": [
+          21.0239,
+          -22.1006,
+          12.085
+        ],
+        "min": [
+          18.6785,
+          -24.4304,
+          7.585
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_16",
+      "room": null,
+      "rz": 140.29
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -13.429,
+        -21.316999,
+        7.271
+      ],
+      "bounds": {
+        "max": [
+          -12.4804,
+          -20.3559,
+          11.771
+        ],
+        "min": [
+          -14.4634,
+          -22.4246,
+          7.271
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_17",
+      "room": null,
+      "rz": -75.35
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        44.412998,
+        -19.181,
+        3.029
+      ],
+      "bounds": {
+        "max": [
+          45.4606,
+          -18.298,
+          7.529
+        ],
+        "min": [
+          43.4594,
+          -20.2052,
+          3.029
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_18",
+      "room": null,
+      "rz": -11.35
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -27.426001,
+        -14.61,
+        2.691
+      ],
+      "bounds": {
+        "max": [
+          -26.3479,
+          -13.4476,
+          7.191
+        ],
+        "min": [
+          -28.6728,
+          -15.7907,
+          2.691
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_19",
+      "room": null,
+      "rz": -128.83
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        25.93,
+        -32.867001,
+        9.661
+      ],
+      "bounds": {
+        "max": [
+          27.0669,
+          -31.6472,
+          14.161
+        ],
+        "min": [
+          24.7564,
+          -33.9211,
+          9.661
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_20",
+      "room": null,
+      "rz": 147.47
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -19.344,
+        -16.948999,
+        4.217
+      ],
+      "bounds": {
+        "max": [
+          -18.1142,
+          -15.8435,
+          8.717
+        ],
+        "min": [
+          -20.4094,
+          -18.0966,
+          4.217
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_21",
+      "room": null,
+      "rz": 30.63
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        41.657001,
+        -32.165001,
+        8.653
+      ],
+      "bounds": {
+        "max": [
+          42.7181,
+          -31.026,
+          13.153
+        ],
+        "min": [
+          40.5287,
+          -33.1482,
+          8.653
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_22",
+      "room": null,
+      "rz": 158.32
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        2.336,
+        -17.954,
+        5.134
+      ],
+      "bounds": {
+        "max": [
+          3.337,
+          -16.8739,
+          9.634
+        ],
+        "min": [
+          1.1767,
+          -19.0951,
+          5.134
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_23",
+      "room": null,
+      "rz": -113.94
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -9.524,
+        -19.068001,
+        5.926
+      ],
+      "bounds": {
+        "max": [
+          -8.4511,
+          -17.9164,
+          10.426
+        ],
+        "min": [
+          -10.6603,
+          -20.0622,
+          5.926
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_24",
+      "room": null,
+      "rz": 156.94
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -7.963,
+        -30.239,
+        9.848
+      ],
+      "bounds": {
+        "max": [
+          -6.9012,
+          -29.3393,
+          14.348
+        ],
+        "min": [
+          -8.9346,
+          -31.2824,
+          9.848
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_25",
+      "room": null,
+      "rz": -12.88
+    },
+    {
+      "asset": "village_tree",
+      "at": [
+        -11.011,
+        -18.381001,
+        5.421
+      ],
+      "bounds": {
+        "max": [
+          -10.1814,
+          -17.51,
+          9.921
+        ],
+        "min": [
+          -11.9478,
+          -19.3836,
+          5.421
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "hill_tree_26",
+      "room": null,
+      "rz": -84.17
+    },
+    {
+      "asset": "neighbor_house",
+      "at": [
+        -38.700001,
+        -1.147,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -35.4361,
+          4.8343,
+          8.3
+        ],
+        "min": [
+          -41.9639,
+          -7.1283,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house_01",
+      "room": null,
+      "rz": 7.411
+    },
+    {
+      "asset": "neighbor_house",
+      "at": [
+        -33.150002,
+        -0.627,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -29.8861,
+          5.3543,
+          8.3
+        ],
+        "min": [
+          -36.4139,
+          -6.6083,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house_02",
+      "room": null,
+      "rz": 7.411
+    },
+    {
+      "asset": "neighbor_house",
+      "at": [
+        -27.6,
+        -0.193,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -24.3361,
+          5.7883,
+          8.3
+        ],
+        "min": [
+          -30.8639,
+          -6.1743,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house_03",
+      "room": null,
+      "rz": 7.411
+    },
+    {
+      "asset": "neighbor_house",
+      "at": [
+        -18.9,
+        0.248,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -15.9682,
+          6.1082,
+          8.3
+        ],
+        "min": [
+          -21.8318,
+          -5.6122,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house_04",
+      "room": null,
+      "rz": 3.9
+    },
+    {
+      "asset": "neighbor_house",
+      "at": [
+        -13.35,
+        0.351,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -10.4182,
+          6.2112,
+          8.3
+        ],
+        "min": [
+          -16.2818,
+          -5.5092,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house_05",
+      "room": null,
+      "rz": 3.9
+    },
+    {
+      "asset": "neighbor_house",
+      "at": [
+        -5.55,
+        0.246,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -3.0,
+          5.946,
+          8.3
+        ],
+        "min": [
+          -8.1,
+          -5.454,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house_06",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "neighbor_house",
+      "at": [
+        5.55,
+        -0.372,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          8.1,
+          5.328,
+          8.3
+        ],
+        "min": [
+          3.0,
+          -6.072,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house_08",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "neighbor_house",
+      "at": [
+        15.05,
+        -1.233,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          17.8483,
+          4.5737,
+          8.3
+        ],
+        "min": [
+          12.2517,
+          -7.0397,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house_09",
+      "room": null,
+      "rz": -2.522
+    },
+    {
+      "asset": "neighbor_house",
+      "at": [
+        20.6,
+        -1.815,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          23.3983,
+          3.9917,
+          8.3
+        ],
+        "min": [
+          17.8017,
+          -7.6217,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house_10",
+      "room": null,
+      "rz": -2.522
+    },
+    {
+      "asset": "neighbor_house",
+      "at": [
+        26.15,
+        -2.411,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          28.9483,
+          3.3957,
+          8.3
+        ],
+        "min": [
+          23.3517,
+          -8.2177,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house_11",
+      "room": null,
+      "rz": -2.522
+    },
+    {
+      "asset": "neighbor_house",
+      "at": [
+        34.450001,
+        -3.249,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          37.0957,
+          2.4932,
+          8.3
+        ],
+        "min": [
+          31.8043,
+          -8.9912,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house_12",
+      "room": null,
+      "rz": -0.966
+    },
+    {
+      "asset": "neighbor_house",
+      "at": [
+        40.0,
+        -3.724,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          42.6457,
+          2.0182,
+          8.3
+        ],
+        "min": [
+          37.3543,
+          -9.4662,
+          0.0
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "house_13",
+      "room": null,
+      "rz": -0.966
+    },
+    {
+      "asset": "street_lamp",
+      "at": [
+        -40.25,
+        17.396,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -39.9758,
+          17.5775,
+          5.51
+        ],
+        "min": [
+          -40.4315,
+          16.5813,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "lamp_01",
+      "room": null,
+      "rz": 8.328
+    },
+    {
+      "asset": "street_lamp",
+      "at": [
+        -28.25,
+        18.461,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -28.0,
+          18.6382,
+          5.51
+        ],
+        "min": [
+          -28.4272,
+          17.648,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "lamp_02",
+      "room": null,
+      "rz": 6.536
+    },
+    {
+      "asset": "street_lamp",
+      "at": [
+        -16.25,
+        19.014999,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -16.0402,
+          19.1847,
+          5.51
+        ],
+        "min": [
+          -16.4197,
+          18.2065,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "lamp_03",
+      "room": null,
+      "rz": 3.591
+    },
+    {
+      "asset": "street_lamp",
+      "at": [
+        -4.25,
+        18.900999,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -4.0854,
+          19.0619,
+          5.51
+        ],
+        "min": [
+          -4.4109,
+          18.1001,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "lamp_04",
+      "room": null,
+      "rz": 0.33
+    },
+    {
+      "asset": "street_lamp",
+      "at": [
+        7.75,
+        18.15,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          7.9163,
+          18.3163,
+          5.51
+        ],
+        "min": [
+          7.5579,
+          17.3442,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "lamp_05",
+      "room": null,
+      "rz": -2.311
+    },
+    {
+      "asset": "street_lamp",
+      "at": [
+        19.75,
+        16.976,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          19.9197,
+          17.1457,
+          5.51
+        ],
+        "min": [
+          19.5403,
+          16.1676,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "lamp_06",
+      "room": null,
+      "rz": -3.587
+    },
+    {
+      "asset": "bench",
+      "at": [
+        -30.25,
+        19.513,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -29.6872,
+          19.7181,
+          0.6
+        ],
+        "min": [
+          -30.8128,
+          19.3079,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_01",
+      "room": "promenade",
+      "rz": 6.903
+    },
+    {
+      "asset": "bench",
+      "at": [
+        -18.25,
+        20.167999,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -17.6914,
+          20.3471,
+          0.6
+        ],
+        "min": [
+          -18.8086,
+          19.9889,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_02",
+      "room": "promenade",
+      "rz": 4.118
+    },
+    {
+      "asset": "bench",
+      "at": [
+        -6.25,
+        20.167999,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -5.6979,
+          20.3163,
+          0.6
+        ],
+        "min": [
+          -6.8021,
+          20.0197,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_03",
+      "room": "promenade",
+      "rz": 0.866
+    },
+    {
+      "asset": "bench",
+      "at": [
+        7.75,
+        19.35,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          8.3051,
+          19.5118,
+          0.6
+        ],
+        "min": [
+          7.1949,
+          19.1882,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_04",
+      "room": "promenade",
+      "rz": -2.278
+    },
+    {
+      "asset": "bench",
+      "at": [
+        19.75,
+        18.176001,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          20.3076,
+          18.3498,
+          0.6
+        ],
+        "min": [
+          19.1924,
+          18.0023,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "bench_05",
+      "room": "promenade",
+      "rz": -3.546
+    },
+    {
+      "asset": "quay_fence",
+      "at": [
+        1.75,
+        8.954,
+        -0.15
+      ],
+      "bounds": {
+        "max": [
+          47.7367,
+          25.4892,
+          1.45
+        ],
+        "min": [
+          -44.2385,
+          17.9073,
+          -0.3847
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "quay_fence",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "quay_stair",
+      "at": [
+        1.75,
+        8.954,
+        -0.15
+      ],
+      "bounds": {
+        "max": [
+          30.01,
+          26.9158,
+          0.3187
+        ],
+        "min": [
+          27.79,
+          25.3858,
+          -2.75
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "quay_stair",
+      "room": "quay",
+      "rz": 0.0
+    },
+    {
+      "asset": "altar",
+      "at": [
+        0.0,
+        -1.525,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          0.6,
+          -1.25,
+          1.0
+        ],
+        "min": [
+          -0.6,
+          -1.8,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "altar",
+      "room": "corridor",
+      "rz": 0.0
+    },
+    {
+      "asset": "ancestor_tablets",
+      "at": [
+        0.0,
+        -1.71,
+        1.0
+      ],
+      "bounds": {
+        "max": [
+          0.2,
+          -1.63,
+          1.38
+        ],
+        "min": [
+          -0.2,
+          -1.79,
+          1.0
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "ancestor_tablets",
+      "room": "corridor",
+      "rz": 0.0
+    },
+    {
+      "asset": "incense_burner_tripod_incense",
+      "at": [
+        0.0,
+        -1.4,
+        1.0
+      ],
+      "bounds": {
+        "max": [
+          0.1009,
+          -1.285,
+          1.2674
+        ],
+        "min": [
+          -0.1009,
+          -1.515,
+          1.0
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "censer",
+      "room": "corridor",
+      "rz": 0.0
+    },
+    {
+      "asset": "candles",
+      "at": [
+        0.42,
+        -1.4,
+        1.0
+      ],
+      "bounds": {
+        "max": [
+          0.57,
+          -1.35,
+          1.33
+        ],
+        "min": [
+          0.27,
+          -1.45,
+          1.0
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "candle_e",
+      "room": "corridor",
+      "rz": 0.0
+    },
+    {
+      "asset": "candles",
+      "at": [
+        -0.42,
+        -1.4,
+        1.0
+      ],
+      "bounds": {
+        "max": [
+          -0.27,
+          -1.35,
+          1.33
+        ],
+        "min": [
+          -0.57,
+          -1.45,
+          1.0
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "candle_w",
+      "room": "corridor",
+      "rz": 0.0
+    },
+    {
+      "asset": "altar_cloth",
+      "at": [
+        0.0,
+        -1.25,
+        1.0
+      ],
+      "bounds": {
+        "max": [
+          0.58,
+          -1.23,
+          1.0
+        ],
+        "min": [
+          -0.58,
+          -1.25,
+          0.44
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "altar_cloth",
+      "room": "corridor",
+      "rz": -180.0
+    },
+    {
+      "asset": "narcissus_bowl",
+      "at": [
+        -0.4,
+        -1.62,
+        1.0
+      ],
+      "bounds": {
+        "max": [
+          -0.2862,
+          -1.4992,
+          1.28
+        ],
+        "min": [
+          -0.5176,
+          -1.7554,
+          1.0
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "narcissus_altar",
+      "room": "corridor",
+      "rz": 0.0
+    },
+    {
+      "asset": "red_lantern",
+      "at": [
+        0.0,
+        -1.65,
+        2.9
+      ],
+      "bounds": {
+        "max": [
+          0.15,
+          -1.5,
+          2.9
+        ],
+        "min": [
+          -0.15,
+          -1.8,
+          2.098
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "lantern_shrine",
+      "room": "corridor",
+      "rz": 0.0
+    },
+    {
+      "asset": "spring_sheet",
+      "at": [
+        0.0,
+        -1.8,
+        1.6
+      ],
+      "bounds": {
+        "max": [
+          0.225,
+          -1.784,
+          2.05
+        ],
+        "min": [
+          -0.225,
+          -1.8,
+          1.6
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "spring_shrine",
+      "room": "corridor",
+      "rz": 0.0
+    },
+    {
+      "asset": "round_table",
+      "at": [
+        0.72,
+        2.98,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          1.47,
+          3.73,
+          0.93
+        ],
+        "min": [
+          -0.03,
+          2.23,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "round_table",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "table_cloth",
+      "at": [
+        0.72,
+        2.98,
+        0.93
+      ],
+      "bounds": {
+        "max": [
+          1.46,
+          3.72,
+          0.946
+        ],
+        "min": [
+          -0.02,
+          2.24,
+          0.93
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "table_cloth",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "stool",
+      "at": [
+        1.647,
+        3.515,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          1.807,
+          3.675,
+          0.6
+        ],
+        "min": [
+          1.487,
+          3.355,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "stool_1",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "stool",
+      "at": [
+        0.72,
+        4.05,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          0.88,
+          4.21,
+          0.6
+        ],
+        "min": [
+          0.56,
+          3.89,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "stool_2",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "stool",
+      "at": [
+        -0.207,
+        3.515,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -0.047,
+          3.675,
+          0.6
+        ],
+        "min": [
+          -0.367,
+          3.355,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "stool_3",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "stool",
+      "at": [
+        -0.207,
+        2.445,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -0.047,
+          2.605,
+          0.6
+        ],
+        "min": [
+          -0.367,
+          2.285,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "stool_4",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "stool",
+      "at": [
+        0.72,
+        1.91,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          0.88,
+          2.07,
+          0.6
+        ],
+        "min": [
+          0.56,
+          1.75,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "stool_5",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "stool",
+      "at": [
+        1.647,
+        2.445,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          1.807,
+          2.605,
+          0.6
+        ],
+        "min": [
+          1.487,
+          2.285,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "stool_6",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "rice_bowl",
+      "at": [
+        1.246,
+        3.248,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          1.326,
+          3.368,
+          1.046
+        ],
+        "min": [
+          1.166,
+          3.128,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "rice_bowl_1",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "rice_bowl",
+      "at": [
+        0.751,
+        3.569,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.831,
+          3.689,
+          1.046
+        ],
+        "min": [
+          0.671,
+          3.449,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "rice_bowl_2",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "rice_bowl",
+      "at": [
+        0.225,
+        3.301,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.305,
+          3.421,
+          1.046
+        ],
+        "min": [
+          0.145,
+          3.181,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "rice_bowl_3",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "rice_bowl",
+      "at": [
+        0.194,
+        2.712,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.274,
+          2.832,
+          1.046
+        ],
+        "min": [
+          0.114,
+          2.592,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "rice_bowl_4",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "rice_bowl",
+      "at": [
+        0.689,
+        2.391,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.769,
+          2.511,
+          1.046
+        ],
+        "min": [
+          0.609,
+          2.271,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "rice_bowl_5",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "rice_bowl",
+      "at": [
+        1.215,
+        2.659,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          1.295,
+          2.779,
+          1.046
+        ],
+        "min": [
+          1.135,
+          2.539,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "rice_bowl_6",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "teacup",
+      "at": [
+        1.088,
+        3.192,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          1.122,
+          3.226,
+          0.986
+        ],
+        "min": [
+          1.054,
+          3.158,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "teacup_1",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "teacup",
+      "at": [
+        0.72,
+        3.405,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.754,
+          3.439,
+          0.986
+        ],
+        "min": [
+          0.686,
+          3.371,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "teacup_2",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "teacup",
+      "at": [
+        0.352,
+        3.192,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.386,
+          3.226,
+          0.986
+        ],
+        "min": [
+          0.318,
+          3.158,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "teacup_3",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "teacup",
+      "at": [
+        0.352,
+        2.768,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.386,
+          2.802,
+          0.986
+        ],
+        "min": [
+          0.318,
+          2.734,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "teacup_4",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "teacup",
+      "at": [
+        0.72,
+        2.555,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.754,
+          2.589,
+          0.986
+        ],
+        "min": [
+          0.686,
+          2.521,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "teacup_5",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "teacup",
+      "at": [
+        1.088,
+        2.767,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          1.122,
+          2.801,
+          0.986
+        ],
+        "min": [
+          1.054,
+          2.733,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "teacup_6",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "wine_cup",
+      "at": [
+        1.107,
+        2.862,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          1.13,
+          2.885,
+          0.976
+        ],
+        "min": [
+          1.084,
+          2.839,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "wine_cup_1",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "wine_cup",
+      "at": [
+        0.629,
+        3.375,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.652,
+          3.398,
+          0.976
+        ],
+        "min": [
+          0.606,
+          3.352,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "wine_cup_3",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "wine_cup",
+      "at": [
+        0.424,
+        2.704,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.447,
+          2.727,
+          0.976
+        ],
+        "min": [
+          0.401,
+          2.681,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "wine_cup_5",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "candy_box",
+      "at": [
+        0.94,
+        2.487,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          1.07,
+          2.617,
+          0.998
+        ],
+        "min": [
+          0.81,
+          2.357,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "candy_box",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "cny_fruit_plate",
+      "at": [
+        0.442,
+        3.425,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.572,
+          3.555,
+          1.014
+        ],
+        "min": [
+          0.312,
+          3.295,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "cny_fruit_plate",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "dumpling_plate",
+      "at": [
+        0.429,
+        2.549,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.549,
+          2.669,
+          0.996
+        ],
+        "min": [
+          0.309,
+          2.429,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "dumpling_plate",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "nian_gao",
+      "at": [
+        0.523,
+        3.164,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.648,
+          3.289,
+          1.03
+        ],
+        "min": [
+          0.398,
+          3.039,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "nian_gao",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "prawn_plate",
+      "at": [
+        0.255,
+        2.972,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.385,
+          3.102,
+          0.994
+        ],
+        "min": [
+          0.125,
+          2.842,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "prawn_plate",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "roast_pork",
+      "at": [
+        1.279,
+        2.941,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          1.399,
+          3.061,
+          1.018
+        ],
+        "min": [
+          1.159,
+          2.821,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "roast_pork",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "soup_pot",
+      "at": [
+        0.51,
+        2.899,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.62,
+          3.031,
+          1.116
+        ],
+        "min": [
+          0.4,
+          2.767,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "soup_pot",
+      "room": "dining",
+      "rz": -90.0
+    },
+    {
+      "asset": "steamed_fish",
+      "at": [
+        0.849,
+        3.164,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          1.039,
+          3.359,
+          1.05
+        ],
+        "min": [
+          0.659,
+          2.974,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "steamed_fish",
+      "room": "dining",
+      "rz": -90.0
+    },
+    {
+      "asset": "tangyuan",
+      "at": [
+        0.613,
+        2.605,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.669,
+          2.661,
+          1.048
+        ],
+        "min": [
+          0.557,
+          2.549,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "tangyuan",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "whole_chicken",
+      "at": [
+        0.874,
+        2.79,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          1.039,
+          2.955,
+          1.048
+        ],
+        "min": [
+          0.709,
+          2.625,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "whole_chicken",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "wine_bottle",
+      "at": [
+        1.088,
+        2.671,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          1.126,
+          2.709,
+          1.226
+        ],
+        "min": [
+          1.05,
+          2.633,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "wine_bottle",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "red_packet",
+      "at": [
+        0.622,
+        3.536,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.6645,
+          3.6185,
+          0.951
+        ],
+        "min": [
+          0.5795,
+          3.4535,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "red_packet_west",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "red_packet",
+      "at": [
+        0.62,
+        2.719,
+        0.946
+      ],
+      "bounds": {
+        "max": [
+          0.7025,
+          2.7615,
+          0.951
+        ],
+        "min": [
+          0.5375,
+          2.6765,
+          0.946
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "red_packet_south",
+      "room": "dining",
+      "rz": 90.0
+    },
+    {
+      "asset": "sofa",
+      "at": [
+        1.91,
+        0.8,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          2.35,
+          1.7,
+          0.95
+        ],
+        "min": [
+          1.53,
+          -0.1,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "sofa",
+      "room": "dining",
+      "rz": 90.0
+    },
+    {
+      "asset": "coffee_table",
+      "at": [
+        1.15,
+        0.8,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          1.425,
+          1.325,
+          0.57
+        ],
+        "min": [
+          0.875,
+          0.275,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "coffee_table",
+      "room": "dining",
+      "rz": 90.0
+    },
+    {
+      "asset": "tea_set",
+      "at": [
+        1.15,
+        0.8,
+        0.57
+      ],
+      "bounds": {
+        "max": [
+          1.305,
+          0.955,
+          0.72
+        ],
+        "min": [
+          0.995,
+          0.645,
+          0.57
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "tea_set",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "living_cabinet",
+      "at": [
+        -2.095,
+        0.8,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -1.833,
+          1.42,
+          0.81
+        ],
+        "min": [
+          -2.325,
+          0.18,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "living_cabinet",
+      "room": "dining",
+      "rz": -90.0
+    },
+    {
+      "asset": "television",
+      "at": [
+        -2.095,
+        0.98,
+        0.81
+      ],
+      "bounds": {
+        "max": [
+          -1.88,
+          1.32,
+          1.6826
+        ],
+        "min": [
+          -2.28,
+          0.64,
+          0.81
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "television",
+      "room": "dining",
+      "rz": -90.0
+    },
+    {
+      "asset": "cassette_recorder",
+      "at": [
+        -2.095,
+        0.37,
+        0.81
+      ],
+      "bounds": {
+        "max": [
+          -2.03,
+          0.54,
+          1.11
+        ],
+        "min": [
+          -2.14,
+          0.2,
+          0.81
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "cassette_recorder",
+      "room": "dining",
+      "rz": -90.0
+    },
+    {
+      "asset": "side_table",
+      "at": [
+        -2.0,
+        -0.2,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -1.76,
+          0.04,
+          0.75
+        ],
+        "min": [
+          -2.24,
+          -0.44,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "side_table",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "telephone",
+      "at": [
+        -2.0,
+        -0.2,
+        0.75
+      ],
+      "bounds": {
+        "max": [
+          -1.885,
+          -0.115,
+          0.898
+        ],
+        "min": [
+          -2.115,
+          -0.285,
+          0.75
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "telephone",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "wall_clock",
+      "at": [
+        2.35,
+        2.2,
+        2.3
+      ],
+      "bounds": {
+        "max": [
+          2.35,
+          2.36,
+          2.62
+        ],
+        "min": [
+          2.26,
+          2.04,
+          2.3
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "wall_clock",
+      "room": "dining",
+      "rz": 90.0
+    },
+    {
+      "asset": "wall_calendar",
+      "at": [
+        2.35,
+        -0.3,
+        1.75
+      ],
+      "bounds": {
+        "max": [
+          2.35,
+          -0.2,
+          2.05
+        ],
+        "min": [
+          2.32,
+          -0.4,
+          1.75
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "wall_calendar",
+      "room": "dining",
+      "rz": 90.0
+    },
+    {
+      "asset": "kumquat_tree",
+      "at": [
+        -2.1,
+        4.05,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -1.93,
+          4.22,
+          1.05
+        ],
+        "min": [
+          -2.27,
+          3.88,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "kumquat_w",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "kumquat_tree",
+      "at": [
+        -0.55,
+        4.05,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -0.38,
+          4.22,
+          1.05
+        ],
+        "min": [
+          -0.72,
+          3.88,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "kumquat_e",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "blossom_vase",
+      "at": [
+        1.9,
+        4.0,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          2.062,
+          4.18,
+          1.015
+        ],
+        "min": [
+          1.724,
+          3.85,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "blossom_vase",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "spring_sheet",
+      "at": [
+        2.35,
+        1.1,
+        1.8
+      ],
+      "bounds": {
+        "max": [
+          2.35,
+          1.325,
+          2.25
+        ],
+        "min": [
+          2.334,
+          0.875,
+          1.8
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "spring_east",
+      "room": "dining",
+      "rz": 90.0
+    },
+    {
+      "asset": "spring_sheet",
+      "at": [
+        1.15,
+        4.3,
+        2.25
+      ],
+      "bounds": {
+        "max": [
+          1.375,
+          4.3,
+          2.7
+        ],
+        "min": [
+          0.925,
+          4.284,
+          2.25
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "spring_front",
+      "room": "dining",
+      "rz": -180.0
+    },
+    {
+      "asset": "spring_sheet",
+      "at": [
+        2.02,
+        -0.6,
+        1.7
+      ],
+      "bounds": {
+        "max": [
+          2.245,
+          -0.584,
+          2.15
+        ],
+        "min": [
+          1.795,
+          -0.6,
+          1.7
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "spring_back",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "spring_couplet",
+      "at": [
+        -1.35,
+        4.5,
+        0.75
+      ],
+      "bounds": {
+        "max": [
+          -0.59,
+          4.522,
+          2.5
+        ],
+        "min": [
+          -2.11,
+          4.5,
+          0.75
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "spring_couplet",
+      "room": "arcade",
+      "rz": 0.0
+    },
+    {
+      "asset": "red_lantern",
+      "at": [
+        -2.1,
+        4.7,
+        2.9
+      ],
+      "bounds": {
+        "max": [
+          -1.95,
+          4.85,
+          2.9
+        ],
+        "min": [
+          -2.25,
+          4.55,
+          2.098
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "lantern_arcade_w",
+      "room": "arcade",
+      "rz": 0.0
+    },
+    {
+      "asset": "red_lantern",
+      "at": [
+        -0.6,
+        4.7,
+        2.9
+      ],
+      "bounds": {
+        "max": [
+          -0.45,
+          4.85,
+          2.9
+        ],
+        "min": [
+          -0.75,
+          4.55,
+          2.098
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "lantern_arcade_e",
+      "room": "arcade",
+      "rz": 0.0
+    },
+    {
+      "asset": "red_lantern",
+      "at": [
+        -2.05,
+        4.05,
+        2.9
+      ],
+      "bounds": {
+        "max": [
+          -1.9,
+          4.2,
+          2.9
+        ],
+        "min": [
+          -2.2,
+          3.9,
+          2.098
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "lantern_dining_w",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "red_lantern",
+      "at": [
+        2.05,
+        4.05,
+        2.9
+      ],
+      "bounds": {
+        "max": [
+          2.2,
+          4.2,
+          2.9
+        ],
+        "min": [
+          1.9,
+          3.9,
+          2.098
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "lantern_dining_e",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "window_papercut",
+      "at": [
+        0.63,
+        4.3,
+        1.32
+      ],
+      "bounds": {
+        "max": [
+          0.94,
+          4.3,
+          1.63
+        ],
+        "min": [
+          0.32,
+          4.297,
+          1.01
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "window_papercut_0",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "window_papercut",
+      "at": [
+        1.67,
+        4.3,
+        1.32
+      ],
+      "bounds": {
+        "max": [
+          1.98,
+          4.3,
+          1.63
+        ],
+        "min": [
+          1.36,
+          4.297,
+          1.01
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "window_papercut_1",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "firecracker_string",
+      "at": [
+        -0.7,
+        4.281,
+        2.2
+      ],
+      "bounds": {
+        "max": [
+          -0.664,
+          4.3,
+          2.2
+        ],
+        "min": [
+          -0.736,
+          4.262,
+          1.71
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "firecracker_e",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "firecracker_string",
+      "at": [
+        -2.0,
+        4.281,
+        2.2
+      ],
+      "bounds": {
+        "max": [
+          -1.964,
+          4.3,
+          2.2
+        ],
+        "min": [
+          -2.036,
+          4.262,
+          1.71
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "firecracker_w",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "door_fringe",
+      "at": [
+        -1.35,
+        4.58,
+        2.9
+      ],
+      "bounds": {
+        "max": [
+          -1.17,
+          4.584,
+          2.9
+        ],
+        "min": [
+          -1.53,
+          4.576,
+          2.786
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "door_fringe",
+      "room": "arcade",
+      "rz": 0.0
+    },
+    {
+      "asset": "door_god",
+      "at": [
+        -1.85,
+        -0.6,
+        1.3
+      ],
+      "bounds": {
+        "max": [
+          -1.75,
+          -0.592,
+          1.6
+        ],
+        "min": [
+          -1.95,
+          -0.6,
+          1.3
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "door_god_w",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "door_god",
+      "at": [
+        1.85,
+        -0.6,
+        1.3
+      ],
+      "bounds": {
+        "max": [
+          1.95,
+          -0.592,
+          1.6
+        ],
+        "min": [
+          1.75,
+          -0.6,
+          1.3
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "door_god_e",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "chinese_knot",
+      "at": [
+        2.35,
+        1.65,
+        1.95
+      ],
+      "bounds": {
+        "max": [
+          2.35,
+          1.73,
+          2.08
+        ],
+        "min": [
+          2.29,
+          1.57,
+          1.72
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "knot_east",
+      "room": "dining",
+      "rz": -90.0
+    },
+    {
+      "asset": "chinese_knot",
+      "at": [
+        2.05,
+        4.3,
+        2.5
+      ],
+      "bounds": {
+        "max": [
+          2.13,
+          4.3,
+          2.63
+        ],
+        "min": [
+          1.97,
+          4.24,
+          2.27
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "knot_front",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "narcissus_bowl",
+      "at": [
+        1.15,
+        1.15,
+        0.57
+      ],
+      "bounds": {
+        "max": [
+          1.2638,
+          1.2708,
+          0.85
+        ],
+        "min": [
+          1.0324,
+          1.0146,
+          0.57
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "narcissus_teatable",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "kitchen_counter",
+      "at": [
+        2.03,
+        -3.45,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          2.35,
+          -2.63,
+          1.05
+        ],
+        "min": [
+          1.672,
+          -4.27,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "kitchen_counter",
+      "room": "kitchen",
+      "rz": 90.0
+    },
+    {
+      "asset": "gas_cooker",
+      "at": [
+        2.03,
+        -3.9,
+        1.05
+      ],
+      "bounds": {
+        "max": [
+          2.24,
+          -3.55,
+          1.25
+        ],
+        "min": [
+          1.78,
+          -4.25,
+          1.05
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "gas_cooker",
+      "room": "kitchen",
+      "rz": 90.0
+    },
+    {
+      "asset": "rice_cooker",
+      "at": [
+        2.0,
+        -3.05,
+        1.05
+      ],
+      "bounds": {
+        "max": [
+          2.2,
+          -2.875,
+          1.35
+        ],
+        "min": [
+          1.8,
+          -3.225,
+          1.05
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "rice_cooker",
+      "room": "kitchen",
+      "rz": 0.0
+    },
+    {
+      "asset": "thermos",
+      "at": [
+        2.0,
+        -3.42,
+        1.05
+      ],
+      "bounds": {
+        "max": [
+          2.114,
+          -3.34,
+          1.472
+        ],
+        "min": [
+          1.92,
+          -3.5,
+          1.05
+        ]
+      },
+      "container": false,
+      "mount": "surface",
+      "name": "thermos",
+      "room": "kitchen",
+      "rz": 0.0
+    },
+    {
+      "asset": "gas_cylinder",
+      "at": [
+        1.45,
+        -4.1,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          1.615,
+          -3.935,
+          0.85
+        ],
+        "min": [
+          1.285,
+          -4.265,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "gas_cylinder",
+      "room": "kitchen",
+      "rz": 0.0
+    },
+    {
+      "asset": "refrigerator",
+      "at": [
+        2.04,
+        -4.62,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          2.35,
+          -4.33,
+          1.49
+        ],
+        "min": [
+          1.62,
+          -4.91,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "refrigerator",
+      "room": "kitchen",
+      "rz": 90.0
+    },
+    {
+      "asset": "spring_sheet",
+      "at": [
+        2.35,
+        -3.45,
+        1.75
+      ],
+      "bounds": {
+        "max": [
+          2.35,
+          -3.225,
+          2.2
+        ],
+        "min": [
+          2.334,
+          -3.675,
+          1.75
+        ]
+      },
+      "container": false,
+      "mount": "wall",
+      "name": "spring_kitchen",
+      "room": "kitchen",
+      "rz": 90.0
+    },
+    {
+      "asset": "interior_door",
+      "at": [
+        0.65,
+        -1.92,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          0.744,
+          -1.92,
+          2.01
+        ],
+        "min": [
+          0.622,
+          -2.82,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "door_kitchen",
+      "room": "kitchen",
+      "rz": -90.0
+    },
+    {
+      "asset": "toilet",
+      "at": [
+        -2.36,
+        -3.6,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -1.55,
+          -3.39,
+          0.97
+        ],
+        "min": [
+          -2.35,
+          -3.84,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "toilet",
+      "room": "washroom",
+      "rz": -90.0
+    },
+    {
+      "asset": "washbasin",
+      "at": [
+        -2.35,
+        -4.3,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -1.91,
+          -4.03,
+          1.09
+        ],
+        "min": [
+          -2.35,
+          -4.57,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "washbasin",
+      "room": "washroom",
+      "rz": -90.0
+    },
+    {
+      "asset": "shower",
+      "at": [
+        -2.18,
+        -5.1,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -2.01,
+          -4.71,
+          2.2
+        ],
+        "min": [
+          -2.35,
+          -5.1,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "shower",
+      "room": "washroom",
+      "rz": 0.0
+    },
+    {
+      "asset": "floor_drain",
+      "at": [
+        -1.9,
+        -4.75,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -1.825,
+          -4.675,
+          0.185
+        ],
+        "min": [
+          -1.975,
+          -4.825,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "floor_drain",
+      "room": "washroom",
+      "rz": 0.0
+    },
+    {
+      "asset": "interior_door",
+      "at": [
+        -0.65,
+        -1.92,
+        0.15
+      ],
+      "bounds": {
+        "max": [
+          -0.556,
+          -1.92,
+          2.01
+        ],
+        "min": [
+          -0.678,
+          -2.82,
+          0.15
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "door_washroom",
+      "room": "washroom",
+      "rz": -90.0
+    },
+    {
+      "asset": "double_bed",
+      "at": [
+        -0.6,
+        -4.6,
+        3.05
+      ],
+      "bounds": {
+        "max": [
+          0.4,
+          -3.85,
+          3.97
+        ],
+        "min": [
+          -1.63,
+          -5.35,
+          3.05
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "double_bed",
+      "room": "bedroom",
+      "rz": 0.0
+    },
+    {
+      "asset": "wardrobe",
+      "at": [
+        2.04,
+        -3.6,
+        3.05
+      ],
+      "bounds": {
+        "max": [
+          2.35,
+          -3.12,
+          4.91
+        ],
+        "min": [
+          1.71,
+          -4.08,
+          3.05
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "wardrobe",
+      "room": "bedroom",
+      "rz": 90.0
+    },
+    {
+      "asset": "dresser",
+      "at": [
+        -2.1,
+        -3.6,
+        3.05
+      ],
+      "bounds": {
+        "max": [
+          -1.83,
+          -3.03,
+          4.63
+        ],
+        "min": [
+          -2.35,
+          -4.17,
+          3.05
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "dresser",
+      "room": "bedroom",
+      "rz": -90.0
+    },
+    {
+      "asset": "interior_door",
+      "at": [
+        0.1,
+        -2.82,
+        3.05
+      ],
+      "bounds": {
+        "max": [
+          0.194,
+          -2.82,
+          4.91
+        ],
+        "min": [
+          0.072,
+          -3.72,
+          3.05
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "door_bedroom",
+      "room": "bedroom",
+      "rz": -90.0
+    },
+    {
+      "asset": "hung_lamp",
+      "at": [
+        0.72,
+        2.98,
+        5.8
+      ],
+      "bounds": {
+        "max": [
+          1.06,
+          3.32,
+          5.8
+        ],
+        "min": [
+          0.38,
+          2.64,
+          3.3
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "pendant",
+      "room": "dining",
+      "rz": 0.0
+    },
+    {
+      "asset": "flush_lamp",
+      "at": [
+        0.0,
+        -4.16,
+        5.8
+      ],
+      "bounds": {
+        "max": [
+          0.2,
+          -3.96,
+          5.8
+        ],
+        "min": [
+          -0.2,
+          -4.36,
+          5.65
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "lamp_bedroom",
+      "room": "bedroom",
+      "rz": 0.0
+    },
+    {
+      "asset": "flush_lamp",
+      "at": [
+        1.8,
+        -1.3,
+        2.9
+      ],
+      "bounds": {
+        "max": [
+          2.0,
+          -1.1,
+          2.9
+        ],
+        "min": [
+          1.6,
+          -1.5,
+          2.75
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "lamp_corridor",
+      "room": "corridor",
+      "rz": 0.0
+    },
+    {
+      "asset": "flush_lamp",
+      "at": [
+        1.1,
+        -3.55,
+        2.9
+      ],
+      "bounds": {
+        "max": [
+          1.3,
+          -3.35,
+          2.9
+        ],
+        "min": [
+          0.9,
+          -3.75,
+          2.75
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "lamp_kitchen",
+      "room": "kitchen",
+      "rz": 0.0
+    },
+    {
+      "asset": "flush_lamp",
+      "at": [
+        -1.9,
+        -3.55,
+        2.9
+      ],
+      "bounds": {
+        "max": [
+          -1.7,
+          -3.35,
+          2.9
+        ],
+        "min": [
+          -2.1,
+          -3.75,
+          2.75
+        ]
+      },
+      "container": false,
+      "mount": "hang",
+      "name": "lamp_washroom",
+      "room": "washroom",
+      "rz": 0.0
+    },
+    {
+      "asset": "ac_unit",
+      "at": [
+        -2.17,
+        5.81,
+        3.2
+      ],
+      "bounds": {
+        "max": [
+          -1.83,
+          6.03,
+          3.74
+        ],
+        "min": [
+          -2.51,
+          5.45,
+          3.2
+        ]
+      },
+      "container": true,
+      "mount": "wall",
+      "name": "ac_w",
+      "room": "facade",
+      "rz": 0.0
+    },
+    {
+      "asset": "ac_unit",
+      "at": [
+        2.17,
+        5.81,
+        3.2
+      ],
+      "bounds": {
+        "max": [
+          2.51,
+          6.03,
+          3.74
+        ],
+        "min": [
+          1.83,
+          5.45,
+          3.2
+        ]
+      },
+      "container": true,
+      "mount": "wall",
+      "name": "ac_e",
+      "room": "facade",
+      "rz": 0.0
+    }
+  ],
+  "scene": "scene_06",
+  "title": "Scene 06 -- the family house, latest era (1980s): the censer on the ground floor, the dining room and the sea",
+  "units": "meters",
+  "up": "Z"
+}
