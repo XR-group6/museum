@@ -17,6 +17,12 @@ public sealed class CenserVisualEffect : MonoBehaviour
     public static void Play(Transform censer)
     {
         if (!censer || !censer.gameObject.activeInHierarchy) return;
+        var scenePlayback = censer.GetComponent<CenserScenePlayback>();
+        if (scenePlayback)
+        {
+            scenePlayback.Play();
+            return;
+        }
         var effect = censer.GetComponent<CenserVisualEffect>();
         if (!effect) effect = censer.gameObject.AddComponent<CenserVisualEffect>();
         effect.enabled = true;

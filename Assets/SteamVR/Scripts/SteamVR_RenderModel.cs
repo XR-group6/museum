@@ -300,7 +300,11 @@ namespace Valve.VR
 
                     if (LoadComponents(holder, renderModelName))
                     {
-                        UpdateComponents(holder.instance);
+                        // Clearing the editor preview needs no OpenVR interface.
+                        // LoadComponents succeeds for an empty name after removing
+                        // the old component meshes, even when SteamVR is not running.
+                        if (!string.IsNullOrEmpty(renderModelName))
+                            UpdateComponents(holder.instance);
                         return true;
                     }
 
