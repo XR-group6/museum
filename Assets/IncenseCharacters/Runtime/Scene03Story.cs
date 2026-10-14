@@ -264,7 +264,8 @@ namespace IncenseCharacters
         {
             if (!ready) return;
             foreach (var item in rotations) if (item.Key && item.Key != father && item.Key != daughter) item.Key.localRotation = item.Value;
-            burner.SetPositionAndRotation(burnerPosition, burnerRotation); burner.localScale = burnerScale;
+            // Sibling scene objects can already be destroyed during a Single scene load.
+            if (burner) { burner.SetPositionAndRotation(burnerPosition, burnerRotation); burner.localScale = burnerScale; }
             if (skinF) skinF.sharedMesh = originalF; if (skinD) skinD.sharedMesh = originalD;
             if (cameraPlaced && rig) rig.SetPositionAndRotation(rigPosition, rigRotation);
             if (cameraPlaced && cameraTransform) { cameraTransform.localRotation = cameraLocalRotation; cameraTransform.GetComponent<Camera>().fieldOfView = cameraFov; }
