@@ -1,0 +1,15 @@
+{
+    "scene": "scene_05",
+    "kind": "check",
+    "stamp": "20261014-123216",
+    "dry_run": false,
+    "applied": true,
+    "findings": [
+        {
+            "name": "scene_05",
+            "kind": "prefab-missing",
+            "detail": "Assets/Project3D/Prefabs/scenes/scene_05.prefab does not exist; the next publish rebuilds it. This check does not fabricate a layout."
+        }
+    ],
+    "restored": []
+}

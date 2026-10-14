@@ -101,6 +101,11 @@
         0.1,
         2.42
       ],
+      "colour": [
+        1.0,
+        1.0,
+        1.0
+      ],
       "energy": 34.0,
       "size": 5.2
     },
@@ -110,6 +115,11 @@
           -0.6,
           0.1,
           2.42
+        ],
+        "colour": [
+          1.0,
+          1.0,
+          1.0
         ],
         "energy": 34.0,
         "name": "scene_fill",
@@ -125,6 +135,11 @@
           5.0
         ],
         "blend": 0.0,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 0.0,
         "energy": 3.0,
         "kind": "sun",
@@ -136,6 +151,8 @@
         "name": "sun_window_desk"
       }
     ],
+    "unity_brightness": 1.0,
+    "unity_sky": false,
     "world": [
       0.16,
       0.18,
@@ -188,6 +205,31 @@
         ]
       },
       "container": true,
+      "guard": true,
+      "guard_meshes": [
+        {
+          "materials": [
+            "door_plank",
+            "flagstone",
+            "lime_wash",
+            "metal_iron",
+            "wood_dark",
+            "wood_light"
+          ],
+          "max": [
+            2.76,
+            2.8,
+            3.85
+          ],
+          "min": [
+            -2.76,
+            -2.8,
+            0.0
+          ],
+          "name": "house",
+          "tris": 1568
+        }
+      ],
       "mount": "floor",
       "name": "house",
       "room": null,
@@ -213,6 +255,27 @@
         ]
       },
       "container": true,
+      "guard": true,
+      "guard_meshes": [
+        {
+          "materials": [
+            "tile_red",
+            "wood_dark"
+          ],
+          "max": [
+            3.295,
+            3.41,
+            4.7
+          ],
+          "min": [
+            -3.295,
+            -3.41,
+            2.4637
+          ],
+          "name": "house_roof",
+          "tris": 372
+        }
+      ],
       "mount": "surface",
       "name": "house_roof",
       "room": null,
@@ -7319,7 +7382,7 @@
       "rz": 0.0
     },
     {
-      "asset": "incense_burner",
+      "asset": "incense_burner_tripod_incense",
       "at": [
         0.0,
         -2.3,
@@ -7327,12 +7390,12 @@
       ],
       "bounds": {
         "max": [
-          0.13,
+          0.1009,
           -2.185,
-          1.3599
+          1.2174
         ],
         "min": [
-          -0.13,
+          -0.1009,
           -2.415,
           0.95
         ]
@@ -9344,7 +9407,7 @@
       "rz": -180.0
     },
     {
-      "asset": "incense_burner",
+      "asset": "incense_burner_tripod_incense",
       "at": [
         4.4,
         12.1,
@@ -9352,12 +9415,12 @@
       ],
       "bounds": {
         "max": [
-          4.53,
+          4.5009,
           12.215,
-          0.6699
+          0.5274
         ],
         "min": [
-          4.27,
+          4.2991,
           11.985,
           0.26
         ]

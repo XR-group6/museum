@@ -15,16 +15,11 @@ It is short and it will save you from making a change that silently disappears.
 
 ```
 Assets/Project3D/
-  Models/<category>/    *.fbx — one per asset
-  Textures/             *.png — one per palette key
-  Materials/            *.mat — one per palette key
-  Prefabs/<category>/   *.prefab — one per asset, what scenes reference
-  Prefabs/scenes/       *.prefab — a whole room's arrangement (see below)
-  Scenes/               *.unity — scene_01, scene_02
-  SceneManifests/       *.json — what a scene means to contain, per scene
-  Update/               *.json — what the last publish changed
-  Editor/               MigrateScene.cs — the one-time fat->thin migration tool
-  Backups/              written by the migration tool; gitignored, local only
+  Models/<category>/    *.fbx — one per asset, 85 of them
+  Textures/             *.png — shared trim sheet (Phase 2; currently empty)
+  Materials/            *.mat — one per palette entry
+  Prefabs/<category>/   *.prefab — what scenes actually reference
+  Scenes/               *.unity
 Assets/Editor/          your own editor scripts. Project3D/ inside it is
                         gitignored — the pipeline injects and removes it.
 Packages/               Unity package manifest
@@ -42,18 +37,6 @@ ProjectSettings/        Unity project settings — version pinned deliberately
    open. Copy the two `git config` lines from the top of `.gitattributes`.
 4. Open the project. Unity will build `Library/` on first open; that takes a few
    minutes and is not committed.
-
-## Scenes are thin, and one migration is pending
-
-A room is delivered as `Prefabs/scenes/<scene>.prefab` — the arrangement — with
-`Scenes/<scene>.unity` holding a single instance of it. The pipeline can therefore
-update a room's layout without rewriting the scene file you edit.
-
-**If you already had this project and edited scene 01 or 02, read
-[`MIGRATION_README.md`](MIGRATION_README.md) before you pull.** It is a one-time,
-in-your-own-checkout step that wraps your scene in the published prefab and carries
-your cameras, components and nudges across. Scenes 03 and 04 have been retired and
-are gone from this delivery; there is nothing to migrate for them.
 
 ## Working in it
 
@@ -77,7 +60,7 @@ here.
 
 ## Status
 
-Scenes 01 and 02 are published and playable, in the thin form described above.
-Scenes 03 and 04 are retired: the pipeline no longer builds them and they are gone
-from this project; they will come back as new scenes when they are rebuilt. The
-layout above is what the pipeline publishes into.
+This repository is being set up. Phases 1–4 of the pipeline work — detail levels,
+textures, and the Unity import itself — are still to land, so `Models/`,
+`Materials/`, `Prefabs/` and `Scenes/` are all currently empty. The layout above
+is the target the pipeline will publish into.

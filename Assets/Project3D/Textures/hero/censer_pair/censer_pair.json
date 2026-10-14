@@ -1,0 +1,13 @@
+{
+  "note": "Exported by blender/tools/build_hero_textures.py from the vendor GLB. Do not edit -- re-running the tool rewrites it.",
+  "set": "censer_pair",
+  "title": "the vendor's bronze and lichen surface for the two tripod censers cut from sourced/incense burner 3d model (1).glb",
+  "material": "censer_pair__tripo",
+  "source": "sourced/incense burner 3d model (1).glb",
+  "sha256": "e643e3250fefb4f0b460ad3b669f3e198aba586ca6630b1cec04352369f895f8",
+  "maps": {
+    "albedo": "tripo.jpg",
+    "normal": "tripo_normal.png",
+    "orm": "tripo_orm.jpg"
+  }
+}
