@@ -11,7 +11,7 @@ public static class CenserScenePlaybackEditor
 {
     const string ScenePath = "Assets/Project3D/Scenes/scene_01.unity";
 
-    [MenuItem("Museum/Effects/Install Scene 01 Censer Autoplay")]
+    [MenuItem("Museum/Effects/Install Scene 01 Censer Interaction")]
     public static void Install()
     {
         if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Stop Play Mode before installing the visual replacement.");
@@ -47,7 +47,7 @@ public static class CenserScenePlaybackEditor
             component.director = visual.GetComponentInChildren<PlayableDirector>(true);
         }
         component.originalRenderer = original;
-        component.playOnStart = true;
+        component.playOnStart = false;
         Undo.RecordObject(original, "Replace censer visuals");
         original.enabled = false;
         PrefabUtility.RecordPrefabInstancePropertyModifications(original);
@@ -59,9 +59,9 @@ public static class CenserScenePlaybackEditor
         EditorSceneManager.MarkSceneDirty(scene);
         if (!EditorSceneManager.SaveScene(scene)) throw new Exception("Could not save scene_01.");
         File.WriteAllText("Library/CenserScenePlayback/result.txt",
-            "PASS scene_01 saved with active CenserInteractionEffect prefab; autoplay enabled; original censer renderer hidden; original Censer tag, Rigidbody, collider and RightController serialization preserved.\n" +
+            "PASS scene_01 saved with active CenserInteractionEffect prefab; interaction playback enabled; original censer renderer hidden; original Censer tag, Rigidbody, collider and RightController serialization preserved.\n" +
             "Visual position: " + component.visualRoot.transform.position + "; scale: " + component.visualRoot.transform.localScale);
-        Debug.Log("[Museum] Scene 01 censer replacement installed: enter Play Mode to preview without VR.");
+        Debug.Log("[Museum] Scene 01 censer replacement installed: playback waits for the narration and right-hand interaction.");
         if (opened) EditorSceneManager.CloseScene(scene, true);
         if (active.IsValid() && active.isLoaded) SceneManager.SetActiveScene(active);
     }

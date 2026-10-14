@@ -37,13 +37,16 @@ Shader "Museum/VisualEffectParticle"
                 fixed4 color : COLOR;
                 float2 uv : TEXCOORD0;
                 UNITY_VERTEX_INPUT_INSTANCE_ID
+                UNITY_VERTEX_OUTPUT_STEREO
             };
 
             v2f vert(appdata input)
             {
                 v2f output;
                 UNITY_SETUP_INSTANCE_ID(input);
+                UNITY_INITIALIZE_OUTPUT(v2f, output);
                 UNITY_TRANSFER_INSTANCE_ID(input, output);
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
                 output.position = UnityObjectToClipPos(input.vertex);
                 output.color = input.color;
                 output.uv = TRANSFORM_TEX(input.uv, _MainTex);
@@ -53,6 +56,7 @@ Shader "Museum/VisualEffectParticle"
             fixed4 frag(v2f input) : SV_Target
             {
                 UNITY_SETUP_INSTANCE_ID(input);
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
                 fixed4 sampleColor = tex2D(_MainTex, input.uv);
                 return fixed4(sampleColor.rgb * min(_MainColor.rgb, 2) * input.color.rgb,
                               sampleColor.a * input.color.a);

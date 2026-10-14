@@ -9,7 +9,8 @@ public sealed class CenserScenePlayback : MonoBehaviour
     public GameObject visualRoot;
     public PlayableDirector director;
     public Renderer originalRenderer;
-    public bool playOnStart = true;
+    public bool playOnStart;
+    public bool HasDisappeared { get; private set; }
 
     readonly List<Renderer> renderers = new List<Renderer>();
     readonly List<Material[]> originals = new List<Material[]>();
@@ -36,12 +37,14 @@ public sealed class CenserScenePlayback : MonoBehaviour
             renderer.sharedMaterials = copies;
         }
         director.stopped += OnStopped;
+        director.time = 0;
+        director.Evaluate();
     }
 
     void OnEnable()
     {
         if (!visualRoot || !director) return;
-        visualRoot.SetActive(true);
+        visualRoot.SetActive(!HasDisappeared);
         if (originalRenderer) originalRenderer.enabled = false;
     }
 
@@ -50,7 +53,7 @@ public sealed class CenserScenePlayback : MonoBehaviour
     [ContextMenu("Play Censer Effect")]
     public void Play()
     {
-        if (!Application.isPlaying || !director || !visualRoot) return;
+        if (!Application.isPlaying || !director || !visualRoot || HasDisappeared) return;
         if (!enabled) enabled = true;
         if (director.state == PlayState.Playing) return;
         director.time = 0;
@@ -61,9 +64,16 @@ public sealed class CenserScenePlayback : MonoBehaviour
     void OnStopped(PlayableDirector stopped)
     {
         if (stopping) return;
-        // Return the persistent replacement to its visible resting pose.
-        stopped.time = 0;
-        stopped.Evaluate();
+        HidePermanently();
+    }
+
+    public void HidePermanently()
+    {
+        if (HasDisappeared) return;
+        HasDisappeared = true;
+        if (visualRoot) visualRoot.SetActive(false);
+        if (originalRenderer) originalRenderer.enabled = false;
+        foreach (var collider in GetComponentsInChildren<Collider>(true)) collider.enabled = false;
     }
 
     void OnDisable()
@@ -71,7 +81,7 @@ public sealed class CenserScenePlayback : MonoBehaviour
         stopping = true;
         if (director) director.Stop();
         if (visualRoot) visualRoot.SetActive(false);
-        if (originalRenderer) originalRenderer.enabled = true;
+        if (originalRenderer) originalRenderer.enabled = !HasDisappeared;
         stopping = false;
     }
 

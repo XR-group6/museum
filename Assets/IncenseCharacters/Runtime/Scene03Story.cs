@@ -13,6 +13,8 @@ namespace IncenseCharacters
         public AudioClip daughterVoice, fatherVoice;
         public Shader coverShader;
         public Vector3 carryOffset = new Vector3(0, 1.13f, .27f);
+        [Tooltip("World-space height adjustment for the camera rig; does not move the carried burner.")]
+        public float cameraRigHeightOffset = -1.1f;
         [Range(0, 30)] public float previewTime;
         public float Duration => 30f;
         readonly Dictionary<Transform, Quaternion> rotations = new Dictionary<Transform, Quaternion>();
@@ -91,6 +93,7 @@ namespace IncenseCharacters
             float yaw = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             rig.Rotate(Vector3.up, Mathf.DeltaAngle(cameraTransform.eulerAngles.y, yaw), Space.World);
             rig.position += eye - cameraTransform.position;
+            rig.position += Vector3.up * cameraRigHeightOffset;
             eyeRigPosition = rig.position; initialCenter = father.TransformPoint(carryOffset);
             if (!camera.stereoEnabled)
             {
