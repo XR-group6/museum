@@ -161,11 +161,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28285490}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dce689cf8b550564d90391708ce5455c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
@@ -504,6 +504,7 @@ MonoBehaviour:
   sceneNumber: 3
   holdSeconds: 3
   story: {fileID: 903030002}
+  narration: {fileID: 2133000003}
   movement: {fileID: 0}
   turning: {fileID: 0}
 --- !u!4 &521465910
@@ -712,7 +713,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: df21eca64a894e34869788f0b56fb403, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 1
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -878,11 +879,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126373762}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0fc08850ef91a0a4ca8a2a804063fdfd, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.12
   m_Pitch: 1
   Loop: 1
@@ -1057,6 +1058,83 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b7a4a517189cce41becb01bc50ce84d, type: 3}
+--- !u!1 &2133000000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2133000001}
+  - component: {fileID: 2133000002}
+  - component: {fileID: 2133000003}
+  m_Layer: 0
+  m_Name: SceneThreeNarration
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2133000001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133000000}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2133000002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133000000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991c9a3bfd694e949f520d447e34abc2, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  subtitleFile: {fileID: 0}
+  vrCamera: {fileID: 0}
+  followCamera: 1
+  cameraOffset: {x: 0, y: 0.35, z: 2}
+  subtitleWidth: 900
+  fontSize: 48
+  canvasScale: 0.0015
+  subtitleFont: {fileID: 0}
+--- !u!114 &2133000003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133000000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c2a4a8eb2e469c9a786b42db62837f, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  story: {fileID: 903030002}
+  subtitles: {fileID: 2133000002}
+  subtitleText: {fileID: 4900000, guid: 63b7822b8a054b16a95eae983d3840e6, type: 3}
+  engine: {fileID: 8300000, guid: 3329cd626c02b5a4c9ab28b774ecc85f, type: 3}
+  waves: {fileID: 8300000, guid: 7bc4627d9a6d1f048adbf45260c85271, type: 3}
+  wind: {fileID: 8300000, guid: 88c5099fbe7f92e46ad79d6af6defb63, type: 3}
+  fabric: {fileID: 8300000, guid: d0d0a6774177be14db8bbec69c9717fc, type: 3}
+  daughterVoice: {fileID: 8300000, guid: 18b0039552f3e4640b24007a9fb27f01, type: 3}
+  fatherVoice: {fileID: 8300000, guid: df68c38b62f904a4aae8ea9739bbe526, type: 3}
+  censerVoice: {fileID: 8300000, guid: ffe9a85ae4f878b489f6b849fce4dc26, type: 3}
+  daughterSecondLineAt: 4.15
+  fatherSecondLineAt: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1069,3 +1147,4 @@ SceneRoots:
   - {fileID: 903030001}
   - {fileID: 903030020}
   - {fileID: 521465910}
+  - {fileID: 2133000001}
