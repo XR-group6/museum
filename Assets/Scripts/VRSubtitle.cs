@@ -22,6 +22,9 @@ public class VRSubtitle : MonoBehaviour
     private Font runtimeFont;
     private string displayed;
     private string runtimeText;
+    void OnEnable() { SubtitleLanguage.Changed+=LanguageChanged; }
+    void OnDisable() { SubtitleLanguage.Changed-=LanguageChanged; }
+    void LanguageChanged() { if(label) Refresh(); }
 
     public void ShowText(string text)
     {
@@ -69,6 +72,7 @@ public class VRSubtitle : MonoBehaviour
             catch (IOException) { return; }
         }
 #endif
+        content=SubtitleLanguage.Translate(content);
         if (displayed == content && label.fontSize == fontSize && textRect.rect.width == Mathf.Max(1, subtitleWidth)) return;
         displayed = content; label.text = content; label.fontSize = Mathf.Max(1, fontSize);
         float width = Mathf.Max(1, subtitleWidth);
