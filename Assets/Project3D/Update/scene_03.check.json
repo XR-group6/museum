@@ -1,0 +1,20 @@
+{
+    "scene": "scene_03",
+    "kind": "check",
+    "stamp": "20261014-174129",
+    "dry_run": false,
+    "applied": true,
+    "findings": [
+        {
+            "name": "fishing_boat",
+            "kind": "mesh-changed",
+            "detail": "mesh 'fishing_boat' has 21096 tris, expected 21112"
+        },
+        {
+            "name": "fishing_boat",
+            "kind": "model-tampered",
+            "detail": "Assets/Project3D/Prefabs/…/fishing_boat.prefab itself fails the fingerprint (mesh 'fishing_boat' has 21096 tris, expected 21112) -- pull the next publish, which rewrites it from the FBX."
+        }
+    ],
+    "restored": []
+}

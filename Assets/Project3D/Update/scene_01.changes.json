@@ -1,40 +1,11 @@
 {
   "added": [],
   "asset_swapped": [],
-  "bounds_changed": [
-    {
-      "asset": "travel_bag",
-      "from": [
-        [
-          4.28,
-          7.293,
-          0.0
-        ],
-        [
-          4.89,
-          8.107,
-          0.49
-        ]
-      ],
-      "name": "bag_e",
-      "to": [
-        [
-          4.3155,
-          7.318,
-          0.0
-        ],
-        [
-          4.8845,
-          8.082,
-          0.45
-        ]
-      ]
-    }
-  ],
+  "bounds_changed": [],
   "first_publish": false,
   "moved": [],
   "removed": [],
   "renamed": [],
   "scene": "scene_01",
-  "unchanged": 102
+  "unchanged": 103
 }

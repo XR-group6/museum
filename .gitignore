@@ -125,3 +125,6 @@ Assets/Project3D/Backups/
 # running, and the pipeline deletes it again; CLAUDE.md says this is ignored on
 # purpose, and until now nothing actually said so. Never commit it.
 Assets/Editor/Project3D/
+
+# macOS filesystem metadata
+.DS_Store

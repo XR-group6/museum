@@ -1,0 +1,338 @@
+{
+  "assembly": "prefab",
+  "bounds": {
+    "dims": [
+      92.0,
+      98.0,
+      13.0
+    ],
+    "max": [
+      46.0,
+      49.0,
+      9.6
+    ],
+    "min": [
+      -46.0,
+      -49.0,
+      -3.4
+    ]
+  },
+  "lighting": {
+    "accents": [],
+    "fill": null,
+    "fills": [],
+    "lights": [
+      {
+        "angle": 2.0,
+        "at": [
+          30.0,
+          -38.0,
+          46.0
+        ],
+        "blend": 0.0,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "cone": 0.0,
+        "energy": 3.0,
+        "kind": "sun",
+        "look": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "name": "sun_sea"
+      }
+    ],
+    "unity_brightness": 1.0,
+    "unity_sky": false,
+    "world": [
+      0.36,
+      0.43,
+      0.52
+    ]
+  },
+  "placements": [
+    {
+      "asset": "strait_water",
+      "at": [
+        0.0,
+        0.0,
+        -0.36
+      ],
+      "bounds": {
+        "max": [
+          46.0,
+          49.0,
+          0.0842
+        ],
+        "min": [
+          -46.0,
+          -49.0,
+          -3.4
+        ]
+      },
+      "container": true,
+      "mount": "floor",
+      "name": "sea",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "working_boat",
+      "at": [
+        -18.0,
+        14.0,
+        -0.24
+      ],
+      "bounds": {
+        "max": [
+          -13.8165,
+          16.9844,
+          4.31
+        ],
+        "min": [
+          -22.104,
+          11.0579,
+          -0.16
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "boat_01",
+      "room": null,
+      "rz": 118.0
+    },
+    {
+      "asset": "working_boat",
+      "at": [
+        16.0,
+        12.0,
+        -0.24
+      ],
+      "bounds": {
+        "max": [
+          18.0075,
+          16.1719,
+          4.31
+        ],
+        "min": [
+          13.9738,
+          7.7401,
+          -0.16
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "boat_02",
+      "room": null,
+      "rz": -12.0
+    },
+    {
+      "asset": "working_boat",
+      "at": [
+        26.0,
+        -2.0,
+        -0.24
+      ],
+      "bounds": {
+        "max": [
+          30.2599,
+          0.0075,
+          4.31
+        ],
+        "min": [
+          21.8281,
+          -4.0262,
+          -0.16
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "boat_03",
+      "room": null,
+      "rz": 78.0
+    },
+    {
+      "asset": "sea_mist",
+      "at": [
+        -32.0,
+        -30.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -19.0727,
+          -19.2977,
+          7.35
+        ],
+        "min": [
+          -44.9273,
+          -41.3317,
+          0.35
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "mist_01",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "sea_mist",
+      "at": [
+        32.0,
+        -36.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          44.9273,
+          -25.2977,
+          7.35
+        ],
+        "min": [
+          19.0727,
+          -47.3317,
+          0.35
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "mist_02",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "sea_mist",
+      "at": [
+        -32.0,
+        34.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -19.0727,
+          44.7023,
+          7.35
+        ],
+        "min": [
+          -44.9273,
+          22.6683,
+          0.35
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "mist_03",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "sea_mist",
+      "at": [
+        32.0,
+        28.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          44.9273,
+          38.7023,
+          7.35
+        ],
+        "min": [
+          19.0727,
+          16.6683,
+          0.35
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "mist_04",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "sea_mist",
+      "at": [
+        -24.0,
+        -6.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          -11.0727,
+          4.7023,
+          7.35
+        ],
+        "min": [
+          -36.9273,
+          -17.3317,
+          0.35
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "mist_05",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "sea_haze",
+      "at": [
+        0.0,
+        34.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          17.4946,
+          48.3209,
+          9.6
+        ],
+        "min": [
+          -18.0047,
+          19.9831,
+          0.6
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "haze_01",
+      "room": null,
+      "rz": 0.0
+    },
+    {
+      "asset": "sea_haze",
+      "at": [
+        0.0,
+        -34.0,
+        0.0
+      ],
+      "bounds": {
+        "max": [
+          17.4946,
+          -19.6791,
+          9.6
+        ],
+        "min": [
+          -18.0047,
+          -48.0169,
+          0.6
+        ]
+      },
+      "container": false,
+      "mount": "floor",
+      "name": "haze_02",
+      "room": null,
+      "rz": 0.0
+    }
+  ],
+  "scene": "scene_08",
+  "title": "Open sea -- the crossing, with nothing on the horizon but weather",
+  "units": "meters",
+  "up": "Z"
+}

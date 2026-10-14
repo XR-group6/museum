@@ -25,6 +25,11 @@
         10.3,
         2.6
       ],
+      "colour": [
+        1.0,
+        1.0,
+        1.0
+      ],
       "energy": 22.0,
       "size": 5.0
     },
@@ -34,6 +39,11 @@
           2.45,
           10.3,
           2.6
+        ],
+        "colour": [
+          1.0,
+          1.0,
+          1.0
         ],
         "energy": 22.0,
         "name": "scene_fill",
@@ -49,6 +59,11 @@
           104.0
         ],
         "blend": 0.0,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 0.0,
         "energy": 4.5,
         "kind": "sun",
@@ -67,6 +82,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 26.0,
         "energy": 300.0,
         "kind": "spot",
@@ -85,6 +105,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 24.0,
         "energy": 150.0,
         "kind": "spot",
@@ -103,6 +128,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 28.0,
         "energy": 170.0,
         "kind": "spot",
@@ -121,6 +151,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 36.0,
         "energy": 150.0,
         "kind": "spot",
@@ -139,6 +174,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 36.0,
         "energy": 150.0,
         "kind": "spot",
@@ -157,6 +197,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 36.0,
         "energy": 140.0,
         "kind": "spot",
@@ -175,6 +220,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 36.0,
         "energy": 130.0,
         "kind": "spot",
@@ -193,6 +243,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 44.0,
         "energy": 120.0,
         "kind": "spot",
@@ -211,6 +266,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 36.0,
         "energy": 160.0,
         "kind": "spot",
@@ -229,6 +289,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 36.0,
         "energy": 140.0,
         "kind": "spot",
@@ -247,6 +312,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 44.0,
         "energy": 150.0,
         "kind": "spot",
@@ -265,6 +335,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 46.0,
         "energy": 140.0,
         "kind": "spot",
@@ -283,6 +358,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 36.0,
         "energy": 130.0,
         "kind": "spot",
@@ -301,6 +381,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 44.0,
         "energy": 120.0,
         "kind": "spot",
@@ -319,6 +404,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 44.0,
         "energy": 120.0,
         "kind": "spot",
@@ -337,6 +427,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 36.0,
         "energy": 120.0,
         "kind": "spot",
@@ -355,6 +450,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 46.0,
         "energy": 150.0,
         "kind": "spot",
@@ -373,6 +473,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 30.0,
         "energy": 150.0,
         "kind": "spot",
@@ -391,6 +496,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 36.0,
         "energy": 140.0,
         "kind": "spot",
@@ -409,6 +519,11 @@
           2.75
         ],
         "blend": 0.55,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 30.0,
         "energy": 150.0,
         "kind": "spot",
@@ -427,6 +542,11 @@
           13.0
         ],
         "blend": 0.62,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 34.0,
         "energy": 3000.0,
         "kind": "spot",
@@ -445,6 +565,11 @@
           5.0
         ],
         "blend": 0.65,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 40.0,
         "energy": 1700.0,
         "kind": "spot",
@@ -463,6 +588,11 @@
           5.0
         ],
         "blend": 0.65,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 40.0,
         "energy": 1700.0,
         "kind": "spot",
@@ -481,6 +611,11 @@
           2.4
         ],
         "blend": 0.7,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 46.0,
         "energy": 1600.0,
         "kind": "spot",
@@ -499,6 +634,11 @@
           9.0
         ],
         "blend": 0.68,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 44.0,
         "energy": 1200.0,
         "kind": "spot",
@@ -517,6 +657,11 @@
           9.0
         ],
         "blend": 0.68,
+        "colour": [
+          1.0,
+          1.0,
+          1.0
+        ],
         "cone": 44.0,
         "energy": 1200.0,
         "kind": "spot",
@@ -528,6 +673,8 @@
         "name": "ext_face_e"
       }
     ],
+    "unity_brightness": 1.0,
+    "unity_sky": false,
     "world": [
       0.2,
       0.19,
@@ -580,6 +727,35 @@
         ]
       },
       "container": true,
+      "guard": true,
+      "guard_meshes": [
+        {
+          "materials": [
+            "ashlar",
+            "charcoal",
+            "glass_clear",
+            "marble",
+            "metal_iron",
+            "metal_steel",
+            "off_white",
+            "sand",
+            "stone_dark",
+            "stone_grey"
+          ],
+          "max": [
+            26.0,
+            18.0,
+            14.9
+          ],
+          "min": [
+            -26.0,
+            -26.0,
+            -1.2
+          ],
+          "name": "museum_hall",
+          "tris": 7676
+        }
+      ],
       "mount": "floor",
       "name": "museum_hall",
       "room": null,
@@ -636,7 +812,7 @@
       "rz": -90.0
     },
     {
-      "asset": "incense_burner_grand",
+      "asset": "incense_burner_tripod",
       "at": [
         1.95,
         10.3,
@@ -644,13 +820,13 @@
       ],
       "bounds": {
         "max": [
-          2.1053,
-          10.4755,
-          1.5534
+          2.0475,
+          10.4155,
+          1.1727
         ],
         "min": [
-          1.7947,
-          10.1245,
+          1.8486,
+          10.1855,
           1.0
         ]
       },
@@ -658,7 +834,7 @@
       "mount": "surface",
       "name": "censer",
       "room": "hall",
-      "rz": -90.0
+      "rz": 0.0
     },
     {
       "asset": "bench",
