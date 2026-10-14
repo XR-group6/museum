@@ -38,6 +38,9 @@ namespace IncenseCharacters
         bool ready, cameraPlaced;
         public float EyeOpening { get; private set; }
         public float ClothOpening { get; private set; }
+        // Optional audio-driven speech envelopes; negative values retain the original preview behavior.
+        [System.NonSerialized] public float daughterSpeechLevel = -1;
+        [System.NonSerialized] public float fatherSpeechLevel = -1;
 
         static Transform Bone(Transform root, string name)
         {
@@ -188,6 +191,8 @@ namespace IncenseCharacters
             Quaternion fatherLook = Quaternion.Slerp(rotations[fh], LocalLook(fh, dh.position), Smooth(t, 11, 12.3f));
             fh.localRotation = Quaternion.Slerp(fatherLook, LocalLook(fh, fh.position + forwardDirection * 3), forward);
             float daughterSpeech = Speech(t, 5, 10), fatherSpeech = Speech(t, 11, 20);
+            if (daughterSpeechLevel >= 0) daughterSpeech = daughterSpeechLevel;
+            if (fatherSpeechLevel >= 0) fatherSpeech = fatherSpeechLevel;
             dh.localRotation *= Quaternion.Euler(1.5f * Mathf.Sin(t * 5.1f) * daughterSpeech, 0, 0);
             fh.localRotation *= Quaternion.Euler(1.2f * Mathf.Sin(t * 4.3f) * fatherSpeech, 0, 0);
 
@@ -200,7 +205,7 @@ namespace IncenseCharacters
             AnimateMouth(mouthF, verticesF, 1, 1, fatherSpeech * (.4f + .6f * Mathf.Abs(Mathf.Sin(t * 10))));
             AnimateMouth(mouthD, verticesD, .61f, .80f, daughterSpeech * (.4f + .6f * Mathf.Abs(Mathf.Sin(t * 11))));
             EyeOpening = Smooth(t, .3f, 2.5f) * (1 - .94f * (Smooth(t, 2.7f, 3.15f) - Smooth(t, 3.25f, 4.8f)));
-            ClothOpening = 1 - .97f * Smooth(t, 23, 30);
+            ClothOpening = 1 - Smooth(t, 23, 30);
             if (effects)
             {
                 var camera = cameraTransform.GetComponent<Camera>();
