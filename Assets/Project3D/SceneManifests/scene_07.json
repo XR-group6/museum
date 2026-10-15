@@ -280,8 +280,8 @@
         "blend": 0.7,
         "colour": [
           1.0,
-          0.82,
-          0.6
+          0.93,
+          0.86
         ],
         "cone": 150.0,
         "energy": 150.0,
@@ -303,8 +303,8 @@
         "blend": 0.6,
         "colour": [
           1.0,
-          0.82,
-          0.6
+          0.93,
+          0.86
         ],
         "cone": 125.0,
         "energy": 46.0,
@@ -326,8 +326,8 @@
         "blend": 0.6,
         "colour": [
           1.0,
-          0.82,
-          0.6
+          0.93,
+          0.86
         ],
         "cone": 125.0,
         "energy": 46.0,
@@ -349,8 +349,8 @@
         "blend": 0.6,
         "colour": [
           1.0,
-          0.82,
-          0.6
+          0.93,
+          0.86
         ],
         "cone": 125.0,
         "energy": 46.0,
@@ -372,8 +372,8 @@
         "blend": 0.6,
         "colour": [
           1.0,
-          0.82,
-          0.6
+          0.93,
+          0.86
         ],
         "cone": 125.0,
         "energy": 46.0,
@@ -386,7 +386,44 @@
         "name": "lamp_washroom"
       }
     ],
-    "unity_brightness": 1.0,
+    "sky": {
+      "brightness": 1.0,
+      "ground": [
+        0.13,
+        0.1,
+        0.11
+      ],
+      "horizon": [
+        0.76,
+        0.43,
+        0.25
+      ],
+      "horizon_falloff": 1.2,
+      "sun_dir": [
+        0.0,
+        -0.998123,
+        -0.061248
+      ],
+      "sun_glow": [
+        1.0,
+        0.6,
+        0.32
+      ],
+      "sun_glow_size": 5.0,
+      "sun_glow_strength": 0.85,
+      "zenith": [
+        0.36,
+        0.21,
+        0.16
+      ]
+    },
+    "unity_ambient": [
+      0.238,
+      0.2,
+      0.172
+    ],
+    "unity_brightness": 0.66,
+    "unity_lamp_range": 5.0,
     "unity_sky": true,
     "world": [
       0.48,

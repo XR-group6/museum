@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.28, g: 0.315, b: 0.37800002, a: 1}
+  m_AmbientSkyColor: {r: 0.15934, g: 0.18104, b: 0.21451999, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 558111757}
+  m_SkyboxMaterial: {fileID: 858491446}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -122,7 +122,43 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &347164579
+--- !u!21 &858491446
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Project3D Sky
+  m_Shader: {fileID: 4800000, guid: 0c1f5354a6a319c978f3f42d4ae71946, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _Brightness: 1
+    - _HorizonFalloff: 0.55
+    - _SunGlowSize: 20
+    - _SunGlowStrength: 0.22
+    m_Colors:
+    - _Ground: {r: 0.17, g: 0.2, b: 0.23, a: 1}
+    - _Horizon: {r: 0.7, g: 0.78, b: 0.9, a: 1}
+    - _SunDir: {r: 0, g: 0.70710677, b: -0.70710677, a: 0}
+    - _SunGlow: {r: 1, g: 0.97, b: 0.9, a: 1}
+    - _Zenith: {r: 0.4, g: 0.53, b: 0.74, a: 1}
+  m_BuildTextureStacks: []
+--- !u!1001 &961746408
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -179,43 +215,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3533ae27356c47a7e9406371e88a3e0f, type: 3}
---- !u!21 &558111757
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Project3D Sky
-  m_Shader: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _SUNDISK_HIGH_QUALITY
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AtmosphereThickness: 0.05
-    - _Exposure: 1
-    - _SunDisk: 2
-    - _SunSize: 0.04
-    - _SunSizeConvergence: 5
-    m_Colors:
-    - _GroundColor: {r: 0.28, g: 0.315, b: 0.37800002, a: 1}
-    - _SkyTint: {r: 0.28, g: 0.315, b: 0.37800002, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 347164579}
+  - {fileID: 961746408}

@@ -91,7 +91,14 @@
         "name": "sun_midday"
       }
     ],
+    "sky": null,
+    "unity_ambient": [
+      0.27,
+      0.34,
+      0.43
+    ],
     "unity_brightness": 1.0,
+    "unity_lamp_range": 0.0,
     "unity_sky": false,
     "world": [
       0.27,

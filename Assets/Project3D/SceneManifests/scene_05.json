@@ -151,7 +151,7 @@
         0.93,
         0.84
       ],
-      "energy": 30.0,
+      "energy": 22.0,
       "size": 4.8
     },
     "fills": [
@@ -166,7 +166,7 @@
           0.93,
           0.84
         ],
-        "energy": 30.0,
+        "energy": 22.0,
         "name": "scene_fill",
         "size": 4.8
       },
@@ -181,7 +181,7 @@
           0.93,
           0.84
         ],
-        "energy": 22.0,
+        "energy": 16.0,
         "name": "scene_fill_1",
         "size": 3.6
       }
@@ -247,7 +247,7 @@
           0.6
         ],
         "cone": 125.0,
-        "energy": 24.0,
+        "energy": 20.0,
         "kind": "spot",
         "look": [
           0.0,
@@ -270,7 +270,7 @@
           0.6
         ],
         "cone": 125.0,
-        "energy": 24.0,
+        "energy": 20.0,
         "kind": "spot",
         "look": [
           1.8,
@@ -293,7 +293,7 @@
           0.6
         ],
         "cone": 125.0,
-        "energy": 24.0,
+        "energy": 20.0,
         "kind": "spot",
         "look": [
           1.1,
@@ -316,7 +316,7 @@
           0.6
         ],
         "cone": 125.0,
-        "energy": 24.0,
+        "energy": 20.0,
         "kind": "spot",
         "look": [
           -1.9,
@@ -339,7 +339,7 @@
           0.6
         ],
         "cone": 85.0,
-        "energy": 4.0,
+        "energy": 3.4,
         "kind": "spot",
         "look": [
           -2.19,
@@ -349,7 +349,44 @@
         "name": "desk_lamp"
       }
     ],
-    "unity_brightness": 0.7,
+    "sky": {
+      "brightness": 1.0,
+      "ground": [
+        0.17,
+        0.2,
+        0.23
+      ],
+      "horizon": [
+        0.7,
+        0.78,
+        0.9
+      ],
+      "horizon_falloff": 0.55,
+      "sun_dir": [
+        0.0,
+        -0.707107,
+        -0.707107
+      ],
+      "sun_glow": [
+        1.0,
+        0.97,
+        0.9
+      ],
+      "sun_glow_size": 20.0,
+      "sun_glow_strength": 0.22,
+      "zenith": [
+        0.4,
+        0.53,
+        0.74
+      ]
+    },
+    "unity_ambient": [
+      0.257,
+      0.292,
+      0.346
+    ],
+    "unity_brightness": 0.62,
+    "unity_lamp_range": 5.0,
     "unity_sky": true,
     "world": [
       0.4,

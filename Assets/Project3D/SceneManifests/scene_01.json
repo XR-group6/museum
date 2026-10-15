@@ -673,7 +673,14 @@
         "name": "ext_face_e"
       }
     ],
+    "sky": null,
+    "unity_ambient": [
+      0.2,
+      0.19,
+      0.18
+    ],
     "unity_brightness": 1.0,
+    "unity_lamp_range": 0.0,
     "unity_sky": false,
     "world": [
       0.2,

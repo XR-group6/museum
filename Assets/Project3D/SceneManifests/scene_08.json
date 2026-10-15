@@ -46,7 +46,14 @@
         "name": "sun_sea"
       }
     ],
+    "sky": null,
+    "unity_ambient": [
+      0.36,
+      0.43,
+      0.52
+    ],
     "unity_brightness": 1.0,
+    "unity_lamp_range": 0.0,
     "unity_sky": false,
     "world": [
       0.36,
