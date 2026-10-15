@@ -15,6 +15,7 @@ public class MuseumRightStickTurn : MonoBehaviour
 
     void OnEnable()
     {
+        if(XRTeam.DebugTools.VRDebugSession.Active)return;
         stick = SteamVR_Input.GetAction<SteamVR_Action_Vector2>("platformer", "Move");
         if (!headset || !rightHand || stick == null)
         {
@@ -27,6 +28,7 @@ public class MuseumRightStickTurn : MonoBehaviour
 
     void Update()
     {
+        if(XRTeam.DebugTools.VRDebugSession.Active)return;
         inputBound = SteamVR_Input.initialized && stick.GetActive(SteamVR_Input_Sources.RightHand);
         lastAxis = inputBound && rightHand.isActiveAndEnabled && rightHand.isValid ? stick.GetAxis(SteamVR_Input_Sources.RightHand) : Vector2.zero;
         TurnAxis(lastAxis, Time.deltaTime);

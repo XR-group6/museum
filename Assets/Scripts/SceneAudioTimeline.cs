@@ -171,7 +171,7 @@ public class SceneAudioTimeline : MonoBehaviour
             return;
         }
         Debug.Log("[Museum] Loading " + nextScene, this);
-        SceneManager.LoadSceneAsync(nextScene);
+        XRTeam.DebugTools.VRDebugSession.LoadSceneAsync(nextScene);
     }
     void OnDisable()
     {

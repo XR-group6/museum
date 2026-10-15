@@ -128,3 +128,8 @@ Assets/Editor/Project3D/
 
 # macOS filesystem metadata
 .DS_Store
+
+# Desktop workbench: generated scenes and local verification exports.
+/Assets/TeamTools/VRDesktop/Generated/
+/Assets/TeamTools/VRDesktop/Generated.meta
+/WorkbenchValidationResults/

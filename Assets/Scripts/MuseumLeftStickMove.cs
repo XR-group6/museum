@@ -19,6 +19,7 @@ public class MuseumLeftStickMove : MonoBehaviour
 
     void OnEnable()
     {
+        if(XRTeam.DebugTools.VRDebugSession.Active)return;
         body = GetComponent<CharacterController>();
         safePosition = transform.position;
         move = SteamVR_Input.GetAction<SteamVR_Action_Vector2>("platformer", "Move");
@@ -34,6 +35,7 @@ public class MuseumLeftStickMove : MonoBehaviour
 
     void Update()
     {
+        if(XRTeam.DebugTools.VRDebugSession.Active)return;
         inputBound = SteamVR_Input.initialized && move.GetActive(SteamVR_Input_Sources.LeftHand);
         lastAxis = inputBound && leftHand.isActiveAndEnabled && leftHand.isValid ? move.GetAxis(SteamVR_Input_Sources.LeftHand) : Vector2.zero;
         MoveAxis(lastAxis, Time.deltaTime);

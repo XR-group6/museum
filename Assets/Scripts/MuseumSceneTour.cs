@@ -111,6 +111,6 @@ public sealed class MuseumSceneTour : MonoBehaviour
         { Debug.LogError("[Museum tour] Scene absent from Build Settings: " + name, this); enabled = false; return; }
         loading = true;
         Debug.Log("[Museum tour] " + sceneNumber + " -> " + next);
-        SceneManager.LoadSceneAsync(name, LoadSceneMode.Single);
+        XRTeam.DebugTools.VRDebugSession.LoadSceneAsync(name, LoadSceneMode.Single);
     }
 }

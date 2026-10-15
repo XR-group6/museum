@@ -28,7 +28,7 @@ public sealed class InitialLanguageSelector : MonoBehaviour
         Choice("中文",false,new Vector2(-195,-25)); Choice("English",true,new Vector2(195,-25));
         Label("中文配音保持不变 / Audio remains in Chinese",new Vector2(0,-130),new Vector2(780,50),25);
         Position();
-        trigger=SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
+        if(!XRTeam.DebugTools.VRDebugSession.Active) trigger=SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
         if(trigger!=null) trigger.actionSet.Activate(SteamVR_Input_Sources.RightHand);
         var pointer=new GameObject("Language Choice Pointer"); pointer.transform.SetParent(transform,false);
         ray=pointer.AddComponent<LineRenderer>(); ray.positionCount=2; ray.startWidth=0.004f; ray.endWidth=0.002f;
@@ -57,6 +57,12 @@ public sealed class InitialLanguageSelector : MonoBehaviour
     }
     void Update()
     {
+        if(XRTeam.DebugTools.VRDebugSession.Active) {
+#if UNITY_EDITOR
+            if(!Built && XRTeam.DebugTools.VRDebugSession.View) Build(XRTeam.DebugTools.VRDebugSession.View);
+#endif
+            return;
+        }
         if(!Built) {
             Camera main=Camera.main;
             if(!main) foreach(var camera in Camera.allCameras) if(camera.enabled) {main=camera; break;}
@@ -76,19 +82,29 @@ public sealed class InitialLanguageSelector : MonoBehaviour
             var aim=new Ray(pose.transform.position,pose.transform.forward);
             ray.enabled=true; ray.SetPosition(0,aim.origin); ray.SetPosition(1,aim.GetPoint(5));
             ray.startColor=ray.endColor=Color.white;
-            foreach(var choice in GetComponentsInChildren<InitialLanguageChoice>()) {
-                RaycastHit hit;
-                if(!choice.GetComponent<Collider>().Raycast(aim,out hit,5)) continue;
-                ray.SetPosition(1,hit.point); ray.startColor=ray.endColor=Color.green;
-                choice.GetComponent<Image>().color=new Color(0.2f,0.65f,0.55f);
-                if(trigger.GetStateDown(pose.inputSource)) {Select(choice.english); return;}
-            }
+            ProcessPointer(aim,trigger.GetStateDown(pose.inputSource),true);
             break;
         }
         if(Input.GetMouseButtonDown(0)) foreach(var choice in GetComponentsInChildren<InitialLanguageChoice>()) {
             RaycastHit hit;
             if(choice.GetComponent<Collider>().Raycast(viewer.ScreenPointToRay(Input.mousePosition),out hit,5)) {Select(choice.english); return;}
         }
+    }
+    // Both real SteamVR and desktop simulation use this exact choice handler.
+    public bool ProcessPointer(Ray aim,bool pressed,bool drawRay=false)
+    {
+        if(!Built)return false;
+        if(ray)ray.enabled=drawRay;
+        if(drawRay){ray.SetPosition(0,aim.origin);ray.SetPosition(1,aim.GetPoint(5));ray.startColor=ray.endColor=Color.white;}
+        bool hitAny=false;
+        foreach(var choice in GetComponentsInChildren<InitialLanguageChoice>()) {
+            RaycastHit hit;bool hovered=choice.GetComponent<Collider>().Raycast(aim,out hit,5);
+            choice.GetComponent<Image>().color=hovered?new Color(.2f,.65f,.55f):new Color(.05f,.36f,.43f,1);
+            if(!hovered)continue;hitAny=true;
+            if(drawRay){ray.SetPosition(1,hit.point);ray.startColor=ray.endColor=Color.green;}
+            if(pressed){Select(choice.english);return true;}
+        }
+        return hitAny;
     }
     void LateUpdate() { if(Built && viewer) Position(); }
     void OnDestroy() { if(font) Destroy(font); if(material) Destroy(material); if(ray && ray.sharedMaterial) Destroy(ray.sharedMaterial); }

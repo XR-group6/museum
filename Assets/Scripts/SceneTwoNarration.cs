@@ -139,7 +139,7 @@ public class SceneTwoNarration : MonoBehaviour
         {
             while (storyDirector.time < storyDirector.playableAsset.duration - 0.001) yield return null;
             yield return WaitSeconds(Mathf.Max(0, delayAfterCompletion));
-            if (Application.CanStreamedLevelBeLoaded(nextScene)) SceneManager.LoadSceneAsync(nextScene);
+            if (Application.CanStreamedLevelBeLoaded(nextScene)) XRTeam.DebugTools.VRDebugSession.LoadSceneAsync(nextScene);
             else Debug.LogError("[Museum] Next scene is absent from Build Settings: " + nextScene, this);
         }
     }

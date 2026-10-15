@@ -208,7 +208,7 @@ public class SceneOneNarration : MonoBehaviour
     {
         // A quick click must not cut off censer 2 or censer 3.
         while (!followupFinished) yield return null;
-        SceneManager.LoadSceneAsync(nextScene);
+        XRTeam.DebugTools.VRDebugSession.LoadSceneAsync(nextScene);
     }
 
     void Fail(string reason)

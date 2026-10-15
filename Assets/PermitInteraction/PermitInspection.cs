@@ -42,7 +42,7 @@ public sealed class PermitInspection : MonoBehaviour
     void BindInput()
     {
         previewLayer=LayerMask.NameToLayer("ObjectPreview");
-        trigger=SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
+        if(!XRTeam.DebugTools.VRDebugSession.Active) trigger=SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
         if(trigger!=null) trigger.actionSet.Activate(SteamVR_Input_Sources.RightHand);
         foreach(var p in FindObjectsOfType<SteamVR_Behaviour_Pose>())
             if(p.inputSource==SteamVR_Input_Sources.RightHand) { hand=p; break; }
@@ -62,6 +62,7 @@ public sealed class PermitInspection : MonoBehaviour
     void Update()
     {
         if(pointer) pointer.enabled=false;
+        if(XRTeam.DebugTools.VRDebugSession.Active)return;
         if(!Ready || !Viewer()) {if(IsOpen) Close();return;}
         bool tracked=hand && hand.isActiveAndEnabled && hand.isValid && trigger!=null;
         if(tracked) {
@@ -86,6 +87,14 @@ public sealed class PermitInspection : MonoBehaviour
             }
             if(Input.GetMouseButtonUp(0)) mouseDragging=false;
         }
+    }
+    public bool ProcessDesktopPointer(Ray ray,bool down,bool held,Quaternion rotation,Camera camera)
+    {
+        if(!XRTeam.DebugTools.VRDebugSession.Active || !Ready)return false;
+        viewer=camera;ProcessRay(ray,down,held,rotation);
+        bool hit=pointer && pointer.startColor==Color.green;
+        if(pointer)pointer.enabled=false;
+        return hit;
     }
     void ProcessRay(Ray ray,bool down,bool held,Quaternion rotation)
     {
