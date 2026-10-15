@@ -15,7 +15,7 @@ public sealed class MuseumSceneTour : MonoBehaviour
     public MuseumRightStickTurn turning;
     [Min(0), Tooltip("Move the rig forward once when entering free exploration, in metres.")]
     public float explorationSpawnForward = 0.35f;
-    [TextArea] public string explorationHintText = "可以使用左摇杆移动，右摇杆可以辅助您调整视角（请不要调整过快以免出现眩晕）";
+    [TextArea] public string explorationHintText = "可以使用左摇杆移动，右摇杆可以辅助您调整视角（请不要调整过快以免出现眩晕）。试试用右摇杆的激光指向桌上的台胞证并按下扳机。";
     [Min(0)] public float explorationHintSeconds = 10;
     VRSubtitle explorationHint;
     public bool ExplorationStarted { get; private set; }

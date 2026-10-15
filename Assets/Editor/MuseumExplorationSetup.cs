@@ -14,7 +14,7 @@ public static class MuseumExplorationSetup
         public float speed = 1.2f, moveDeadzone = .2f, gravity = 9.81f, fallReset = 5;
         public float turnSpeed = 60, turnDeadzone = .2f, radius = .2f, skin = .02f, step = .15f, slope = 45;
         public float forward = .35f, hintSeconds = 10;
-        public string hint = "可以使用左摇杆移动，右摇杆可以辅助您调整视角（请不要调整过快以免出现眩晕）";
+        public string hint = "可以使用左摇杆移动，右摇杆可以辅助您调整视角（请不要调整过快以免出现眩晕）。试试用右摇杆的激光指向桌上的台胞证并按下扳机。";
         public void Read(MuseumSceneTour flow)
         {
             if (!flow || !flow.movement || !flow.turning) return;

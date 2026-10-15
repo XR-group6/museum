@@ -43,7 +43,7 @@ public class SceneOneNarration : MonoBehaviour
         if (!narrationSubtitle || !interactionSubtitle)
         { Fail("Missing narration or interaction subtitle component."); yield break; }
         narrationSubtitle.ShowText(""); interactionSubtitle.ShowText("");
-        if (!museumEcho || museumEcho.length < 10f || !censerIntro || !censerAfterGrab || !censerFinal || !introSubtitles ||
+        if (!museumEcho || museumEcho.length < 5f || !censerIntro || !censerAfterGrab || !censerFinal || !introSubtitles ||
             !censerPlayback || !censerPlayback.director || !censerPlayback.director.playableAsset ||
             !Application.CanStreamedLevelBeLoaded(nextScene))
         { Fail("Missing scene-one audio, subtitle asset or next scene."); yield break; }
@@ -61,7 +61,7 @@ public class SceneOneNarration : MonoBehaviour
             if (clip.loadState != AudioDataLoadState.Loaded) { Fail("Failed to load " + clip.name); yield break; }
         }
         source.clip = museumEcho; source.Play();
-        while (AudioListener.pause || (source.isPlaying && source.timeSamples / (float)museumEcho.frequency < 10f))
+        while (AudioListener.pause || (source.isPlaying && source.timeSamples / (float)museumEcho.frequency < 5f))
             yield return null;
         source.Stop();
         source.clip = censerIntro; source.Play();

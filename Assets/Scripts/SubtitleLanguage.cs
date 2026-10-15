@@ -30,7 +30,7 @@ public static class SubtitleLanguage
         {"家具、行李和日常用品，记录着一个家庭离开故乡前的准备。", "Furniture, luggage and everyday objects show a family's preparations to leave home."},
         {"本场景结合历史背景与艺术化重构。", "This scene combines historical context with artistic reconstruction."},
         {"请环顾四周，观察香炉、行李和家中的生活物件。", "Look around at the incense burner, luggage and everyday objects in the home."},
-        {"可以使用左摇杆移动，右摇杆可以辅助您调整视角（请不要调整过快以免出现眩晕）", "Use the left stick to move and the right stick to turn. Turn slowly to avoid discomfort."}
+        {"可以使用左摇杆移动，右摇杆可以辅助您调整视角（请不要调整过快以免出现眩晕）。试试用右摇杆的激光指向桌上的台胞证并按下扳机。", "Use the left stick to move and the right stick to turn. Turn slowly to avoid discomfort. Try aiming your right controller's laser at the Taiwan Compatriot Permit on the table, then press the trigger."}
     };
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     static void Reset() { English=false; HasSelected=false; Changed=null; }
