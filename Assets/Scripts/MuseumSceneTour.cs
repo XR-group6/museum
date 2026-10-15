@@ -3,7 +3,7 @@ using IncenseCharacters;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Scene-local configuration; only the tour phase survives Single scene loads.
+// Scenes 4-6 are timed views. Scene 7 unlocks exploration after its timed view.
 [DefaultExecutionOrder(10001)]
 public sealed class MuseumSceneTour : MonoBehaviour
 {
@@ -18,23 +18,25 @@ public sealed class MuseumSceneTour : MonoBehaviour
     [TextArea] public string explorationHintText = "可以使用左摇杆移动，右摇杆可以辅助您调整视角（请不要调整过快以免出现眩晕）";
     [Min(0)] public float explorationHintSeconds = 10;
     VRSubtitle explorationHint;
-    static int expectedScene;
-    static bool returningToExplore;
+    public bool ExplorationStarted { get; private set; }
     bool loading;
     bool finishingStory;
 
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-    static void ResetTour() { expectedScene = 0; returningToExplore = false; }
-
-    public static int NextScene(int current) => current == 7 ? 5 : current + 1;
-    public static bool CanExplore(int current, bool inTour, bool returning) => current == 5 && (!inTour || returning);
+    public static int NextScene(int current) => current >= 7 ? 0 : current + 1;
+    public static bool CanExplore(int current) => current == 7;
 
     void Awake()
     {
-        if (sceneNumber == 3) ResetTour();
-        if (sceneNumber == 4) { expectedScene = 4; returningToExplore = false; }
-        bool explore = CanExplore(sceneNumber, expectedScene != 0, returningToExplore);
-        if (explore && movement && explorationSpawnForward > 0)
+        if (movement) movement.enabled = false;
+        if (turning) turning.enabled = false;
+    }
+
+    void BeginExploration()
+    {
+        if (ExplorationStarted || !CanExplore(sceneNumber)) return;
+        if (!movement || !turning)
+        { Debug.LogError("[Museum tour] Scene seven exploration references are missing.", this); return; }
+        if (explorationSpawnForward > 0)
         {
             Transform rig = movement.transform;
             Vector3 forward = Vector3.ProjectOnPlane(rig.forward, Vector3.up).normalized;
@@ -44,15 +46,21 @@ public sealed class MuseumSceneTour : MonoBehaviour
             rig.position += forward * explorationSpawnForward;
             if (bodyEnabled) body.enabled = true;
         }
-        if (movement) movement.enabled = explore;
-        if (turning) turning.enabled = explore;
-        if (explore) { expectedScene = 0; returningToExplore = false; }
+        movement.enabled = turning.enabled = true;
+        ExplorationStarted = true;
+        Debug.Log("[Museum tour] Scene 7 exploration enabled after " + holdSeconds + " seconds.", this);
     }
 
     IEnumerator Start()
     {
-        if (sceneNumber == 5 && movement && movement.enabled)
+        if (sceneNumber == 3) yield break;
+        // Count residence after the new scene has produced its first frame.
+        yield return null;
+        yield return new WaitForSecondsRealtime(holdSeconds);
+        if (CanExplore(sceneNumber))
         {
+            BeginExploration();
+            if (!ExplorationStarted) yield break;
             explorationHint = new GameObject("Exploration VR Hint").AddComponent<VRSubtitle>();
             explorationHint.transform.SetParent(transform, false);
             explorationHint.followCamera = true;
@@ -62,10 +70,6 @@ public sealed class MuseumSceneTour : MonoBehaviour
             if (explorationHint) Destroy(explorationHint.gameObject);
             yield break;
         }
-        if (sceneNumber == 3) yield break;
-        // Count residence after the new scene has produced its first frame.
-        yield return null;
-        yield return new WaitForSecondsRealtime(holdSeconds);
         LoadNext();
     }
 
@@ -101,11 +105,12 @@ public sealed class MuseumSceneTour : MonoBehaviour
     {
         if (loading) return;
         int next = NextScene(sceneNumber);
+        if (next == 0) return;
         string name = "scene_" + next.ToString("00");
         if (!Application.CanStreamedLevelBeLoaded(name))
         { Debug.LogError("[Museum tour] Scene absent from Build Settings: " + name, this); enabled = false; return; }
-        loading = true; expectedScene = next; returningToExplore = sceneNumber == 7;
-        Debug.Log("[Museum tour] " + sceneNumber + " -> " + next + "; exploration=" + returningToExplore);
+        loading = true;
+        Debug.Log("[Museum tour] " + sceneNumber + " -> " + next);
         SceneManager.LoadSceneAsync(name, LoadSceneMode.Single);
     }
 }

@@ -28,6 +28,8 @@ public sealed class InitialLanguageSelector : MonoBehaviour
         Choice("中文",false,new Vector2(-195,-25)); Choice("English",true,new Vector2(195,-25));
         Label("中文配音保持不变 / Audio remains in Chinese",new Vector2(0,-130),new Vector2(780,50),25);
         Position();
+        trigger=SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
+        if(trigger!=null) trigger.actionSet.Activate(SteamVR_Input_Sources.RightHand);
         var pointer=new GameObject("Language Choice Pointer"); pointer.transform.SetParent(transform,false);
         ray=pointer.AddComponent<LineRenderer>(); ray.positionCount=2; ray.startWidth=0.004f; ray.endWidth=0.002f;
         ray.material=new Material(Shader.Find("Sprites/Default")); ray.startColor=ray.endColor=Color.cyan; ray.enabled=false;
@@ -64,19 +66,24 @@ public sealed class InitialLanguageSelector : MonoBehaviour
             foreach(var pose in FindObjectsOfType<SteamVR_Behaviour_Pose>()) if(pose.isValid) tracked=true;
             if(!tracked) return;
             Build(main);
-            trigger=SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
-            if(trigger!=null) trigger.actionSet.Activate(SteamVR_Input_Sources.Any);
         }
         ray.enabled=false;
+        foreach(var choice in GetComponentsInChildren<InitialLanguageChoice>())
+            choice.GetComponent<Image>().color=new Color(0.05f,0.36f,0.43f,1);
         foreach(var pose in FindObjectsOfType<SteamVR_Behaviour_Pose>()) {
             if(!pose.isActiveAndEnabled || !pose.isValid || trigger==null) continue;
-            if(pose.inputSource!=SteamVR_Input_Sources.LeftHand && pose.inputSource!=SteamVR_Input_Sources.RightHand) continue;
+            if(pose.inputSource!=SteamVR_Input_Sources.RightHand) continue;
+            var aim=new Ray(pose.transform.position,pose.transform.forward);
+            ray.enabled=true; ray.SetPosition(0,aim.origin); ray.SetPosition(1,aim.GetPoint(5));
+            ray.startColor=ray.endColor=Color.white;
             foreach(var choice in GetComponentsInChildren<InitialLanguageChoice>()) {
                 RaycastHit hit;
-                if(!choice.GetComponent<Collider>().Raycast(new Ray(pose.transform.position,pose.transform.forward),out hit,5)) continue;
-                ray.enabled=true; ray.SetPosition(0,pose.transform.position); ray.SetPosition(1,hit.point);
+                if(!choice.GetComponent<Collider>().Raycast(aim,out hit,5)) continue;
+                ray.SetPosition(1,hit.point); ray.startColor=ray.endColor=Color.green;
+                choice.GetComponent<Image>().color=new Color(0.2f,0.65f,0.55f);
                 if(trigger.GetStateDown(pose.inputSource)) {Select(choice.english); return;}
             }
+            break;
         }
         if(Input.GetMouseButtonDown(0)) foreach(var choice in GetComponentsInChildren<InitialLanguageChoice>()) {
             RaycastHit hit;

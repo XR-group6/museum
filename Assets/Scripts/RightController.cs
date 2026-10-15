@@ -30,7 +30,7 @@ public class RightController : MonoBehaviour
     void Update()
     {
         transform.SetPositionAndRotation(rightHand.transform.position, rightHand.transform.rotation);
-        if (narration && narration.ShowingMemoryChoice && rightHand.isValid)
+        if (narration && narration.ShowingMemoryChoice && rightHand.isActiveAndEnabled && rightHand.isValid)
         {
             if (!choicePointer)
             {
@@ -43,7 +43,7 @@ public class RightController : MonoBehaviour
                 choicePointer.sharedMaterial = pointerMaterial;
             }
             Vector3 hit;
-            bool hovered = narration.PointAtMemoryChoice(new Ray(transform.position, transform.forward), transform.position,
+            bool hovered = narration.PointAtMemoryChoice(new Ray(transform.position, transform.forward),
                 trigger.GetStateDown(SteamVR_Input_Sources.RightHand), out hit);
             choicePointer.enabled = narration.ShowingMemoryChoice;
             choicePointer.SetPosition(0, transform.position); choicePointer.SetPosition(1, hit);
