@@ -38,10 +38,12 @@ public class SceneOneNarration : MonoBehaviour
 
     IEnumerator Start()
     {
+        // Hold the existing story until the initial headset language choice is made.
+        while(!SubtitleLanguage.HasSelected) yield return null;
         if (!narrationSubtitle || !interactionSubtitle)
         { Fail("Missing narration or interaction subtitle component."); yield break; }
         narrationSubtitle.ShowText(""); interactionSubtitle.ShowText("");
-        if (!museumEcho || museumEcho.length < 10f || !censerIntro || !censerAfterGrab || !censerFinal || !introSubtitles ||
+        if (!museumEcho || museumEcho.length < 5f || !censerIntro || !censerAfterGrab || !censerFinal || !introSubtitles ||
             !censerPlayback || !censerPlayback.director || !censerPlayback.director.playableAsset ||
             !Application.CanStreamedLevelBeLoaded(nextScene))
         { Fail("Missing scene-one audio, subtitle asset or next scene."); yield break; }
@@ -59,7 +61,7 @@ public class SceneOneNarration : MonoBehaviour
             if (clip.loadState != AudioDataLoadState.Loaded) { Fail("Failed to load " + clip.name); yield break; }
         }
         source.clip = museumEcho; source.Play();
-        while (AudioListener.pause || (source.isPlaying && source.timeSamples / (float)museumEcho.frequency < 10f))
+        while (AudioListener.pause || (source.isPlaying && source.timeSamples / (float)museumEcho.frequency < 5f))
             yield return null;
         source.Stop();
         source.clip = censerIntro; source.Play();
@@ -161,15 +163,16 @@ public class SceneOneNarration : MonoBehaviour
         var label = text.GetComponent<Text>();
         label.font = choiceFont; label.fontSize = 48; label.text = content;
         label.alignment = TextAnchor.MiddleCenter; label.color = Color.white; label.raycastTarget = false;
+        text.AddComponent<LocalizedUIText>().Bind(content);
     }
 
-    public bool PointAtMemoryChoice(Ray ray, Vector3 handPosition, bool pressed, out Vector3 hitPoint)
+    public bool PointAtMemoryChoice(Ray ray, bool pressed, out Vector3 hitPoint)
     {
-        hitPoint = ray.GetPoint(3);
+        hitPoint = ray.GetPoint(5);
         if (!ShowingMemoryChoice || !yesCollider) return false;
         RaycastHit hit;
         bool rayHit = yesCollider.Raycast(ray, out hit, 5);
-        hovered = rayHit || Vector3.Distance(handPosition, yesCollider.ClosestPoint(handPosition)) < 0.06f;
+        hovered = rayHit;
         if (rayHit) hitPoint = hit.point;
         if (hovered && pressed) yesButton.onClick.Invoke();
         return hovered;
@@ -190,6 +193,7 @@ public class SceneOneNarration : MonoBehaviour
             }
         }
         yesButton.targetGraphic.color = hovered ? new Color(0.2f, 0.65f, 0.55f) : new Color(0.12f, 0.36f, 0.3f);
+        hovered = false;
     }
 
     public void EnterMemory()

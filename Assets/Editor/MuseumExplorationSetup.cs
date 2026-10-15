@@ -9,12 +9,55 @@ using Valve.VR;
 
 public static class MuseumExplorationSetup
 {
-    [MenuItem("Museum/Configure tour and scene five exploration")]
+    sealed class ExplorationSettings
+    {
+        public float speed = 1.2f, moveDeadzone = .2f, gravity = 9.81f, fallReset = 5;
+        public float turnSpeed = 60, turnDeadzone = .2f, radius = .2f, skin = .02f, step = .15f, slope = 45;
+        public float forward = .35f, hintSeconds = 10;
+        public string hint = "可以使用左摇杆移动，右摇杆可以辅助您调整视角（请不要调整过快以免出现眩晕）。试试用右摇杆的激光指向桌上的台胞证并按下扳机。";
+        public void Read(MuseumSceneTour flow)
+        {
+            if (!flow || !flow.movement || !flow.turning) return;
+            var move = flow.movement; var turn = flow.turning;
+            speed = move.speed; moveDeadzone = move.deadzone; gravity = move.gravity; fallReset = move.fallResetDistance;
+            turnSpeed = turn.degreesPerSecond; turnDeadzone = turn.deadzone;
+            var body = move.GetComponent<CharacterController>();
+            if (body) { radius = body.radius; skin = body.skinWidth; step = body.stepOffset; slope = body.slopeLimit; }
+            forward = flow.explorationSpawnForward; hintSeconds = flow.explorationHintSeconds; hint = flow.explorationHintText;
+        }
+    }
+
+    [MenuItem("Museum/Configure tour and scene seven exploration")]
     public static void Run()
     {
         try
         {
             var report = new List<string>();
+            var config = new ExplorationSettings();
+            EditorSceneManager.OpenScene("Assets/Project3D/Scenes/scene_07.unity");
+            config.Read(UnityEngine.Object.FindObjectOfType<MuseumSceneTour>());
+            var oldScene = EditorSceneManager.OpenScene("Assets/Project3D/Scenes/scene_05.unity");
+            var oldFlow = UnityEngine.Object.FindObjectOfType<MuseumSceneTour>();
+            config.Read(oldFlow);
+            foreach (var move in UnityEngine.Object.FindObjectsOfType<MuseumLeftStickMove>(true))
+            {
+                var body = move.GetComponent<CharacterController>();
+                UnityEngine.Object.DestroyImmediate(move);
+                if (body) UnityEngine.Object.DestroyImmediate(body);
+            }
+            foreach (var turn in UnityEngine.Object.FindObjectsOfType<MuseumRightStickTurn>(true)) UnityEngine.Object.DestroyImmediate(turn);
+            int removed = 0;
+            foreach (var root in oldScene.GetRootGameObjects())
+            {
+                if (root.name == "Exploration edge guards") { UnityEngine.Object.DestroyImmediate(root); continue; }
+                if (PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(root) != "Assets/Project3D/Prefabs/scenes/scene_05.prefab") continue;
+                foreach (var collider in root.GetComponentsInChildren<MeshCollider>(true))
+                    if (!collider.isTrigger && PrefabUtility.IsAddedComponentOverride(collider))
+                    { UnityEngine.Object.DestroyImmediate(collider); removed++; }
+            }
+            if (oldFlow) { oldFlow.movement = null; oldFlow.turning = null; oldFlow.explorationHintText = ""; oldFlow.explorationHintSeconds = 0; oldFlow.explorationSpawnForward = 0; EditorUtility.SetDirty(oldFlow); }
+            EditorSceneManager.MarkSceneDirty(oldScene); EditorSceneManager.SaveScene(oldScene);
+            report.Add("scene_05 exploration components, hint settings and edge guards removed; removed scene-added mesh colliders=" + removed);
             for (int number = 3; number <= 7; number++)
             {
                 string path = "Assets/Project3D/Scenes/scene_" + number.ToString("00") + ".unity";
@@ -25,7 +68,7 @@ public static class MuseumExplorationSetup
                 flow.sceneNumber = number; flow.holdSeconds = 3;
                 if (number == 3) flow.story = UnityEngine.Object.FindObjectOfType<IncenseCharacters.Scene03Story>();
                 if (number == 3 && (!flow.story || !flow.story.director)) throw new Exception("Scene three story missing");
-                if (number == 5)
+                if (number == 7)
                 {
                     var left = UnityEngine.Object.FindObjectsOfType<SteamVR_Behaviour_Pose>(true).Single(p => p.inputSource == SteamVR_Input_Sources.LeftHand);
                     var right = UnityEngine.Object.FindObjectsOfType<SteamVR_Behaviour_Pose>(true).Single(p => p.inputSource == SteamVR_Input_Sources.RightHand);
@@ -35,20 +78,24 @@ public static class MuseumExplorationSetup
                     if ((rig.lossyScale - Vector3.one).sqrMagnitude > .001f) throw new Exception("Rig must use metre scale");
                     var body = rig.GetComponent<CharacterController>();
                     if (!body) body = rig.gameObject.AddComponent<CharacterController>();
-                    body.radius = .2f; body.height = 1.7f; body.center = new Vector3(0, .85f, 0);
-                    body.skinWidth = .02f; body.minMoveDistance = 0; body.stepOffset = .15f;
+                    body.radius = config.radius; body.height = 1.7f; body.center = new Vector3(0, .85f, 0);
+                    body.skinWidth = config.skin; body.minMoveDistance = 0; body.stepOffset = config.step; body.slopeLimit = config.slope;
                     flow.movement = rig.GetComponent<MuseumLeftStickMove>();
                     if (!flow.movement) flow.movement = rig.gameObject.AddComponent<MuseumLeftStickMove>();
                     flow.movement.headset = camera.transform; flow.movement.leftHand = left;
                     flow.turning = rig.GetComponent<MuseumRightStickTurn>();
                     if (!flow.turning) flow.turning = rig.gameObject.AddComponent<MuseumRightStickTurn>();
                     flow.turning.headset = camera.transform; flow.turning.rightHand = right;
-                    // Awake on the tour enables these only for the final visit (or a direct scene-five test).
+                    flow.movement.speed = config.speed; flow.movement.deadzone = config.moveDeadzone;
+                    flow.movement.gravity = config.gravity; flow.movement.fallResetDistance = config.fallReset;
+                    flow.turning.degreesPerSecond = config.turnSpeed; flow.turning.deadzone = config.turnDeadzone;
+                    flow.explorationSpawnForward = config.forward; flow.explorationHintText = config.hint; flow.explorationHintSeconds = config.hintSeconds;
+                    // Scene seven unlocks controls and the hint only after its three-second view.
                     flow.movement.enabled = flow.turning.enabled = false;
                     int added = 0;
                     foreach (var root in scene.GetRootGameObjects())
                     {
-                        if (PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(root) != "Assets/Project3D/Prefabs/scenes/scene_05.prefab") continue;
+                        if (PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(root) != "Assets/Project3D/Prefabs/scenes/scene_07.prefab") continue;
                         foreach (var mesh in root.GetComponentsInChildren<MeshFilter>(true))
                         {
                             // The sea is a visual surface, not walkable ground.
@@ -60,12 +107,12 @@ public static class MuseumExplorationSetup
                     Physics.SyncTransforms();
                     var groundHits = Physics.RaycastAll(rig.position + Vector3.up * .5f, Vector3.down, 5)
                         .Where(h => !h.collider.isTrigger && !(h.collider is CharacterController)).OrderBy(h => h.distance).ToArray();
-                    if (groundHits.Length == 0) throw new Exception("No floor under scene-five spawn");
+                    if (groundHits.Length == 0) throw new Exception("No floor under scene-seven spawn");
                     body.enabled = false;
                     rig.position = new Vector3(rig.position.x, groundHits[0].point.y + .01f, rig.position.z);
                     body.enabled = true;
                     PrefabUtility.RecordPrefabInstancePropertyModifications(rig);
-                    report.Add("scene_05 rig=" + rig.position + ", floor=" + groundHits[0].collider.name + ", new mesh colliders=" + added);
+                    report.Add("scene_07 rig=" + rig.position + ", floor=" + groundHits[0].collider.name + ", new mesh colliders=" + added);
                     // Keep people inside the main room's ground extents, including any open outer edges.
                     var floor = groundHits[0].collider.bounds;
                     report.Add("Spawn floor bounds=" + floor);
@@ -75,7 +122,7 @@ public static class MuseumExplorationSetup
                     foreach (var collider in terrain.Skip(1)) terrainBounds.Encapsulate(collider.bounds);
                     AddBoundary(scene, terrainBounds, groundHits[0].point.y);
                     report.Add("Outdoor edge guards bounds=" + terrainBounds + "; sea excluded from walkable collision; fall recovery enabled");
-                    var stairMesh = UnityEngine.Object.FindObjectsOfType<MeshFilter>().FirstOrDefault(m => m.name == "stair_1960");
+                    var stairMesh = UnityEngine.Object.FindObjectsOfType<MeshFilter>().FirstOrDefault(m => m.name == "stair");
                     if (stairMesh && stairMesh.sharedMesh)
                     {
                         var vertices = stairMesh.sharedMesh.vertices; var triangles = stairMesh.sharedMesh.triangles;
@@ -89,7 +136,7 @@ public static class MuseumExplorationSetup
                         }
                         var levels = heights.Distinct().OrderBy(y => y).ToArray();
                         var rises = levels.Skip(1).Select((y, i) => y - levels[i]).Where(y => y > .08f && y < .3f).OrderBy(y => y).ToArray();
-                        if (rises.Length > 0) body.stepOffset = Mathf.Max(.15f, rises[rises.Length - 1] + .02f);
+                        if (rises.Length > 0) body.stepOffset = Mathf.Max(body.stepOffset, rises[rises.Length - 1] + .02f);
                         report.Add("Stair horizontal levels=" + string.Join(",", levels.Select(y => y.ToString("F3"))) + "; controller stepOffset=" + body.stepOffset);
                     }
                     EditorUtility.SetDirty(flow.movement); EditorUtility.SetDirty(flow.turning);
@@ -131,9 +178,8 @@ public static class MuseumExplorationSetup
     static void Validate(List<string> report)
     {
         Check(MuseumSceneTour.NextScene(3) == 4 && MuseumSceneTour.NextScene(4) == 5 && MuseumSceneTour.NextScene(5) == 6 &&
-              MuseumSceneTour.NextScene(6) == 7 && MuseumSceneTour.NextScene(7) == 5, "Tour order");
-        Check(!MuseumSceneTour.CanExplore(5, true, false) && MuseumSceneTour.CanExplore(5, true, true) &&
-              !MuseumSceneTour.CanExplore(4, false, false), "Tour exploration gate");
+              MuseumSceneTour.NextScene(6) == 7 && MuseumSceneTour.NextScene(7) == 0, "Tour order");
+        Check(!MuseumSceneTour.CanExplore(5) && MuseumSceneTour.CanExplore(7) && !MuseumSceneTour.CanExplore(4), "Tour exploration gate");
         Check(MuseumLeftStickMove.CalculateVelocity(new Vector2(.1f, 0), Vector3.forward, 1.2f, .2f) == Vector3.zero, "Move deadzone");
         Check(Vector3.Distance(MuseumLeftStickMove.CalculateVelocity(Vector2.up, new Vector3(0, -.8f, .6f), 1.2f, .2f), Vector3.forward * 1.2f) < .001f, "Horizontal move");
         Check(MuseumLeftStickMove.CalculateVelocity(Vector2.one, Vector3.forward, 1.2f, .2f).magnitude <= 1.201f, "Diagonal limit");
