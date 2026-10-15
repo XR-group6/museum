@@ -1,6 +1,7 @@
-scene_03 -> scene_04 residence=30.024s (includes scene load)
-scene_04 -> scene_05 residence=3.094s (includes scene load)
-scene_05 -> scene_06 residence=3.085s (includes scene load)
-scene_06 -> scene_07 residence=3.072s (includes scene load)
-scene_07 -> scene_05 residence=3.080s (includes scene load)
-PASS: scene three natural autoplay from zero (no seek), real Play Mode scene loads 3->4->5->6->7->5, 3s holds, first scene-five movement disabled, final scene-five controls enabled, final scene remains; no hardware input used.
+scene_04 -> next scene: 3.054s including loading; no controls/hint
+scene_05 -> next scene: 3.066s including loading; no controls/hint
+scene_06 -> next scene: 3.074s including loading; no controls/hint
+scene_07 controls and Chinese/English hint enabled after 3.281s; hand references PASS
+scene_07 stays for exploration; hint expires after configured duration; CharacterController remains enabled PASS
+scene_07 controls and Chinese/English hint enabled after 3.003s; hand references PASS
+scene_07 stays for exploration; hint expires after configured duration; CharacterController remains enabled PASS
