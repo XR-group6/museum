@@ -11101,7 +11101,7 @@ Transform:
   m_GameObject: {fileID: 294348161}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000008688296, y: 0.99781877, z: -0.06601265, w: 0.0000005747912}
-  m_LocalPosition: {x: -0, y: 2.24, z: 5.67}
+  m_LocalPosition: {x: -0, y: 1.14, z: 5.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16225,7 +16225,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 1d51c1168c3161c479c9ee196bc43ad6, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -55141,10 +55141,89 @@ Transform:
   m_Children: []
   m_Father: {fileID: 269821123}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1001 &700000000100
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 146900, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_Name
+      value: '[CameraRig]'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+--- !u!1 &700000000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700000000002}
+  - component: {fileID: 700000000003}
+  m_Layer: 0
+  m_Name: Museum journey
+  m_TagString: Untagged
+  m_IsActive: 1
+--- !u!4 &700000000002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700000000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &700000000003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700000000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd9795a71d942c19ce2fb85ed4c82d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  censer: {fileID: 8490234565598240247}
+  eraLights: []
+  regionCue: {fileID: 8300000, guid: 96d6726ebc3c6064eb5ad94f2f00da00, type: 3}
+  oceanAmbience: {fileID: 8300000, guid: 7bc4627d9a6d1f048adbf45260c85271, type: 3}
+  coverShader: {fileID: 4800000, guid: 8f060e4071694679aca1ea84d0a40449, type: 3}
+  roomSubtitleHeight: 3.2
+  oceanSeconds: 5
+  whiteFadeSeconds: 1.5
+  touchDistance: 0.025
+  roomCentre: {x: 0, y: 0.116, z: 3.17}
+  blackEnvironment: {fileID: 1084406724}
+  oceanSurfaces:
+  - {fileID: 269821120}
+  - {fileID: 2138989765}
+  - {fileID: 31909338}
+  - {fileID: 220227589}
+  - {fileID: 2073519433}
+  roomTimeline: {fileID: 0}
+  finalRegionSeconds: 10
+  darknessFadeSeconds: 3
+  guideLine: {fileID: 921190762}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 700000000002}
+  - {fileID: 700000000100}
   - {fileID: 1401470983}
   - {fileID: 948849973}
   - {fileID: 1174297181}

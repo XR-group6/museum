@@ -11,6 +11,7 @@ public class VRSubtitle : MonoBehaviour
     public Camera vrCamera;
     [Tooltip("When disabled, the subtitle stays at this object's scene position and faces the headset.")]
     public bool followCamera = true;
+    public bool faceCamera = true;
     public Vector3 cameraOffset = new Vector3(0, -0.35f, 2);
     public float subtitleWidth = 900;
     public int fontSize = 48;
@@ -22,14 +23,29 @@ public class VRSubtitle : MonoBehaviour
     private Font runtimeFont;
     private string displayed;
     private string runtimeText;
+    private string runtimeEnglishText;
     void OnEnable() { SubtitleLanguage.Changed+=LanguageChanged; }
     void OnDisable() { SubtitleLanguage.Changed-=LanguageChanged; }
     void LanguageChanged() { if(label) Refresh(); }
 
     public void ShowText(string text)
     {
+        runtimeEnglishText = null;
         runtimeText = text ?? "";
         if (label) Refresh();
+    }
+
+    public void ShowBilingualText(string chinese, string english)
+    {
+        runtimeText = chinese ?? "";
+        runtimeEnglishText = english ?? "";
+        if (label) Refresh();
+    }
+
+    public void SetMaterial(Material material)
+    {
+        if (!canvas) return;
+        foreach (var graphic in canvas.GetComponentsInChildren<Graphic>(true)) graphic.material = material;
     }
 #if UNITY_EDITOR
     private double nextRefresh;
@@ -72,7 +88,7 @@ public class VRSubtitle : MonoBehaviour
             catch (IOException) { return; }
         }
 #endif
-        content=SubtitleLanguage.Translate(content);
+        content=SubtitleLanguage.English && runtimeEnglishText != null ? runtimeEnglishText : SubtitleLanguage.Translate(content);
         if (displayed == content && label.fontSize == fontSize && textRect.rect.width == Mathf.Max(1, subtitleWidth)) return;
         displayed = content; label.text = content; label.fontSize = Mathf.Max(1, fontSize);
         float width = Mathf.Max(1, subtitleWidth);
@@ -116,8 +132,9 @@ public class VRSubtitle : MonoBehaviour
             panel.position = transform.position;
             // UI's readable front faces opposite its forward direction.
             Vector3 facing = panel.position - vrCamera.transform.position;
-            if (facing.sqrMagnitude > 0.0001f)
+            if (faceCamera && facing.sqrMagnitude > 0.0001f)
                 panel.rotation = Quaternion.LookRotation(facing, Vector3.up);
+            else if (!faceCamera) panel.rotation = transform.rotation;
         }
         panel.localScale = Vector3.one * Mathf.Max(0.00001f, canvasScale);
     }

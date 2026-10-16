@@ -3,7 +3,8 @@ using IncenseCharacters;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Scenes 4-6 are timed views. Scene 7 unlocks exploration after its timed view.
+// Scene 3 enters the four-era room. Legacy views remain available for previews;
+// scene 7 unlocks the existing free-exploration controls after its timed view.
 [DefaultExecutionOrder(10001)]
 public sealed class MuseumSceneTour : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public sealed class MuseumSceneTour : MonoBehaviour
     bool finishingStory;
 
     public static int NextScene(int current) => current >= 7 ? 0 : current + 1;
+    public static string NextSceneName(int current) => current == 3 ? "scene_04_01" :
+        NextScene(current) == 0 ? null : "scene_" + NextScene(current).ToString("00");
     public static bool CanExplore(int current) => current == 7;
 
     void Awake()
@@ -54,9 +57,12 @@ public sealed class MuseumSceneTour : MonoBehaviour
     IEnumerator Start()
     {
         if (sceneNumber == 3) yield break;
-        // Count residence after the new scene has produced its first frame.
-        yield return null;
-        yield return new WaitForSecondsRealtime(holdSeconds);
+        // Scene seven is immediately interactive; legacy preview scenes keep their hold.
+        if (!CanExplore(sceneNumber))
+        {
+            yield return null;
+            yield return new WaitForSecondsRealtime(holdSeconds);
+        }
         if (CanExplore(sceneNumber))
         {
             BeginExploration();
@@ -104,13 +110,12 @@ public sealed class MuseumSceneTour : MonoBehaviour
     void LoadNext()
     {
         if (loading) return;
-        int next = NextScene(sceneNumber);
-        if (next == 0) return;
-        string name = "scene_" + next.ToString("00");
+        string name = NextSceneName(sceneNumber);
+        if (string.IsNullOrEmpty(name)) return;
         if (!Application.CanStreamedLevelBeLoaded(name))
         { Debug.LogError("[Museum tour] Scene absent from Build Settings: " + name, this); enabled = false; return; }
         loading = true;
-        Debug.Log("[Museum tour] " + sceneNumber + " -> " + next);
+        Debug.Log("[Museum tour] " + sceneNumber + " -> " + name);
         SceneManager.LoadSceneAsync(name, LoadSceneMode.Single);
     }
 }

@@ -1,0 +1,16 @@
+Unity 2022.3.62f3 C# compilation: PASS
+
+Single renamed rig retains requested position (-0.003,0.5,2.584), yaw 180: PASS
+Develop room Timeline unchanged: PASS
+scene_04_01: unique object IDs and local journey references PASS
+scene_07: unique object IDs and local journey references PASS
+scene_06_01: unique object IDs and local journey references PASS
+Original black materials and Timeline expose _Dissolve_Scale 0->1: PASS
+
+Loop 0: authored light curves, final-light +10s, exact 90-degree snap with neutral rearm, fixed head and overhead CN/EN world panels PASS
+Loop 0: immediate exploration, permit isolation, physical censer contact, visible ground line, 3s authored material dissolve, forward/back movement, 5s sea and language-selection restart PASS
+Loop 1: authored light curves, final-light +10s, exact 90-degree snap with neutral rearm, fixed head and overhead CN/EN world panels PASS
+Loop 1: immediate exploration, permit isolation, physical censer contact, visible ground line, 3s authored material dissolve, forward/back movement, 5s sea and language-selection restart PASS
+JOURNEY_VERIFY_PASS (simulated controllers; headset rendering still requires hardware)
+
+The Play Mode test constructs representative rigs, colliders and a material exposing the authored dissolve property. The original shader graph and Timeline were inspected, but GPU rendering of the authored environment and actual tracked controller input remain untested.

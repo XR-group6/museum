@@ -11,7 +11,14 @@ public sealed class InitialLanguageSelector : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void Bootstrap()
     {
-        if(SceneManager.GetActiveScene().name=="scene_01" && !SubtitleLanguage.HasSelected && !FindObjectOfType<InitialLanguageSelector>())
+        SceneManager.sceneLoaded -= SceneLoaded;
+        SceneManager.sceneLoaded += SceneLoaded;
+        EnsureSelector(SceneManager.GetActiveScene());
+    }
+    static void SceneLoaded(Scene scene, LoadSceneMode mode) { EnsureSelector(scene); }
+    static void EnsureSelector(Scene scene)
+    {
+        if(scene.name=="scene_01" && !SubtitleLanguage.HasSelected && !FindObjectOfType<InitialLanguageSelector>())
             new GameObject("Initial Subtitle Language Choice").AddComponent<InitialLanguageSelector>();
     }
     public void Build(Camera camera)

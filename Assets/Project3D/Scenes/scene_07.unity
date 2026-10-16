@@ -2130,7 +2130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNumber: 7
-  holdSeconds: 3
+  holdSeconds: 0
   story: {fileID: 0}
   narration: {fileID: 0}
   movement: {fileID: 1105104670}
@@ -4521,10 +4521,66 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2077143022282759093, guid: a8f9691cfad105055a4f33d441a3406b, type: 3}
+--- !u!1 &700000000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700000000002}
+  - component: {fileID: 700000000003}
+  m_Layer: 0
+  m_Name: Museum journey
+  m_TagString: Untagged
+  m_IsActive: 1
+--- !u!4 &700000000002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700000000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &700000000003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700000000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd9795a71d942c19ce2fb85ed4c82d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  censer: {fileID: 0}
+  eraLights: []
+  regionCue: {fileID: 8300000, guid: 96d6726ebc3c6064eb5ad94f2f00da00, type: 3}
+  oceanAmbience: {fileID: 8300000, guid: 7bc4627d9a6d1f048adbf45260c85271, type: 3}
+  coverShader: {fileID: 4800000, guid: 8f060e4071694679aca1ea84d0a40449, type: 3}
+  roomSubtitleHeight: 3.2
+  oceanSeconds: 5
+  whiteFadeSeconds: 1.5
+  touchDistance: 0.025
+  roomCentre: {x: 0, y: 0.116, z: 3.17}
+  blackEnvironment: {fileID: 0}
+  oceanSurfaces: []
+  roomTimeline: {fileID: 0}
+  finalRegionSeconds: 10
+  darknessFadeSeconds: 3
+  guideLine: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 700000000002}
   - {fileID: 72743435}
   - {fileID: 1105104663}
   - {fileID: 521465910}

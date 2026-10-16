@@ -34,6 +34,16 @@ public sealed class PermitInspection : MonoBehaviour
     Camera[] maskedCameras; int[] oldMasks;
     Light[] maskedLights; int[] oldLightMasks;
     public bool Ready => tour && tour.ExplorationStarted;
+    public int TriggerConsumedFrame { get; private set; } = -1;
+
+    public bool OwnsTrigger(Ray ray)
+    {
+        if (IsOpen || TriggerConsumedFrame == Time.frameCount) return true;
+        RaycastHit hit;
+        int layer = LayerMask.NameToLayer("ObjectPreview");
+        int mask = layer < 0 ? ~0 : ~(1 << layer);
+        return Ready && tableCollider && Physics.Raycast(ray, out hit, 5, mask, QueryTriggerInteraction.Ignore) && hit.collider == tableCollider;
+    }
 
     void OnEnable()
     {
@@ -90,6 +100,7 @@ public sealed class PermitInspection : MonoBehaviour
     }
     void ProcessRay(Ray ray,bool down,bool held,Quaternion rotation)
     {
+        if (down && OwnsTrigger(ray)) TriggerConsumedFrame = Time.frameCount;
         Vector3 end=ray.GetPoint(5);bool hovered=false;RaycastHit hit;
         if(!IsOpen) {
             bool near=tableCollider && Vector3.Distance(ray.origin,tableCollider.ClosestPoint(ray.origin))<=nearbyDistance;

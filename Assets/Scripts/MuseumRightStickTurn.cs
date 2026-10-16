@@ -11,6 +11,10 @@ public class MuseumRightStickTurn : MonoBehaviour
     [Range(0, 0.9f)] public float deadzone = 0.2f;
     public Vector2 lastAxis;
     public bool inputBound;
+    public bool snapTurn;
+    public float snapDegrees = 90;
+    [Range(.1f, .95f)] public float snapThreshold = .7f;
+    bool snapLatched;
     private SteamVR_Action_Vector2 stick;
 
     void OnEnable()
@@ -35,13 +39,26 @@ public class MuseumRightStickTurn : MonoBehaviour
     public void TurnAxis(Vector2 axis, float deltaTime)
     {
         float amount = Mathf.Clamp(axis.x, -1f, 1f);
+        if (snapTurn)
+        {
+            if (Mathf.Abs(amount) <= deadzone) snapLatched = false;
+            if (!headset || snapLatched || Mathf.Abs(amount) < snapThreshold || deltaTime <= 0) return;
+            snapLatched = true;
+            RotateHeadPivot(Mathf.Sign(amount) * snapDegrees);
+            return;
+        }
         if (!headset || Mathf.Abs(amount) <= deadzone || deltaTime <= 0) return;
         float rate = Mathf.Sign(amount) * (Mathf.Abs(amount) - deadzone) / (1f - deadzone);
+        RotateHeadPivot(rate * degreesPerSecond * deltaTime);
+    }
+
+    void RotateHeadPivot(float degrees)
+    {
         // Pivot at the tracked head so room-scale offsets do not orbit around the rig origin.
         var body = GetComponent<CharacterController>();
         bool restoreBody = body && body.enabled;
         if (restoreBody) body.enabled = false;
-        try { transform.RotateAround(headset.position, Vector3.up, rate * degreesPerSecond * deltaTime); }
+        try { transform.RotateAround(headset.position, Vector3.up, degrees); }
         finally { if (restoreBody) body.enabled = true; }
     }
 
@@ -49,5 +66,6 @@ public class MuseumRightStickTurn : MonoBehaviour
     {
         if (stick != null) stick.actionSet.Deactivate(SteamVR_Input_Sources.RightHand);
         lastAxis = Vector2.zero; inputBound = false;
+        snapLatched = false;
     }
 }

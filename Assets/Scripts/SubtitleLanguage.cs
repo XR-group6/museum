@@ -8,6 +8,13 @@ public static class SubtitleLanguage
     public static bool HasSelected { get; private set; }
     public static event Action Changed;
     static readonly Dictionary<string,string> translations = new Dictionary<string,string> {
+        {"可以使用右摇杆跟随灯光转动视角", "Use the right stick to turn your view and follow the lights."},
+        {"请用右手触碰并握住香炉，继续我们的旅程。", "Touch the incense burner with your right controller and press the trigger to continue our journey."},
+        {"请向前走到香炉前，用右手触碰握住香炉。", "Move forward to the incense burner. Touch it with your right controller and press the trigger."},
+        {"约1951年：新的生活", "Around 1951: A New Life"},
+        {"约1960年：女儿长大了", "Around 1960: The Daughter Grows Up"},
+        {"约1970年：团圆饭", "Around 1970: The Reunion Dinner"},
+        {"约1980年：等待与思念", "Around 1980: Waiting and Longing"},
         {"过去，渡海的人会在启程前，向妈祖祈求平安。", "Before setting sail, people prayed to Mazu for a safe crossing."},
         {"像这样的香炉，盛放的不只是香灰，也承载着人们对平安、团圆和归家的盼望。", "This incense burner holds more than ashes. It carries hopes for safety, reunion and a return home."},
         {"它随着人离开故土，又在海的另一边，陪伴一个家庭慢慢长大。", "It left its homeland with its owners and accompanied a family as it grew on the other side of the sea."},
@@ -35,6 +42,7 @@ public static class SubtitleLanguage
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     static void Reset() { English=false; HasSelected=false; Changed=null; }
     public static void Select(bool english) { English=english; HasSelected=true; Changed?.Invoke(); }
+    public static void BeginNewVisit() { English=false; HasSelected=false; Changed?.Invoke(); }
     public static string Translate(string text)
     {
         if(!English || string.IsNullOrEmpty(text)) return text??"";

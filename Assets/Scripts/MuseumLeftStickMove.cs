@@ -10,6 +10,9 @@ public class MuseumLeftStickMove : MonoBehaviour
     [Range(0, 0.9f)] public float deadzone = 0.2f;
     public Vector2 lastAxis;
     public bool inputBound;
+    [Tooltip("Only allow forward input, used when approaching the censer in the final scene.")]
+    public bool forwardOnly;
+    public bool forwardBackwardOnly;
     private CharacterController body;
     private SteamVR_Action_Vector2 move;
     [Min(0)] public float gravity = 9.81f;
@@ -41,6 +44,8 @@ public class MuseumLeftStickMove : MonoBehaviour
 
     public void MoveAxis(Vector2 axis, float deltaTime)
     {
+        if (forwardOnly) axis = new Vector2(0, Mathf.Max(0, axis.y));
+        else if (forwardBackwardOnly) axis = new Vector2(0, axis.y);
         if (!headset || deltaTime <= 0) return;
         if (!body) body = GetComponent<CharacterController>();
         if (!body.enabled) return;
