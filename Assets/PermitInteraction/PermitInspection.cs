@@ -32,6 +32,7 @@ public sealed class PermitInspection : MonoBehaviour
     Quaternion handStart, objectStart;
     int previewLayer;
     Camera[] maskedCameras; int[] oldMasks;
+    Light[] maskedLights; int[] oldLightMasks;
     public bool Ready => tour && tour.ExplorationStarted;
 
     void OnEnable()
@@ -132,10 +133,15 @@ public sealed class PermitInspection : MonoBehaviour
         BindInput();
         maskedCameras=FindObjectsOfType<Camera>();oldMasks=new int[maskedCameras.Length];
         for(int i=0;i<maskedCameras.Length;i++) {oldMasks[i]=maskedCameras[i].cullingMask;maskedCameras[i].cullingMask &= ~(1<<previewLayer);}
+        // New scene lighting must not darken or tint the isolated document preview.
+        maskedLights=FindObjectsOfType<Light>();oldLightMasks=new int[maskedLights.Length];
+        for(int i=0;i<maskedLights.Length;i++){oldLightMasks[i]=maskedLights[i].cullingMask;maskedLights[i].cullingMask &= ~(1<<previewLayer);}
         movement=tour?tour.movement:null;turning=tour?tour.turning:null;
         restoreMove=movement && movement.enabled;restoreTurn=turning && turning.enabled;
         if(movement) movement.enabled=false;if(turning) turning.enabled=false;
         container=new GameObject("PreviewCameraContainer");container.transform.position=new Vector3(0,-1000,0);
+        PreviewLight("Permit Preview Key",Quaternion.Euler(20,-25,0),1.0f);
+        PreviewLight("Permit Preview Fill",Quaternion.Euler(-20,145,0),.45f);
         pivot=new GameObject("PermitRotationPivot");pivot.transform.SetParent(container.transform,false);
         var cam=new GameObject("PermitPreviewCamera");cam.transform.SetParent(container.transform,false);cam.transform.localPosition=new Vector3(0,0,-3);
         previewCamera=cam.AddComponent<Camera>();previewCamera.orthographic=true;previewCamera.orthographicSize=.88f;
@@ -144,6 +150,12 @@ public sealed class PermitInspection : MonoBehaviour
         texture=new RenderTexture(1024,1024,24,RenderTextureFormat.ARGB32);texture.Create();previewCamera.targetTexture=texture;
         IsOpen=true;IsUnfolded=false;BuildPanel();BuildClone();
         if(tableModel) tableModel.gameObject.SetActive(false);
+    }
+    void PreviewLight(string name,Quaternion rotation,float intensity)
+    {
+        var go=new GameObject(name);go.transform.SetParent(container.transform,false);go.transform.localRotation=rotation;
+        var light=go.AddComponent<Light>();light.type=LightType.Directional;light.color=Color.white;light.intensity=intensity;
+        light.cullingMask=1<<previewLayer;light.shadows=LightShadows.None;
     }
     void BuildClone()
     {
@@ -210,6 +222,7 @@ public sealed class PermitInspection : MonoBehaviour
         if(previewCamera)previewCamera.targetTexture=null;
         if(texture){texture.Release();Dispose(texture);}if(panel){panel.SetActive(false);Dispose(panel);}if(container){container.SetActive(false);Dispose(container);}
         if(maskedCameras!=null)for(int i=0;i<maskedCameras.Length;i++)if(maskedCameras[i])maskedCameras[i].cullingMask=oldMasks[i];
+        if(maskedLights!=null)for(int i=0;i<maskedLights.Length;i++)if(maskedLights[i])maskedLights[i].cullingMask=oldLightMasks[i];
         if(movement && restoreMove)movement.enabled=true;if(turning && restoreTurn)turning.enabled=true;
         if(font)Dispose(font);if(uiMaterial)Dispose(uiMaterial);if(composite)Dispose(composite);
     }

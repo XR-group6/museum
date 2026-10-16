@@ -106,7 +106,9 @@
     "Models/prop/desk_chair.fbx",
     "Models/prop/exhibit_rug.fbx",
     "Models/prop/incense_burner.fbx",
+    "Models/prop/incense_burner.fbx.meta",
     "Models/prop/incense_burner_grand.fbx",
+    "Models/prop/incense_burner_grand.fbx.meta",
     "Models/prop/kitchen_sink.fbx",
     "Models/prop/quay_gangway.fbx",
     "Models/prop/shop_shutter.fbx",
@@ -117,7 +119,11 @@
     "Models/prop/wall_mirror.fbx",
     "Models/prop/wall_shelf.fbx",
     "Models/prop/water_tank.fbx",
-    "Models/prop/window_curtain.fbx"
+    "Models/prop/window_curtain.fbx",
+    "Prefabs/prop/incense_burner.prefab",
+    "Prefabs/prop/incense_burner.prefab.meta",
+    "Prefabs/prop/incense_burner_grand.prefab",
+    "Prefabs/prop/incense_burner_grand.prefab.meta"
   ],
   "retired_scenes": [],
   "why": "Removed by the pipeline on this publish: the retired scenes and every model no shipped scene references. Written for MigrateScene.cs, which does the same in a consumer's checkout when a `git pull` cannot."

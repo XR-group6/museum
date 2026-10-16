@@ -30,7 +30,7 @@
           0.72,
           0.42
         ],
-        "energy": 6.0,
+        "energy": 9.0,
         "name": "candle_flame",
         "range": 2.5
       },
@@ -45,7 +45,7 @@
           0.66,
           0.34
         ],
-        "energy": 30.0,
+        "energy": 46.0,
         "name": "oil_lamp_flame",
         "range": 4.0
       },
@@ -60,7 +60,7 @@
           0.55,
           0.25
         ],
-        "energy": 20.0,
+        "energy": 30.0,
         "name": "stove_fire",
         "range": 3.0
       },
@@ -75,7 +75,7 @@
           0.52,
           0.22
         ],
-        "energy": 9.0,
+        "energy": 13.0,
         "name": "wok_fire",
         "range": 1.4
       },
@@ -90,7 +90,7 @@
           0.52,
           0.22
         ],
-        "energy": 9.0,
+        "energy": 13.0,
         "name": "pot_fire",
         "range": 1.4
       }
@@ -106,7 +106,7 @@
         1.0,
         1.0
       ],
-      "energy": 34.0,
+      "energy": 52.0,
       "size": 5.2
     },
     "fills": [
@@ -121,7 +121,7 @@
           1.0,
           1.0
         ],
-        "energy": 34.0,
+        "energy": 52.0,
         "name": "scene_fill",
         "size": 5.2
       }
@@ -151,7 +151,14 @@
         "name": "sun_window_desk"
       }
     ],
+    "sky": null,
+    "unity_ambient": [
+      0.16,
+      0.18,
+      0.22
+    ],
     "unity_brightness": 1.0,
+    "unity_lamp_range": 0.0,
     "unity_sky": false,
     "world": [
       0.16,

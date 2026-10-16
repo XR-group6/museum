@@ -30,7 +30,7 @@
           0.72,
           0.42
         ],
-        "energy": 8.0,
+        "energy": 11.0,
         "name": "candle_flame_e",
         "range": 2.5
       },
@@ -45,7 +45,7 @@
           0.72,
           0.42
         ],
-        "energy": 8.0,
+        "energy": 11.0,
         "name": "candle_flame_w",
         "range": 2.5
       },
@@ -60,7 +60,7 @@
           0.55,
           0.25
         ],
-        "energy": 30.0,
+        "energy": 42.0,
         "name": "stove_fire",
         "range": 3.6
       }
@@ -76,7 +76,7 @@
         0.8,
         0.58
       ],
-      "energy": 24.0,
+      "energy": 38.0,
       "size": 4.8
     },
     "fills": [
@@ -91,7 +91,7 @@
           0.8,
           0.58
         ],
-        "energy": 24.0,
+        "energy": 38.0,
         "name": "scene_fill",
         "size": 4.8
       },
@@ -106,7 +106,7 @@
           0.8,
           0.58
         ],
-        "energy": 16.0,
+        "energy": 25.0,
         "name": "scene_fill_1",
         "size": 3.6
       }
@@ -149,7 +149,7 @@
           0.42
         ],
         "cone": 120.0,
-        "energy": 130.0,
+        "energy": 185.0,
         "kind": "spot",
         "look": [
           0.72,
@@ -172,7 +172,7 @@
           0.42
         ],
         "cone": 100.0,
-        "energy": 60.0,
+        "energy": 84.0,
         "kind": "spot",
         "look": [
           0.75,
@@ -218,7 +218,7 @@
           0.42
         ],
         "cone": 100.0,
-        "energy": 60.0,
+        "energy": 72.0,
         "kind": "spot",
         "look": [
           0.35,
@@ -241,7 +241,7 @@
           0.42
         ],
         "cone": 100.0,
-        "energy": 60.0,
+        "energy": 72.0,
         "kind": "spot",
         "look": [
           -0.19,
@@ -264,7 +264,7 @@
           0.42
         ],
         "cone": 100.0,
-        "energy": 60.0,
+        "energy": 72.0,
         "kind": "spot",
         "look": [
           -2.09,
@@ -412,7 +412,44 @@
         "name": "street_lamp_06"
       }
     ],
-    "unity_brightness": 1.0,
+    "sky": {
+      "brightness": 1.0,
+      "ground": [
+        0.09,
+        0.06,
+        0.13
+      ],
+      "horizon": [
+        0.47,
+        0.3,
+        0.54
+      ],
+      "horizon_falloff": 1.15,
+      "sun_dir": [
+        -0.302724,
+        -0.951419,
+        -0.05622
+      ],
+      "sun_glow": [
+        1.0,
+        0.55,
+        0.3
+      ],
+      "sun_glow_size": 6.0,
+      "sun_glow_strength": 0.55,
+      "zenith": [
+        0.3,
+        0.19,
+        0.38
+      ]
+    },
+    "unity_ambient": [
+      0.135,
+      0.096,
+      0.174
+    ],
+    "unity_brightness": 1.05,
+    "unity_lamp_range": 5.0,
     "unity_sky": true,
     "world": [
       0.26,

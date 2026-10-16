@@ -44,8 +44,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.78, b: 0.5, a: 1}
-  m_Intensity: 0.2516846
-  m_Range: 147.00003
+  m_Intensity: 0.52853763
+  m_Range: 19.300001
   m_SpotAngle: 120
   m_InnerSpotAngle: 60
   m_CookieSize: 10
@@ -138,8 +138,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.72, b: 0.42, a: 1}
-  m_Intensity: 0.09325923
-  m_Range: 147.00003
+  m_Intensity: 0.27418214
+  m_Range: 20.052555
   m_SpotAngle: 100
   m_InnerSpotAngle: 50
   m_CookieSize: 10
@@ -232,8 +232,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.8, b: 0.58, a: 1}
-  m_Intensity: 0.24
-  m_Range: 147.00003
+  m_Intensity: 0.39899996
+  m_Range: 24
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -326,7 +326,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.72, b: 0.42, a: 1}
-  m_Intensity: 0.28
+  m_Intensity: 0.40425
   m_Range: 2.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -420,8 +420,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.72, b: 0.42, a: 1}
-  m_Intensity: 1.5
-  m_Range: 147.00003
+  m_Intensity: 2.1902342
+  m_Range: 8
   m_SpotAngle: 100
   m_InnerSpotAngle: 50
   m_CookieSize: 10
@@ -514,7 +514,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.55, b: 0.25, a: 1}
-  m_Intensity: 1.05
+  m_Intensity: 1.5435
   m_Range: 3.6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -608,8 +608,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.78, b: 0.5, a: 1}
-  m_Intensity: 0.2516846
-  m_Range: 147.00003
+  m_Intensity: 0.52853763
+  m_Range: 19.300001
   m_SpotAngle: 120
   m_InnerSpotAngle: 60
   m_CookieSize: 10
@@ -846,8 +846,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.72, b: 0.42, a: 1}
-  m_Intensity: 0.5122608
-  m_Range: 147.00003
+  m_Intensity: 1.2908971
+  m_Range: 8.555986
   m_SpotAngle: 100
   m_InnerSpotAngle: 50
   m_CookieSize: 10
@@ -989,8 +989,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.78, b: 0.5, a: 1}
-  m_Intensity: 0.2516846
-  m_Range: 147.00003
+  m_Intensity: 0.52853763
+  m_Range: 19.300001
   m_SpotAngle: 120
   m_InnerSpotAngle: 60
   m_CookieSize: 10
@@ -1083,8 +1083,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.72, b: 0.42, a: 1}
-  m_Intensity: 0.68701285
-  m_Range: 147.00003
+  m_Intensity: 2.0531113
+  m_Range: 10.875
   m_SpotAngle: 120
   m_InnerSpotAngle: 54
   m_CookieSize: 10
@@ -1177,8 +1177,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.8, b: 0.58, a: 1}
-  m_Intensity: 0.16
-  m_Range: 147.00003
+  m_Intensity: 0.2625
+  m_Range: 18
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1271,7 +1271,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.72, b: 0.42, a: 1}
-  m_Intensity: 0.28
+  m_Intensity: 0.40425
   m_Range: 2.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1365,8 +1365,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.72, b: 0.42, a: 1}
-  m_Intensity: 1.2133996
-  m_Range: 147.00003
+  m_Intensity: 2.2671647
+  m_Range: 8
   m_SpotAngle: 100
   m_InnerSpotAngle: 50
   m_CookieSize: 10
@@ -1459,8 +1459,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.78, b: 0.5, a: 1}
-  m_Intensity: 0.2516846
-  m_Range: 147.00003
+  m_Intensity: 0.52853763
+  m_Range: 19.300001
   m_SpotAngle: 120
   m_InnerSpotAngle: 60
   m_CookieSize: 10
@@ -1647,8 +1647,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.78, b: 0.5, a: 1}
-  m_Intensity: 0.2516846
-  m_Range: 147.00003
+  m_Intensity: 0.52853763
+  m_Range: 19.300001
   m_SpotAngle: 120
   m_InnerSpotAngle: 60
   m_CookieSize: 10
@@ -1741,8 +1741,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.78, b: 0.5, a: 1}
-  m_Intensity: 0.2516846
-  m_Range: 147.00003
+  m_Intensity: 0.52853763
+  m_Range: 19.300001
   m_SpotAngle: 120
   m_InnerSpotAngle: 60
   m_CookieSize: 10
@@ -1835,8 +1835,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.72, b: 0.42, a: 1}
-  m_Intensity: 0.8091942
-  m_Range: 147.00003
+  m_Intensity: 1.7578659
+  m_Range: 8
   m_SpotAngle: 100
   m_InnerSpotAngle: 50
   m_CookieSize: 10

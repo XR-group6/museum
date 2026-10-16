@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.26, g: 0.17, b: 0.34, a: 1}
+  m_AmbientSkyColor: {r: 0.14175, g: 0.10079999, b: 0.1827, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 72743436}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -179,6 +179,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3115f770b84606676b7aa34056905258, type: 3}
+--- !u!108 &72743436 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 4073195843427882592, guid: 3115f770b84606676b7aa34056905258, type: 3}
+  m_PrefabInstance: {fileID: 72743435}
+  m_PrefabAsset: {fileID: 0}
 --- !u!21 &310929988
 Material:
   serializedVersion: 8
@@ -254,6 +259,9 @@ MonoBehaviour:
   narration: {fileID: 0}
   movement: {fileID: 0}
   turning: {fileID: 0}
+  explorationSpawnForward: 0.35
+  explorationHintText: "\u53EF\u4EE5\u4F7F\u7528\u5DE6\u6447\u6746\u79FB\u52A8\uFF0C\u53F3\u6447\u6746\u53EF\u4EE5\u8F85\u52A9\u60A8\u8C03\u6574\u89C6\u89D2\uFF08\u8BF7\u4E0D\u8981\u8C03\u6574\u8FC7\u5FEB\u4EE5\u514D\u51FA\u73B0\u7729\u6655\uFF09\u3002\u8BD5\u8BD5\u7528\u53F3\u6447\u6746\u7684\u6FC0\u5149\u6307\u5411\u684C\u4E0A\u7684\u53F0\u80DE\u8BC1\u5E76\u6309\u4E0B\u6273\u673A\u3002"
+  explorationHintSeconds: 10
 --- !u!4 &521465910
 Transform:
   m_ObjectHideFlags: 0
@@ -346,11 +354,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Project3D Sky
-  m_Shader: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 0c1f5354a6a319c978f3f42d4ae71946, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _SUNDISK_HIGH_QUALITY
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -364,14 +371,16 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _AtmosphereThickness: 0.05
-    - _Exposure: 1
-    - _SunDisk: 2
-    - _SunSize: 0.04
-    - _SunSizeConvergence: 5
+    - _Brightness: 1
+    - _HorizonFalloff: 1.15
+    - _SunGlowSize: 6
+    - _SunGlowStrength: 0.55
     m_Colors:
-    - _GroundColor: {r: 0.26, g: 0.17, b: 0.34, a: 1}
-    - _SkyTint: {r: 0.26, g: 0.17, b: 0.34, a: 1}
+    - _Ground: {r: 0.09, g: 0.06, b: 0.13, a: 1}
+    - _Horizon: {r: 0.47, g: 0.3, b: 0.54, a: 1}
+    - _SunDir: {r: -0.30272388, g: 0.05621998, b: -0.95141864, a: 0}
+    - _SunGlow: {r: 1, g: 0.55, b: 0.3, a: 1}
+    - _Zenith: {r: 0.3, g: 0.19, b: 0.38, a: 1}
   m_BuildTextureStacks: []
 --- !u!43 &1803486529
 Mesh:
