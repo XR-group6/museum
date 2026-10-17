@@ -632,8 +632,8 @@ VideoPlayer:
   m_TargetCamera: {fileID: 0}
   m_TargetTexture: {fileID: 0}
   m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: <noninit>
+  m_TargetMaterialRenderer: {fileID: 78785239}
+  m_TargetMaterialProperty: _MainTex
   m_RenderMode: 3
   m_AspectRatio: 2
   m_DataSource: 0
@@ -39035,8 +39035,8 @@ VideoPlayer:
   m_TargetCamera: {fileID: 0}
   m_TargetTexture: {fileID: 0}
   m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: <noninit>
+  m_TargetMaterialRenderer: {fileID: 1691212959}
+  m_TargetMaterialProperty: _MainTex
   m_RenderMode: 3
   m_AspectRatio: 2
   m_DataSource: 0
@@ -55203,7 +55203,6 @@ MonoBehaviour:
   oceanAmbience: {fileID: 8300000, guid: 7bc4627d9a6d1f048adbf45260c85271, type: 3}
   coverShader: {fileID: 4800000, guid: 8f060e4071694679aca1ea84d0a40449, type: 3}
   roomSubtitleHeight: 3.2
-  oceanSeconds: 5
   whiteFadeSeconds: 1.5
   touchDistance: 0.025
   roomCentre: {x: 0, y: 0.116, z: 3.17}
@@ -55215,8 +55214,8 @@ MonoBehaviour:
   - {fileID: 220227589}
   - {fileID: 2073519433}
   roomTimeline: {fileID: 0}
+  oceanTimeline: {fileID: 335642445}
   finalRegionSeconds: 10
-  darknessFadeSeconds: 3
   guideLine: {fileID: 921190762}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

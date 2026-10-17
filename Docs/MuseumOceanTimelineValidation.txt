@@ -1,0 +1,9 @@
+Unity 2022.3.62f3 runtime C# compilation: PASS
+Original ocean Timeline asset unchanged: PASS
+Scene object IDs, original director and explicit video screen bindings: PASS
+
+Loop 0: censer gate, boat animation, both video activation windows, full 24.93s Timeline, whiteout and language reset PASS. Video start callbacks=1,1
+Loop 1: censer gate, boat animation, both video activation windows, full 24.93s Timeline, whiteout and language reset PASS. Video start callbacks=1,1
+OCEAN_TIMELINE_VERIFY_PASS; null graphics device: headset image/video frame appearance not tested.
+
+Verification uses representative Timeline tracks and the actual two video clips in an isolated project. The original Timeline resource was not rewritten. Actual headset video projection and rendered whiteout remain untested.

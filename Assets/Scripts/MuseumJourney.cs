@@ -24,10 +24,9 @@ public sealed class MuseumJourney : MonoBehaviour
     [Min(0)] public float roomSubtitleHeight = 3.2f;
     public Shader roomSubtitleShader;
     public PlayableDirector roomTimeline;
+    public PlayableDirector oceanTimeline;
     [Min(0)] public float finalRegionSeconds = 10;
-    [Min(.1f)] public float darknessFadeSeconds = 3;
     public Transform guideLine;
-    [Min(0)] public float oceanSeconds = 5;
     [Min(.1f)] public float whiteFadeSeconds = 1.5f;
     [Min(0)] public float touchDistance = .025f;
     public Vector3 roomCentre = new Vector3(0, .116f, 3.17f);
@@ -49,16 +48,19 @@ public sealed class MuseumJourney : MonoBehaviour
     MuseumLeftStickMove movement;
     MuseumRightStickTurn turning;
     public double FinalRegionLitAt { get; private set; } = -1;
-    public float DarknessOpacity { get; private set; } = 1;
     Renderer[] guideRenderers = new Renderer[0];
     bool loading;
     string sceneName;
     Material fadeMaterial;
     Material roomSubtitleMaterial;
     readonly List<Material> darknessMaterials = new List<Material>();
-    public float DissolveProgress { get; private set; }
     Image fadeImage;
     Renderer[] hiddenEnvironment = new Renderer[0];
+    Transform guideParent;
+    Vector3 guidePosition, guideScale;
+    Quaternion guideRotation;
+    UnityEngine.Video.VideoPlayer[] timelineVideos = new UnityEngine.Video.VideoPlayer[0];
+    bool[] videoWasActive = new bool[0];
 
     void Awake()
     {
@@ -237,6 +239,9 @@ public sealed class MuseumJourney : MonoBehaviour
 
     void PrepareOcean()
     {
+        if (!oceanTimeline) oceanTimeline = SceneObjects<PlayableDirector>().FirstOrDefault(d => d.playableAsset);
+        if (!oceanTimeline || !oceanTimeline.playableAsset)
+        { Fail("Original ocean Timeline missing"); return; }
         hiddenEnvironment = SceneObjects<Renderer>().Where(r => r.enabled &&
             !r.transform.IsChildOf(censer) && !r.transform.IsChildOf(rig) &&
             (!guideLine || !r.transform.IsChildOf(guideLine)) &&
@@ -248,7 +253,9 @@ public sealed class MuseumJourney : MonoBehaviour
         if (!guideLine) guideLine = SceneObjects<Transform>().FirstOrDefault(t => t.name == "line");
         if (guideLine)
         {
-            // Keep the authored line out of the hidden Smoke_guide hierarchy.
+            guideParent = guideLine.parent;
+            guidePosition = guideLine.localPosition; guideRotation = guideLine.localRotation; guideScale = guideLine.localScale;
+            // Keep the authored line visible until interaction, then restore its Timeline hierarchy.
             guideLine.SetParent(transform, true); guideLine.gameObject.SetActive(true);
             foreach (var animator in guideLine.GetComponentsInChildren<Animator>(true)) animator.enabled = false;
             guideRenderers = guideLine.GetComponentsInChildren<Renderer>(true);
@@ -279,7 +286,16 @@ public sealed class MuseumJourney : MonoBehaviour
             }
         }
         foreach (var surface in oceanSurfaces) if (surface) surface.SetActive(false);
-        foreach (var video in SceneObjects<UnityEngine.Video.VideoPlayer>()) { video.Stop(); video.enabled = false; }
+        timelineVideos = SceneObjects<UnityEngine.Video.VideoPlayer>();
+        videoWasActive = new bool[timelineVideos.Length];
+        foreach (var video in timelineVideos)
+        {
+            video.Stop(); video.playOnAwake = false;
+            // Activation tracks will reveal the screens; the playback loop starts
+            // each player on its activation edge, including on repeated visits.
+            video.gameObject.SetActive(false);
+            video.enabled = true;
+        }
         foreach (var text in SceneObjects<Text>()) text.gameObject.SetActive(false);
         foreach (var item in SceneObjects<Transform>())
             if (item.name == "slide" || item.name == "Smoke_guide" || item.name == "P_VFX") item.gameObject.SetActive(false);
@@ -340,31 +356,46 @@ public sealed class MuseumJourney : MonoBehaviour
     {
         if (movement) movement.enabled = false;
         if (turning) turning.enabled = false;
-        // Reveal through the authored noise/dissolve masks, not a screen fade.
+        if (!oceanTimeline || !oceanTimeline.playableAsset)
+        { Fail("Original ocean Timeline missing"); yield break; }
         viewer.clearFlags = CameraClearFlags.Skybox;
         foreach (var renderer in hiddenEnvironment) if (renderer) renderer.enabled = true;
         foreach (var surface in oceanSurfaces) if (surface) surface.SetActive(true);
-        // Reveal behind the black shell first, then blend the shell away gradually.
-        float revealTime = 0;
-        while (revealTime < darknessFadeSeconds)
+        foreach (var item in SceneObjects<Transform>())
+            if (item.name == "slide" || item.name == "Smoke_guide" || item.name == "P_VFX") item.gameObject.SetActive(true);
+        if (guideLine)
         {
-            revealTime += Time.unscaledDeltaTime;
-            DarknessOpacity = 1 - Mathf.SmoothStep(0, 1, Mathf.Clamp01(revealTime / darknessFadeSeconds));
-            DissolveProgress = 1 - DarknessOpacity;
-            foreach (var material in darknessMaterials)
-                if (material.HasProperty("_Dissolve_Scale")) material.SetFloat("_Dissolve_Scale", DissolveProgress);
+            guideLine.SetParent(guideParent, false);
+            guideLine.localPosition = guidePosition; guideLine.localRotation = guideRotation; guideLine.localScale = guideScale;
+            foreach (var renderer in guideRenderers) renderer.SetPropertyBlock(null);
+        }
+        // Re-enable only the Animators referenced by this Timeline. Keep the HMD
+        // and controller transforms under SteamVR tracking throughout the show.
+        foreach (var output in oceanTimeline.playableAsset.outputs)
+        {
+            var animator = oceanTimeline.GetGenericBinding(output.sourceObject) as Animator;
+            if (animator) animator.enabled = true;
+        }
+        oceanTimeline.enabled = true;
+        oceanTimeline.extrapolationMode = DirectorWrapMode.Hold;
+        oceanTimeline.time = 0;
+        oceanTimeline.Evaluate();
+        double duration = oceanTimeline.duration;
+        if (duration <= 0 || double.IsNaN(duration) || double.IsInfinity(duration))
+        { Fail("Original ocean Timeline has an invalid duration"); yield break; }
+        oceanTimeline.Play();
+        while (oceanTimeline.time < duration - .001)
+        {
+            SyncTimelineVideos();
+            OceanRevealed = !blackEnvironment || !blackEnvironment.activeInHierarchy;
             yield return null;
         }
-        DarknessOpacity = 0;
-        DissolveProgress = 1;
-        foreach (var material in darknessMaterials)
-            if (material.HasProperty("_Dissolve_Scale")) material.SetFloat("_Dissolve_Scale", 1);
-        if (blackEnvironment) blackEnvironment.SetActive(false);
-        OceanRevealed = true;
-        sound.transform.position = censer.position;
-        sound.clip = oceanAmbience; sound.loop = true; sound.spatialBlend = 0;
-        if (sound.clip) sound.Play();
-        yield return new WaitForSecondsRealtime(oceanSeconds);
+        // Hold and evaluate the actual final frame before beginning the whiteout.
+        oceanTimeline.Pause();
+        oceanTimeline.time = duration;
+        oceanTimeline.Evaluate();
+        foreach (var video in timelineVideos) if (video) video.Stop();
+        yield return null;
         Returning = true;
         CreateWhiteCover(new Color(1, 1, 1, 0), "Ocean light cover");
         float elapsed = 0;
@@ -379,6 +410,18 @@ public sealed class MuseumJourney : MonoBehaviour
         yield return null;
         SubtitleLanguage.BeginNewVisit();
         Load("scene_01");
+    }
+
+    void SyncTimelineVideos()
+    {
+        for (int i = 0; i < timelineVideos.Length; i++)
+        {
+            var video = timelineVideos[i];
+            bool active = video && video.isActiveAndEnabled;
+            if (active && !videoWasActive[i]) { video.time = 0; video.Play(); }
+            else if (!active && videoWasActive[i] && video) video.Stop();
+            videoWasActive[i] = active;
+        }
     }
 
     void CreateWhiteCover(Color initial, string objectName)

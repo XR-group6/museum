@@ -108,21 +108,16 @@ public sealed class MuseumJourneyPlayVerify : MonoBehaviour
             Check(Vector3.ProjectOnPlane(move.transform.position-initial,Vector3.up).magnitude > .05f, "Forward movement failed");
             Check(!journey.TryGrab(initial, true), "Remote ocean activation");
             Check(journey.TryGrab(journey.censer.position, true), "Ocean grab rejected");
-            Check(!journey.OceanRevealed && journey.DarknessOpacity > .95f && !move.enabled && journey.blackEnvironment.activeSelf, "Reveal must start with authored black environment");
-            yield return new WaitForSecondsRealtime(1.5f);
-            Check(!journey.OceanRevealed && journey.DissolveProgress>.1f && journey.DissolveProgress<.9f && journey.blackEnvironment.activeSelf, "Darkness must dissolve gradually");
-            Check(Mathf.Abs(journey.blackEnvironment.GetComponent<Renderer>().sharedMaterial.GetFloat("_Dissolve_Scale")-journey.DissolveProgress)<.01f,"Authored dissolve property not driven");
-            Check(!GameObject.Find("Ocean darkness reveal"),"Screen alpha fade must not replace material dissolve");
-            yield return new WaitForSecondsRealtime(1.7f);
-            Check(journey.OceanRevealed && journey.DarknessOpacity==0 && journey.oceanSurfaces.All(x=>x.activeSelf), "Reveal completion");
-            yield return new WaitForSecondsRealtime(4.6f);
-            Check(!journey.Returning && SceneManager.GetActiveScene().name == "scene_06_01", "Ocean hold shorter than 5 seconds");
-            yield return new WaitForSecondsRealtime(.3f);
-            Check(journey.Returning && SceneManager.GetActiveScene().name == "scene_06_01", "White cover should begin after 5 seconds");
+            Check(journey.oceanTimeline && journey.oceanTimeline.enabled && !move.enabled, "Original ocean Timeline must run after grab");
+            yield return new WaitForSecondsRealtime(6);
+            Check(!journey.Returning && SceneManager.GetActiveScene().name=="scene_06_01", "Legacy timeout must not cut the Timeline short");
+            double timelineDeadline=Time.realtimeSinceStartupAsDouble+30;
+            while(!journey.Returning) { Check(Time.realtimeSinceStartupAsDouble<timelineDeadline,"Ocean Timeline stalled");yield return null; }
+            Check(journey.oceanTimeline.time>=journey.oceanTimeline.duration-.001,"Whiteout must wait for complete Timeline");
             yield return new WaitForSecondsRealtime(1.7f);
             Check(SceneManager.GetActiveScene().name == "scene_01", "Return to museum failed");
             Check(!SubtitleLanguage.HasSelected && FindObjectOfType<InitialLanguageSelector>(),"Return must restart at the language selector");
-            report.Add("Loop " + loop + ": immediate exploration, permit isolation, physical censer contact, visible ground line, 3s authored material dissolve, forward/back movement, 5s sea and language-selection restart PASS");
+            report.Add("Loop " + loop + ": immediate exploration, permit isolation, physical censer contact, visible ground line, original full ocean Timeline, forward/back movement, completed whiteout and language-selection restart PASS");
         }
         File.WriteAllLines("../result.txt", report.Concat(new[]{"JOURNEY_VERIFY_PASS (simulated controllers; headset rendering still requires hardware)"}));
 #if UNITY_EDITOR
@@ -185,6 +180,10 @@ public sealed class MuseumJourneyPlayVerify : MonoBehaviour
                 {
                     journey.blackEnvironment=GameObject.CreatePrimitive(PrimitiveType.Sphere);journey.blackEnvironment.name="blackenvironment";journey.blackEnvironment.GetComponent<Renderer>().sharedMaterial=new Material(Shader.Find("Verification/AuthoredDissolve"));journey.oceanSurfaces=new[]{new GameObject("Sea")};
                     var smoke=new GameObject("Smoke_guide");var line=GameObject.CreatePrimitive(PrimitiveType.Plane);line.name="line";line.transform.SetParent(smoke.transform);journey.guideLine=line.transform;
+                    var oceanDirector=new GameObject("Ocean Timeline").AddComponent<PlayableDirector>();oceanDirector.playOnAwake=false;oceanDirector.timeUpdateMode=DirectorUpdateMode.UnscaledGameTime;
+                    var oceanTimeline=ScriptableObject.CreateInstance<TimelineAsset>();AssetDatabase.DeleteAsset("Assets/TestOcean.playable");AssetDatabase.CreateAsset(oceanTimeline,"Assets/TestOcean.playable");
+                    var durationTrack=oceanTimeline.CreateTrack<ActivationTrack>(null,"Complete original show duration");var durationClip=durationTrack.CreateDefaultClip();durationClip.start=0;durationClip.duration=24.933333333333334;
+                    oceanDirector.SetGenericBinding(durationTrack,new GameObject("Timeline duration marker"));oceanDirector.playableAsset=oceanTimeline;journey.oceanTimeline=oceanDirector;AssetDatabase.SaveAssets();
                 }
                 rig.SetActive(true);
             }
