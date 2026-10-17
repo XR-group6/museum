@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "shared.slnx",
+    "dotnet.defaultSolution": "museum.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
