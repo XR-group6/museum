@@ -1,6 +1,6 @@
-COMP5424 Extended Reality - Group Project for Accessible Museum Experience (Scenario B):
+## COMP5424 Extended Reality: Group Project for Accessible Museum Experience (Scenario B) [Group 6]:
 
-## Group Members [Group 6]
+## Group Members
 
 | Student ID   | Student Name   | Account ID   |
 |--------------|----------------|--------------|
