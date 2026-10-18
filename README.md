@@ -1,4 +1,4 @@
-XR-group6's museum project:
+COMP5424 Extended Reality - Group Project for Accessible Museum Experience (Scenario B):
 
 ## Group Members [Group 6]
 
