@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Timeline;
 using Valve.VR;
 
 // Owns the new 03 -> 04_01 -> 07 -> 06_01 -> 01 loop.
@@ -50,6 +51,15 @@ public sealed class MuseumJourney : MonoBehaviour
     public double FinalRegionLitAt { get; private set; } = -1;
     Renderer[] guideRenderers = new Renderer[0];
     bool loading;
+    GameObject explorationChoice;
+    BoxCollider finishHit, continueHit;
+    Image finishImage, continueImage;
+    LineRenderer confirmationPointer;
+    Material confirmationPointerMaterial;
+    Font confirmationFont;
+    PermitInspection pausedInspection;
+    public bool ShowingExplorationChoice => explorationChoice && explorationChoice.activeSelf;
+
     string sceneName;
     Material fadeMaterial;
     Material roomSubtitleMaterial;
@@ -60,7 +70,14 @@ public sealed class MuseumJourney : MonoBehaviour
     Vector3 guidePosition, guideScale;
     Quaternion guideRotation;
     UnityEngine.Video.VideoPlayer[] timelineVideos = new UnityEngine.Video.VideoPlayer[0];
-    bool[] videoWasActive = new bool[0];
+    bool[] videoStarted, videoFinished;
+    Collider[] videoHits;
+    double[] videoReadyAt, videoPlaybackSeconds, videoEntranceAt;
+    bool[] videoPreviewRequested, videoPreviewReady;
+    readonly List<Material> videoScreenMaterials = new List<Material>();
+    VRSubtitle[] videoHints;
+    bool awaitingSail, sailConfirmed;
+
 
     void Awake()
     {
@@ -287,16 +304,60 @@ public sealed class MuseumJourney : MonoBehaviour
         }
         foreach (var surface in oceanSurfaces) if (surface) surface.SetActive(false);
         timelineVideos = SceneObjects<UnityEngine.Video.VideoPlayer>();
-        videoWasActive = new bool[timelineVideos.Length];
+        videoStarted = new bool[timelineVideos.Length]; videoFinished = new bool[timelineVideos.Length];
+        videoReadyAt = new double[timelineVideos.Length];
+        videoPlaybackSeconds = new double[timelineVideos.Length];
+        videoEntranceAt = Enumerable.Repeat(double.PositiveInfinity, timelineVideos.Length).ToArray();
+        videoPreviewRequested = new bool[timelineVideos.Length]; videoPreviewReady = new bool[timelineVideos.Length];
+        videoHits = new Collider[timelineVideos.Length]; videoHints = new VRSubtitle[timelineVideos.Length];
         foreach (var video in timelineVideos)
         {
-            video.Stop(); video.playOnAwake = false;
+            video.Stop(); video.playOnAwake = false; video.isLooping = false;
+            video.loopPointReached += VideoCompleted;
+            video.prepareCompleted += VideoPrepared;
+            video.frameReady += VideoPreviewFrame;
+            video.sendFrameReadyEvents = true;
+            var screen = video.targetMaterialRenderer ? video.targetMaterialRenderer : video.GetComponent<Renderer>();
+            if (!screen) { Fail("Video screen renderer missing: " + video.name); return; }
+            int index = System.Array.IndexOf(timelineVideos, video);
+            var previewMaterial = new Material(screen.sharedMaterial);
+            previewMaterial.SetTexture(video.targetMaterialProperty, Texture2D.blackTexture);
+            screen.material = previewMaterial; videoScreenMaterials.Add(previewMaterial);
+            var target = screen.gameObject.AddComponent<BoxCollider>();
+            var mesh = screen.GetComponent<MeshFilter>();
+            if (mesh && mesh.sharedMesh) { target.center = mesh.sharedMesh.bounds.center; target.size = mesh.sharedMesh.bounds.size + Vector3.one * .01f; }
+            target.isTrigger = true; videoHits[index] = target;
+            // Let the original screen entrance animation reach its final key
+            // before pausing the Timeline to await a click.
+            var timeline = oceanTimeline.playableAsset as TimelineAsset;
+            if (timeline)
+                foreach (var track in timeline.GetOutputTracks())
+                {
+                    var activation = track as ActivationTrack;
+                    var binding = oceanTimeline.GetGenericBinding(track) as GameObject;
+                    if (activation && binding && (video.transform == binding.transform || video.transform.IsChildOf(binding.transform)))
+                        foreach (var clip in activation.GetClips())
+                        {
+                            videoPlaybackSeconds[index] = System.Math.Max(videoPlaybackSeconds[index], clip.duration);
+                            videoEntranceAt[index] = System.Math.Min(videoEntranceAt[index], clip.start);
+                        }
+                    var animation = track as AnimationTrack;
+                    if (!animation || !animation.infiniteClip) continue;
+                    var animator = oceanTimeline.GetGenericBinding(track) as Animator;
+                    if (animator && (screen.transform == animator.transform || screen.transform.IsChildOf(animator.transform)))
+                        videoReadyAt[index] = System.Math.Max(videoReadyAt[index], animation.infiniteClip.length);
+                }
+            var hint = CreateSubtitle(false); videoHints[index] = hint;
+            hint.transform.position = screen.bounds.center + Vector3.up * (screen.bounds.extents.y + .25f);
+            hint.subtitleWidth = 1400; hint.fontSize = 34;
+            hint.ShowText("");
             // Activation tracks will reveal the screens; the playback loop starts
             // each player on its activation edge, including on repeated visits.
             video.gameObject.SetActive(false);
             video.enabled = true;
         }
-        foreach (var text in SceneObjects<Text>()) text.gameObject.SetActive(false);
+        foreach (var text in SceneObjects<Text>())
+            if (!text.GetComponentInParent<VRSubtitle>()) text.gameObject.SetActive(false);
         foreach (var item in SceneObjects<Transform>())
             if (item.name == "slide" || item.name == "Smoke_guide" || item.name == "P_VFX") item.gameObject.SetActive(false);
         // The black shell is a visual cover, not a barrier around the viewer.
@@ -329,6 +390,7 @@ public sealed class MuseumJourney : MonoBehaviour
 
     void Update()
     {
+        if (ShowingExplorationChoice) { UpdateExplorationChoice(); return; }
         if (!WaitingForCenser || !rightHand || !rightHand.isActiveAndEnabled || !rightHand.isValid || trigger == null) return;
         TryGrab(rightHand.transform.position, trigger.GetStateDown(SteamVR_Input_Sources.RightHand));
     }
@@ -347,9 +409,104 @@ public sealed class MuseumJourney : MonoBehaviour
         if (!touching) return false;
         WaitingForCenser = false;
         if (subtitle) subtitle.ShowText("");
-        if (sceneName == "scene_07") Load("scene_06_01");
+        if (sceneName == "scene_07") ShowExplorationChoice();
         else StartCoroutine(RevealOcean());
         return true;
+    }
+
+    void ShowExplorationChoice()
+    {
+        if (ShowingExplorationChoice || loading) return;
+        pausedInspection = SceneObjects<PermitInspection>().FirstOrDefault(p => p.enabled);
+        if (pausedInspection) pausedInspection.enabled = false;
+        if (!explorationChoice)
+        {
+            explorationChoice = new GameObject("Exploration completion confirmation", typeof(RectTransform), typeof(Canvas));
+            explorationChoice.transform.SetParent(transform, false);
+            explorationChoice.transform.localScale = Vector3.one * .0015f;
+            explorationChoice.GetComponent<RectTransform>().sizeDelta = new Vector2(900, 280);
+            var canvas = explorationChoice.GetComponent<Canvas>();
+            canvas.renderMode = RenderMode.WorldSpace; canvas.worldCamera = viewer; canvas.sortingOrder = 200;
+            confirmationFont = Font.CreateDynamicFontFromOSFont(new[] { "Microsoft YaHei", "SimHei", "Arial" }, 42);
+            ConfirmationLabel(explorationChoice.transform, "是否已经探索完毕", "Have you finished exploring?", new Vector2(0, 70), new Vector2(900, 100));
+            finishHit = ConfirmationButton("是", "Yes", -160, out finishImage);
+            continueHit = ConfirmationButton("否", "No", 160, out continueImage);
+            var pointer = new GameObject("Exploration confirmation right pointer"); pointer.transform.SetParent(transform, false);
+            confirmationPointer = pointer.AddComponent<LineRenderer>(); confirmationPointer.positionCount = 2;
+            confirmationPointer.startWidth = .004f; confirmationPointer.endWidth = .002f;
+            confirmationPointerMaterial = new Material(Shader.Find("Sprites/Default"));
+            confirmationPointer.sharedMaterial = confirmationPointerMaterial;
+        }
+        // Reuse the censer instruction anchor without attaching UI to the HMD.
+        var anchor = subtitle ? subtitle.transform.position : censer.position + Vector3.up * .4f;
+        explorationChoice.transform.position = anchor;
+        Vector3 facing = anchor - viewer.transform.position;
+        explorationChoice.transform.rotation = facing.sqrMagnitude > .001f
+            ? Quaternion.LookRotation(facing, Vector3.up) : viewer.transform.rotation;
+        explorationChoice.SetActive(true);
+    }
+
+    void ConfirmationLabel(Transform parent, string chinese, string english, Vector2 position, Vector2 size)
+    {
+        var go = new GameObject("Label", typeof(RectTransform), typeof(Text)); go.transform.SetParent(parent, false);
+        var rect = go.GetComponent<RectTransform>(); rect.anchoredPosition = position; rect.sizeDelta = size;
+        var label = go.GetComponent<Text>(); label.font = confirmationFont; label.fontSize = 42;
+        label.color = Color.white; label.alignment = TextAnchor.MiddleCenter; label.raycastTarget = false;
+        go.AddComponent<LocalizedUIText>().BindBilingual(chinese, english);
+    }
+
+    BoxCollider ConfirmationButton(string chinese, string english, float x, out Image image)
+    {
+        var go = new GameObject(english, typeof(RectTransform), typeof(Image), typeof(BoxCollider));
+        go.transform.SetParent(explorationChoice.transform, false);
+        var rect = go.GetComponent<RectTransform>(); rect.anchoredPosition = new Vector2(x, -45); rect.sizeDelta = new Vector2(240, 90);
+        image = go.GetComponent<Image>(); image.color = new Color(.12f, .36f, .3f);
+        var hit = go.GetComponent<BoxCollider>(); hit.size = new Vector3(240, 90, 16);
+        ConfirmationLabel(go.transform, chinese, english, Vector2.zero, rect.sizeDelta);
+        return hit;
+    }
+
+    void UpdateExplorationChoice()
+    {
+        finishImage.color = new Color(.12f, .36f, .3f);
+        if (continueImage) continueImage.color = finishImage.color;
+        confirmationPointer.enabled = false;
+        if (rightHand && rightHand.isActiveAndEnabled && rightHand.isValid && trigger != null)
+        {
+            var ray = new Ray(rightHand.transform.position, rightHand.transform.forward);
+            ProcessExplorationChoice(ray, trigger.GetStateDown(SteamVR_Input_Sources.RightHand), true);
+        }
+        if (Application.isEditor && Input.GetMouseButtonDown(0))
+            ProcessExplorationChoice(viewer.ScreenPointToRay(Input.mousePosition), true, false);
+    }
+
+    void ProcessExplorationChoice(Ray ray, bool pressed, bool draw)
+    {
+        RaycastHit hit; Vector3 end = ray.GetPoint(5); bool hovered = false, finish = false;
+        if (finishHit.Raycast(ray, out hit, 5)) { hovered = finish = true; end = hit.point; finishImage.color = new Color(.2f, .65f, .55f); }
+        else if (continueHit && continueHit.Raycast(ray, out hit, 5)) { hovered = true; end = hit.point; continueImage.color = new Color(.2f, .65f, .55f); }
+        if (draw)
+        {
+            confirmationPointer.enabled = true; confirmationPointer.SetPosition(0, ray.origin); confirmationPointer.SetPosition(1, end);
+            confirmationPointer.startColor = confirmationPointer.endColor = hovered ? Color.green : Color.white;
+        }
+        if (hovered && pressed) ConfirmExplorationFinished(finish);
+    }
+
+    public void ConfirmExplorationFinished(bool finished)
+    {
+        if (!ShowingExplorationChoice) return;
+        explorationChoice.SetActive(false);
+        confirmationPointer.enabled = false;
+        if (awaitingSail) { sailConfirmed = true; awaitingSail = false; return; }
+        if (pausedInspection) pausedInspection.enabled = true;
+        pausedInspection = null;
+        if (finished) Load("scene_06_01");
+        else
+        {
+            if (subtitle) subtitle.ShowText(ExplorePrompt);
+            WaitingForCenser = true;
+        }
     }
 
     IEnumerator RevealOcean()
@@ -386,16 +543,25 @@ public sealed class MuseumJourney : MonoBehaviour
         oceanTimeline.Play();
         while (oceanTimeline.time < duration - .001)
         {
-            SyncTimelineVideos();
+            yield return InteractWithVideos();
+            if (timelineVideos.Length > 0 && videoFinished.All(finished => finished)) break;
             OceanRevealed = !blackEnvironment || !blackEnvironment.activeInHierarchy;
             yield return null;
         }
         // Hold and evaluate the actual final frame before beginning the whiteout.
         oceanTimeline.Pause();
-        oceanTimeline.time = duration;
-        oceanTimeline.Evaluate();
-        foreach (var video in timelineVideos) if (video) video.Stop();
-        yield return null;
+        if (!videoFinished.All(finished => finished))
+        {
+            oceanTimeline.time = duration;
+            oceanTimeline.Evaluate();
+        }
+        // Every clip must actually finish, even if its authored activation window was missed.
+        for (int i = 0; i < timelineVideos.Length; i++)
+            if (timelineVideos[i] && !videoFinished[i]) timelineVideos[i].gameObject.SetActive(true);
+        yield return InteractWithVideos();
+        foreach (var video in timelineVideos) if (video) video.Pause();
+        ShowSailChoice();
+        while (!sailConfirmed) yield return null;
         Returning = true;
         CreateWhiteCover(new Color(1, 1, 1, 0), "Ocean light cover");
         float elapsed = 0;
@@ -412,16 +578,176 @@ public sealed class MuseumJourney : MonoBehaviour
         Load("scene_01");
     }
 
-    void SyncTimelineVideos()
+    void VideoPrepared(UnityEngine.Video.VideoPlayer video)
     {
+        int index = System.Array.IndexOf(timelineVideos, video);
+        if (index >= 0 && !videoStarted[index]) { video.time = 0; video.Play(); }
+    }
+
+    void VideoPreviewFrame(UnityEngine.Video.VideoPlayer video, long frame)
+    {
+        int index = System.Array.IndexOf(timelineVideos, video);
+        if (index < 0 || videoStarted[index] || videoPreviewReady[index]) return;
+        video.Pause(); videoPreviewReady[index] = true;
+    }
+
+    void VideoCompleted(UnityEngine.Video.VideoPlayer video)
+    {
+        int index = System.Array.IndexOf(timelineVideos, video);
+        if (index >= 0) videoFinished[index] = true;
+    }
+
+    IEnumerator InteractWithVideos()
+    {
+        bool pending = false;
+        for (int i = 0; i < timelineVideos.Length; i++)
+            if (timelineVideos[i] && timelineVideos[i].isActiveAndEnabled && !videoFinished[i] && oceanTimeline.time + .0001 >= videoReadyAt[i]) pending = true;
+        if (!pending) yield break;
+        bool resume = oceanTimeline.state == PlayState.Playing;
+        oceanTimeline.Pause();
+        EnsureVideoPointer();
+        while (pending)
+        {
+            pending = false;
+            bool tracked = rightHand && rightHand.isActiveAndEnabled && rightHand.isValid && trigger != null;
+            var ray = tracked ? new Ray(rightHand.transform.position, rightHand.transform.forward) : new Ray();
+            int selected = -1; float nearest = 5f; Vector3 end = ray.GetPoint(5);
+            for (int i = 0; i < timelineVideos.Length; i++)
+            {
+                var video = timelineVideos[i];
+                if (!video || !video.isActiveAndEnabled || videoFinished[i] || oceanTimeline.time + .0001 < videoReadyAt[i]) continue;
+                if (videoStarted[i] && video.time >= videoPlaybackSeconds[i] && videoPlaybackSeconds[i] > 0)
+                { video.Pause(); videoFinished[i] = true; videoHints[i].ShowText(""); continue; }
+                pending = true;
+                var screen = video.targetMaterialRenderer ? video.targetMaterialRenderer : video.GetComponent<Renderer>();
+                OrientVideo(i);
+                Physics.SyncTransforms();
+                if (!videoStarted[i])
+                {
+                    videoHints[i].ShowBilingualText("用右摇杆激光点击视频开始播放", "Point the right controller laser at the video and press the trigger to play.");
+                    RaycastHit hit;
+                    if (tracked && videoHits[i].Raycast(ray, out hit, nearest)) { selected = i; nearest = hit.distance; end = hit.point; }
+                    if (Application.isEditor && Input.GetMouseButtonDown(0) && videoHits[i].Raycast(viewer.ScreenPointToRay(Input.mousePosition), out hit, 20)) StartVideo(i);
+                }
+                else videoHints[i].ShowText("");
+            }
+            confirmationPointer.enabled = tracked && pending;
+            if (tracked)
+            {
+                confirmationPointer.SetPosition(0, ray.origin); confirmationPointer.SetPosition(1, end);
+                confirmationPointer.startColor = confirmationPointer.endColor = selected >= 0 ? Color.green : Color.white;
+                if (selected >= 0 && trigger.GetStateDown(SteamVR_Input_Sources.RightHand)) StartVideo(selected);
+            }
+            yield return null;
+        }
+        confirmationPointer.enabled = false;
+        foreach (var hint in videoHints) if (hint) hint.ShowText("");
+        if (resume)
+        {
+            // Remove only the idle gap before the next screen; play its original
+            // entrance animation at the authored speed after a brief .2s beat.
+            double nextEntrance = double.PositiveInfinity;
+            for (int i = 0; i < timelineVideos.Length; i++)
+                if (!videoFinished[i] && videoEntranceAt[i] > oceanTimeline.time)
+                    nextEntrance = System.Math.Min(nextEntrance, videoEntranceAt[i]);
+            if (!double.IsInfinity(nextEntrance) && nextEntrance - oceanTimeline.time > .2)
+            {
+                oceanTimeline.time = nextEntrance - .2;
+                oceanTimeline.Evaluate();
+            }
+            oceanTimeline.Play();
+        }
+    }
+
+    void LateUpdate()
+    {
+        if (sceneName != "scene_06_01" || !viewer || videoReadyAt == null) return;
         for (int i = 0; i < timelineVideos.Length; i++)
         {
             var video = timelineVideos[i];
-            bool active = video && video.isActiveAndEnabled;
-            if (active && !videoWasActive[i]) { video.time = 0; video.Play(); }
-            else if (!active && videoWasActive[i] && video) video.Stop();
-            videoWasActive[i] = active;
+            if (video && video.isActiveAndEnabled && !videoPreviewRequested[i])
+            {
+                videoPreviewRequested[i] = true;
+                for (ushort track = 0; track < video.controlledAudioTrackCount; track++) video.SetDirectAudioMute(track, true);
+                video.Prepare();
+            }
+            OrientVideo(i);
         }
+    }
+
+    void OrientVideo(int index)
+    {
+        var video = timelineVideos[index];
+        if (!video || !video.isActiveAndEnabled || oceanTimeline.time + .0001 < videoReadyAt[index]) return;
+        var screen = video.targetMaterialRenderer ? video.targetMaterialRenderer : video.GetComponent<Renderer>();
+        if (!screen) return;
+        Vector3 away = screen.bounds.center - viewer.transform.position;
+        if (away.sqrMagnitude > .001f)
+        {
+            // Unity's Quad front points along local -Z, like the subtitle UI.
+            screen.transform.rotation = Quaternion.LookRotation(away, Vector3.up);
+        }
+        if (videoHints[index])
+        {
+            videoHints[index].transform.position = screen.bounds.center + Vector3.up * (screen.bounds.extents.y + .25f);
+            videoHints[index].vrCamera = viewer;
+        }
+    }
+
+    void StartVideo(int index)
+    {
+        if (videoStarted[index] || !videoPreviewReady[index]) return;
+        videoStarted[index] = true;
+        var video = timelineVideos[index];
+        video.sendFrameReadyEvents = false;
+        for (ushort track = 0; track < video.controlledAudioTrackCount; track++) video.SetDirectAudioMute(track, false);
+        video.time = 0; video.Play();
+        videoHints[index].ShowText("");
+    }
+
+    void EnsureVideoPointer()
+    {
+        if (confirmationPointer) return;
+        var go = new GameObject("Boat right controller pointer"); go.transform.SetParent(transform, false);
+        confirmationPointer = go.AddComponent<LineRenderer>(); confirmationPointer.positionCount = 2;
+        confirmationPointer.startWidth = .004f; confirmationPointer.endWidth = .002f;
+        confirmationPointerMaterial = new Material(Shader.Find("Sprites/Default"));
+        confirmationPointer.sharedMaterial = confirmationPointerMaterial;
+    }
+
+    void ShowSailChoice()
+    {
+        awaitingSail = true;
+        explorationChoice = new GameObject("Sail to museum", typeof(RectTransform), typeof(Canvas));
+        explorationChoice.transform.SetParent(transform, false);
+        var boat = SceneObjects<Transform>().FirstOrDefault(t => t.name == "fishing_boat");
+        if (!boat) { Fail("Fishing boat missing for return button"); Destroy(explorationChoice); return; }
+        var renderers = boat.GetComponentsInChildren<Renderer>();
+        Bounds bounds = new Bounds(boat.position, Vector3.zero);
+        if (renderers.Length > 0)
+        {
+            bounds = renderers[0].bounds;
+            foreach (var renderer in renderers) bounds.Encapsulate(renderer.bounds);
+        }
+        // Keep the return button in the clear space between the viewer and
+        // the near side of the boat, biased toward the boat for visibility.
+        Vector3 nearBoat = bounds.ClosestPoint(viewer.transform.position);
+        Vector3 anchor = Vector3.Lerp(viewer.transform.position, nearBoat, .95f);
+        anchor.y = viewer.transform.position.y - .2f;
+        explorationChoice.transform.position = anchor;
+        Vector3 facing = anchor - viewer.transform.position;
+        explorationChoice.transform.rotation = facing.sqrMagnitude > .001f
+            ? Quaternion.LookRotation(facing, Vector3.up) : viewer.transform.rotation;
+        explorationChoice.transform.localScale = Vector3.one * .0015f;
+        var canvas = explorationChoice.GetComponent<Canvas>(); canvas.renderMode = RenderMode.WorldSpace;
+        canvas.worldCamera = viewer; canvas.sortingOrder = 200;
+        confirmationFont = Font.CreateDynamicFontFromOSFont(new[] { "Microsoft YaHei", "SimHei", "Arial" }, 42);
+        finishHit = ConfirmationButton("驶向博物馆", "Sail to the museum", 0, out finishImage);
+        finishHit.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        finishHit.GetComponent<RectTransform>().sizeDelta = new Vector2(600, 110);
+        finishHit.size = new Vector3(600, 110, 16);
+        var label = finishHit.GetComponentInChildren<Text>(); label.rectTransform.sizeDelta = new Vector2(600, 110);
+        EnsureVideoPointer();
     }
 
     void CreateWhiteCover(Color initial, string objectName)
@@ -449,6 +775,16 @@ public sealed class MuseumJourney : MonoBehaviour
     void Fail(string reason) { Debug.LogError("[Museum journey] " + reason, this); enabled = false; }
     void OnDestroy()
     {
+        foreach (var video in timelineVideos) if (video)
+        {
+            video.loopPointReached -= VideoCompleted;
+            video.prepareCompleted -= VideoPrepared;
+            video.frameReady -= VideoPreviewFrame;
+        }
+        foreach (var material in videoScreenMaterials) if (material) Destroy(material);
+        if (explorationChoice) Destroy(explorationChoice);
+        if (confirmationFont) Destroy(confirmationFont);
+        if (confirmationPointerMaterial) Destroy(confirmationPointerMaterial);
         if (fadeMaterial) Destroy(fadeMaterial);
         if (roomSubtitleMaterial) Destroy(roomSubtitleMaterial);
         foreach (var material in darknessMaterials) if (material) Destroy(material);

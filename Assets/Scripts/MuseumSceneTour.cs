@@ -18,7 +18,8 @@ public sealed class MuseumSceneTour : MonoBehaviour
     public float explorationSpawnForward = 0.35f;
     [TextArea] public string explorationHintText = "可以使用左摇杆移动，右摇杆可以辅助您调整视角（请不要调整过快以免出现眩晕）。试试用右摇杆的激光指向桌上的台胞证并按下扳机。";
     [Min(0)] public float explorationHintSeconds = 10;
-    VRSubtitle explorationHint;
+    const string PermitHint = "试试用右摇杆的激光指向桌上的台胞证并按下扳机。";
+    VRSubtitle explorationHint, sofaHint;
     public bool ExplorationStarted { get; private set; }
     bool loading;
     bool finishingStory;
@@ -71,12 +72,42 @@ public sealed class MuseumSceneTour : MonoBehaviour
             explorationHint.transform.SetParent(transform, false);
             explorationHint.followCamera = true;
             explorationHint.cameraOffset = new Vector3(0, 0.35f, 2);
-            explorationHint.ShowText(explorationHintText);
+            string movementHint = explorationHintText.Replace(PermitHint, "").Trim();
+            explorationHint.ShowBilingualText(movementHint,
+                "Use the left stick to move and the right stick to turn. Turn slowly to avoid discomfort.");
+            CreateSofaHint();
             yield return new WaitForSecondsRealtime(explorationHintSeconds);
             if (explorationHint) Destroy(explorationHint.gameObject);
             yield break;
         }
         LoadNext();
+    }
+
+    void CreateSofaHint()
+    {
+        Transform sofa = null;
+        foreach (var root in gameObject.scene.GetRootGameObjects())
+            foreach (var candidate in root.GetComponentsInChildren<Transform>(true))
+                if (candidate.name == "sofa") { sofa = candidate; break; }
+        if (!sofa) { Debug.LogError("[Museum tour] Sofa missing for permit instruction.", this); return; }
+        Camera viewer = movement.headset ? movement.headset.GetComponent<Camera>() : Camera.main;
+        if (!viewer) return;
+        var renderers = sofa.GetComponentsInChildren<Renderer>();
+        Bounds bounds = new Bounds(sofa.position, Vector3.zero);
+        if (renderers.Length > 0)
+        {
+            bounds = renderers[0].bounds;
+            foreach (var renderer in renderers) bounds.Encapsulate(renderer.bounds);
+        }
+        var go = new GameObject("Sofa permit instruction"); go.transform.SetParent(transform, false);
+        go.transform.position = new Vector3(bounds.center.x, bounds.max.y + .45f, bounds.center.z);
+        Vector3 facing = Vector3.ProjectOnPlane(go.transform.position - viewer.transform.position, Vector3.up);
+        go.transform.rotation = facing.sqrMagnitude > .001f ? Quaternion.LookRotation(facing) : viewer.transform.rotation;
+        sofaHint = go.AddComponent<VRSubtitle>();
+        sofaHint.vrCamera = viewer; sofaHint.followCamera = false; sofaHint.faceCamera = false;
+        sofaHint.subtitleWidth = 1500; sofaHint.fontSize = 38;
+        sofaHint.ShowBilingualText(PermitHint,
+            "Aim your right controller's laser at the Taiwan Compatriot Permit on the table, then press the trigger.");
     }
 
     void Update()
@@ -95,6 +126,7 @@ public sealed class MuseumSceneTour : MonoBehaviour
     void OnDisable()
     {
         if (explorationHint) Destroy(explorationHint.gameObject);
+        if (sofaHint) Destroy(sofaHint.gameObject);
     }
 
     IEnumerator FinishStory()

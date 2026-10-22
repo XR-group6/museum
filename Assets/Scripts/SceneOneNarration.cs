@@ -24,7 +24,9 @@ public class SceneOneNarration : MonoBehaviour
     private BoxCollider yesCollider;
     private Button yesButton;
     private Font choiceFont;
-    private bool followupFinished, loadingScene, hovered;
+    private bool followupFinished, dissolveFinished, loadingScene, hovered;
+    public bool CanInspect { get; private set; }
+    VRSubtitle rotationHint;
 
     void Awake()
     {
@@ -64,6 +66,14 @@ public class SceneOneNarration : MonoBehaviour
         while (AudioListener.pause || (source.isPlaying && source.timeSamples / (float)museumEcho.frequency < 5f))
             yield return null;
         source.Stop();
+        interactionSubtitle.ShowText("请用右手触摸并握住香炉。");
+        WaitingForInteraction = true;
+    }
+
+    IEnumerator PlayIntroduction()
+    {
+        CanInspect = true;
+        ShowRotationHint();
         source.clip = censerIntro; source.Play();
         int paragraph = -1;
         while (source.isPlaying || AudioListener.pause)
@@ -80,8 +90,62 @@ public class SceneOneNarration : MonoBehaviour
             yield return null;
         }
         narrationSubtitle.ShowText("");
-        interactionSubtitle.ShowText("请用右手触摸并握住香炉。");
-        WaitingForInteraction = true;
+        if (rotationHint) rotationHint.ShowText("");
+        while (!FindSceneCamera()) yield return null;
+        ShowMemoryChoice();
+    }
+
+    void ShowRotationHint()
+    {
+        var camera = FindSceneCamera();
+        if (!camera) return;
+        var go = new GameObject("Censer rotation wall hint");
+        go.transform.SetParent(transform, false);
+        Vector3 direction = Vector3.ProjectOnPlane(camera.transform.forward, Vector3.up).normalized;
+        if (direction.sqrMagnitude < .01f) direction = Vector3.forward;
+        Vector3 position = camera.transform.position + direction * 4f;
+        float nearestWall = float.PositiveInfinity;
+        // Find the room surface ahead, excluding the censer and small props.
+        foreach (var hit in Physics.RaycastAll(camera.transform.position, direction, 30f))
+        {
+            if (hit.distance < 1.5f || Mathf.Abs(hit.normal.y) > .35f ||
+                Mathf.Abs(Vector3.Dot(hit.normal, direction)) < .7f ||
+                hit.collider.GetComponentInParent<CenserScenePlayback>()) continue;
+            if (hit.distance < nearestWall)
+            {
+                nearestWall = hit.distance;
+                position = hit.point - direction * .04f;
+            }
+        }
+        // Published room meshes may have no physics colliders. Use a temporary
+        // mesh query to locate the actual wall without changing the scene asset.
+        foreach (var mesh in FindObjectsOfType<MeshFilter>())
+        {
+            if (!mesh.sharedMesh || mesh.gameObject.scene != gameObject.scene) continue;
+            Transform room = mesh.transform;
+            while (room && room.name != "museum_hall") room = room.parent;
+            if (!room) continue;
+            var query = new GameObject("Temporary room wall query");
+            query.transform.SetPositionAndRotation(mesh.transform.position, mesh.transform.rotation);
+            query.transform.localScale = mesh.transform.lossyScale;
+            var collider = query.AddComponent<MeshCollider>(); collider.sharedMesh = mesh.sharedMesh;
+            RaycastHit wall;
+            if (collider.Raycast(new Ray(camera.transform.position, direction), out wall, 30f) &&
+                wall.distance > 1.5f && Mathf.Abs(wall.normal.y) < .35f && wall.distance < nearestWall)
+            {
+                nearestWall = wall.distance;
+                position = wall.point - direction * .04f;
+            }
+            collider.enabled = false;
+            Destroy(query);
+        }
+        go.transform.SetPositionAndRotation(position, Quaternion.LookRotation(direction));
+        rotationHint = go.AddComponent<VRSubtitle>();
+        rotationHint.followCamera = false; rotationHint.faceCamera = false;
+        rotationHint.vrCamera = camera; rotationHint.subtitleFont = narrationSubtitle.subtitleFont;
+        rotationHint.subtitleWidth = 1500; rotationHint.fontSize = 42;
+        rotationHint.ShowBilingualText("试试用右摇杆的激光长按扳机转动香炉。",
+            "Aim the right controller laser at the censer; hold the trigger and rotate your controller.");
     }
 
     public void Interact()
@@ -89,9 +153,7 @@ public class SceneOneNarration : MonoBehaviour
         if (!WaitingForInteraction || failed) return;
         WaitingForInteraction = false;
         interactionSubtitle.ShowText("");
-        censerPlayback.Play();
-        StartCoroutine(WaitForDissolve());
-        StartCoroutine(AfterInteraction());
+        StartCoroutine(PlayIntroduction());
     }
 
     IEnumerator AfterInteraction()
@@ -116,8 +178,7 @@ public class SceneOneNarration : MonoBehaviour
         censerPlayback.HidePermanently();
         // Stop without resetting the model or restoring its renderer.
         censerPlayback.director.Stop();
-        while (!FindSceneCamera()) yield return null;
-        ShowMemoryChoice();
+        dissolveFinished = true;
     }
 
     Camera FindSceneCamera()
@@ -133,11 +194,11 @@ public class SceneOneNarration : MonoBehaviour
     {
         var camera = FindSceneCamera();
         choiceRoot = new GameObject("EnterCenserMemory", typeof(RectTransform), typeof(Canvas));
-        choiceRoot.transform.SetParent(transform, false);
+        choiceRoot.transform.SetParent(camera.transform, false);
         var canvas = choiceRoot.GetComponent<Canvas>();
         canvas.renderMode = RenderMode.WorldSpace; canvas.worldCamera = camera; canvas.sortingOrder = 110;
-        choiceRoot.transform.position = camera.transform.TransformPoint(new Vector3(0, 0.12f, 1.6f));
-        choiceRoot.transform.rotation = camera.transform.rotation;
+        choiceRoot.transform.localPosition = new Vector3(0, 0.12f, 1.6f);
+        choiceRoot.transform.localRotation = Quaternion.identity;
         choiceRoot.transform.localScale = Vector3.one * 0.0015f;
         choiceRoot.GetComponent<RectTransform>().sizeDelta = new Vector2(900, 230);
         choiceFont = narrationSubtitle.subtitleFont ? narrationSubtitle.subtitleFont :
@@ -184,8 +245,10 @@ public class SceneOneNarration : MonoBehaviour
         var camera = FindSceneCamera();
         if (camera)
         {
-            Vector3 facing = choiceRoot.transform.position - camera.transform.position;
-            if (facing.sqrMagnitude > 0.001f) choiceRoot.transform.rotation = Quaternion.LookRotation(facing, Vector3.up);
+            if (choiceRoot.transform.parent != camera.transform)
+                choiceRoot.transform.SetParent(camera.transform, false);
+            choiceRoot.transform.localPosition = new Vector3(0, .12f, 1.6f);
+            choiceRoot.transform.localRotation = Quaternion.identity;
             if (Input.GetMouseButtonDown(0))
             {
                 RaycastHit hit;
@@ -200,14 +263,20 @@ public class SceneOneNarration : MonoBehaviour
     {
         if (!ShowingMemoryChoice || failed) return;
         loadingScene = true;
+        CanInspect = false;
         choiceRoot.SetActive(false);
+        var controller = FindObjectOfType<RightController>();
+        if (controller) controller.EndInspection();
+        censerPlayback.Play();
+        StartCoroutine(WaitForDissolve());
+        StartCoroutine(AfterInteraction());
         StartCoroutine(LoadMemoryAfterNarration());
     }
 
     IEnumerator LoadMemoryAfterNarration()
     {
         // A quick click must not cut off censer 2 or censer 3.
-        while (!followupFinished) yield return null;
+        while (!followupFinished || !dissolveFinished) yield return null;
         SceneManager.LoadSceneAsync(nextScene);
     }
 
@@ -219,7 +288,8 @@ public class SceneOneNarration : MonoBehaviour
 
     void OnDisable()
     {
-        StopAllCoroutines(); WaitingForInteraction = false;
+        StopAllCoroutines(); WaitingForInteraction = false; CanInspect = false;
+        if (rotationHint) rotationHint.ShowText("");
         if (source) source.Stop();
         if (narrationSubtitle) narrationSubtitle.ShowText("");
         if (interactionSubtitle) interactionSubtitle.ShowText("");
