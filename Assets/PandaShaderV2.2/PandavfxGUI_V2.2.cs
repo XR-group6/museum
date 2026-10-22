@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System;
 using UnityEngine;
 using UnityEditor;
@@ -4967,3 +4968,4 @@ public class CommonGUI5 : ShaderGUI
   
 
 }
+#endif
