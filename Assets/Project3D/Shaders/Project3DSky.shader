@@ -46,6 +46,41 @@ Shader "Project3D/Sky"
         _HorizonFalloff ("Horizon falloff", Range(0.05, 4)) = 0.80
         _SunGlowSize    ("Sun glow size", Range(0.5, 64)) = 8.0
         _SunGlowStrength("Sun glow strength", Range(0, 4)) = 0.35
+
+        // Four authored skies, selected by view azimuth. A count of zero is the old
+        // single-sky path, byte-for-byte; a scene that declares sectors sets it to 1..4.
+        // Each sector is a complete sky -- its own zenith, horizon, ground, glow, sun and
+        // shape -- because the four hours are not one palette at four brightnesses.
+        _SectorCount      ("Sector count", Float) = 0
+        _SectorBlend      ("Sector blend (degrees)", Range(0.01, 44)) = 6
+        _Sector1Zenith    ("Sector 1 zenith", Color) = (0, 0, 0, 1)
+        _Sector1Horizon   ("Sector 1 horizon", Color) = (0, 0, 0, 1)
+        _Sector1Ground    ("Sector 1 ground", Color) = (0, 0, 0, 1)
+        _Sector1Glow      ("Sector 1 glow", Color) = (0, 0, 0, 1)
+        _Sector1Centre    ("Sector 1 centre", Vector) = (1, 0, 0, 0)
+        _Sector1Sun       ("Sector 1 sun", Vector) = (0, 1, 0, 0)
+        _Sector1Shape     ("Sector 1 brightness, falloff, glow size, glow strength", Vector) = (1, 0.8, 8, 0.35)
+        _Sector2Zenith    ("Sector 2 zenith", Color) = (0, 0, 0, 1)
+        _Sector2Horizon   ("Sector 2 horizon", Color) = (0, 0, 0, 1)
+        _Sector2Ground    ("Sector 2 ground", Color) = (0, 0, 0, 1)
+        _Sector2Glow      ("Sector 2 glow", Color) = (0, 0, 0, 1)
+        _Sector2Centre    ("Sector 2 centre", Vector) = (0, 0, 1, 0)
+        _Sector2Sun       ("Sector 2 sun", Vector) = (0, 1, 0, 0)
+        _Sector2Shape     ("Sector 2 brightness, falloff, glow size, glow strength", Vector) = (1, 0.8, 8, 0.35)
+        _Sector3Zenith    ("Sector 3 zenith", Color) = (0, 0, 0, 1)
+        _Sector3Horizon   ("Sector 3 horizon", Color) = (0, 0, 0, 1)
+        _Sector3Ground    ("Sector 3 ground", Color) = (0, 0, 0, 1)
+        _Sector3Glow      ("Sector 3 glow", Color) = (0, 0, 0, 1)
+        _Sector3Centre    ("Sector 3 centre", Vector) = (-1, 0, 0, 0)
+        _Sector3Sun       ("Sector 3 sun", Vector) = (0, 1, 0, 0)
+        _Sector3Shape     ("Sector 3 brightness, falloff, glow size, glow strength", Vector) = (1, 0.8, 8, 0.35)
+        _Sector4Zenith    ("Sector 4 zenith", Color) = (0, 0, 0, 1)
+        _Sector4Horizon   ("Sector 4 horizon", Color) = (0, 0, 0, 1)
+        _Sector4Ground    ("Sector 4 ground", Color) = (0, 0, 0, 1)
+        _Sector4Glow      ("Sector 4 glow", Color) = (0, 0, 0, 1)
+        _Sector4Centre    ("Sector 4 centre", Vector) = (0, 0, -1, 0)
+        _Sector4Sun       ("Sector 4 sun", Vector) = (0, 1, 0, 0)
+        _Sector4Shape     ("Sector 4 brightness, falloff, glow size, glow strength", Vector) = (1, 0.8, 8, 0.35)
     }
 
     SubShader
@@ -85,6 +120,77 @@ Shader "Project3D/Sky"
             float _HorizonFalloff;
             float _SunGlowSize;
             float _SunGlowStrength;
+            float4 _Sector1Zenith;
+            float4 _Sector1Horizon;
+            float4 _Sector1Ground;
+            float4 _Sector1Glow;
+            float4 _Sector1Centre;
+            float4 _Sector1Sun;
+            float4 _Sector1Shape;
+            float4 _Sector2Zenith;
+            float4 _Sector2Horizon;
+            float4 _Sector2Ground;
+            float4 _Sector2Glow;
+            float4 _Sector2Centre;
+            float4 _Sector2Sun;
+            float4 _Sector2Shape;
+            float4 _Sector3Zenith;
+            float4 _Sector3Horizon;
+            float4 _Sector3Ground;
+            float4 _Sector3Glow;
+            float4 _Sector3Centre;
+            float4 _Sector3Sun;
+            float4 _Sector3Shape;
+            float4 _Sector4Zenith;
+            float4 _Sector4Horizon;
+            float4 _Sector4Ground;
+            float4 _Sector4Glow;
+            float4 _Sector4Centre;
+            float4 _Sector4Sun;
+            float4 _Sector4Shape;
+            float _SectorCount;
+            float _SectorBlend;
+
+            // The weight of one sector at an azimuth, in degrees. Each sector owns the
+            // 90 degrees around its door; the seam is narrow and smooth on both diagonal
+            // construction joints, so two adjacent skies sum to 1 through the corner
+            // yards and the rest of each quarter is that era's own sky.
+            float SectorWeight(float azimuth, float4 centre)
+            {
+                float centreAzimuth = atan2(centre.z, centre.x) * 57.29577951308232;
+                float delta = azimuth - centreAzimuth;
+                delta = frac((delta + 180.0) / 360.0) * 360.0 - 180.0;
+                float distance = abs(delta);
+                float blend = clamp(_SectorBlend, 0.01, 44.0);
+                return 1.0 - smoothstep(45.0 - blend, 45.0 + blend, distance);
+            }
+
+            // One sky's gradient, shared by the single-sky path and the blended sectors.
+            // `dir` is Y-up Unity world space; `ground` is what is below the horizon.
+            float3 SkyGradient(float3 dir, float3 zenith, float3 horizon, float3 ground,
+                               float3 glowColour, float3 sun, float brightness,
+                               float falloff, float glowSize, float glowStrength)
+            {
+                float elevation = dir.y;
+                float3 colour;
+                if (elevation >= 0.0)
+                {
+                    float t = pow(saturate(elevation), falloff);
+                    colour = lerp(horizon, zenith, t);
+                }
+                else
+                {
+                    float t = saturate(-elevation * 3.0);
+                    colour = lerp(horizon, ground, t);
+                }
+
+                float3 sunDir = dot(sun, sun) > 1e-8 ? normalize(sun) : float3(0.0, 1.0, 0.0);
+                float facing = saturate(dot(dir, sunDir));
+                float glow = pow(facing, max(glowSize, 0.5)) * glowStrength
+                             * saturate(1.0 - abs(elevation) * 1.8);
+                colour += glowColour * glow;
+                return colour * brightness;
+            }
 
             v2f vert(appdata v)
             {
@@ -101,37 +207,57 @@ Shader "Project3D/Sky"
             fixed4 frag(v2f i) : SV_Target
             {
                 float3 dir = normalize(i.dir);
-                float elevation = dir.y;
-
-                // Above the horizon: zenith over horizon, blended by a power of the
-                // elevation so the transition can be tight or broad. Below it: the same
-                // horizon colour giving way to the ground, which is the one asymmetric
-                // part -- the water meets the air at a hard line, and there is no such
-                // thing as a ground horizon that fades upward.
                 float3 colour;
-                if (elevation >= 0.0)
+                if (_SectorCount >= 0.5)
                 {
-                    float t = pow(saturate(elevation), _HorizonFalloff);
-                    colour = lerp(_Horizon.rgb, _Zenith.rgb, t);
+                    float azimuth = atan2(dir.z, dir.x) * 57.29577951308232;
+                    float4 weights = float4(0.0, 0.0, 0.0, 0.0);
+                    if (_SectorCount >= 0.5) weights.x = SectorWeight(azimuth, _Sector1Centre);
+                    if (_SectorCount >= 1.5) weights.y = SectorWeight(azimuth, _Sector2Centre);
+                    if (_SectorCount >= 2.5) weights.z = SectorWeight(azimuth, _Sector3Centre);
+                    if (_SectorCount >= 3.5) weights.w = SectorWeight(azimuth, _Sector4Centre);
+                    float total = weights.x + weights.y + weights.z + weights.w;
+                    if (total < 1e-4)
+                    {
+                        weights = float4(1.0, 0.0, 0.0, 0.0);
+                        total = 1.0;
+                    }
+                    weights /= total;
+
+                    // Evaluate each complete sky, then blend the *finished* colours.
+                    // Blending the parameters would blend the four sun directions into one
+                    // that belongs to none of them -- a false sun on every diagonal seam.
+                    // A quarter is an hour, and an hour includes where its light comes from.
+                    float3 colour1 = SkyGradient(dir, _Sector1Zenith.rgb, _Sector1Horizon.rgb,
+                                                 _Sector1Ground.rgb, _Sector1Glow.rgb,
+                                                 _Sector1Sun.xyz, _Sector1Shape.x,
+                                                 _Sector1Shape.y, _Sector1Shape.z,
+                                                 _Sector1Shape.w);
+                    float3 colour2 = SkyGradient(dir, _Sector2Zenith.rgb, _Sector2Horizon.rgb,
+                                                 _Sector2Ground.rgb, _Sector2Glow.rgb,
+                                                 _Sector2Sun.xyz, _Sector2Shape.x,
+                                                 _Sector2Shape.y, _Sector2Shape.z,
+                                                 _Sector2Shape.w);
+                    float3 colour3 = SkyGradient(dir, _Sector3Zenith.rgb, _Sector3Horizon.rgb,
+                                                 _Sector3Ground.rgb, _Sector3Glow.rgb,
+                                                 _Sector3Sun.xyz, _Sector3Shape.x,
+                                                 _Sector3Shape.y, _Sector3Shape.z,
+                                                 _Sector3Shape.w);
+                    float3 colour4 = SkyGradient(dir, _Sector4Zenith.rgb, _Sector4Horizon.rgb,
+                                                 _Sector4Ground.rgb, _Sector4Glow.rgb,
+                                                 _Sector4Sun.xyz, _Sector4Shape.x,
+                                                 _Sector4Shape.y, _Sector4Shape.z,
+                                                 _Sector4Shape.w);
+                    colour = colour1 * weights.x + colour2 * weights.y
+                           + colour3 * weights.z + colour4 * weights.w;
                 }
                 else
                 {
-                    float t = saturate(-elevation * 3.0);
-                    colour = lerp(_Horizon.rgb, _Ground.rgb, t);
+                    colour = SkyGradient(dir, _Zenith.rgb, _Horizon.rgb, _Ground.rgb,
+                                         _SunGlow.rgb, _SunDir.xyz, _Brightness,
+                                         _HorizonFalloff, _SunGlowSize, _SunGlowStrength);
                 }
-
-                // The sun lobe. Squared cosine rather than a bare power, so the falloff is
-                // smooth away from the disk instead of a cone with a visible edge. Faded
-                // out with elevation so it is a *horizon* glow: the same lobe overhead
-                // would be a bright patch in the middle of the sky, which is a noon, not
-                // a dawn.
-                float3 sun = normalize(_SunDir.xyz);
-                float facing = saturate(dot(dir, sun));
-                float glow = pow(facing, _SunGlowSize) * _SunGlowStrength
-                             * saturate(1.0 - abs(elevation) * 1.8);
-                colour += _SunGlow.rgb * glow;
-
-                return fixed4(colour * _Brightness, 1.0);
+                return fixed4(colour, 1.0);
             }
             ENDCG
         }
