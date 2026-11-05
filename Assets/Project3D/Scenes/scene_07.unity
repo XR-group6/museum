@@ -3061,6 +3061,9 @@ MonoBehaviour:
   deadzone: 0.2
   lastAxis: {x: 0, y: 0}
   inputBound: 0
+  snapTurn: 1
+  snapDegrees: 15
+  snapThreshold: 0.7
 --- !u!143 &1105104669
 CharacterController:
   m_ObjectHideFlags: 0

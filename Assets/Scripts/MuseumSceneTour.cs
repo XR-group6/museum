@@ -50,6 +50,9 @@ public sealed class MuseumSceneTour : MonoBehaviour
             rig.position += forward * explorationSpawnForward;
             if (bodyEnabled) body.enabled = true;
         }
+        // Scene seven uses discrete turns; release to the deadzone before turning again.
+        turning.snapTurn = true;
+        turning.snapDegrees = 15f;
         movement.enabled = turning.enabled = true;
         ExplorationStarted = true;
         Debug.Log("[Museum tour] Scene 7 exploration enabled after " + holdSeconds + " seconds.", this);
@@ -72,9 +75,9 @@ public sealed class MuseumSceneTour : MonoBehaviour
             explorationHint.transform.SetParent(transform, false);
             explorationHint.followCamera = true;
             explorationHint.cameraOffset = new Vector3(0, 0.35f, 2);
-            string movementHint = explorationHintText.Replace(PermitHint, "").Trim();
+            string movementHint = "使用左摇杆移动。向左或向右拨动右摇杆，每次转向15度；松开回中后可再次转向。";
             explorationHint.ShowBilingualText(movementHint,
-                "Use the left stick to move and the right stick to turn. Turn slowly to avoid discomfort.");
+                "Use the left stick to move. Push the right stick left or right to turn 15 degrees. Release to center before turning again.");
             CreateSofaHint();
             yield return new WaitForSecondsRealtime(explorationHintSeconds);
             if (explorationHint) Destroy(explorationHint.gameObject);
