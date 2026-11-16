@@ -1,0 +1,6 @@
+{
+    "name": "PandaShader.Editor",
+    "includePlatforms": [
+        "Editor"
+    ]
+}

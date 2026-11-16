@@ -33,6 +33,10 @@ public sealed class MuseumJourney : MonoBehaviour
     public Vector3 roomCentre = new Vector3(0, .116f, 3.17f);
     public GameObject blackEnvironment;
     public GameObject[] oceanSurfaces = new GameObject[0];
+    [Tooltip("Props that must stay visible during the black opening. Their renderers are never hidden by PrepareOcean.")]
+    public Transform[] alwaysVisible = new Transform[0];
+    [Tooltip("预览用：进 Play 直接播放 oceanTimeline（TL_scene06_01），并跳过黑场/香炉交互接管。正式演出或交作业前请把这个勾去掉。")]
+    public bool previewTimelineOnEnter = false;
     public bool WaitingForCenser { get; private set; }
     public int ActiveEra { get; private set; } = -1;
     public bool OceanRevealed { get; private set; }
@@ -83,6 +87,25 @@ public sealed class MuseumJourney : MonoBehaviour
     {
         sceneName = gameObject.scene.name;
         tour = SceneObjects<MuseumSceneTour>().FirstOrDefault();
+        if (previewTimelineOnEnter)
+        {
+            // Preview path: hand the scene back to the authored Timeline and skip
+            // every takeover below, so the animation plays as soon as Play starts.
+            var preview = oceanTimeline ? oceanTimeline : SceneObjects<PlayableDirector>().FirstOrDefault(d => d.playableAsset);
+            Debug.LogWarning("[Museum] 预览模式开着：TL_scene06_01 会自动播放，香炉交互/字幕/视频点击/白光返航全部被跳过。" +
+                "交作业或正式演示前，请在 Museum journey 上取消勾选 Preview Timeline On Enter。", this);
+            foreach (var fader in SceneObjects<LightGroupFader>()) fader.enabled = false;
+            if (preview)
+            {
+                preview.playOnAwake = true;
+                preview.enabled = true;
+                preview.Stop();
+                preview.time = 0;
+                preview.Play();
+            }
+            enabled = false;
+            return;
+        }
         if (sceneName == "scene_07") return;
         foreach (var oldTour in SceneObjects<MuseumSceneTour>()) oldTour.enabled = false;
         if (sceneName == "scene_04_01") return;
@@ -254,6 +277,16 @@ public sealed class MuseumJourney : MonoBehaviour
         if (wasEnabled) body.enabled = true;
     }
 
+    // Props listed in alwaysVisible are excluded from the black opening, so an
+    // authored prop keeps rendering instead of vanishing on the first frame.
+    bool IsAlwaysVisible(Transform target)
+    {
+        if (alwaysVisible == null) return false;
+        foreach (var anchor in alwaysVisible)
+            if (anchor && target.IsChildOf(anchor)) return true;
+        return false;
+    }
+
     void PrepareOcean()
     {
         if (!oceanTimeline) oceanTimeline = SceneObjects<PlayableDirector>().FirstOrDefault(d => d.playableAsset);
@@ -262,7 +295,8 @@ public sealed class MuseumJourney : MonoBehaviour
         hiddenEnvironment = SceneObjects<Renderer>().Where(r => r.enabled &&
             !r.transform.IsChildOf(censer) && !r.transform.IsChildOf(rig) &&
             (!guideLine || !r.transform.IsChildOf(guideLine)) &&
-            (!blackEnvironment || !r.transform.IsChildOf(blackEnvironment.transform))).ToArray();
+            (!blackEnvironment || !r.transform.IsChildOf(blackEnvironment.transform)) &&
+            !IsAlwaysVisible(r.transform)).ToArray();
         foreach (var renderer in hiddenEnvironment) renderer.enabled = false;
         viewer.clearFlags = CameraClearFlags.SolidColor;
         viewer.backgroundColor = Color.black;
