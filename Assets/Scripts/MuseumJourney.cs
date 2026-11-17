@@ -28,6 +28,7 @@ public sealed class MuseumJourney : MonoBehaviour
     public PlayableDirector oceanTimeline;
     [Min(0)] public float finalRegionSeconds = 10;
     public Transform guideLine;
+    public Transform approachSmoke;
     [Min(.1f)] public float whiteFadeSeconds = 1.5f;
     [Min(0)] public float touchDistance = .025f;
     public Vector3 roomCentre = new Vector3(0, .116f, 3.17f);
@@ -75,12 +76,16 @@ public sealed class MuseumJourney : MonoBehaviour
     Quaternion guideRotation;
     UnityEngine.Video.VideoPlayer[] timelineVideos = new UnityEngine.Video.VideoPlayer[0];
     bool[] videoStarted, videoFinished;
-    Collider[] videoHits;
-    double[] videoReadyAt, videoPlaybackSeconds, videoEntranceAt;
+    BoxCollider[] videoHits;
+    double[] videoReadyAt, videoEntranceAt;
+    BoxCollider[] videoProgressHits;
+    Image[] videoProgressFills;
     bool[] videoPreviewRequested, videoPreviewReady;
     readonly List<Material> videoScreenMaterials = new List<Material>();
     VRSubtitle[] videoHints;
     bool awaitingSail, sailConfirmed;
+    Transform sailBoat;
+    Renderer[] sailBoatRenderers;
 
 
     void Awake()
@@ -295,6 +300,7 @@ public sealed class MuseumJourney : MonoBehaviour
         hiddenEnvironment = SceneObjects<Renderer>().Where(r => r.enabled &&
             !r.transform.IsChildOf(censer) && !r.transform.IsChildOf(rig) &&
             (!guideLine || !r.transform.IsChildOf(guideLine)) &&
+            (!approachSmoke || !r.transform.IsChildOf(approachSmoke)) &&
             (!blackEnvironment || !r.transform.IsChildOf(blackEnvironment.transform)) &&
             !IsAlwaysVisible(r.transform)).ToArray();
         foreach (var renderer in hiddenEnvironment) renderer.enabled = false;
@@ -340,10 +346,11 @@ public sealed class MuseumJourney : MonoBehaviour
         timelineVideos = SceneObjects<UnityEngine.Video.VideoPlayer>();
         videoStarted = new bool[timelineVideos.Length]; videoFinished = new bool[timelineVideos.Length];
         videoReadyAt = new double[timelineVideos.Length];
-        videoPlaybackSeconds = new double[timelineVideos.Length];
+        videoProgressHits = new BoxCollider[timelineVideos.Length];
+        videoProgressFills = new Image[timelineVideos.Length];
         videoEntranceAt = Enumerable.Repeat(double.PositiveInfinity, timelineVideos.Length).ToArray();
         videoPreviewRequested = new bool[timelineVideos.Length]; videoPreviewReady = new bool[timelineVideos.Length];
-        videoHits = new Collider[timelineVideos.Length]; videoHints = new VRSubtitle[timelineVideos.Length];
+        videoHits = new BoxCollider[timelineVideos.Length]; videoHints = new VRSubtitle[timelineVideos.Length];
         foreach (var video in timelineVideos)
         {
             video.Stop(); video.playOnAwake = false; video.isLooping = false;
@@ -371,10 +378,7 @@ public sealed class MuseumJourney : MonoBehaviour
                     var binding = oceanTimeline.GetGenericBinding(track) as GameObject;
                     if (activation && binding && (video.transform == binding.transform || video.transform.IsChildOf(binding.transform)))
                         foreach (var clip in activation.GetClips())
-                        {
-                            videoPlaybackSeconds[index] = System.Math.Max(videoPlaybackSeconds[index], clip.duration);
                             videoEntranceAt[index] = System.Math.Min(videoEntranceAt[index], clip.start);
-                        }
                     var animation = track as AnimationTrack;
                     if (!animation || !animation.infiniteClip) continue;
                     var animator = oceanTimeline.GetGenericBinding(track) as Animator;
@@ -382,7 +386,6 @@ public sealed class MuseumJourney : MonoBehaviour
                         videoReadyAt[index] = System.Math.Max(videoReadyAt[index], animation.infiniteClip.length);
                 }
             var hint = CreateSubtitle(false); videoHints[index] = hint;
-            hint.transform.position = screen.bounds.center + Vector3.up * (screen.bounds.extents.y + .25f);
             hint.subtitleWidth = 1400; hint.fontSize = 34;
             hint.ShowText("");
             // Activation tracks will reveal the screens; the playback loop starts
@@ -392,16 +395,19 @@ public sealed class MuseumJourney : MonoBehaviour
         }
         foreach (var text in SceneObjects<Text>())
             if (!text.GetComponentInParent<VRSubtitle>()) text.gameObject.SetActive(false);
+        for (int i = 0; i < videoHits.Length; i++) CreateVideoProgress(i, videoHits[i]);
         foreach (var item in SceneObjects<Transform>())
-            if (item.name == "slide" || item.name == "Smoke_guide" || item.name == "P_VFX") item.gameObject.SetActive(false);
+            if (item.name == "slide" || item.name == "P_VFX") item.gameObject.SetActive(false);
         // The black shell is a visual cover, not a barrier around the viewer.
         if (blackEnvironment)
             foreach (var collider in blackEnvironment.GetComponentsInChildren<Collider>(true)) collider.enabled = false;
-        MoveRig(new Vector3(censer.position.x, 0, censer.position.z + 2.3f));
-        FaceDirection(censer.position - viewer.transform.position);
+        const float approachHeight = .2f;
+        MoveRig(new Vector3(censer.position.x, approachHeight, censer.position.z + 2.3f));
+        Vector3 approachDirection = Vector3.ProjectOnPlane(censer.position - viewer.transform.position, Vector3.up);
+        FaceDirection(approachDirection);
         var floor = new GameObject("Journey approach floor");
         floor.transform.SetParent(transform, false);
-        floor.transform.position = new Vector3(censer.position.x, -.06f, censer.position.z);
+        floor.transform.position = new Vector3(censer.position.x, approachHeight - .06f, censer.position.z);
         var ground = floor.AddComponent<BoxCollider>(); ground.size = new Vector3(12, .1f, 12);
         if (!movement)
         {
@@ -413,7 +419,10 @@ public sealed class MuseumJourney : MonoBehaviour
                 .FirstOrDefault(p => p.inputSource == SteamVR_Input_Sources.LeftHand);
             rig.gameObject.SetActive(true);
         }
-        movement.forwardOnly = false; movement.forwardBackwardOnly = true; movement.enabled = true;
+        movement.forwardOnly = false;
+        movement.forwardBackwardOnly = true;
+        movement.ForwardDirectionOverride = approachDirection;
+        movement.enabled = true;
         if (turning) turning.enabled = false;
         var body = rig.GetComponent<CharacterController>();
         body.radius = .2f; body.skinWidth = .02f; body.minMoveDistance = 0;
@@ -424,7 +433,11 @@ public sealed class MuseumJourney : MonoBehaviour
 
     void Update()
     {
-        if (ShowingExplorationChoice) { UpdateExplorationChoice(); return; }
+        if (ShowingExplorationChoice)
+        {
+            if (!awaitingSail) UpdateExplorationChoice();
+            return;
+        }
         if (!WaitingForCenser || !rightHand || !rightHand.isActiveAndEnabled || !rightHand.isValid || trigger == null) return;
         TryGrab(rightHand.transform.position, trigger.GetStateDown(SteamVR_Input_Sources.RightHand));
     }
@@ -516,9 +529,10 @@ public sealed class MuseumJourney : MonoBehaviour
 
     void ProcessExplorationChoice(Ray ray, bool pressed, bool draw)
     {
+        float reach = awaitingSail ? Mathf.Max(5f, Vector3.Distance(ray.origin, finishHit.transform.position) + 1f) : 5f;
         RaycastHit hit; Vector3 end = ray.GetPoint(5); bool hovered = false, finish = false;
-        if (finishHit.Raycast(ray, out hit, 5)) { hovered = finish = true; end = hit.point; finishImage.color = new Color(.2f, .65f, .55f); }
-        else if (continueHit && continueHit.Raycast(ray, out hit, 5)) { hovered = true; end = hit.point; continueImage.color = new Color(.2f, .65f, .55f); }
+        if (finishHit.Raycast(ray, out hit, reach)) { hovered = finish = true; end = hit.point; finishImage.color = new Color(.2f, .65f, .55f); }
+        else if (continueHit && continueHit.Raycast(ray, out hit, reach)) { hovered = true; end = hit.point; continueImage.color = new Color(.2f, .65f, .55f); }
         if (draw)
         {
             confirmationPointer.enabled = true; confirmationPointer.SetPosition(0, ray.origin); confirmationPointer.SetPosition(1, end);
@@ -584,14 +598,15 @@ public sealed class MuseumJourney : MonoBehaviour
         }
         // Hold and evaluate the actual final frame before beginning the whiteout.
         oceanTimeline.Pause();
-        if (!videoFinished.All(finished => finished))
-        {
-            oceanTimeline.time = duration;
-            oceanTimeline.Evaluate();
-        }
+        oceanTimeline.time = duration;
+        oceanTimeline.Evaluate();
         // Every clip must actually finish, even if its authored activation window was missed.
         for (int i = 0; i < timelineVideos.Length; i++)
-            if (timelineVideos[i] && !videoFinished[i]) timelineVideos[i].gameObject.SetActive(true);
+            if (timelineVideos[i] && !videoFinished[i])
+            {
+                videoReadyAt[i] = System.Math.Min(videoReadyAt[i], duration);
+                timelineVideos[i].gameObject.SetActive(true);
+            }
         yield return InteractWithVideos();
         foreach (var video in timelineVideos) if (video) video.Pause();
         ShowSailChoice();
@@ -631,6 +646,38 @@ public sealed class MuseumJourney : MonoBehaviour
         if (index >= 0) videoFinished[index] = true;
     }
 
+    void CreateVideoProgress(int index, BoxCollider screen)
+    {
+        var progress = new GameObject("Video progress", typeof(RectTransform), typeof(Canvas),
+            typeof(Image), typeof(BoxCollider));
+        progress.transform.SetParent(screen.transform, false);
+        var rect = progress.GetComponent<RectTransform>();
+        float height = screen.size.y * .065f;
+        rect.sizeDelta = new Vector2(screen.size.x * .9f, height);
+        float gap = height * .35f;
+        rect.localPosition = screen.center + new Vector3(0, (screen.size.y + height) * .5f + gap, -screen.size.z);
+        var canvas = progress.GetComponent<Canvas>();
+        canvas.renderMode = RenderMode.WorldSpace;
+        canvas.worldCamera = viewer;
+        var background = progress.GetComponent<Image>();
+        background.color = new Color(.12f, .15f, .18f);
+        background.raycastTarget = false;
+        var hit = progress.GetComponent<BoxCollider>();
+        hit.size = new Vector3(rect.sizeDelta.x, height, .01f);
+        hit.isTrigger = true;
+        videoProgressHits[index] = hit;
+
+        var fill = new GameObject("Played", typeof(RectTransform), typeof(Image)).GetComponent<Image>();
+        fill.transform.SetParent(progress.transform, false);
+        fill.rectTransform.anchorMin = Vector2.zero;
+        fill.rectTransform.anchorMax = Vector2.up;
+        fill.rectTransform.offsetMin = fill.rectTransform.offsetMax = Vector2.zero;
+        fill.color = new Color(.2f, .85f, .7f);
+        fill.raycastTarget = false;
+        videoProgressFills[index] = fill;
+        progress.SetActive(false);
+    }
+
     IEnumerator InteractWithVideos()
     {
         bool pending = false;
@@ -645,32 +692,70 @@ public sealed class MuseumJourney : MonoBehaviour
             pending = false;
             bool tracked = rightHand && rightHand.isActiveAndEnabled && rightHand.isValid && trigger != null;
             var ray = tracked ? new Ray(rightHand.transform.position, rightHand.transform.forward) : new Ray();
-            int selected = -1; float nearest = 5f; Vector3 end = ray.GetPoint(5);
+            bool mousePressed = Application.isEditor && Input.GetMouseButtonDown(0);
+            var aim = mousePressed ? viewer.ScreenPointToRay(Input.mousePosition) : ray;
+            int selected = -1;
+            float nearest = 20f;
+            Vector3 end = ray.GetPoint(nearest);
+            double seek = -1;
             for (int i = 0; i < timelineVideos.Length; i++)
             {
                 var video = timelineVideos[i];
-                if (!video || !video.isActiveAndEnabled || videoFinished[i] || oceanTimeline.time + .0001 < videoReadyAt[i]) continue;
-                if (videoStarted[i] && video.time >= videoPlaybackSeconds[i] && videoPlaybackSeconds[i] > 0)
-                { video.Pause(); videoFinished[i] = true; videoHints[i].ShowText(""); continue; }
+                var progress = videoProgressHits[i];
+                bool available = video && video.isActiveAndEnabled && !videoFinished[i] &&
+                    oceanTimeline.time + .0001 >= videoReadyAt[i];
+                progress.gameObject.SetActive(available);
+                if (!available) continue;
                 pending = true;
-                var screen = video.targetMaterialRenderer ? video.targetMaterialRenderer : video.GetComponent<Renderer>();
                 OrientVideo(i);
-                Physics.SyncTransforms();
+                double length = video.length;
+                videoProgressFills[i].rectTransform.anchorMax = new Vector2(
+                    length > 0 ? Mathf.Clamp01((float)(video.time / length)) : 0, 1);
                 if (!videoStarted[i])
                 {
-                    videoHints[i].ShowBilingualText("用右摇杆激光点击视频开始播放", "Point the right controller laser at the video and press the trigger to play.");
-                    RaycastHit hit;
-                    if (tracked && videoHits[i].Raycast(ray, out hit, nearest)) { selected = i; nearest = hit.distance; end = hit.point; }
-                    if (Application.isEditor && Input.GetMouseButtonDown(0) && videoHits[i].Raycast(viewer.ScreenPointToRay(Input.mousePosition), out hit, 20)) StartVideo(i);
+                    videoHints[i].ShowBilingualText(
+                        "用右手柄激光点击视频播放，点击进度条跳转",
+                        "Use the right controller laser to play the video or jump to a point on the progress bar.");
                 }
                 else videoHints[i].ShowText("");
             }
+            if (tracked || mousePressed)
+            {
+                Physics.SyncTransforms();
+                for (int i = 0; i < timelineVideos.Length; i++)
+                {
+                    var progress = videoProgressHits[i];
+                    if (!progress.gameObject.activeInHierarchy) continue;
+                    var video = timelineVideos[i];
+                    if (video.isPrepared && video.canSetTime && video.length > 0 &&
+                        progress.Raycast(aim, out var hit, nearest))
+                    {
+                        selected = i; nearest = hit.distance; end = hit.point;
+                        float x = progress.transform.InverseTransformPoint(hit.point).x;
+                        seek = Mathf.Clamp01(x / progress.size.x + .5f) * video.length;
+                    }
+                    if (!videoStarted[i] && video.isPrepared && videoHits[i].Raycast(aim, out hit, nearest))
+                    {
+                        selected = i; nearest = hit.distance; end = hit.point; seek = -1;
+                    }
+                }
+                if (selected >= 0 && (mousePressed || trigger.GetStateDown(SteamVR_Input_Sources.RightHand)))
+                {
+                    var video = timelineVideos[selected];
+                    if (seek >= 0)
+                    {
+                        // Leave a decodable frame before the end so playback can signal completion.
+                        double lastFrameTime = System.Math.Max(0, video.length - 1.0 / System.Math.Max(1, video.frameRate));
+                        video.time = System.Math.Min(seek, lastFrameTime);
+                    }
+                    if (!videoStarted[selected]) StartVideo(selected);
+                }
+            }
             confirmationPointer.enabled = tracked && pending;
-            if (tracked)
+            if (tracked && !mousePressed)
             {
                 confirmationPointer.SetPosition(0, ray.origin); confirmationPointer.SetPosition(1, end);
                 confirmationPointer.startColor = confirmationPointer.endColor = selected >= 0 ? Color.green : Color.white;
-                if (selected >= 0 && trigger.GetStateDown(SteamVR_Input_Sources.RightHand)) StartVideo(selected);
             }
             yield return null;
         }
@@ -696,6 +781,12 @@ public sealed class MuseumJourney : MonoBehaviour
     void LateUpdate()
     {
         if (sceneName != "scene_06_01" || !viewer || videoReadyAt == null) return;
+        if (awaitingSail && ShowingExplorationChoice)
+        {
+            PositionSailChoice();
+            Physics.SyncTransforms();
+            UpdateExplorationChoice();
+        }
         for (int i = 0; i < timelineVideos.Length; i++)
         {
             var video = timelineVideos[i];
@@ -723,19 +814,21 @@ public sealed class MuseumJourney : MonoBehaviour
         }
         if (videoHints[index])
         {
-            videoHints[index].transform.position = screen.bounds.center + Vector3.up * (screen.bounds.extents.y + .25f);
+            var progress = videoProgressHits[index];
+            Vector3 progressTop = progress.transform.TransformPoint(Vector3.up * (progress.size.y * .5f));
+            videoHints[index].transform.position = progressTop + Vector3.up * .25f;
             videoHints[index].vrCamera = viewer;
         }
     }
 
     void StartVideo(int index)
     {
-        if (videoStarted[index] || !videoPreviewReady[index]) return;
-        videoStarted[index] = true;
         var video = timelineVideos[index];
+        if (videoStarted[index] || !video.isPrepared) return;
+        videoStarted[index] = true;
         video.sendFrameReadyEvents = false;
         for (ushort track = 0; track < video.controlledAudioTrackCount; track++) video.SetDirectAudioMute(track, false);
-        video.time = 0; video.Play();
+        video.Play();
         videoHints[index].ShowText("");
     }
 
@@ -754,25 +847,10 @@ public sealed class MuseumJourney : MonoBehaviour
         awaitingSail = true;
         explorationChoice = new GameObject("Sail to museum", typeof(RectTransform), typeof(Canvas));
         explorationChoice.transform.SetParent(transform, false);
-        var boat = SceneObjects<Transform>().FirstOrDefault(t => t.name == "fishing_boat");
-        if (!boat) { Fail("Fishing boat missing for return button"); Destroy(explorationChoice); return; }
-        var renderers = boat.GetComponentsInChildren<Renderer>();
-        Bounds bounds = new Bounds(boat.position, Vector3.zero);
-        if (renderers.Length > 0)
-        {
-            bounds = renderers[0].bounds;
-            foreach (var renderer in renderers) bounds.Encapsulate(renderer.bounds);
-        }
-        // Keep the return button in the clear space between the viewer and
-        // the near side of the boat, biased toward the boat for visibility.
-        Vector3 nearBoat = bounds.ClosestPoint(viewer.transform.position);
-        Vector3 anchor = Vector3.Lerp(viewer.transform.position, nearBoat, .95f);
-        anchor.y = viewer.transform.position.y - .2f;
-        explorationChoice.transform.position = anchor;
-        Vector3 facing = anchor - viewer.transform.position;
-        explorationChoice.transform.rotation = facing.sqrMagnitude > .001f
-            ? Quaternion.LookRotation(facing, Vector3.up) : viewer.transform.rotation;
-        explorationChoice.transform.localScale = Vector3.one * .0015f;
+        explorationChoice.transform.position = viewer.transform.TransformPoint(new Vector3(0, -.2f, 1.65f));
+        sailBoat = SceneObjects<Transform>().FirstOrDefault(item => item.name == "fishing_boat");
+        if (sailBoat) sailBoatRenderers = sailBoat.GetComponentsInChildren<Renderer>();
+        PositionSailChoice();
         var canvas = explorationChoice.GetComponent<Canvas>(); canvas.renderMode = RenderMode.WorldSpace;
         canvas.worldCamera = viewer; canvas.sortingOrder = 200;
         confirmationFont = Font.CreateDynamicFontFromOSFont(new[] { "Microsoft YaHei", "SimHei", "Arial" }, 42);
@@ -781,7 +859,27 @@ public sealed class MuseumJourney : MonoBehaviour
         finishHit.GetComponent<RectTransform>().sizeDelta = new Vector2(600, 110);
         finishHit.size = new Vector3(600, 110, 16);
         var label = finishHit.GetComponentInChildren<Text>(); label.rectTransform.sizeDelta = new Vector2(600, 110);
+        fadeMaterial = new Material(coverShader ? coverShader : Shader.Find("TeamPrototype/LanguagePanelUI"));
+        finishImage.material = label.material = fadeMaterial;
+        Physics.SyncTransforms();
         EnsureVideoPointer();
+    }
+
+    void PositionSailChoice()
+    {
+        Vector3 eye = viewer.transform.position;
+        var panel = explorationChoice.transform;
+        if (sailBoat)
+        {
+            var hull = sailBoatRenderers.Length > 0 ? sailBoatRenderers[0].bounds : new Bounds(sailBoat.position, Vector3.zero);
+            for (int i = 1; i < sailBoatRenderers.Length; i++) hull.Encapsulate(sailBoatRenderers[i].bounds);
+            Vector3 nearHull = hull.Contains(eye) ? hull.center : hull.ClosestPoint(eye);
+            float separation = Vector3.Distance(nearHull, eye);
+            panel.position = Vector3.MoveTowards(nearHull, eye, Mathf.Min(.35f, separation * .2f));
+        }
+        Vector3 away = panel.position - eye;
+        if (away.sqrMagnitude > .001f) panel.rotation = Quaternion.LookRotation(away, Vector3.up);
+        panel.localScale = Vector3.one * Mathf.Max(.0015f, away.magnitude * .0002f);
     }
 
     void CreateWhiteCover(Color initial, string objectName)
@@ -794,7 +892,6 @@ public sealed class MuseumJourney : MonoBehaviour
         var canvas = cover.GetComponent<Canvas>(); canvas.renderMode = RenderMode.WorldSpace;
         canvas.worldCamera = viewer; canvas.sortingOrder = 1000;
         fadeImage = cover.AddComponent<Image>(); fadeImage.raycastTarget = false;
-        fadeMaterial = new Material(coverShader ? coverShader : Shader.Find("TeamPrototype/JourneyCover"));
         fadeImage.material = fadeMaterial; fadeImage.color = initial;
     }
 

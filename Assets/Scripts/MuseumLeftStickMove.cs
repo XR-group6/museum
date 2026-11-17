@@ -13,6 +13,7 @@ public class MuseumLeftStickMove : MonoBehaviour
     [Tooltip("Only allow forward input, used when approaching the censer in the final scene.")]
     public bool forwardOnly;
     public bool forwardBackwardOnly;
+    public Vector3 ForwardDirectionOverride { get; set; }
     private CharacterController body;
     private SteamVR_Action_Vector2 move;
     [Min(0)] public float gravity = 9.81f;
@@ -60,7 +61,8 @@ public class MuseumLeftStickMove : MonoBehaviour
         body.center = new Vector3(localHead.x, body.height * 0.5f, localHead.z);
         if (body.isGrounded && verticalSpeed < 0) verticalSpeed = -0.5f;
         verticalSpeed = Mathf.Max(verticalSpeed - gravity * deltaTime, -20f);
-        var flags = body.Move((CalculateVelocity(axis, headset.forward, speed, deadzone) + Vector3.up * verticalSpeed) * deltaTime);
+        Vector3 forward = ForwardDirectionOverride == Vector3.zero ? headset.forward : ForwardDirectionOverride;
+        var flags = body.Move((CalculateVelocity(axis, forward, speed, deadzone) + Vector3.up * verticalSpeed) * deltaTime);
         if ((flags & CollisionFlags.Below) != 0) verticalSpeed = -0.5f;
     }
 
