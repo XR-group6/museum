@@ -1,0 +1,21 @@
+{
+    "scene": "scene_05",
+    "kind": "check",
+    "stamp": "20261118-230615",
+    "dry_run": false,
+    "applied": true,
+    "findings": [
+        {
+            "name": "rowhouse_1960",
+            "kind": "mesh-changed",
+            "detail": "mesh 'rowhouse_1960' is missing"
+        }
+    ],
+    "restored": [
+        {
+            "name": "rowhouse_1960",
+            "kind": "restored",
+            "detail": "the mesh would not heal; the whole object was replaced."
+        }
+    ]
+}

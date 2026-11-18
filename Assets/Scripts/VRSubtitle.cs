@@ -101,6 +101,12 @@ public class VRSubtitle : MonoBehaviour
 
     void LateUpdate()
     {
+        UpdatePose();
+    }
+
+    // Late-moving story cameras can refresh the panel after positioning the viewer.
+    public void UpdatePose()
+    {
         if (!canvas) return;
 #if UNITY_EDITOR
         if (EditorApplication.timeSinceStartup >= nextRefresh)

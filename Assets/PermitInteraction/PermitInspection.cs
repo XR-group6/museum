@@ -10,6 +10,10 @@ public sealed class PermitInspection : MonoBehaviour
     public Collider tableCollider;
     public SoftInteractionHighlight tableGlow;
     public MuseumSceneTour tour;
+    public Scene05HomecomingStory homecoming;
+    public event System.Action ReadAndReturned;
+    public float RequiredReadSeconds = 3;
+    float unfoldedSeconds;
     public Camera viewer;
     public float nearbyDistance = .35f;
     public bool IsOpen { get; private set; }
@@ -33,7 +37,7 @@ public sealed class PermitInspection : MonoBehaviour
     int previewLayer;
     Camera[] maskedCameras; int[] oldMasks;
     Light[] maskedLights; int[] oldLightMasks;
-    public bool Ready => tour && tour.ExplorationStarted;
+    public bool Ready => homecoming ? homecoming.ExplorationStarted : tour && tour.ExplorationStarted;
     public int TriggerConsumedFrame { get; private set; } = -1;
 
     public bool OwnsTrigger(Ray ray)
@@ -73,7 +77,8 @@ public sealed class PermitInspection : MonoBehaviour
     void Update()
     {
         if(pointer) pointer.enabled=false;
-        if(!Ready || !Viewer()) {if(IsOpen) Close();return;}
+        if(!Ready || !Viewer()) {if(IsOpen) CloseInspection(false);return;}
+        if(IsOpen && IsUnfolded) unfoldedSeconds += Time.unscaledDeltaTime;
         bool tracked=hand && hand.isActiveAndEnabled && hand.isValid && trigger!=null;
         if(tracked) {
             var ray=new Ray(hand.transform.position,hand.transform.forward);
@@ -147,7 +152,7 @@ public sealed class PermitInspection : MonoBehaviour
         // New scene lighting must not darken or tint the isolated document preview.
         maskedLights=FindObjectsOfType<Light>();oldLightMasks=new int[maskedLights.Length];
         for(int i=0;i<maskedLights.Length;i++){oldLightMasks[i]=maskedLights[i].cullingMask;maskedLights[i].cullingMask &= ~(1<<previewLayer);}
-        movement=tour?tour.movement:null;turning=tour?tour.turning:null;
+        movement=homecoming?homecoming.movement:tour?tour.movement:null;turning=homecoming?homecoming.turning:tour?tour.turning:null;
         restoreMove=movement && movement.enabled;restoreTurn=turning && turning.enabled;
         if(movement) movement.enabled=false;if(turning) turning.enabled=false;
         container=new GameObject("PreviewCameraContainer");container.transform.position=new Vector3(0,-1000,0);
@@ -159,7 +164,7 @@ public sealed class PermitInspection : MonoBehaviour
         previewCamera.nearClipPlane=.05f;previewCamera.farClipPlane=8;previewCamera.cullingMask=1<<previewLayer;
         previewCamera.clearFlags=CameraClearFlags.SolidColor;previewCamera.backgroundColor=Color.clear;previewCamera.stereoTargetEye=StereoTargetEyeMask.None;
         texture=new RenderTexture(1024,1024,24,RenderTextureFormat.ARGB32);texture.Create();previewCamera.targetTexture=texture;
-        IsOpen=true;IsUnfolded=false;BuildPanel();BuildClone();
+        IsOpen=true;IsUnfolded=false;unfoldedSeconds=0;BuildPanel();BuildClone();
         if(tableModel) tableModel.gameObject.SetActive(false);
     }
     void PreviewLight(string name,Quaternion rotation,float intensity)
@@ -220,15 +225,18 @@ public sealed class PermitInspection : MonoBehaviour
     }
     void RefreshText() {
         if(!title) return;bool en=SubtitleLanguage.English;
-        title.text=en?"Travel permit · Narrative reconstruction":"入台证 · 叙事重构道具";
+        title.text=homecoming?(en?"Taiwan Compatriot Travel Certificate · Narrative prop":"台湾同胞旅行证明 · 叙事重构道具"):(en?"Travel permit · Narrative reconstruction":"入台证 · 叙事重构道具");
         instruction.text=en?"Aim at the document; hold the right trigger and rotate your controller":"指向证件，按住右手扳机并转动手柄查看";
+        if(homecoming) instruction.text=en?"Unfold and read, then return to the table. Hold the trigger to rotate.":"展开阅读后，选择放回桌面。按住右手扳机可转动查看。";
         toggleLabel.text=IsUnfolded?(en?"Fold":"合拢"):(en?"Unfold":"展开");closeLabel.text=en?"Return to table":"放回桌面";
     }
     public void ToggleFold() {if(!IsOpen)return;IsUnfolded=!IsUnfolded;rotating=false;BuildClone();RefreshText();}
     public void SetPreviewRotation(Quaternion rotation) {if(pivot)pivot.transform.localRotation=rotation;}
     public void RenderPreview() {if(previewCamera){Canvas.ForceUpdateCanvases();previewCamera.Render();}}
-    public void Close() {
+    public void Close() { CloseInspection(true); }
+    void CloseInspection(bool returnedByUser) {
         if(!IsOpen) return;IsOpen=false;IsUnfolded=false;rotating=mouseDragging=false;
+        bool read = unfoldedSeconds >= RequiredReadSeconds;
         if(tableModel)tableModel.gameObject.SetActive(true);if(tableGlow)tableGlow.SetNearby(false);
         if(previewCamera)previewCamera.targetTexture=null;
         if(texture){texture.Release();Dispose(texture);}if(panel){panel.SetActive(false);Dispose(panel);}if(container){container.SetActive(false);Dispose(container);}
@@ -236,8 +244,9 @@ public sealed class PermitInspection : MonoBehaviour
         if(maskedLights!=null)for(int i=0;i<maskedLights.Length;i++)if(maskedLights[i])maskedLights[i].cullingMask=oldLightMasks[i];
         if(movement && restoreMove)movement.enabled=true;if(turning && restoreTurn)turning.enabled=true;
         if(font)Dispose(font);if(uiMaterial)Dispose(uiMaterial);if(composite)Dispose(composite);
+        if(returnedByUser && read) ReadAndReturned?.Invoke();
     }
-    void OnDisable() {SubtitleLanguage.Changed-=RefreshText;Close();if(pointer)pointer.enabled=false;}
+    void OnDisable() {SubtitleLanguage.Changed-=RefreshText;CloseInspection(false);if(pointer)pointer.enabled=false;}
     void OnDestroy() {if(pointerMaterial)Dispose(pointerMaterial);}
     static void Dispose(Object obj) {if(Application.isPlaying)Destroy(obj);else DestroyImmediate(obj);}
 }

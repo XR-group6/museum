@@ -249,7 +249,9 @@ public sealed class MuseumJourney : MonoBehaviour
         roomTimeline.extrapolationMode = DirectorWrapMode.Hold;
         roomTimeline.Evaluate();
         roomTimeline.Play();
-        while (FinalRegionLitAt < 0 || Time.realtimeSinceStartupAsDouble - FinalRegionLitAt < finalRegionSeconds)
+        var harborStory = roomTimeline.GetComponent<Scene04HarborStory>();
+        while (FinalRegionLitAt < 0 || Time.realtimeSinceStartupAsDouble - FinalRegionLitAt < finalRegionSeconds ||
+               (harborStory && roomTimeline.time < harborStory.EndTime))
         {
             ActiveEra = -1;
             for (int i = 0; i < eraLights.Length; i++)
