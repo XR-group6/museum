@@ -1,4 +1,4 @@
-%YAML 1.1
+﻿%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!29 &1
 OcclusionCullingSettings:
@@ -637,7 +637,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171025493}
-  m_Text: 
+  m_Text: "\u5973\u513F\uFF1A\u7238\u3001\u5988\uFF0C\u6211\u4E0A\u73ED\u53BB\u4E86\u3002"
   m_OffsetZ: 0
   m_CharacterSize: 0.014
   m_LineSpacing: 1
@@ -10850,19 +10850,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4789705388229728840, guid: 3cacd06563903f54481f31ac4978f5a5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9845793
       objectReference: {fileID: 0}
     - target: {fileID: 4789705388229728840, guid: 3cacd06563903f54481f31ac4978f5a5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.011725505
       objectReference: {fileID: 0}
     - target: {fileID: 4789705388229728840, guid: 3cacd06563903f54481f31ac4978f5a5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.17453271
       objectReference: {fileID: 0}
     - target: {fileID: 4789705388229728840, guid: 3cacd06563903f54481f31ac4978f5a5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.0020785367
       objectReference: {fileID: 0}
     - target: {fileID: 7949929400839858277, guid: 3cacd06563903f54481f31ac4978f5a5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10878,7 +10878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7949929400839858277, guid: 3cacd06563903f54481f31ac4978f5a5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7071068
+      value: -0.9659259
       objectReference: {fileID: 0}
     - target: {fileID: 7949929400839858277, guid: 3cacd06563903f54481f31ac4978f5a5, type: 3}
       propertyPath: m_LocalRotation.x
@@ -10886,7 +10886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7949929400839858277, guid: 3cacd06563903f54481f31ac4978f5a5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: -0.25881907
       objectReference: {fileID: 0}
     - target: {fileID: 7949929400839858277, guid: 3cacd06563903f54481f31ac4978f5a5, type: 3}
       propertyPath: m_LocalRotation.z
@@ -14932,7 +14932,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: f608f521a4b0d684a914ffa5508fb824, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -15065,9 +15065,9 @@ MonoBehaviour:
   scene03: {fileID: 1849503459}
   scene04: {fileID: 1849503460}
   eyeLift: 0.035
-  scene02TurnDegrees: 70
-  scene03TurnDegrees: -146
-  scene04TurnDegrees: -144
+  scene02TurnDegrees: -110
+  scene03TurnDegrees: 34
+  scene04TurnDegrees: 36
 --- !u!114 &1849503458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15089,9 +15089,9 @@ MonoBehaviour:
   director: {fileID: 1849503453}
   startTime: 37.2333333333333
   duration: 18
-  daughterVoice: {fileID: 0}
-  fatherVoice: {fileID: 0}
-  burnerVoice: {fileID: 0}
+  daughterVoice: {fileID: 8300000, guid: 6e429c3f2d3f3b844a713e9d3e2f1dff, type: 3}
+  fatherVoice: {fileID: 8300000, guid: 4a66293df9eea1f4094a6a2afdbb348b, type: 3}
+  burnerVoice: {fileID: 8300000, guid: 8f6e8e4dbe345794b88eefc75746a4e6, type: 3}
   exitLocalPosition: {x: -9.0375, y: 0.14500174, z: -1.1854998}
   poseBones:
   - {fileID: 239433227}
@@ -15605,9 +15605,9 @@ MonoBehaviour:
   caption: {fileID: 691760081}
   startTime: 62
   duration: 22
-  daughterVoice: {fileID: 0}
-  fatherVoice: {fileID: 0}
-  burnerVoice: {fileID: 0}
+  daughterVoice: {fileID: 8300000, guid: 31f0ef86d20b18f42b10b11f4dbad26e, type: 3}
+  fatherVoice: {fileID: 8300000, guid: 299d225c42a9b0c478ece47d0ba6e1db, type: 3}
+  burnerVoice: {fileID: 8300000, guid: bbb0ef0d60c127a4586ad1ab96895d83, type: 3}
   poseBones:
   - {fileID: 1388255184}
   - {fileID: 1388255237}
@@ -16282,8 +16282,8 @@ MonoBehaviour:
   seaTarget: {x: 10.5, y: 1.35, z: 3.9}
   startTime: 88.0833333333333
   duration: 22
-  fatherVoice: {fileID: 0}
-  burnerVoice: {fileID: 0}
+  fatherVoice: {fileID: 8300000, guid: 9cd1e915beeb4114ca9c254786770cea, type: 3}
+  burnerVoice: {fileID: 8300000, guid: 759dbd8c78a12bf428690ad96dcd6901, type: 3}
   clockBell: {fileID: 8300000, guid: a9e2d10880b4f6846918a64688d0ed93, type: 3}
   poseBones:
   - {fileID: 2103072340}
@@ -17136,9 +17136,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   director: {fileID: 1849503453}
   caption: {fileID: 1988630877}
-  daughterVoice: {fileID: 0}
-  fatherVoice: {fileID: 0}
-  burnerVoice: {fileID: 0}
+  daughterVoice: {fileID: 8300000, guid: 642fba5ae78042f4a828f8ced1cd3d84, type: 3}
+  fatherVoice: {fileID: 8300000, guid: 681155416b580994a8a9b24d08f92f67, type: 3}
+  burnerVoice: {fileID: 8300000, guid: 066541ee735d46148990475d982c23fa, type: 3}
   chime: {fileID: 8300000, guid: 7e2a41a9a051d544b8ba690860d8fddf, type: 3}
 --- !u!102 &1988630877
 TextMesh:

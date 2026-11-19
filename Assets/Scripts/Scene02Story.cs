@@ -41,9 +41,12 @@ public sealed class Scene02Story : MonoBehaviour
   Look(father,dh.position,1);Pose(father,"Head",nod);
   Look(mother,t<6.2f?dh.position:Vector3.Lerp(dh.position,fh.position,S(6.2f,6.8f,t)),1);
   if(t>=10){float walk=S(10.8f,16,t);daughter.localPosition=Vector3.Lerp(positions[daughter],exitLocalPosition,walk);daughter.localRotation=Quaternion.Slerp(daughter.localRotation,rotations[daughter],S(10,11.5f,t));float gait=Mathf.Sin((t-10.8f)*8.2f)*(S(10.8f,11.3f,t)-S(15.5f,16,t));Pose(daughter,"LeftUpperLeg",24*gait);Pose(daughter,"RightUpperLeg",-24*gait);Pose(daughter,"LeftLowerLeg",Mathf.Max(0,-gait)*30);Pose(daughter,"RightLowerLeg",Mathf.Max(0,gait)*30);Pose(daughter,"LeftUpperArm",-12*gait);Pose(daughter,"RightUpperArm",12*gait);}
-  if(caption)caption.text=CaptionAt(t);
+  if(caption)caption.text=SyncedCaptionAt(t);
  }
- public static string CaptionAt(float t)=>t<2||t>=13?"":t<6.3f?"女儿：爸、妈，我上班去了。":t<8.8f?"父亲：路上小心。":"香炉：我还在等。";
+ string SyncedCaptionAt(float t) => t >= 2f && t < 2f + (daughterVoice ? daughterVoice.length : 2.795f) ? "女儿：爸、妈，我上班去了。" :
+        t >= 6.4f && t < 6.4f + (fatherVoice ? fatherVoice.length : 1.411f) ? "父亲：路上小心。" :
+        t >= 9f && t < 9f + (burnerVoice ? burnerVoice.length : 2.064f) ? "香炉：我还在等。" : "";
+    public static string CaptionAt(float t)=>t<2||t>=13?"":t<6.3f?"女儿：爸、妈，我上班去了。":t<8.8f?"父亲：路上小心。":"香炉：我还在等。";
  public void Present(Camera view)
  {
   if(!director||!view)return;double t=director.time-startTime;

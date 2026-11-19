@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using IncenseCharacters;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,9 +16,9 @@ public sealed class MuseumSceneTour : MonoBehaviour
     public MuseumRightStickTurn turning;
     [Min(0), Tooltip("Move the rig forward once when entering free exploration, in metres.")]
     public float explorationSpawnForward = 0.35f;
-    [TextArea] public string explorationHintText = "可以使用左摇杆移动，右摇杆可以辅助您调整视角（请不要调整过快以免出现眩晕）。试试用右摇杆的激光指向桌上的台胞证并按下扳机。";
+    [TextArea] public string explorationHintText = "可以使用左摇杆移动，右摇杆可以辅助您调整视角（请不要调整过快以免出现眩晕）。试试用右摇杆的激光指向桌上的行程单和台湾同胞旅行证明并按下扳机。";
     [Min(0)] public float explorationHintSeconds = 10;
-    const string PermitHint = "试试用右摇杆的激光指向桌上的台胞证并按下扳机。";
+    const string PermitHint = "试试用右摇杆的激光指向桌上的行程单和台湾同胞旅行证明并按下扳机。";
     VRSubtitle explorationHint, sofaHint;
     public bool ExplorationStarted { get; private set; }
     bool loading;
@@ -75,9 +75,13 @@ public sealed class MuseumSceneTour : MonoBehaviour
             explorationHint.transform.SetParent(transform, false);
             explorationHint.followCamera = true;
             explorationHint.cameraOffset = new Vector3(0, 0.35f, 2);
-            string movementHint = "使用左摇杆移动。向左或向右拨动右摇杆，每次转向15度；松开回中后可再次转向。";
+            string movementHint = sceneNumber == 7
+                ? "现在，你可以在屋里自由走动，看看桌上留下的证件。（使用左摇杆移动。向左或向右拨动右摇杆，每次转向15度；松开回中后可再次转向。）"
+                : "使用左摇杆移动。向左或向右拨动右摇杆，每次转向15度；松开回中后可再次转向。";
             explorationHint.ShowBilingualText(movementHint,
-                "Use the left stick to move. Push the right stick left or right to turn 15 degrees. Release to center before turning again.");
+                sceneNumber == 7
+                    ? "You can now walk freely around the room and look at the documents left on the table. (Use the left stick to move. Push the right stick left or right to turn 15 degrees. Release to center before turning again.)"
+                    : "Use the left stick to move. Push the right stick left or right to turn 15 degrees. Release to center before turning again.");
             CreateSofaHint();
             yield return new WaitForSecondsRealtime(explorationHintSeconds);
             if (explorationHint) Destroy(explorationHint.gameObject);
@@ -110,7 +114,7 @@ public sealed class MuseumSceneTour : MonoBehaviour
         sofaHint.vrCamera = viewer; sofaHint.followCamera = false; sofaHint.faceCamera = false;
         sofaHint.subtitleWidth = 1500; sofaHint.fontSize = 38;
         sofaHint.ShowBilingualText(PermitHint,
-            "Aim your right controller's laser at the Taiwan Compatriot Permit on the table, then press the trigger.");
+            "Try aiming your right controller's laser at the itinerary and the Taiwan Compatriot Travel Certificate on the table, then press the trigger.");
     }
 
     void Update()

@@ -54,7 +54,7 @@ public sealed class Scene03DinnerStory : MonoBehaviour
   Vector3 contact=fishPlate.position+towardDaughter*.18f+Vector3.up*.045f;
   float reach=S(2.2f,3,t)*(1-S(6.3f,7.3f,t));Arm(daughter,"Left",Vector3.Lerp(restHand,contact,reach));
   if (Application.isPlaying) Smile(S(6.8f,7.5f,t)*(1-S(10.5f,12,t)));
-  if(caption)caption.text=CaptionAt(t);
+  if(caption)caption.text=SyncedCaptionAt(t);
  }
  void Smile(float amount){
   if(!fatherSkin){fatherSkin=father.GetComponentInChildren<SkinnedMeshRenderer>();if(!fatherSkin)return;originalFace=fatherSkin.sharedMesh;smileFace=Instantiate(originalFace);smileFace.name="Scene03 father smile";smileFace.hideFlags=HideFlags.HideAndDontSave;faceVertices=originalFace.vertices;fatherSkin.sharedMesh=smileFace;}
@@ -65,7 +65,10 @@ public sealed class Scene03DinnerStory : MonoBehaviour
  }
  public void RestoreSmile(){if(fatherSkin&&originalFace)fatherSkin.sharedMesh=originalFace;if(smileFace){if(Application.isPlaying)Destroy(smileFace);else DestroyImmediate(smileFace);}fatherSkin=null;smileFace=null;}
  void OnDisable(){RestoreSmile();}
- public static string CaptionAt(float t)=>t<2||t>=20?"":t<6.6f?"女儿：爸，尝尝我做的鱼。":t<10.8f?"父亲：好，你也趁热吃。":"香炉：这些年，我又听见了许多心愿。\n我还在等。";
+ string SyncedCaptionAt(float t) => t >= 2f && t < 2f + (daughterVoice ? daughterVoice.length : 2.377f) ? "女儿：爸，尝尝我做的鱼。" :
+        t >= 7f && t < 7f + (fatherVoice ? fatherVoice.length : 2.978f) ? "父亲：好，你也趁热吃。" :
+        t >= 11f && t < 11f + (burnerVoice ? burnerVoice.length : 5.016f) ? "香炉：这些年，我又听见了许多心愿。\n我还在等。" : "";
+    public static string CaptionAt(float t)=>t<2||t>=20?"":t<6.6f?"女儿：爸，尝尝我做的鱼。":t<10.8f?"父亲：好，你也趁热吃。":"香炉：这些年，我又听见了许多心愿。\n我还在等。";
  public void Present(Camera camera){if(!director||!camera)return;double t=director.time-startTime;if(t<0||t>=duration){if(caption)caption.text="";return;}Sample(t);if(caption){caption.transform.position=camera.transform.TransformPoint(new Vector3(0,-.21f,1.7f));caption.transform.rotation=camera.transform.rotation;}if(title){title.position=camera.transform.TransformPoint(new Vector3(0,1.85f,2.6f));title.rotation=camera.transform.rotation;}}
  void Update(){if(!Application.isPlaying||!director)return;double t=director.time-startTime;if(director.state==PlayState.Playing){if(!voice){voice=gameObject.AddComponent<AudioSource>();voice.playOnAwake=false;}Cue(2,daughterVoice,t);Cue(7,fatherVoice,t);Cue(11,burnerVoice,t);}previous=t;}
  void Cue(double at,AudioClip clip,double t){if(clip&&previous<at&&t>=at&&t-at<.5)voice.PlayOneShot(clip);}

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR;
 
@@ -6,6 +6,10 @@ using Valve.VR;
 public sealed class PermitInspection : MonoBehaviour
 {
     public GameObject closedPrefab, openPrefab;
+    public bool singleSheet;
+    public string documentTitle;
+    public string englishDocumentTitle;
+    static PermitInspection activeInspection;
     public Transform tableModel;
     public Collider tableCollider;
     public SoftInteractionHighlight tableGlow;
@@ -42,7 +46,14 @@ public sealed class PermitInspection : MonoBehaviour
 
     public bool OwnsTrigger(Ray ray)
     {
-        if (IsOpen || TriggerConsumedFrame == Time.frameCount) return true;
+        if (activeInspection || TriggerConsumedFrame == Time.frameCount) return true;
+        foreach (var inspection in FindObjectsOfType<PermitInspection>())
+        {
+            if (inspection.TriggerConsumedFrame == Time.frameCount) return true;
+            RaycastHit documentHit;
+            if (inspection.Ready && inspection.tableCollider && Physics.Raycast(ray, out documentHit, 5,
+                ~(1 << LayerMask.NameToLayer("ObjectPreview")), QueryTriggerInteraction.Ignore) && documentHit.collider == inspection.tableCollider) return true;
+        }
         RaycastHit hit;
         int layer = LayerMask.NameToLayer("ObjectPreview");
         int mask = layer < 0 ? ~0 : ~(1 << layer);
@@ -77,6 +88,7 @@ public sealed class PermitInspection : MonoBehaviour
     void Update()
     {
         if(pointer) pointer.enabled=false;
+        if(activeInspection && activeInspection != this) { if(tableGlow)tableGlow.SetNearby(false);return; }
         if(!Ready || !Viewer()) {if(IsOpen) CloseInspection(false);return;}
         if(IsOpen && IsUnfolded) unfoldedSeconds += Time.unscaledDeltaTime;
         bool tracked=hand && hand.isActiveAndEnabled && hand.isValid && trigger!=null;
@@ -142,6 +154,7 @@ public sealed class PermitInspection : MonoBehaviour
     }
     public void Open()
     {
+        if(activeInspection && activeInspection != this)return;
         if(IsOpen || (!Ready && !PreviewReadyForCapture) || !Viewer() || !closedPrefab || !openPrefab) return;
         previewLayer=LayerMask.NameToLayer("ObjectPreview");
         if(previewLayer<0) {Debug.LogError("Permit: ObjectPreview layer missing.",this);return;}
@@ -164,7 +177,8 @@ public sealed class PermitInspection : MonoBehaviour
         previewCamera.nearClipPlane=.05f;previewCamera.farClipPlane=8;previewCamera.cullingMask=1<<previewLayer;
         previewCamera.clearFlags=CameraClearFlags.SolidColor;previewCamera.backgroundColor=Color.clear;previewCamera.stereoTargetEye=StereoTargetEyeMask.None;
         texture=new RenderTexture(1024,1024,24,RenderTextureFormat.ARGB32);texture.Create();previewCamera.targetTexture=texture;
-        IsOpen=true;IsUnfolded=false;unfoldedSeconds=0;BuildPanel();BuildClone();
+        activeInspection=this;
+        IsOpen=true;IsUnfolded=singleSheet;unfoldedSeconds=0;BuildPanel();BuildClone();
         if(tableModel) tableModel.gameObject.SetActive(false);
     }
     void PreviewLight(string name,Quaternion rotation,float intensity)
@@ -183,7 +197,9 @@ public sealed class PermitInspection : MonoBehaviour
         bounds=BoundsOf(clone);clone.transform.position+=pivot.transform.position-bounds.center;
         foreach(var c in clone.GetComponentsInChildren<Collider>()) c.enabled=false;
         SetLayer(clone,previewLayer);
-        var glow=clone.AddComponent<SoftInteractionHighlight>();glow.width=.025f;glow.idleStrength=.25f;
+        var glow=clone.GetComponent<SoftInteractionHighlight>();
+        if(!glow)glow=clone.AddComponent<SoftInteractionHighlight>();
+        glow.width=.025f;glow.idleStrength=.25f;
         glow.EnsureBuilt();glow.SetNearby(false);
         // OnEnable creates the shells before fields are assigned; layer is inherited.
     }
@@ -209,6 +225,12 @@ public sealed class PermitInspection : MonoBehaviour
         toggleHit=Button("ToggleFold",new Vector2(-140,-380),out toggleImage);toggleLabel=Label(new Vector2(-140,-380),new Vector2(230,48),23);
         closeHit=Button("Close",new Vector2(140,-380),out closeImage);closeLabel=Label(new Vector2(140,-380),new Vector2(230,48),23);
         toggleImage.color=new Color(.15f,.30f,.32f);closeImage.color=new Color(.35f,.18f,.12f);
+        if(singleSheet)
+        {
+            toggleImage.gameObject.SetActive(false);toggleLabel.gameObject.SetActive(false);
+            closeImage.rectTransform.anchoredPosition=new Vector2(0,-380);
+            closeLabel.rectTransform.anchoredPosition=new Vector2(0,-380);
+        }
         RefreshText();
     }
     GameObject Element(string name,Vector2 pos,Vector2 size) {
@@ -228,14 +250,18 @@ public sealed class PermitInspection : MonoBehaviour
         title.text=homecoming?(en?"Taiwan Compatriot Travel Certificate · Narrative prop":"台湾同胞旅行证明 · 叙事重构道具"):(en?"Travel permit · Narrative reconstruction":"入台证 · 叙事重构道具");
         instruction.text=en?"Aim at the document; hold the right trigger and rotate your controller":"指向证件，按住右手扳机并转动手柄查看";
         if(homecoming) instruction.text=en?"Unfold and read, then return to the table. Hold the trigger to rotate.":"展开阅读后，选择放回桌面。按住右手扳机可转动查看。";
+        if(!string.IsNullOrEmpty(documentTitle))title.text=en?englishDocumentTitle:documentTitle;
+        if(singleSheet)instruction.text=en?"Hold the right trigger to rotate and inspect. Return to the table when finished.":"按住右手扳机转动查看，读完后选择放回桌面。";
         toggleLabel.text=IsUnfolded?(en?"Fold":"合拢"):(en?"Unfold":"展开");closeLabel.text=en?"Return to table":"放回桌面";
     }
-    public void ToggleFold() {if(!IsOpen)return;IsUnfolded=!IsUnfolded;rotating=false;BuildClone();RefreshText();}
+    public void ToggleFold() {if(!IsOpen || singleSheet)return;IsUnfolded=!IsUnfolded;rotating=false;BuildClone();RefreshText();}
     public void SetPreviewRotation(Quaternion rotation) {if(pivot)pivot.transform.localRotation=rotation;}
     public void RenderPreview() {if(previewCamera){Canvas.ForceUpdateCanvases();previewCamera.Render();}}
     public void Close() { CloseInspection(true); }
     void CloseInspection(bool returnedByUser) {
-        if(!IsOpen) return;IsOpen=false;IsUnfolded=false;rotating=mouseDragging=false;
+        if(!IsOpen) return;
+        if(activeInspection==this)activeInspection=null;
+        IsOpen=false;IsUnfolded=false;rotating=mouseDragging=false;
         bool read = unfoldedSeconds >= RequiredReadSeconds;
         if(tableModel)tableModel.gameObject.SetActive(true);if(tableGlow)tableGlow.SetNearby(false);
         if(previewCamera)previewCamera.targetTexture=null;

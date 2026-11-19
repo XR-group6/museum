@@ -2,6 +2,7 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 using Valve.VR;
 
 // Scene five owns its story and hands control to exploration only after the door closes.
@@ -129,7 +130,7 @@ public sealed class Scene05HomecomingStory : MonoBehaviour
     {
         foreach(var tour in gameObject.scene.GetRootGameObjects().SelectMany(g=>g.GetComponentsInChildren<MuseumSceneTour>(true)))tour.enabled=false;
         SetMovement(false);
-        if(permit){permit.ReadAndReturned+=OnReadAndReturned;finalSubscribed=true;}
+        if(permit) permit.enabled=false;
     }
     IEnumerator Start()
     {
@@ -148,10 +149,13 @@ public sealed class Scene05HomecomingStory : MonoBehaviour
         if(subtitleShader)subtitleMaterial=new Material(subtitleShader);
         // A narrow column beside the actor leaves the central performance unobstructed.
         // Match scene 04's apparent text size at this panel's longer viewing distance.
-        dialogue=Subtitle("Scene05 dialogue",new Vector3(1.4f,-.55f,2.4f),56);
+        dialogue=Subtitle("Scene05 dialogue",new Vector3(0,.75f,2.4f),56);
         dialogue.subtitleWidth=580;
         history=Subtitle("Scene05 history",new Vector3(1.4f,.85f,2.4f),52);
-        history.subtitleWidth=580;
+        history.subtitleWidth=1100;
+        history.followCamera=false; history.faceCamera=true;
+        var sofa=gameObject.scene.GetRootGameObjects().SelectMany(g=>g.GetComponentsInChildren<Transform>(true)).FirstOrDefault(t=>t.name=="wood_sofa" || t.name=="sofa");
+        history.transform.position=sofa ? PermitInspection.BoundsOf(sofa.gameObject).center + Vector3.up*1.4f : new Vector3(1.6f,2.2f,-2.5f);
         hint=Subtitle("Scene05 exploration hint",new Vector3(0,-.28f,1.8f),34);
         history.ShowText(History);
         voice=Source("Scene05 voices",burner.position,false,.85f);effects=Source("Scene05 effects",burner.position,false,.35f);
@@ -174,7 +178,7 @@ public sealed class Scene05HomecomingStory : MonoBehaviour
             if(t>=outsideAt&&steps.isPlaying)steps.Stop();
             if(previous<closedAt&&t>=closedAt&&ticking){clock.loop=true;clock.Play();}
             dialogue.ShowText(CaptionAt(t));
-            if(t>=exploreAt)BeginExploration();
+            if(t>=exploreAt){SceneManager.LoadScene("scene_07");return;}
         }
         if(desktopMovement && ExplorationStarted)desktopMovement.enabled=!permit.IsOpen;
         previous=t;
@@ -184,7 +188,7 @@ public sealed class Scene05HomecomingStory : MonoBehaviour
         if(!started||ExplorationStarted||!Viewer)return;
         float t=(float)director.time;
         Vector3 eye=PermitInspection.BoundsOf(burner.gameObject).center+Vector3.up*.035f;
-        eye=Vector3.Lerp(eye,explorationEye,S(closedAt+.2f,exploreAt,t));
+        eye += Vector3.down * 1.1f;
         var body=ActiveRig.GetComponent<CharacterController>();bool enabledBody=body&&body.enabled;if(enabledBody)body.enabled=false;
         ActiveRig.position=eye-ActiveRig.TransformVector(trackingOffset);
         if(enabledBody)body.enabled=true;
@@ -193,22 +197,7 @@ public sealed class Scene05HomecomingStory : MonoBehaviour
         // The seated camera moves late; keep captions aligned in this same frame.
         dialogue.UpdatePose();history.UpdatePose();hint.UpdatePose();
     }
-    public void BeginExploration()
-    {
-        if(ExplorationStarted)return;
-        var body=ActiveRig.GetComponent<CharacterController>();bool wasEnabled=body&&body.enabled;if(wasEnabled)body.enabled=false;
-        ActiveRig.position=explorationEye-ActiveRig.TransformVector(trackingOffset);
-        Vector3 facing=Vector3.ProjectOnPlane(new Vector3(-.72f,1.3f,-3)-explorationEye,Vector3.up);
-        ActiveRig.RotateAround(Viewer.transform.position,Vector3.up,Mathf.DeltaAngle(Viewer.transform.eulerAngles.y,Mathf.Atan2(facing.x,facing.z)*Mathf.Rad2Deg));
-        if(Viewer==desktopCamera)Viewer.transform.localRotation=Quaternion.identity;
-        if(wasEnabled)body.enabled=true;
-        ExplorationStarted=true;
-        RestoreBurner();
-        foreach(var h in hands)h.gameObject.SetActive(true);
-        history.ShowText("");dialogue.ShowText("");hint.ShowText(ExploreHint);
-        SetMovement(true);
-        StartCoroutine(HideHint());
-    }
+    public void BeginExploration() { SceneManager.LoadScene("scene_07"); }
     IEnumerator HideHint(){yield return new WaitForSeconds(14);if(hint)hint.ShowText("");}
     void SetMovement(bool enabled){if(movement)movement.enabled=enabled;if(turning)turning.enabled=enabled;if(desktopMovement)desktopMovement.enabled=enabled;}
     void OnReadAndReturned(){if(!ExplorationStarted||FinalNarrationPlayed)return;FinalNarrationPlayed=true;StartCoroutine(FinalNarration());}

@@ -79,8 +79,10 @@ public sealed class Scene04HarborStory : MonoBehaviour
         float lift = Smooth(1.4f, 3.4f, t);
         target.y = Mathf.Lerp(head.position.y - .18f, seaTarget.y, lift);
         head.rotation = Quaternion.LookRotation(target - head.position, Vector3.up);
-        if (caption) caption.text = CaptionAt(t);
+        if (caption) caption.text = SyncedCaptionAt(t);
     }
+    string SyncedCaptionAt(float t) => t >= 2f && t < 2f + (fatherVoice ? fatherVoice.length : 3.5f) ? "父亲：不知道那边的老屋，还在不在。" :
+        t >= 14f && t < 14f + (burnerVoice ? burnerVoice.length : 2.168f) ? "香炉：我还在等。" : "";
     public static string CaptionAt(float t) => t < 2 || t >= 18 ? "" :
         t < 8.5f ? "父亲：不知道那边的老屋，还在不在。" :
         t < 14 ? "" : "香炉：我还在等。";

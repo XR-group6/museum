@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Playables;
 
 [ExecuteAlways]
@@ -13,7 +13,9 @@ public sealed class Scene01Dialogue : MonoBehaviour
     {
         if (!director || !caption) return;
         double t = director.time;
-        caption.text = t < 4 || t >= 26 ? "" : t < 8 ? "女儿：爸，怎么把它也带来了？" : t < 16 ? "父亲：等回去那天，还要求妈祖保佑航海顺利呢。" : t < 18.5 ? "父亲：快去上学吧。" : "香炉：等他们再求航海顺利，我就能回家。那我就等。";
+        caption.text = t >= 4 && t < 4 + Length(daughterVoice, 3.082) ? "女儿：爸，怎么把它也带来了？" :
+            t >= 8 && t < 8 + Length(fatherVoice, 6.818) ? "父亲：等回去那天，还要求妈祖保佑航海顺利呢。\n快去上学吧。" :
+            t >= 18.5 && t < 18.5 + Length(burnerVoice, 5.721) ? "香炉：等他们再求航海顺利，我就能回家。那我就等。" : "";
         if (Application.isPlaying && director.state == PlayState.Playing)
         {
             if (!source) { source = gameObject.AddComponent<AudioSource>(); source.playOnAwake = false; }
@@ -21,5 +23,6 @@ public sealed class Scene01Dialogue : MonoBehaviour
         }
         previous = t;
     }
+    static double Length(AudioClip clip, double fallback) => clip ? clip.length : fallback;
     void Cue(double at, AudioClip clip, double t) { if (clip && previous < at && t >= at && t-at < .5) source.PlayOneShot(clip); }
 }

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -24,8 +24,17 @@ public sealed class SoftInteractionHighlight : MonoBehaviour
         var shader = Shader.Find("LocalPrototype/SoftOutline");
         if (!shader) { Debug.LogError("Soft outline shader missing", this); return; }
         for (int i = 0; i < glowLayers; i++) glowMaterials.Add(new Material(shader));
+        // Instantiated inspection models may contain copies of generated shells.
+        // Never outline an outline: that multiplies renderers on every inspection.
+        foreach (var child in GetComponentsInChildren<Transform>(true))
+            if (child != transform && child.name.StartsWith("[Highlight]"))
+            { child.gameObject.SetActive(false); Dispose(child.gameObject); }
         foreach (var renderer in GetComponentsInChildren<Renderer>(true))
         {
+            bool generated = false;
+            for (var ancestor = renderer.transform; ancestor && ancestor != transform; ancestor = ancestor.parent)
+                if (ancestor.name.StartsWith("[Highlight]")) { generated = true; break; }
+            if (generated) continue;
             var filter = renderer.GetComponent<MeshFilter>();
             var skin = renderer as SkinnedMeshRenderer;
             if (!filter && !skin) continue;

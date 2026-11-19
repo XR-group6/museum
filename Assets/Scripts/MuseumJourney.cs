@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -248,6 +248,20 @@ public sealed class MuseumJourney : MonoBehaviour
         roomTimeline.time = 0;
         roomTimeline.extrapolationMode = DirectorWrapMode.Hold;
         roomTimeline.Evaluate();
+        // Hold every animation and voice at time zero until the morning light is up.
+        var morningLight = eraLights[0];
+        float morningIntensity = morningLight.intensity;
+        morningLight.enabled = true;
+        morningLight.intensity = 0;
+        const float morningLightSeconds = 1.5f;
+        float lightStarted = Time.unscaledTime;
+        while (Time.unscaledTime - lightStarted < morningLightSeconds)
+        {
+            morningLight.intensity = morningIntensity * Mathf.SmoothStep(0, 1,
+                (Time.unscaledTime - lightStarted) / morningLightSeconds);
+            yield return null;
+        }
+        morningLight.intensity = morningIntensity;
         roomTimeline.Play();
         var harborStory = roomTimeline.GetComponent<Scene04HarborStory>();
         while (FinalRegionLitAt < 0 || Time.realtimeSinceStartupAsDouble - FinalRegionLitAt < finalRegionSeconds ||
@@ -260,7 +274,7 @@ public sealed class MuseumJourney : MonoBehaviour
                 FinalRegionLitAt = Time.realtimeSinceStartupAsDouble;
             yield return null;
         }
-        Load("scene_07");
+        Load("scene_05");
     }
 
     void FaceDirection(Vector3 direction)

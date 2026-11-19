@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,41 @@ public static class SubtitleLanguage
     public static bool HasSelected { get; private set; }
     public static event Action Changed;
     static readonly Dictionary<string,string> translations = new Dictionary<string,string> {
+        {"女儿：爸，怎么把它也带来了？", "Daughter: Dad, why did you bring that too?"},
+        {"父亲：等回去那天，还要求妈祖保佑航海顺利呢。", "Father: When we go back, we will still ask Mazu to bless our voyage."},
+        {"快去上学吧。", "Go on, off to school."},
+        {"父亲：快去上学吧。", "Father: Go on, off to school."},
+        {"香炉：等他们再求航海顺利，我就能回家。那我就等。", "Incense burner: When they pray for another safe voyage, I can go home. So I will wait."},
+        {"女儿：爸、妈，我上班去了。", "Daughter: Dad, Mum, I am off to work."},
+        {"父亲：路上小心。", "Father: Take care on the way."},
+        {"香炉：我还在等。", "Incense burner: I am still waiting."},
+        {"女儿：爸，尝尝我做的鱼。", "Daughter: Dad, try the fish I made."},
+        {"父亲：好，你也趁热吃。", "Father: All right. You eat while it is hot too."},
+        {"香炉：这些年，我又听见了许多心愿。", "Incense burner: Over the years, I have heard many more wishes."},
+        {"我还在等。", "I am still waiting."},
+        {"父亲：不知道那边的老屋，还在不在。", "Father: I wonder if the old house back there is still standing."},
+        {"约1951年｜清晨", "Around 1951 | Morning"},
+        {"许多人渡海来到台湾，仍盼着早日回乡。", "Many people crossed the sea to Taiwan, still hoping to return home soon."},
+        {"一家人在港口边安顿下来，也渐渐适应了这里的生活。", "The family settled near the harbour and gradually adjusted to life here."},
+        {"约1960年｜白天", "Around 1960 | Daytime"},
+        {"两岸相隔，返乡的日子一直定不下来。", "Separated by the strait, they could not say when they would return home."},
+        {"当年牵着父亲的手上船的女孩，已经在台湾长大，开始工作了。", "The girl who once boarded the boat holding her father's hand has grown up in Taiwan and started work."},
+        {"约1970年｜除夕夜", "Around 1970 | Lunar New Year's Eve"},
+        {"在台湾，除夕一家人同桌吃年夜饭，叫作“围炉”。", "In Taiwan, sharing a family meal on Lunar New Year's Eve is called gathering around the hearth."},
+        {"如今，女儿也带着自己的孩子回来过年，", "Now the daughter brings her own child home for the New Year,"},
+        {"一张桌旁坐了三代人。", "and three generations sit around one table."},
+        {"约1980年｜黄昏", "Around 1980 | Dusk"},
+        {"那时，两岸还未开放探亲。父亲惦记着海那边的老屋，", "Cross-strait family visits were not yet permitted. Father thought of the old house across the sea,"},
+        {"也在海这边的屋檐下，看着女儿和外孙两代人长大。", "while watching his daughter and grandchild grow up under this roof."},
+        {"1988年｜返乡探亲", "1988 | Returning Home to Visit Family"},
+        {"两岸开放探亲后，许多离乡多年的人终于有机会回去看看。", "After cross-strait family visits were allowed, many who had been away for years finally had a chance to return."},
+        {"离开故乡近四十年，父亲也等到了自己的归期。", "After almost forty years away, Father too could finally go home."},
+        {"父亲：请妈祖保佑我们这次航海顺利。", "Father: May Mazu bless us with a safe voyage."},
+        {"香炉：那我……", "Incense burner: Then I..."},
+        {"父亲：这次，我就不带你了。", "Father: This time, I will leave you here."},
+        {"父亲：当年我把你带过来，现在这里也是你的家了。", "Father: I brought you here all those years ago. This is your home now too."},
+        {"香炉：看来你终于要回家了。我也知道，你还会回家。", "Incense burner: It seems you are finally going home. And I know you will come home again."},
+        {"现在，你可以在屋里自由走动，看看桌上留下的证件。", "You can now walk freely around the room and look at the documents left on the table."},
         {"可以使用右摇杆跟随灯光转动视角", "Use the right stick to turn your view and follow the lights."},
         {"请用右手触碰并握住香炉，继续我们的旅程。", "Touch the incense burner with your right controller and press the trigger to continue our journey."},
         {"请向前走到香炉前，用右手触碰握住香炉。", "Move forward to the incense burner. Touch it with your right controller and press the trigger."},
