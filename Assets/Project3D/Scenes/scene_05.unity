@@ -6295,6 +6295,7 @@ MonoBehaviour:
   luggageRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   doorway: {x: 1.35, y: 0.15, z: -4.5}
   outside: {x: 1.35, y: 0.15, z: -5.7}
+  wallClearance: 0.25
   explorationEye: {x: 0.25, y: 1.72, z: -1.45}
   touchPoint: {x: 0, y: 1.13, z: 1.285}
   exitWaypoints:
@@ -6302,15 +6303,17 @@ MonoBehaviour:
   - {x: 0.32, y: 0.15, z: -3.98}
   - {x: 1.35, y: 0.15, z: -4.02}
   - {x: 1.35, y: 0.15, z: -5.7}
-  prayer: {fileID: 8300000, guid: be001ecce6e379a43a69d408aa14200c, type: 3}
-  expectation: {fileID: 8300000, guid: 16e77584bd0e67147baeca2dc20a95b3, type: 3}
-  leave: {fileID: 8300000, guid: e28cb38d35ded884fb143a083eb466ff, type: 3}
-  home: {fileID: 8300000, guid: 1ad8182d32d0d8a438f83e6bd0217bf1, type: 3}
-  finalVoice: {fileID: 8300000, guid: 018a988b7f0b0254aa6a67f17a81a51f, type: 3}
-  chime: {fileID: 8300000, guid: 7e2a41a9a051d544b8ba690860d8fddf, type: 3}
-  doorSound: {fileID: 8300000, guid: aaa8bd3e7eedbba45bf2b35c89e25a1d, type: 3}
-  ticking: {fileID: 8300000, guid: ab31de65a8b9ef549899273062a91e60, type: 3}
-  footsteps: {fileID: 8300000, guid: a014ba7f0a7e4cc498eb47d321eebeda, type: 3}
+  prayer: {fileID: 8300000, guid: f09730b7ea5da354f8ba3880fbb0993b, type: 3}
+  expectation: {fileID: 8300000, guid: 2d4bb703296af2d40bc2bfe0c548d8ea, type: 3}
+  leave: {fileID: 8300000, guid: 235ccbfc620b69e4284cd9d3fe9cf167, type: 3}
+  home: {fileID: 8300000, guid: 95c67df01ef704e47a677774557dacdc, type: 3}
+  finalVoice: {fileID: 8300000, guid: a2db115f987442a48a230c5e80592c54, type: 3}
+  chime: {fileID: 8300000, guid: 5a88e0d0ffaf6a641968589534f64f5a, type: 3}
+  doorSound: {fileID: 8300000, guid: 02ee10bd69e580547b56b9c79e17d5da, type: 3}
+  ticking: {fileID: 8300000, guid: b099be303b40a69488856e969a64ec91, type: 3}
+  footsteps: {fileID: 0}
+  luggageSound: {fileID: 8300000, guid: cb5816f1a5f99e44bae5de5fd093ce2c, type: 3}
+  roomAmbience: {fileID: 8300000, guid: cf993108a626fef4bab0415eefdb83c4, type: 3}
   prayerAt: 2
   chimeAt: 5.20616
   expectationAt: 7

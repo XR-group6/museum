@@ -238,7 +238,7 @@ public sealed class MuseumJourney : MonoBehaviour
             turning.headset = viewer.transform; turning.rightHand = rightHand;
             rig.gameObject.SetActive(true);
         }
-        turning.snapTurn = true; turning.snapDegrees = 90; turning.enabled = true;
+        turning.snapTurn = true; turning.snapDegrees = 30; turning.enabled = true;
         var turnHint = CreateSubtitle(true);
         turnHint.name = "Room headset turn guide";
         turnHint.cameraOffset = new Vector3(0, .35f, 1.8f);

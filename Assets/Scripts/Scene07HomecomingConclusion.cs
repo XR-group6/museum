@@ -15,9 +15,10 @@ public sealed class Scene07HomecomingConclusion : MonoBehaviour
     void Start()
     {
         var objects=gameObject.scene.GetRootGameObjects().SelectMany(g=>g.GetComponentsInChildren<Transform>(true)).ToArray();
-        permit=objects.Select(t=>t.GetComponent<PermitInspection>()).FirstOrDefault(p=>p);
+        permit=objects.Select(t=>t.GetComponent<PermitInspection>()).FirstOrDefault(p=>p && !p.singleSheet && p.tableModel != itinerary);
         if(permit)
         {
+            permit.RequiredReadSeconds=0; // Returning the certificate is sufficient; no reading timer.
             permit.ReadAndReturned+=ReadAndReturned;
             permit.documentTitle="台湾同胞旅行证明 · 叙事重构道具";
             permit.englishDocumentTitle="Taiwan Compatriot Travel Certificate · Narrative prop";

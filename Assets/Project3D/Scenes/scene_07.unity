@@ -4948,7 +4948,7 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier:
   itinerary: {fileID: 810000000001}
-  finalVoice: {fileID: 8300000, guid: 018a988b7f0b0254aa6a67f17a81a51f, type: 3}
+  finalVoice: {fileID: 8300000, guid: a2db115f987442a48a230c5e80592c54, type: 3}
   subtitleShader: {fileID: 4800000, guid: fbf539d8637fd48868320f42a5f9838d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -25,9 +25,10 @@ public sealed class Scene05HomecomingStory : MonoBehaviour
     public Quaternion standRotation, luggageRotation;
     public Vector3 doorway = new Vector3(0,.15f,-5.4f), outside = new Vector3(0,.15f,-6.6f);
     public Vector3 explorationEye = new Vector3(.25f,1.72f,-1.45f);
+    [Min(0)] public float wallClearance = .25f;
     public Vector3 touchPoint;
     public Vector3[] exitWaypoints;
-    public AudioClip prayer, expectation, leave, home, finalVoice, chime, doorSound, ticking, footsteps;
+    public AudioClip prayer, expectation, leave, home, finalVoice, chime, doorSound, ticking, footsteps, luggageSound, roomAmbience;
     public float prayerAt=2, chimeAt=4.6f, expectationAt=7, leaveAt=10, homeAt=15;
     public float withdrawAt=23, pickupAt=25, walkAt=28, outsideAt=34, closeAt=35, closedAt=37, exploreAt=39;
     public bool ExplorationStarted { get; private set; }
@@ -37,7 +38,7 @@ public sealed class Scene05HomecomingStory : MonoBehaviour
     Material subtitleMaterial;
     public Camera Viewer => headsetCamera && headsetCamera.isActiveAndEnabled ? headsetCamera : desktopCamera;
     public Transform ActiveRig => Viewer==headsetCamera?rig:desktopRig;
-    AudioSource voice, effects, clock, steps;
+    AudioSource voice, effects, clock, steps, ambience;
     double previous=-1;
     bool started;
     Renderer[] burnerRenderers;
@@ -160,23 +161,35 @@ public sealed class Scene05HomecomingStory : MonoBehaviour
         history.ShowText(History);
         voice=Source("Scene05 voices",burner.position,false,.85f);effects=Source("Scene05 effects",burner.position,false,.35f);
         clock=Source("Scene05 clock only",new Vector3(-2.3f,2.45f,-2.2f),true,.22f);clock.clip=ticking;
+        ambience=Source("Scene05 room ambience",burner.position,false,.18f);
+        ambience.clip=roomAmbience;ambience.loop=true;if(roomAmbience)ambience.Play();
         steps=Source("Scene05 footsteps",standPosition,true,.18f);steps.clip=footsteps;
         yield return null;
         started=true;director.time=0;director.Play();
     }
     VRSubtitle Subtitle(string name,Vector3 offset,int size){var go=new GameObject(name);go.transform.SetParent(transform,false);var s=go.AddComponent<VRSubtitle>();s.vrCamera=Viewer;s.cameraOffset=offset;s.fontSize=size;s.subtitleWidth=1100;s.canvasScale=.002f;if(subtitleMaterial)s.SetMaterial(subtitleMaterial);return s;}
     AudioSource Source(string name,Vector3 at,bool spatial,float volume){var go=new GameObject(name);go.transform.SetParent(transform,true);go.transform.position=at;var a=go.AddComponent<AudioSource>();a.playOnAwake=false;a.spatialBlend=spatial?1:0;a.minDistance=2;a.maxDistance=12;a.volume=volume;return a;}
-    public string CaptionAt(float t)=>t<prayerAt?"":t<expectationAt-1?"父亲：请妈祖保佑我们这次航海顺利。":t<expectationAt?"":t<leaveAt-.5f?"香炉：那我……":t<homeAt-.8f?"父亲：这次，我就不带你了。":t<homeAt?"":t<withdrawAt?"父亲：当年我把你带过来，现在这里也是你的家了。":"";
+    public string CaptionAt(float t) =>
+        t>=prayerAt && t<prayerAt+(prayer?prayer.length:3.605f) ? "父亲：请妈祖保佑我们这次航海顺利。" :
+        t>=expectationAt && t<expectationAt+(expectation?expectation.length:1.75f) ? "香炉：那我……" :
+        t>=leaveAt && t<leaveAt+(leave?leave.length:3.318f) ? "父亲：这次，我就不带你了。" :
+        t>=homeAt && t<homeAt+(home?home.length:5.799f) ? "父亲：当年我把你带过来，现在这里也是你的家了。" : "";
     void Cue(float at,AudioClip clip,AudioSource source){double t=director.time;if(previous<at&&t>=at&&clip)source.PlayOneShot(clip);}
     void Update()
     {
         if(!started||!director)return;
         float t=(float)director.time;
         if(!ExplorationStarted){
-            Cue(prayerAt,prayer,voice);Cue(chimeAt,chime,effects);Cue(expectationAt,expectation,voice);Cue(leaveAt,leave,voice);Cue(homeAt,home,voice);Cue(closedAt,doorSound,effects);
+            Cue(prayerAt,prayer,voice);Cue(chimeAt,chime,effects);Cue(expectationAt,expectation,voice);Cue(leaveAt,leave,voice);Cue(homeAt,home,voice);Cue(closedAt,doorSound,effects);Cue(pickupAt,luggageSound,effects);
             if(previous<walkAt&&t>=walkAt&&footsteps){steps.loop=true;steps.Play();}
             if(t>=outsideAt&&steps.isPlaying)steps.Stop();
             if(previous<closedAt&&t>=closedAt&&ticking){clock.loop=true;clock.Play();}
+            // After the door closes, leave only the clock, as specified in the script.
+            if(ambience)
+            {
+                if(t>=closedAt){if(ambience.isPlaying)ambience.Stop();}
+                else ambience.volume=voice.isPlaying?.07f:.14f;
+            }
             dialogue.ShowText(CaptionAt(t));
             if(t>=exploreAt){SceneManager.LoadScene("scene_07");return;}
         }
@@ -189,6 +202,9 @@ public sealed class Scene05HomecomingStory : MonoBehaviour
         float t=(float)director.time;
         Vector3 eye=PermitInspection.BoundsOf(burner.gameObject).center+Vector3.up*.035f;
         eye += Vector3.down * 1.1f;
+        // Shift the seated view horizontally towards the clear interior of the room.
+        Vector3 inward=Vector3.ProjectOnPlane(explorationEye-eye,Vector3.up);
+        if(inward.sqrMagnitude>.0001f)eye+=inward.normalized*wallClearance;
         var body=ActiveRig.GetComponent<CharacterController>();bool enabledBody=body&&body.enabled;if(enabledBody)body.enabled=false;
         ActiveRig.position=eye-ActiveRig.TransformVector(trackingOffset);
         if(enabledBody)body.enabled=true;

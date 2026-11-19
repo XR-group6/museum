@@ -112,9 +112,9 @@ public sealed class MuseumSceneTour : MonoBehaviour
         go.transform.rotation = facing.sqrMagnitude > .001f ? Quaternion.LookRotation(facing) : viewer.transform.rotation;
         sofaHint = go.AddComponent<VRSubtitle>();
         sofaHint.vrCamera = viewer; sofaHint.followCamera = false; sofaHint.faceCamera = false;
-        sofaHint.subtitleWidth = 1500; sofaHint.fontSize = 38;
-        sofaHint.ShowBilingualText(PermitHint,
-            "Try aiming your right controller's laser at the itinerary and the Taiwan Compatriot Travel Certificate on the table, then press the trigger.");
+        sofaHint.subtitleWidth = 1100; sofaHint.fontSize = 38;
+        sofaHint.ShowBilingualText("试试用右摇杆的激光指向桌上的行程单\n和台湾同胞旅行证明并按下扳机。",
+            "Aim at the itinerary or Taiwan Compatriot Travel Certificate\nwith your right controller's laser, then press the trigger.");
     }
 
     void Update()

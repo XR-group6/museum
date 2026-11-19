@@ -19,7 +19,7 @@ public sealed class Scene01Dialogue : MonoBehaviour
         if (Application.isPlaying && director.state == PlayState.Playing)
         {
             if (!source) { source = gameObject.AddComponent<AudioSource>(); source.playOnAwake = false; }
-            Cue(4, daughterVoice, t); Cue(8, fatherVoice, t); Cue(18.5, burnerVoice, t); Cue(14, chime, t);
+            Cue(4, daughterVoice, t); Cue(8, fatherVoice, t); Cue(18.5, burnerVoice, t); Cue(12, chime, t);
         }
         previous = t;
     }

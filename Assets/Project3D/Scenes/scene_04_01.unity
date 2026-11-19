@@ -14915,6 +14915,7 @@ GameObject:
   - component: {fileID: 1849503458}
   - component: {fileID: 1849503459}
   - component: {fileID: 1849503460}
+  - component: {fileID: 830000000001}
   m_Layer: 0
   m_Name: TimeLine
   m_TagString: Untagged
@@ -16284,7 +16285,7 @@ MonoBehaviour:
   duration: 22
   fatherVoice: {fileID: 8300000, guid: 9cd1e915beeb4114ca9c254786770cea, type: 3}
   burnerVoice: {fileID: 8300000, guid: 759dbd8c78a12bf428690ad96dcd6901, type: 3}
-  clockBell: {fileID: 8300000, guid: a9e2d10880b4f6846918a64688d0ed93, type: 3}
+  clockBell: {fileID: 8300000, guid: d1d850cb0db36bb4cb74edff51b63ad1, type: 3}
   poseBones:
   - {fileID: 2103072340}
   - {fileID: 2103072393}
@@ -17139,7 +17140,7 @@ MonoBehaviour:
   daughterVoice: {fileID: 8300000, guid: 642fba5ae78042f4a828f8ced1cd3d84, type: 3}
   fatherVoice: {fileID: 8300000, guid: 681155416b580994a8a9b24d08f92f67, type: 3}
   burnerVoice: {fileID: 8300000, guid: 066541ee735d46148990475d982c23fa, type: 3}
-  chime: {fileID: 8300000, guid: 7e2a41a9a051d544b8ba690860d8fddf, type: 3}
+  chime: {fileID: 8300000, guid: 5a88e0d0ffaf6a641968589534f64f5a, type: 3}
 --- !u!102 &1988630877
 TextMesh:
   serializedVersion: 3
@@ -19182,6 +19183,24 @@ MonoBehaviour:
   oceanSurfaces: []
   alwaysVisible: []
   previewTimelineOnEnter: 0
+--- !u!114 &830000000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1849503452}
+  m_Enabled: 1
+  m_Script: {fileID: 11500000, guid: 203395e21139411aadb43ae3af310659, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  director: {fileID: 1849503453}
+  roomTone: {fileID: 8300000, guid: 6acde10c489829f4b9f41a345d5fccd3, type: 3}
+  harbour: {fileID: 8300000, guid: 4f5e291dcc8fe0f4f873ceb0cfcf3673, type: 3}
+  gulls: {fileID: 8300000, guid: 91227db588e69e748aaf8aa226560e2c, type: 3}
+  clockTick: {fileID: 8300000, guid: f258309222c437849a3b3e8cafc2efe5, type: 3}
+  clothes: {fileID: 8300000, guid: bf4488f3b91961542b430d1327c6bb2f, type: 3}
+  luggageRustle: {fileID: 8300000, guid: 9731dc489c8a6d1469d33f8892104073, type: 3}
+  footsteps: {fileID: 8300000, guid: 466e11fb82b90fb41a60f5a68ecad216, type: 3}
+  tableware: {fileID: 8300000, guid: f3936b490d8c706428d64f1ed2279219, type: 3}
+  burnerSetDown: {fileID: 8300000, guid: 6c98dfd93202d6447b80791418b82933, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

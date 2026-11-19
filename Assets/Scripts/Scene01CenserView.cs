@@ -43,7 +43,7 @@ public sealed class Scene01CenserView : MonoBehaviour
         {
             float enter = Mathf.SmoothStep(0, 1, Mathf.InverseLerp((float)scene03.startTime - 2.4f, (float)scene03.startTime, (float)time));
             float leave = 1 - Mathf.SmoothStep(0, 1, Mathf.InverseLerp((float)scene03.EndTime, (float)scene03.EndTime + 2.4f, (float)time));
-            eye = Vector3.Lerp(eye, Centre(scene03.burner) + Vector3.up * eyeLift, enter * leave);
+            eye = Vector3.Lerp(eye, Centre(scene03.burner) + Vector3.up * (eyeLift + (RestyledRoom ? .3f : 0)), enter * leave);
         }
         if (scene04 && scene04.burner)
         {
@@ -81,6 +81,7 @@ public sealed class Scene01CenserView : MonoBehaviour
             panel = go.AddComponent<VRSubtitle>();
             panel.subtitleFont = text ? text.font : uiText.font;
             panel.fontSize = 38; panel.subtitleWidth = 1100; panel.canvasScale = .002f;
+            if (history && source == scene01Title) panel.subtitleWidth = 550;
             panel.followCamera = !history; panel.faceCamera = true;
             panel.cameraOffset = new Vector3(0, -.55f, 1.8f);
             scenePanels[source] = panel;
@@ -89,7 +90,7 @@ public sealed class Scene01CenserView : MonoBehaviour
             if (history && !windowWall)
             {
                 // Fixed world positions copied from the user's temporary placement cubes.
-                anchor = source == scene01Title ? new Vector3(1.802f, 3.173f, -3.631f) :
+                anchor = source == scene01Title ? new Vector3(.833f, 2.168f, -4.107f) :
                     scene02 && source == scene02.title ? new Vector3(-6.339f, 2.469f, 1.389f) :
                     new Vector3(6.228f, 2.079f, 4.786f);
             }
