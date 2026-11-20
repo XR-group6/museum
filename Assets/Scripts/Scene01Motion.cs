@@ -3,6 +3,14 @@ public sealed class Scene01Motion : MonoBehaviour {
  public AnimationClip characters, burner;
  public GameObject actors, prop;
  Transform[] standingBones;
+ void Awake() {
+   // Player builds require an Animator on each non-Legacy sampling root.
+   EnsureSamplingAnimator(actors);
+   EnsureSamplingAnimator(prop);
+ }
+ static void EnsureSamplingAnimator(GameObject target) {
+   if(target && !target.GetComponent<Animator>()) target.AddComponent<Animator>();
+ }
  public void Sample(double time) {
    if(time<0 || time>26) return;
    characters.SampleAnimation(actors,(float)time);

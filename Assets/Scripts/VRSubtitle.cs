@@ -30,16 +30,27 @@ public class VRSubtitle : MonoBehaviour
 
     public void ShowText(string text)
     {
+        string content = text ?? "";
+        if (runtimeEnglishText == null && runtimeText == content && LayoutMatches()) return;
         runtimeEnglishText = null;
-        runtimeText = text ?? "";
+        runtimeText = content;
         if (label) Refresh();
     }
 
     public void ShowBilingualText(string chinese, string english)
     {
-        runtimeText = chinese ?? "";
-        runtimeEnglishText = english ?? "";
+        string chineseContent = chinese ?? "";
+        string englishContent = english ?? "";
+        if (runtimeText == chineseContent && runtimeEnglishText == englishContent && LayoutMatches()) return;
+        runtimeText = chineseContent;
+        runtimeEnglishText = englishContent;
         if (label) Refresh();
+    }
+
+    bool LayoutMatches()
+    {
+        return label && label.fontSize == Mathf.Max(1, fontSize) &&
+            textRect.rect.width == Mathf.Max(1, subtitleWidth);
     }
 
     public void SetMaterial(Material material)

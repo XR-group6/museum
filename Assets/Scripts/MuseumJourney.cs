@@ -724,7 +724,6 @@ public sealed class MuseumJourney : MonoBehaviour
                 progress.gameObject.SetActive(available);
                 if (!available) continue;
                 pending = true;
-                OrientVideo(i);
                 double length = video.length;
                 videoProgressFills[i].rectTransform.anchorMax = new Vector2(
                     length > 0 ? Mathf.Clamp01((float)(video.time / length)) : 0, 1);

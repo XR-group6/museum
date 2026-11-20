@@ -43,8 +43,15 @@ public static class SceneBloomVisualEffect
             return;
         }
 
+        var resources = Resources.Load<PostProcessResources>("MuseumPostProcessResources");
+        if (!resources)
+        {
+            Debug.LogError("[Museum] Post-processing resources are unavailable.");
+            return;
+        }
         var layer = camera.GetComponent<PostProcessLayer>();
         if (!layer) layer = camera.gameObject.AddComponent<PostProcessLayer>();
+        layer.Init(resources);
         layer.volumeTrigger = camera.transform;
         layer.volumeLayer = 1 << 0;
 
