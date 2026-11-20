@@ -415,7 +415,7 @@
         ]
       },
       "container": true,
-      "guard": true,
+      "guard": false,
       "guard_meshes": [
         {
           "materials": [

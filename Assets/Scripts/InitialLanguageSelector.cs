@@ -18,7 +18,7 @@ public sealed class InitialLanguageSelector : MonoBehaviour
     static void SceneLoaded(Scene scene, LoadSceneMode mode) { EnsureSelector(scene); }
     static void EnsureSelector(Scene scene)
     {
-        if(scene.name=="scene_01" && !SubtitleLanguage.HasSelected && !FindObjectOfType<InitialLanguageSelector>())
+        if(scene.name=="scene_01" && !SubtitleLanguage.ReturnedToMuseum && !SubtitleLanguage.HasSelected && !FindObjectOfType<InitialLanguageSelector>())
             new GameObject("Initial Subtitle Language Choice").AddComponent<InitialLanguageSelector>();
     }
     public void Build(Camera camera)

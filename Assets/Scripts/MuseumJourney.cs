@@ -627,6 +627,7 @@ public sealed class MuseumJourney : MonoBehaviour
         foreach (var video in timelineVideos) if (video) video.Pause();
         ShowSailChoice();
         while (!sailConfirmed) yield return null;
+        if (subtitle) subtitle.ShowText("");
         Returning = true;
         CreateWhiteCover(new Color(1, 1, 1, 0), "Ocean light cover");
         float elapsed = 0;
@@ -639,7 +640,7 @@ public sealed class MuseumJourney : MonoBehaviour
         // Render the fully white frame before loading the museum again.
         fadeImage.color = Color.white;
         yield return null;
-        SubtitleLanguage.BeginNewVisit();
+        SubtitleLanguage.CompleteJourney();
         Load("scene_01");
     }
 
@@ -861,6 +862,12 @@ public sealed class MuseumJourney : MonoBehaviour
     void ShowSailChoice()
     {
         awaitingSail = true;
+        if (!subtitle) subtitle = CreateSubtitle(true);
+        subtitle.followCamera = true;
+        subtitle.cameraOffset = new Vector3(0, .35f, 1.8f);
+        subtitle.subtitleWidth = 1100;
+        subtitle.ShowBilingualText("请向右看，乘坐渔船驶回博物馆",
+            "Look to your right and take the fishing boat back to the museum.");
         explorationChoice = new GameObject("Sail to museum", typeof(RectTransform), typeof(Canvas));
         explorationChoice.transform.SetParent(transform, false);
         explorationChoice.transform.position = viewer.transform.TransformPoint(new Vector3(0, -.2f, 1.65f));

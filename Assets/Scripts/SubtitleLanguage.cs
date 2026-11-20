@@ -6,6 +6,8 @@ public static class SubtitleLanguage
 {
     public static bool English { get; private set; }
     public static bool HasSelected { get; private set; }
+    public static bool ReturnedToMuseum { get; private set; }
+    public static void CompleteJourney() { ReturnedToMuseum = true; }
     public static event Action Changed;
     static readonly Dictionary<string,string> translations = new Dictionary<string,string> {
         {"女儿：爸，怎么把它也带来了？", "Daughter: Dad, why did you bring that too?"},
@@ -75,9 +77,15 @@ public static class SubtitleLanguage
         {"可以使用左摇杆移动，右摇杆可以辅助您调整视角（请不要调整过快以免出现眩晕）。试试用右摇杆的激光指向桌上的台胞证并按下扳机。", "Use the left stick to move and the right stick to turn. Turn slowly to avoid discomfort. Try aiming your right controller's laser at the Taiwan Compatriot Permit on the table, then press the trigger."}
     };
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-    static void Reset() { English=false; HasSelected=false; Changed=null; }
+    static void Reset() { English=false; HasSelected=false; ReturnedToMuseum=false; Changed=null; }
     public static void Select(bool english) { English=english; HasSelected=true; Changed?.Invoke(); }
-    public static void BeginNewVisit() { English=false; HasSelected=false; Changed?.Invoke(); }
+    public static void BeginNewVisit()
+    {
+        English = false;
+        HasSelected = false;
+        ReturnedToMuseum = false;
+        Changed?.Invoke();
+    }
     public static string Translate(string text)
     {
         if(!English || string.IsNullOrEmpty(text)) return text??"";

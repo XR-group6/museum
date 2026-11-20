@@ -40,6 +40,21 @@ public class SceneOneNarration : MonoBehaviour
 
     IEnumerator Start()
     {
+        if (SubtitleLanguage.ReturnedToMuseum)
+        {
+            var closing = new GameObject("Journey closing subtitle").AddComponent<VRSubtitle>();
+            closing.followCamera = true;
+            closing.cameraOffset = new Vector3(0, .15f, 1.8f);
+            closing.ShowBilingualText(
+                "我们的旅程暂告一段落，感谢您的游玩。请摘下头显，再去看看这个香炉吧。",
+                "Our journey ends here for now. Thank you for joining us. Please take off your headset and take another look at the incense burner.");
+            yield return new WaitForSecondsRealtime(10f);
+            closing.ShowText("");
+            SubtitleLanguage.BeginNewVisit();
+            yield return SceneManager.LoadSceneAsync(gameObject.scene.buildIndex, LoadSceneMode.Single);
+            yield break;
+        }
+
         // Hold the existing story until the initial headset language choice is made.
         while(!SubtitleLanguage.HasSelected) yield return null;
         if (!narrationSubtitle || !interactionSubtitle)
