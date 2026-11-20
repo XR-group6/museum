@@ -1,11 +1,40 @@
 {
   "added": [],
   "asset_swapped": [],
-  "bounds_changed": [],
+  "bounds_changed": [
+    {
+      "asset": "incense_burner_grand",
+      "from": [
+        [
+          -0.1755,
+          -0.1553,
+          1.0
+        ],
+        [
+          0.1755,
+          0.1553,
+          1.5534
+        ]
+      ],
+      "name": "court_censer",
+      "to": [
+        [
+          -0.2088,
+          -0.238,
+          1.0
+        ],
+        [
+          0.2088,
+          0.238,
+          1.5534
+        ]
+      ]
+    }
+  ],
   "first_publish": false,
   "moved": [],
   "removed": [],
   "renamed": [],
   "scene": "scene_09",
-  "unchanged": 190
+  "unchanged": 189
 }
