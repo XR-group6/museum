@@ -1,4 +1,4 @@
-﻿%YAML 1.1
+%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!29 &1
 OcclusionCullingSettings:
@@ -477,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2966517990580294211, guid: 93ba11542e4f46c439e3655a3d0bd83d, type: 3}
       propertyPath: m_Font
-      value:
+      value: 
       objectReference: {fileID: 2127277755}
     - target: {fileID: 2966517990580294211, guid: 93ba11542e4f46c439e3655a3d0bd83d, type: 3}
       propertyPath: m_CharacterSize
@@ -485,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5854345900009681210, guid: 93ba11542e4f46c439e3655a3d0bd83d, type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 911101560}
     - target: {fileID: 8585661439011637741, guid: 93ba11542e4f46c439e3655a3d0bd83d, type: 3}
       propertyPath: m_Name
@@ -522,8 +522,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da55f913b8104405196c1bec1bec81ad, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   color: {r: 1, g: 0.91, b: 0.65, a: 1}
   width: 0.028
   nearbyWidthMultiplier: 2.6
@@ -636,7 +636,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties:
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -679,6 +679,39 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5331122095962769756, guid: f53ee3b01730ef3ff9d75c4a56dbda74, type: 3}
+--- !u!128 &237609805
+Font:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Microsoft YaHei
+  serializedVersion: 5
+  m_LineSpacing: 63.351562
+  m_DefaultMaterial: {fileID: 955402545}
+  m_FontSize: 48
+  m_Texture: {fileID: 388453447}
+  m_AsciiStartOffset: 0
+  m_Tracking: 1
+  m_CharacterSpacing: 0
+  m_CharacterPadding: 1
+  m_ConvertCase: -2
+  m_CharacterRects: []
+  m_KerningValues: []
+  m_PixelScale: 0.1
+  m_FontData: 
+  m_Ascent: 50.789062
+  m_Descent: 0
+  m_DefaultStyle: 0
+  m_FontNames:
+  - Microsoft YaHei
+  - SimHei
+  - Arial Unicode MS
+  - Arial
+  m_FallbackFonts: []
+  m_FontRenderingMode: 0
+  m_UseLegacyBoundsCalculation: 0
+  m_ShouldRoundAdvanceValue: 1
 --- !u!64 &284699841
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -872,7 +905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5315281019429672927, guid: 3533ae27356c47a7e9406371e88a3e0f, type: 3}
       propertyPath: m_Mesh
-      value:
+      value: 
       objectReference: {fileID: 4300000, guid: 22599ac90f7386042860e869fec6d7e2, type: 2}
     - target: {fileID: 5959312888812827745, guid: 3533ae27356c47a7e9406371e88a3e0f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1477,6 +1510,54 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8906620993266638286, guid: 02aea4edac7e87679bdc1e4baec48d8d, type: 3}
+--- !u!28 &388453447
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Microsoft YaHei
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 0
+  m_Height: 0
+  m_CompleteImageSize: 0
+  m_MipsStripped: 0
+  m_TextureFormat: 4
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 0
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 0
+  m_PlatformBlob: 
+  image data: 0
+  _typelessdata: 
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!64 &389241357
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1973,7 +2054,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name:
+  m_Name: 
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1992,11 +2073,11 @@ Mesh:
     channels: []
     fullWeights: []
   m_BindPose: []
-  m_BoneNameHashes:
+  m_BoneNameHashes: 
   m_RootBoneNameHash: 0
   m_BonesAABB: []
   m_VariableBoneCountWeights:
-    m_Data:
+    m_Data: 
   m_MeshCompression: 0
   m_IsReadable: 1
   m_KeepVertices: 1
@@ -2070,51 +2151,51 @@ Mesh:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_UV:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Normals:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Tangents:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Weights:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_NormalSigns:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_TangentSigns:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_FloatColors:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_BoneIndices:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Triangles:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_UVInfo: 0
   m_LocalAABB:
@@ -2122,8 +2203,8 @@ Mesh:
     m_Extent: {x: 1.65, y: 0, z: 1.275}
   m_MeshUsageFlags: 0
   m_CookingOptions: 30
-  m_BakedConvexCollisionMesh:
-  m_BakedTriangleCollisionMesh:
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
@@ -2131,7 +2212,7 @@ Mesh:
     serializedVersion: 2
     offset: 0
     size: 0
-    path:
+    path: 
 --- !u!64 &513615396
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2256,7 +2337,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties:
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
@@ -2580,7 +2661,7 @@ Texture2D:
   m_IsReadable: 1
   m_IsPreProcessed: 0
   m_IgnoreMipmapLimit: 0
-  m_MipmapLimitGroupName:
+  m_MipmapLimitGroupName: 
   m_StreamingMipmaps: 0
   m_StreamingMipmapsPriority: 0
   m_VTOnly: 0
@@ -2597,14 +2678,14 @@ Texture2D:
     m_WrapW: 0
   m_LightmapFormat: 0
   m_ColorSpace: 0
-  m_PlatformBlob:
+  m_PlatformBlob: 
   image data: 0
-  _typelessdata:
+  _typelessdata: 
   m_StreamData:
     serializedVersion: 2
     offset: 0
     size: 0
-    path:
+    path: 
 --- !u!64 &693310170
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2991,8 +3072,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 057facead3e6dd11cbb21d99e1349e75, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   head: {fileID: 1850459726}
   focusPoints: []
   focusStandoff: 0
@@ -3068,7 +3149,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties:
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -3108,8 +3189,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36a7fca91b53d2f4b91b168553e355a6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   sceneNumber: 5
   holdSeconds: 3
   story: {fileID: 0}
@@ -3117,7 +3198,7 @@ MonoBehaviour:
   movement: {fileID: 0}
   turning: {fileID: 0}
   explorationSpawnForward: 0
-  explorationHintText:
+  explorationHintText: 
   explorationHintSeconds: 0
 --- !u!4 &914005990
 Transform:
@@ -3283,6 +3364,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2259857985376424719, guid: 74817f3833c3cfab8924d9618c2f623a, type: 3}
+--- !u!21 &955402545
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Microsoft YaHei
+  m_Shader: {fileID: 10101, guid: 0000000000000000e000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 388453447}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!64 &956176969
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3692,7 +3805,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1309407832216561817, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Mesh
-      value:
+      value: 
       objectReference: {fileID: 4300000, guid: 22599ac90f7386042860e869fec6d7e2, type: 2}
     - target: {fileID: 2703330658183210812, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_LocalScale.x
@@ -3756,51 +3869,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877322432208510035, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: bce91c91e0f553cc98f6fc2a31d54e82, type: 2}
     - target: {fileID: 3877322432208510035, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Materials.Array.data[2]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: fd11289728d4bc6feaa154c3bc7b1394, type: 2}
     - target: {fileID: 3877322432208510035, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Materials.Array.data[4]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 4f00fe9d9a88ffee5bf48449dbd7c7b6, type: 2}
     - target: {fileID: 3877322432208510035, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Materials.Array.data[5]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e6d11c84cb40f70e59f7ca31e7ed06d9, type: 2}
     - target: {fileID: 3877322432208510035, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Materials.Array.data[6]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: f833db925ac10fa6a9b4bbd2929553c2, type: 2}
     - target: {fileID: 3877322432208510035, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Materials.Array.data[7]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 598dc3adb4c885f7588020b4e65f010c, type: 2}
     - target: {fileID: 3877322432208510035, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Materials.Array.data[8]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: cd64df6fa3550e318a7e813f67f1d071, type: 2}
     - target: {fileID: 3877322432208510035, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Materials.Array.data[9]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: a55e3e9790d3189669a3403cab6ae6fa, type: 2}
     - target: {fileID: 3877322432208510035, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Materials.Array.data[10]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: f4b91f2462ac33558ad7c1204e3def95, type: 2}
     - target: {fileID: 3877322432208510035, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Materials.Array.data[11]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 4d007ce20eabbfb17825e8822aee875a, type: 2}
     - target: {fileID: 3877322432208510035, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Materials.Array.data[12]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 35f2c2ba93a974edaba64737eb807d2e, type: 2}
     - target: {fileID: 3877322432208510035, guid: 8ba7b8f2478776fea862165f5c61a737, type: 3}
       propertyPath: m_Materials.Array.data[13]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 5872962740afbac81bd931dbdfbe669a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4774,11 +4887,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 170430174}
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Mesh
-      value:
+      value: 
       objectReference: {fileID: 480159834}
     - target: {fileID: 4000013889601590, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4822,8 +4935,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a5fb0ca93b55ef4b8d54b512b103341, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1721069589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 458974, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
@@ -4838,8 +4951,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a5fb0ca93b55ef4b8d54b512b103341, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1721069591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013889601590, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
@@ -4896,8 +5009,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9ffc9b4c5d01b04ea58984c790863b3, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   headset: {fileID: 1721069591}
   rightHand: {fileID: 1721069588}
   degreesPerSecond: 60
@@ -4917,8 +5030,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd0b07564d2a6804bbe5c054ddab32f9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   headset: {fileID: 1721069591}
   leftHand: {fileID: 1721069590}
   speed: 1.2
@@ -6058,13 +6171,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11efd20375a2f4025beed65f4e5a71ee, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   closedPrefab: {fileID: 8585661439011637741, guid: 93ba11542e4f46c439e3655a3d0bd83d, type: 3}
   openPrefab: {fileID: 6226797561916218848, guid: e2e5d18f8af1bb244a19348a42024647, type: 3}
   singleSheet: 0
-  documentTitle:
-  englishDocumentTitle:
+  documentTitle: 
+  englishDocumentTitle: 
   tableModel: {fileID: 117797766}
   tableCollider: {fileID: 117797768}
   tableGlow: {fileID: 117797767}
@@ -6103,8 +6216,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 390127f3975324f4b9415b9ed1513315, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   director: {fileID: 2083102215}
   father: {fileID: 2062530043}
   burner: {fileID: 347164581}
@@ -6295,8 +6408,8 @@ MonoBehaviour:
   luggageRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   doorway: {x: 1.35, y: 0.15, z: -4.5}
   outside: {x: 1.35, y: 0.15, z: -5.7}
-  wallClearance: 0.25
   explorationEye: {x: 0.25, y: 1.72, z: -1.45}
+  wallClearance: 0.25
   touchPoint: {x: 0, y: 1.13, z: 1.285}
   exitWaypoints:
   - {x: 0.32, y: 0.15, z: -0.55}
@@ -6403,7 +6516,7 @@ Font:
   m_CharacterRects: []
   m_KerningValues: []
   m_PixelScale: 0.1
-  m_FontData:
+  m_FontData: 
   m_Ascent: 50.789062
   m_Descent: 0
   m_DefaultStyle: 0
